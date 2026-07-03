@@ -140,19 +140,35 @@
   .field .helper{
     font-size:13px; color:var(--muted); margin-bottom:12px; line-height:1.5;
   }
-
-  input[type="text"], input[type="email"], input[type="tel"], textarea{
+ 
+  input[type="text"], input[type="email"], input[type="tel"], textarea, select{
     width:100%; background:var(--void-2); border:1px solid var(--line);
     border-radius:10px; padding:13px 16px; color:var(--bone);
     font-family:var(--body); font-size:14.5px;
     transition:border-color .2s, background .2s;
   }
+  select{
+    appearance:none; -webkit-appearance:none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%238f7fac' stroke-width='1.6' fill='none' fill-rule='evenodd'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 14px center;
+    padding-right:36px;
+    cursor:pointer;
+  }
+  select option{ background:var(--void-2); color:var(--bone); }
+  .phone-row{ display:flex; gap:10px; }
+  .phone-row select{ flex:0 0 190px; }
+  .phone-row input{ flex:1; min-width:0; }
+  @media (max-width:480px){
+    .phone-row{ flex-direction:column; }
+    .phone-row select{ flex:1; }
+  }
   textarea{ resize:vertical; min-height:90px; }
   input::placeholder, textarea::placeholder{ color:var(--muted); }
-  input:focus, textarea:focus{
+  input:focus, textarea:focus, select:focus{
     outline:none; border-color:var(--signal); background:var(--surface-2);
   }
-
+ 
   .options{ display:flex; flex-direction:column; gap:10px; }
   .option{
     display:flex; align-items:flex-start; gap:12px;
@@ -166,7 +182,7 @@
   .option:has(input:checked){
     border-color:var(--signal); background:rgba(245,158,11,.06); color:var(--bone);
   }
-
+  
   .conditional{ margin-top:14px; display:none; }
   .conditional.show{ display:block; }
 
@@ -235,7 +251,7 @@
   <div class="intro">
     <span class="eyebrow"><i class="bi bi-lightning-charge-fill"></i> 2-MINUTE FIT CHECK</span>
     <h1>Let's See If StoreFront Pro Is Right for Your Business</h1>
-    <p>Tell us a bit about your business — what you sell, how you're currently taking orders, and what's not working. Takes about 2 minutes. We'll review your answers and follow up by email. If it looks like a good fit, we'll offer you a short call to walk through exactly what this would look like for you.</p>
+    <p>Tell us a bit about your business; what you sell, how you're currently taking orders, and what's not working. Takes about 2 minutes. We'll review your answers and follow up by email. If it looks like a good fit, we'll offer you a short call to walk through exactly what this would look like for you.</p>
   </div>
 
   <!-- ============ FORM ============ -->
@@ -262,9 +278,43 @@
       </div>
 
       <div class="field">
-        <label class="q" for="q4">What's the best phone number to reach you on? <span class="req">Required</span></label>
+        <label class="q" for="q4number">What's the best phone number to reach you on? <span class="req">Required</span></label>
         <div class="helper">We won't call without your permission — this is just in case email isn't working.</div>
-        <input type="tel" id="q4" name="q4_phone" required placeholder="+00 0000 000000">
+        <div class="phone-row">
+          <select id="q4code" name="q4_country_code" required>
+            <option value="" disabled selected>Code</option>
+            <option value="+44">🇬🇧 +44 — United Kingdom</option>
+            <option value="+353">🇮🇪 +353 — Ireland</option>
+            <option value="+33">🇫🇷 +33 — France</option>
+            <option value="+49">🇩🇪 +49 — Germany</option>
+            <option value="+34">🇪🇸 +34 — Spain</option>
+            <option value="+39">🇮🇹 +39 — Italy</option>
+            <option value="+31">🇳🇱 +31 — Netherlands</option>
+            <option value="+351">🇵🇹 +351 — Portugal</option>
+            <option value="+32">🇧🇪 +32 — Belgium</option>
+            <option value="+41">🇨🇭 +41 — Switzerland</option>
+            <option value="+43">🇦🇹 +43 — Austria</option>
+            <option value="+46">🇸🇪 +46 — Sweden</option>
+            <option value="+45">🇩🇰 +45 — Denmark</option>
+            <option value="+47">🇳🇴 +47 — Norway</option>
+            <option value="+48">🇵🇱 +48 — Poland</option>
+            <option value="+30">🇬🇷 +30 — Greece</option>
+            <option value="+234">🇳🇬 +234 — Nigeria</option>
+            <option value="+233">🇬🇭 +233 — Ghana</option>
+            <option value="+254">🇰🇪 +254 — Kenya</option>
+            <option value="+27">🇿🇦 +27 — South Africa</option>
+            <option value="+20">🇪🇬 +20 — Egypt</option>
+            <option value="+212">🇲🇦 +212 — Morocco</option>
+            <option value="+256">🇺🇬 +256 — Uganda</option>
+            <option value="+255">🇹🇿 +255 — Tanzania</option>
+            <option value="+1">🇺🇸 +1 — US / Canada</option>
+            <option value="other">🌐 Other — enter code manually</option>
+          </select>
+          <input type="tel" id="q4number" name="q4_phone_number" required placeholder="Phone number" inputmode="tel">
+        </div>
+        <div class="conditional" id="q4otherwrap">
+          <input type="text" id="q4othercode" name="q4_country_code_other" placeholder="Enter your country's dial code, e.g. +254">
+        </div>
       </div>
 
       <div class="field">
@@ -299,7 +349,7 @@
 
       <div class="field">
         <label class="q">How do you currently take orders or bookings? <span class="req">Required</span></label>
-        <div class="helper">Select all that apply — this is the single most important question for us.</div>
+        <div class="helper">Select all that apply; this is the single most important question for us.</div>
         <div class="options">
           <label class="option"><input type="checkbox" name="q8_current_orders" value="Instagram or Facebook DMs"> Instagram or Facebook DMs</label>
           <label class="option"><input type="checkbox" name="q8_current_orders" value="WhatsApp messages"> WhatsApp messages</label>
@@ -317,7 +367,7 @@
         <div class="options">
           <label class="option"><input type="radio" name="q9_physical_location" value="Yes, main way I sell" required> Yes, and that's my main way of selling</label>
           <label class="option"><input type="radio" name="q9_physical_location" value="Yes, but also sell online" required> Yes, but I also sell online/remotely</label>
-          <label class="option"><input type="radio" name="q9_physical_location" value="No physical location" required> No physical location — online or mobile only</label>
+          <label class="option"><input type="radio" name="q9_physical_location" value="No physical location" required> No physical location; online or mobile only</label>
         </div>
       </div>
 
@@ -340,7 +390,7 @@
 
       <div class="field">
         <label class="q" for="q11">What's the most frustrating part of how you currently take orders? <span class="req">Required</span></label>
-        <div class="helper">Be honest — this helps us understand exactly what to fix.</div>
+        <div class="helper">Be honest. This helps us understand exactly what to fix.</div>
         <textarea id="q11" name="q11_frustration" required placeholder="Tell us what's not working..."></textarea>
       </div>
 
@@ -416,8 +466,8 @@
   <!-- ============ CONFIRMATION ============ -->
   <div class="confirmation" id="confirmation">
     <i class="bi bi-check-circle-fill"></i>
-    <h2>Thanks — we've got everything we need.</h2>
-    <p>We'll review your answers and follow up by email within 1–2 business days. If StoreFront Pro looks like a strong fit for your business, we'll send you a link to book a short call so we can walk through exactly what this would look like for you — no pressure, no obligation.</p>
+    <h2>Thanks! We've got everything we need.</h2>
+    <p>We'll review your answers and follow up by email within 1–2 business days. If StoreFront Pro looks like a strong fit for your business, we'll send you a link to book a short call so we can walk through exactly what this would look like for you. No pressure, no obligation.</p>
     <div class="sign">— The ImpactDev Team</div>
   </div>
 </div>
