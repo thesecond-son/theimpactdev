@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ImpactDev — Websites That Go Live</title>
+<meta name="description" content="ImpactDev builds websites and ecommerce systems for businesses ready to launch their online presence — from first signal to full network." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+  :root{
+    --void:      #0c0818;
+    --void-2:    #110b22;
+    --surface:   #161029;
+    --surface-2: #1d1638;
+    --line:      #2a2348;
+    --line-soft: #221c3d;
+    --signal:    #7c5cff;
+    --signal-2:  #a78bfa;
+    --lime:      #c8f135;
+    --bone:      #f3f1fa;
+    --bone-dim:  #b8b2d4;
+    --muted:     #8a82a8;
+    --mono:      'JetBrains Mono', monospace;
+    --disp:      'Space Grotesk', sans-serif;
+    --body:      'Inter', sans-serif;
+    --ease:      cubic-bezier(.16,1,.3,1);
+  }
+
+  *,*::before,*::after{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--void);
+    color:var(--bone);
+    font-family:var(--body);
+    overflow-x:hidden;
+    line-height:1.6;
+  }
+  ::selection{ background:var(--signal); color:var(--void); }
+
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+  section{ position:relative; }
+
+  /* ---------- noise / grid backdrop ---------- */
+  .grid-field{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(0,0,0,.9), transparent 75%);
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(0,0,0,.9), transparent 75%);
+    pointer-events:none;
+    opacity:.55;
+  }
+
+  /* ---------- focus ---------- */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--lime);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  /* ================= NAV ================= */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 32px;
+    backdrop-filter: blur(14px) saturate(140%);
+    background:rgba(12,8,24,.55);
+    border-bottom:1px solid transparent;
+    transition:border-color .4s var(--ease), background .4s var(--ease);
+  }
+  nav.scrolled{ border-bottom-color:var(--line-soft); background:rgba(12,8,24,.85); }
+
+  .logo{
+    display:flex; align-items:center; gap:10px;
+    font-family:var(--disp); font-weight:600; font-size:18px; letter-spacing:.01em;
+  }
+  .logo .dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--lime);
+    box-shadow:0 0 0 0 rgba(200,241,53,.6);
+    animation:pulse 2.6s var(--ease) infinite;
+  }
+  @keyframes pulse{
+    0%{ box-shadow:0 0 0 0 rgba(200,241,53,.55); }
+    70%{ box-shadow:0 0 0 8px rgba(200,241,53,0); }
+    100%{ box-shadow:0 0 0 0 rgba(200,241,53,0); }
+  }
+  .logo span{ color:var(--muted); font-weight:400; }
+
+  .navlinks{ display:flex; align-items:center; gap:36px; }
+  .navlinks a{
+    font-size:13px; color:var(--bone-dim); font-weight:500;
+    letter-spacing:.02em;
+    transition:color .25s;
+  }
+  .navlinks a:hover{ color:var(--bone); }
+
+  .nav-cta{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--signal); color:var(--void);
+    font-family:var(--disp); font-weight:600; font-size:13px;
+    padding:10px 18px; border-radius:100px;
+    transition:transform .25s var(--ease), box-shadow .25s var(--ease);
+  }
+  .nav-cta:hover{ transform:translateY(-1px); box-shadow:0 8px 24px rgba(124,92,255,.35); }
+
+  @media (max-width:860px){ .navlinks{ display:none; } }
+
+  /* ================= HERO ================= */
+  .hero{
+    min-height:100vh;
+    display:flex; flex-direction:column; justify-content:center;
+    padding-top:120px; padding-bottom:80px;
+    overflow:hidden;
+  }
+  .hero-inner{ position:relative; z-index:2; }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:12px; color:var(--lime);
+    letter-spacing:.08em; margin-bottom:28px;
+    padding:7px 14px; border:1px solid rgba(200,241,53,.25);
+    border-radius:100px; background:rgba(200,241,53,.05);
+  }
+  .eyebrow .bar{
+    display:inline-flex; gap:3px;
+  }
+  .eyebrow .bar span{
+    width:3px; height:10px; background:var(--lime); border-radius:1px;
+    animation:bars 1.2s ease-in-out infinite;
+  }
+  .eyebrow .bar span:nth-child(2){ animation-delay:.15s; }
+  .eyebrow .bar span:nth-child(3){ animation-delay:.3s; }
+  @keyframes bars{ 0%,100%{ transform:scaleY(.4);} 50%{ transform:scaleY(1);} }
+
+  .hero h1{
+    font-family:var(--disp);
+    font-size:clamp(40px, 7.4vw, 92px);
+    font-weight:600;
+    line-height:1.02;
+    letter-spacing:-.01em;
+    max-width:980px;
+    color:var(--bone);
+  }
+  .hero h1 .accent{
+    color:var(--signal-2);
+    position:relative;
+  }
+  .hero h1 .out{
+    -webkit-text-stroke: 1.5px var(--line);
+    color:transparent;
+  }
+
+  .hero-sub{
+    margin-top:30px;
+    font-size:clamp(16px,2vw,19px);
+    color:var(--bone-dim);
+    max-width:560px;
+    line-height:1.7;
+  }
+
+  .hero-cta-row{
+    margin-top:46px;
+    display:flex; flex-wrap:wrap; align-items:center; gap:18px;
+  }
+  .btn-primary{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--bone); color:var(--void);
+    font-family:var(--disp); font-weight:600; font-size:15px;
+    padding:16px 28px; border-radius:100px;
+    transition:transform .25s var(--ease), background .25s var(--ease);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); background:var(--lime); }
+  .btn-ghost{
+    display:inline-flex; align-items:center; gap:10px;
+    color:var(--bone-dim); font-size:14px; font-weight:500;
+    padding:16px 6px;
+    border-bottom:1px solid var(--line);
+    transition:color .25s, border-color .25s;
+  }
+  .btn-ghost:hover{ color:var(--bone); border-color:var(--signal-2); }
+
+  .hero-meta{
+    margin-top:64px;
+    display:flex; flex-wrap:wrap; gap:40px;
+  }
+  .hero-meta div{ font-family:var(--mono); font-size:12px; color:var(--muted); }
+  .hero-meta strong{
+    display:block; font-family:var(--disp); font-size:22px; color:var(--bone);
+    font-weight:600; margin-bottom:4px;
+  }
+
+  /* floating coordinate / scan marks */
+  .scan-mark{
+    position:absolute; font-family:var(--mono); font-size:11px; color:var(--muted);
+    opacity:.7; letter-spacing:.05em;
+  }
+
+  /* ================= SECTION HEADERS ================= */
+  .sec-head{ margin-bottom:56px; max-width:680px; }
+  .sec-tag{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:12px; color:var(--signal-2);
+    letter-spacing:.1em; text-transform:uppercase; margin-bottom:16px;
+  }
+  .sec-tag::before{
+    content:''; width:6px; height:6px; background:var(--signal-2); border-radius:50%;
+  }
+  .sec-head h2{
+    font-family:var(--disp); font-weight:600;
+    font-size:clamp(28px,4.2vw,46px); line-height:1.08; color:var(--bone);
+  }
+  .sec-head p{ margin-top:18px; color:var(--bone-dim); font-size:16px; max-width:520px; }
+
+  /* ================= OFFERS ================= */
+  .offers{ padding:140px 0; }
+  .offer-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); border-radius:18px;
+    overflow:hidden;
+  }
+  .offer-card{
+    background:var(--surface);
+    padding:40px 34px 36px;
+    display:flex; flex-direction:column;
+    transition:background .35s var(--ease);
+    position:relative;
+  }
+  .offer-card:hover{ background:var(--surface-2); }
+  .offer-card .idx{
+    font-family:var(--mono); font-size:12px; color:var(--muted); margin-bottom:28px;
+  }
+  .offer-card h3{
+    font-family:var(--disp); font-weight:600; font-size:23px; color:var(--bone);
+    margin-bottom:12px;
+  }
+  .offer-card .tagline{
+    font-size:13px; color:var(--signal-2); font-weight:500; margin-bottom:18px;
+    font-family:var(--mono); letter-spacing:.02em;
+  }
+  .offer-card p.desc{ color:var(--bone-dim); font-size:14.5px; margin-bottom:26px; flex-grow:1; }
+  .offer-card ul{ list-style:none; margin-bottom:30px; }
+  .offer-card li{
+    font-size:13.5px; color:var(--bone-dim); padding:8px 0;
+    border-top:1px solid var(--line-soft);
+    display:flex; gap:10px; align-items:flex-start;
+  }
+  .offer-card li:first-child{ border-top:none; }
+  .offer-card li i{ color:var(--lime); font-size:13px; margin-top:2px; }
+  .offer-card .learn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13.5px; font-weight:600; color:var(--bone);
+    margin-top:auto;
+  }
+  .offer-card .learn i{ transition:transform .25s var(--ease); font-size:12px; }
+  .offer-card:hover .learn i{ transform:translateX(4px); }
+  .offer-card.feature{ background:var(--surface-2); }
+  .offer-card.feature .tagline{ color:var(--lime); }
+  .badge-flag{
+    position:absolute; top:40px; right:34px;
+    font-family:var(--mono); font-size:10px; letter-spacing:.07em;
+    color:var(--lime); border:1px solid rgba(200,241,53,.3);
+    padding:4px 9px; border-radius:100px; background:rgba(200,241,53,.06);
+  }
+
+  @media (max-width:900px){
+    .offer-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ================= PROCESS / SERVICES STRIP ================= */
+  .services{ padding:0 0 140px; }
+  .svc-row{
+    display:grid; grid-template-columns: 1.1fr 1.9fr; gap:64px;
+    align-items:start;
+  }
+  .svc-list{ display:flex; flex-direction:column; }
+  .svc-item{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:26px 0; border-top:1px solid var(--line-soft);
+    cursor:default;
+  }
+  .svc-item:last-child{ border-bottom:1px solid var(--line-soft); }
+  .svc-item .name{
+    display:flex; align-items:baseline; gap:18px;
+  }
+  .svc-item .num{ font-family:var(--mono); font-size:12px; color:var(--muted); }
+  .svc-item h4{ font-family:var(--disp); font-weight:500; font-size:19px; color:var(--bone); }
+  .svc-item i{ color:var(--muted); font-size:13px; transition:transform .3s var(--ease), color .3s; }
+  .svc-item:hover i{ color:var(--signal-2); transform:translateX(3px); }
+  .svc-item:hover h4{ color:var(--signal-2); }
+
+  .svc-panel{
+    background:var(--surface); border:1px solid var(--line); border-radius:18px;
+    padding:40px; position:relative; overflow:hidden;
+  }
+  .svc-panel::before{
+    content:''; position:absolute; top:-40%; right:-20%; width:280px; height:280px;
+    background:radial-gradient(circle, rgba(124,92,255,.18), transparent 70%);
+  }
+  .svc-panel .label{
+    font-family:var(--mono); font-size:12px; color:var(--lime); letter-spacing:.08em;
+    margin-bottom:18px; display:block;
+  }
+  .svc-panel h3{ font-family:var(--disp); font-size:26px; font-weight:600; color:var(--bone); margin-bottom:16px; }
+  .svc-panel p{ color:var(--bone-dim); font-size:15px; margin-bottom:28px; }
+  .svc-panel .stat-row{ display:flex; gap:36px; }
+  .svc-panel .stat strong{ display:block; font-family:var(--disp); font-size:28px; color:var(--bone); }
+  .svc-panel .stat span{ font-family:var(--mono); font-size:11.5px; color:var(--muted); }
+
+  @media (max-width:860px){
+    .svc-row{ grid-template-columns:1fr; }
+  }
+
+  /* ================= PORTFOLIO / NETWORK ================= */
+  .network{ padding:140px 0; background:var(--void-2); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
+
+  .node-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+  }
+  .node-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:16px;
+    padding:26px; display:flex; flex-direction:column; gap:16px;
+    text-decoration:none; position:relative;
+    transition:transform .3s var(--ease), border-color .3s var(--ease), background .3s var(--ease);
+  }
+  .node-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(124,92,255,.45);
+    background:var(--surface-2);
+  }
+  .node-top{ display:flex; align-items:center; justify-content:space-between; }
+  .node-status{
+    display:flex; align-items:center; gap:7px;
+    font-family:var(--mono); font-size:10.5px; color:var(--lime); letter-spacing:.06em;
+  }
+  .node-status .led{
+    width:6px; height:6px; border-radius:50%; background:var(--lime);
+    box-shadow:0 0 6px rgba(200,241,53,.8);
+  }
+  .node-card .arrow{
+    font-size:13px; color:var(--muted); transition:transform .3s var(--ease), color .3s;
+  }
+  .node-card:hover .arrow{ color:var(--signal-2); transform:translate(3px,-3px); }
+
+  .node-card h4{
+    font-family:var(--disp); font-weight:600; font-size:19px; color:var(--bone);
+  }
+  .node-tag{
+    font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:.04em;
+  }
+  .node-desc{ font-size:13.5px; color:var(--bone-dim); line-height:1.6; }
+  .node-url{
+    font-family:var(--mono); font-size:11px; color:var(--signal-2);
+    padding-top:14px; border-top:1px solid var(--line-soft);
+    word-break:break-all;
+  }
+
+  @media (max-width:900px){ .node-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px){ .node-grid{ grid-template-columns:1fr; } }
+
+  .network-more{
+    margin-top:40px; display:flex; align-items:center; justify-content:center;
+    gap:10px; font-family:var(--mono); font-size:12.5px; color:var(--muted);
+  }
+
+  /* ================= TESTIMONIALS ================= */
+  .testimonials{ padding:140px 0; }
+  .log-window{
+    background:var(--surface); border:1px solid var(--line); border-radius:18px;
+    overflow:hidden;
+  }
+  .log-bar{
+    display:flex; align-items:center; gap:8px;
+    padding:16px 22px; border-bottom:1px solid var(--line-soft);
+    font-family:var(--mono); font-size:11.5px; color:var(--muted);
+  }
+  .log-bar .led-group{ display:flex; gap:6px; margin-right:10px; }
+  .log-bar .led-group span{ width:9px; height:9px; border-radius:50%; background:var(--line); }
+  .log-bar .led-group span:nth-child(1){ background:#ff6464; }
+  .log-bar .led-group span:nth-child(2){ background:var(--lime); }
+  .log-bar .led-group span:nth-child(3){ background:var(--signal-2); }
+
+  .log-grid{
+    display:grid; grid-template-columns:repeat(3,1fr);
+  }
+  .log-entry{
+    padding:34px 30px; border-right:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);
+  }
+  .log-entry:nth-child(3n){ border-right:none; }
+  .log-entry .qmark{ font-family:var(--disp); font-size:32px; color:var(--signal); line-height:1; margin-bottom:14px; display:block; }
+  .log-entry p{ font-size:14.5px; color:var(--bone-dim); margin-bottom:22px; line-height:1.7; }
+  .log-who{ display:flex; align-items:center; gap:12px; }
+  .log-avatar{
+    width:36px; height:36px; border-radius:50%;
+    background:var(--surface-2); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--disp); font-weight:600; font-size:13px; color:var(--signal-2);
+  }
+  .log-name{ font-size:13.5px; font-weight:600; color:var(--bone); }
+  .log-role{ font-family:var(--mono); font-size:11px; color:var(--muted); margin-top:1px; }
+
+  @media (max-width:900px){
+    .log-grid{ grid-template-columns:1fr; }
+    .log-entry{ border-right:none; }
+  }
+
+  /* ================= CTA BAND ================= */
+  .cta-band{
+    padding:130px 0; text-align:center; position:relative; overflow:hidden;
+    background:var(--void-2); border-top:1px solid var(--line-soft);
+  }
+  .cta-band::before{
+    content:''; position:absolute; top:-30%; left:50%; transform:translateX(-50%);
+    width:680px; height:680px; border-radius:50%;
+    background:radial-gradient(circle, rgba(124,92,255,.16), transparent 68%);
+    pointer-events:none;
+  }
+  .cta-band-inner{ position:relative; z-index:2; }
+  .cta-band h2{
+    font-family:var(--disp); font-weight:600; font-size:clamp(30px,5.4vw,56px);
+    color:var(--bone); max-width:680px; margin:0 auto 22px; line-height:1.08;
+  }
+  .cta-band p{ color:var(--bone-dim); font-size:16px; max-width:480px; margin:0 auto 42px; }
+  .cta-buttons{ display:flex; justify-content:center; gap:18px; flex-wrap:wrap; }
+
+  /* ================= FOOTER ================= */
+  footer{
+    padding:64px 0 36px; border-top:1px solid var(--line-soft);
+  }
+  .footer-top{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:40px;
+    flex-wrap:wrap; margin-bottom:56px;
+  }
+  .footer-brand .logo{ margin-bottom:16px; }
+  .footer-brand p{ color:var(--muted); font-size:13.5px; max-width:280px; }
+  .footer-cols{ display:flex; gap:64px; flex-wrap:wrap; }
+  .footer-col h5{
+    font-family:var(--mono); font-size:11.5px; color:var(--muted); letter-spacing:.08em;
+    text-transform:uppercase; margin-bottom:18px;
+  }
+  .footer-col a{
+    display:block; font-size:13.5px; color:var(--bone-dim); margin-bottom:12px;
+    transition:color .2s;
+  }
+  .footer-col a:hover{ color:var(--bone); }
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+    padding-top:28px; border-top:1px solid var(--line-soft);
+    font-family:var(--mono); font-size:11.5px; color:var(--muted);
+  }
+  .footer-bottom .status{ display:flex; align-items:center; gap:8px; }
+  .footer-bottom .status .led{ width:6px; height:6px; border-radius:50%; background:var(--lime); }
+
+  /* ================= REVEAL ANIMATION ================= */
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal.in{ opacity:1; transform:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+    .reveal{ opacity:1; transform:none; }
+  }
+
+  @media (max-width:600px){
+    .wrap{ padding:0 20px; }
+    .hero{ padding-top:110px; }
+    .offers, .services, .network, .testimonials, .cta-band{ padding:90px 0; }
+    .log-entry{ padding:28px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="logo">Impact<span>Dev</span><span class="dot" aria-hidden="true"></span></div>
+  <div class="navlinks">
+    <a href="#offers">Offers</a>
+    <a href="#services">Services</a>
+    <a href="#network">Work</a>
+    <a href="#testimonials">Testimonials</a>
+  </div>
+  <a href="#contact" class="nav-cta">Start a project <i class="bi bi-arrow-up-right"></i></a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="grid-field" aria-hidden="true"></div>
+  <span class="scan-mark" style="top:130px; right:48px;">SYS // ONLINE</span>
+  <span class="scan-mark" style="bottom:60px; left:48px;">04°N, 6°E — LAGOS</span>
+
+  <div class="wrap hero-inner">
+    <div class="eyebrow">
+      <span class="bar" aria-hidden="true"><span></span><span></span><span></span></span>
+      SIGNAL ACQUIRED — READY TO BUILD
+    </div>
+
+    <h1 class="reveal">
+      Every business<br>
+      has a <span class="accent">signal</span>.<br>
+      <span class="out">We put it online.</span>
+    </h1>
+
+    <p class="hero-sub reveal">
+      ImpactDev designs and builds websites, ecommerce systems, and online infrastructure for businesses ready to stop being invisible — from a first launch to a full-scale store.
+    </p>
+
+    <div class="hero-cta-row reveal">
+      <a href="#offers" class="btn-primary">See our offers <i class="bi bi-arrow-down"></i></a>
+      <a href="#network" class="btn-ghost">View live builds <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <!-- <div class="hero-meta reveal">
+      <div><strong>12+</strong>SITES LAUNCHED</div>
+      <div><strong>4 DAYS</strong>FASTEST DELIVERY</div>
+      <div><strong>3</strong>MARKETS SERVED</div>
+    </div> -->
+  </div>
+</section>
+
+<!-- ============ OFFERS ============ -->
+<section class="offers" id="offers">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Offers</div>
+      <h2>Three ways to get online — built for where your business actually is.</h2>
+      <p>Whether you're launching for the first time or replacing a system that's holding you back, there's a clear starting point.</p>
+    </div>
+
+    <div class="offer-grid">
+
+      <div class="offer-card reveal">
+        <div class="idx">01 / LAUNCH</div>
+        <h3>LaunchSite</h3>
+        <div class="tagline">Get online. Fast.</div>
+        <p class="desc">A clean, professional website built in days — for freelancers, small businesses, and anyone who needs a real online presence without the wait.</p>
+        <ul>
+          <li><i class="bi bi-check"></i> 1–3 page professional site</li>
+          <li><i class="bi bi-check"></i> Mobile-first design</li>
+          <li><i class="bi bi-check"></i> WhatsApp-integrated contact</li>
+          <li><i class="bi bi-check"></i> Delivered in days, not months</li>
+        </ul>
+        <a href="#contact" class="learn">Start here <i class="bi bi-arrow-right"></i></a>
+      </div>
+
+      <div class="offer-card feature reveal">
+        <span class="badge-flag">MOST REQUESTED</span>
+        <div class="idx">02 / AUTHORITY</div>
+        <h3>AuthoritySite System</h3>
+        <div class="tagline">Look like the obvious choice.</div>
+        <p class="desc">A conversion-focused website for consultants, agencies, and established businesses ready to win bigger clients and justify higher prices.</p>
+        <ul>
+          <li><i class="bi bi-check"></i> Strategy session + custom copy</li>
+          <li><i class="bi bi-check"></i> Case studies &amp; testimonial system</li>
+          <li><i class="bi bi-check"></i> Lead capture built in</li>
+          <li><i class="bi bi-check"></i> Google Business setup + growth guide</li>
+        </ul>
+        <a href="#contact" class="learn">Explore AuthoritySite <i class="bi bi-arrow-right"></i></a>
+      </div>
+
+      <div class="offer-card reveal">
+        <div class="idx">03 / SCALE</div>
+        <h3>StoreFront Pro</h3>
+        <div class="tagline">Stop selling in the DMs.</div>
+        <p class="desc">A complete ecommerce system — products, orders, payments, and inventory — for product businesses ready to operate like a real store.</p>
+        <ul>
+          <li><i class="bi bi-check"></i> Full catalogue + order dashboard</li>
+          <li><i class="bi bi-check"></i> Local + international payments</li>
+          <li><i class="bi bi-check"></i> Inventory &amp; delivery automation</li>
+          <li><i class="bi bi-check"></i> 30 days of launch support</li>
+        </ul>
+        <a href="storefront-pro-form.html" class="learn">Explore StoreFront Pro <i class="bi bi-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Capabilities</div>
+      <h2>What we actually build, under the hood.</h2>
+    </div>
+
+    <div class="svc-row">
+      <div class="svc-list reveal">
+        <div class="svc-item">
+          <div class="name"><span class="num">01</span><h4>Website design &amp; build</h4></div>
+          <i class="bi bi-arrow-up-right"></i>
+        </div>
+        <div class="svc-item">
+          <div class="name"><span class="num">02</span><h4>Ecommerce &amp; order systems</h4></div>
+          <i class="bi bi-arrow-up-right"></i>
+        </div>
+        <div class="svc-item">
+          <div class="name"><span class="num">03</span><h4>Payment &amp; inventory integration</h4></div>
+          <i class="bi bi-arrow-up-right"></i>
+        </div>
+        <div class="svc-item">
+          <div class="name"><span class="num">04</span><h4>SEO &amp; Google Business setup</h4></div>
+          <i class="bi bi-arrow-up-right"></i>
+        </div>
+        <div class="svc-item">
+          <div class="name"><span class="num">05</span><h4>Brand &amp; growth strategy</h4></div>
+          <i class="bi bi-arrow-up-right"></i>
+        </div>
+      </div>
+
+      <div class="svc-panel reveal">
+        <span class="label">CURRENTLY DEPLOYING</span>
+        <h3>Full-stack builds, not templates.</h3>
+        <p>Every project is designed and coded around the business it's for — its market, its customers, and what it's actually trying to sell. No drag-and-drop builders, no recycled themes.</p>
+        <div class="stat-row">
+          <div class="stat"><strong>4–30</strong><span>DAYS TO LAUNCH</span></div>
+          <div class="stat"><strong>NG / UK / US</strong><span>MARKETS SUPPORTED</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NETWORK / PORTFOLIO ============ -->
+<section class="network" id="network">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Live Network</div>
+      <h2>Businesses we've put on the map.</h2>
+      <p>A sample of sites currently live and running — across food, fashion, healthcare, energy, and professional services.</p>
+    </div>
+
+    <div class="node-grid">
+
+      <a href="https://tutusfoods.com" target="_blank" rel="noopener" class="node-card reveal">
+        <div class="node-top">
+          <span class="node-status"><span class="led"></span>LIVE</span>
+          <i class="bi bi-arrow-up-right arrow"></i>
+        </div>
+        <h4>Tutu's Foods</h4>
+        <span class="node-tag">BAKERY · ECOMMERCE</span>
+        <p class="node-desc">Handcrafted sourdough and baked goods — moved from a single physical store to a full online ordering system.</p>
+        <span class="node-url">tutusfoods.com</span>
+      </a>
+
+      <a href="https://h00lynation.com" target="_blank" rel="noopener" class="node-card reveal">
+        <div class="node-top">
+          <span class="node-status"><span class="led"></span>LIVE</span>
+          <i class="bi bi-arrow-up-right arrow"></i>
+        </div>
+        <h4>H00lynation</h4>
+        <span class="node-tag">FASHION · ECOMMERCE</span>
+        <p class="node-desc">A premium clothing brand, built with a storefront that matches the quality of the product.</p>
+        <span class="node-url">h00lynation.com</span>
+      </a>
+
+      <a href="https://joyouscakesnaccessories.com" target="_blank" rel="noopener" class="node-card reveal">
+        <div class="node-top">
+          <span class="node-status"><span class="led"></span>LIVE</span>
+          <i class="bi bi-arrow-up-right arrow"></i>
+        </div>
+        <h4>Joyous Cakes N Accessories</h4>
+        <span class="node-tag">BAKERY · ECOMMERCE</span>
+        <p class="node-desc">Migrated fully from WhatsApp Status orders to a real online store with order tracking.</p>
+        <span class="node-url">joyouscakesnaccessories.com</span>
+      </a>
+
+      <a href="https://cavalcare.org" target="_blank" rel="noopener" class="node-card reveal">
+        <div class="node-top">
+          <span class="node-status"><span class="led"></span>LIVE</span>
+          <i class="bi bi-arrow-up-right arrow"></i>
+        </div>
+        <h4>CavalCare</h4>
+        <span class="node-tag">HEALTHCARE · BOOKING</span>
+        <p class="node-desc">An in-home nursing care platform with a full booking and intake system built in.</p>
+        <span class="node-url">cavalcare.org</span>
+      </a>
+
+      <a href="https://www.megaloiteprojects.com" target="_blank" rel="noopener" class="node-card reveal">
+        <div class="node-top">
+          <span class="node-status"><span class="led"></span>LIVE</span>
+          <i class="bi bi-arrow-up-right arrow"></i>
+        </div>
+        <h4>Megaloite Projects</h4>
+        <span class="node-tag">ELECTRICAL · AUTHORITYSITE</span>
+        <p class="node-desc">An electrical contractor that went from word-of-mouth only to fully discoverable online.</p>
+        <span class="node-url">megaloiteprojects.com</span>
+      </a>
+
+      <a href="https://stormvestsolar.com" target="_blank" rel="noopener" class="node-card reveal">
+        <div class="node-top">
+          <span class="node-status"><span class="led"></span>LIVE</span>
+          <i class="bi bi-arrow-up-right arrow"></i>
+        </div>
+        <h4>StormVest Solar</h4>
+        <span class="node-tag">ENERGY · AUTHORITYSITE</span>
+        <p class="node-desc">A solar energy company positioned as a credible, established option in its market.</p>
+        <span class="node-url">stormvestsolar.com</span>
+      </a>
+
+      <a href="https://madetolastbrands.com" target="_blank" rel="noopener" class="node-card reveal">
+        <div class="node-top">
+          <span class="node-status"><span class="led"></span>LIVE</span>
+          <i class="bi bi-arrow-up-right arrow"></i>
+        </div>
+        <h4>Made To Last Brands</h4>
+        <span class="node-tag">RETAIL · ECOMMERCE</span>
+        <p class="node-desc">A product brand built with a storefront designed to last as long as the products themselves.</p>
+        <span class="node-url">madetolastbrands.com</span>
+      </a>
+
+      <a href="https://jachinlatex.com.ng" target="_blank" rel="noopener" class="node-card reveal">
+        <div class="node-top">
+          <span class="node-status"><span class="led"></span>LIVE</span>
+          <i class="bi bi-arrow-up-right arrow"></i>
+        </div>
+        <h4>Jachin Latex</h4>
+        <span class="node-tag">MANUFACTURING · BUSINESS</span>
+        <p class="node-desc">A manufacturing business with a professional presence built for B2B credibility.</p>
+        <span class="node-url">jachinlatex.com.ng</span>
+      </a>
+
+      <a href="https://eatwithdas.vercel.app" target="_blank" rel="noopener" class="node-card reveal">
+        <div class="node-top">
+          <span class="node-status"><span class="led"></span>LIVE</span>
+          <i class="bi bi-arrow-up-right arrow"></i>
+        </div>
+        <h4>Eat With Das</h4>
+        <span class="node-tag">FOOD · LAUNCHSITE</span>
+        <p class="node-desc">A food brand's first step online — fast, clean, and built to start taking orders immediately.</p>
+        <span class="node-url">eatwithdas.vercel.app</span>
+      </a>
+
+    </div>
+
+    <div class="network-more">
+      <span>+ JAYNET VA · GEORGE OJEANELO · GBOSSTECH AND OTHERS CURRENTLY LIVE</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Transmissions Received</div>
+      <h2>What it sounds like once the site is live.</h2>
+    </div>
+
+    <div class="log-window reveal">
+      <div class="log-bar">
+        <div class="led-group"><span></span><span></span><span></span></div>
+        client-feedback.log
+      </div>
+      <div class="log-grid">
+
+        <div class="log-entry">
+          <span class="qmark">"</span>
+          <p>Within two weeks of launching, we got enquiries from people who found us on Google. That had never happened before. The site paid for itself in the first month.</p>
+          <div class="log-who">
+            <div class="log-avatar">KI</div>
+            <div>
+              <div class="log-name">Kunle I.</div>
+              <div class="log-role">SOCIAL MEDIA MANAGER</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="log-entry">
+          <span class="qmark">"</span>
+          <p>I had been saying "I need a website" for over a year. ImpactDev had it done in four days. Now I send clients a link instead of explaining myself from scratch.</p>
+          <div class="log-who">
+            <div class="log-avatar">TM</div>
+            <div>
+              <div class="log-name">Temi M.</div>
+              <div class="log-role">BUSINESS COACH</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="log-entry">
+          <span class="qmark">"</span>
+          <p>We went from taking every order through WhatsApp Status to a real store with tracking and automatic payment confirmation. It changed how the whole business runs.</p>
+          <div class="log-who">
+            <div class="log-avatar">JC</div>
+            <div>
+              <div class="log-name">Joyous C.</div>
+              <div class="log-role">FOUNDER, JOYOUS CAKES N ACCESSORIES</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band" id="contact">
+  <div class="wrap cta-band-inner">
+    <h2 class="reveal">Your business has a signal.<br>Let's put it online.</h2>
+    <p class="reveal">Tell us what you're building and we'll show you exactly which offer fits — LaunchSite, AuthoritySite, or StoreFront Pro.</p>
+    <div class="cta-buttons reveal">
+      <a href="https://wa.me/2349026487958" target="_blank" class="btn-primary">Message us on WhatsApp <i class="bi bi-whatsapp"></i></a>
+      <a href="#offers" class="btn-ghost">Compare offers again <i class="bi bi-arrow-up"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">Impact<span>Dev</span><span class="dot" aria-hidden="true"></span></div>
+        <p>We design and build websites and ecommerce systems for businesses ready to go online — in Nigeria and beyond.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Offers</h5>
+          <a href="#offers">LaunchSite</a>
+          <a href="#offers">AuthoritySite System</a>
+          <a href="#offers">StoreFront Pro</a>
+        </div>
+        <div class="footer-col">
+          <h5>Studio</h5>
+          <a href="#network">Our work</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Start a project</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="https://wa.me/2349026487958" target="_blank">WhatsApp</a>
+          <a href="https://www.instagram.com/theimpactdev" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ImpactDev Digital Solutions. All rights reserved.</span>
+      <span class="status"><span class="led"></span>ALL SYSTEMS OPERATIONAL</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // nav background on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 24);
+  });
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el,i) => {
+    el.style.transitionDelay = (i % 4) * 70 + 'ms';
+    io.observe(el);
+  });
+</script>
+
+</body>
+</html>
