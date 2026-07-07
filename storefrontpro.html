@@ -6,7 +6,7 @@
 <title>StoreFront Pro — Let's See If It's Right for Your Business | ImpactDev</title>
 <meta name="description" content="Tell us about your business and we'll let you know if StoreFront Pro is the right fit — takes about 2 minutes." />
 <meta name="robots" content="noindex, follow" />
-<link rel="canonical" href="https://theimpactdev.vercel.app/storefront-pro-form" />
+<link rel="canonical" href="https://theimpactdev.com/storefrontpro" />
 
 <link rel="icon" type="image/png" href="logo-icon.png" />
 <link rel="apple-touch-icon" href="logo-icon.png" />
@@ -15,8 +15,28 @@
 <meta property="og:site_name" content="ImpactDev" />
 <meta property="og:title" content="StoreFront Pro — Is It Right for Your Business?" />
 <meta property="og:description" content="Tell us about your business and we'll let you know if StoreFront Pro is the right fit — takes about 2 minutes." />
-<meta property="og:image" content="https://theimpactdev.vercel.app/logo.png" />
-<meta property="og:url" content="https://theimpactdev.vercel.app/storefront-pro-form" />
+<meta property="og:image" content="https://theimpactdev.com/logo.png" />
+<meta property="og:url" content="https://theimpactdev.com/storefrontpro" />
+
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+   fbq('init', '1381492960504350'); 
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+   <img height="1" width="1" 
+  src="https://www.facebook.com/tr?id=1381492960504350&ev=PageView
+  &noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -505,7 +525,7 @@
         <div class="options">
           <label class="option"><input type="checkbox" name="q13_payment_methods" value="Bank transfer"> Bank transfer</label>
           <label class="option"><input type="checkbox" name="q13_payment_methods" value="Card in person"> Card payment (in person)</label>
-          <label class="option"><input type="checkbox" name="q13_payment_methods" value="Card online"> Card payment (online, e.g. PayPal/Stripe link)</label>
+          <label class="option"><input type="checkbox" name="q13_payment_methods" value="Card online"> Card payment (online, e.g. PayPal/Square/Stripe link)</label>
           <label class="option"><input type="checkbox" name="q13_payment_methods" value="Cash"> Cash</label>
           <label class="option"><input type="checkbox" name="q13_payment_methods" value="No consistent method"> I don't have a consistent payment method yet</label>
         </div>
@@ -595,6 +615,12 @@
   const confirmCheck = document.getElementById('confirmCheck');
   const confirmBlock = document.getElementById('confirmBlock');
 
+  window.addEventListener('load', () => {
+    if (typeof fbq === 'function') {
+        fbq('track', 'ViewContent');
+    }
+});
+  
   // ── Checkbox group helpers ────────────────────────────────────
   function checkboxGroupValid(name){
     return Array.from(document.querySelectorAll(`input[name="${name}"]`)).some(i => i.checked);
@@ -676,6 +702,11 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting...';
 
+     // Fire Meta Lead event AFTER successful submission
+     if (typeof fbq === 'function') {
+          fbq('track', 'Lead');
+      }
+
     const formData = new FormData(form);
     const payload = {};
     formData.forEach((value, key) => {
@@ -694,6 +725,7 @@
         body: JSON.stringify(payload)
       });
 
+     
       form.style.display = 'none';
       confirmation.classList.add('show');
     } catch (err) {
