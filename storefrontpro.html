@@ -182,6 +182,45 @@
   .intro p{ color:var(--bone-dim); font-size:16px; max-width:520px; margin:0 auto; }
 
 
+  /* ---------- direct booking path ---------- */
+  .path-choice{
+    display:flex; flex-direction:column; align-items:center;
+    margin-bottom:36px;
+  }
+  .direct-book{
+    width:100%;
+    background:#ffffff;
+    border:1px solid #e0d9f5;
+    border-left:4px solid #F59E0B;
+    border-radius:18px;
+    padding:28px 32px;
+    text-align:center;
+    box-shadow:0 2px 12px rgba(30,10,60,.06);
+  }
+  .direct-book h3{
+    font-family:var(--disp); font-weight:600; font-size:17px;
+    color:#1E0A3C; margin-bottom:8px;
+  }
+  .direct-book p{
+    font-size:14px; color:#4C1AA3; max-width:440px;
+    margin:0 auto 20px; line-height:1.55;
+  }
+  .direct-book .btn-submit{
+    padding:13px 28px; font-size:14.5px;
+  }
+  .path-divider{
+    display:flex; align-items:center; gap:14px;
+    width:100%; max-width:440px;
+    margin:28px auto; font-family:var(--mono); font-size:11.5px;
+    color:var(--muted); letter-spacing:.08em; text-transform:uppercase;
+  }
+  .path-divider::before, .path-divider::after{
+    content:''; flex:1; height:1px; background:var(--line);
+  }
+  @media (max-width:600px){
+    .direct-book{ padding:22px 20px; }
+  }
+
   /* ---------- offer preview ---------- */
   .offer-preview{
     background:#ffffff;
@@ -407,6 +446,15 @@
     <span class="eyebrow"><i class="bi bi-lightning-charge-fill"></i> 2-3 MINUTES FIT CHECK</span>
     <h1>Let's See If StoreFront Pro Is Right for Your Business</h1>
     <p>Tell us a bit about your business; what you sell, how you're currently taking orders, and what's not working. Takes about 2 minutes. We'll review your answers and follow up by email. If it looks like a good fit, we'll offer you a short call to walk through exactly what this would look like for you.</p>
+  </div>
+
+  <div class="path-choice">
+    <div class="direct-book">
+      <h3>Already know you want to talk?</h3>
+      <p>Skip the form and grab a slot on our calendar right now — we'll cover the same ground on the call.</p>
+      <a class="btn-submit" href="https://calendly.com/impactdevagency/storefrontpro-discovery" target="_blank" rel="noopener">Book a call directly <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="path-divider">or fill out the quick form first</div>
   </div>
 </div>
 
