@@ -181,6 +181,41 @@
   }
   .intro p{ color:var(--bone-dim); font-size:16px; max-width:520px; margin:0 auto; }
 
+
+  /* ---------- offer preview ---------- */
+  .offer-preview{
+    background:#ffffff;
+    border:1px solid #e0d9f5;
+    border-left:4px solid #F59E0B;
+    border-radius:18px;
+    padding:28px 32px;
+    margin-bottom:24px;
+    text-align:left;
+    box-shadow:0 2px 12px rgba(30,10,60,.06);
+  }
+  .offer-preview-label{
+    font-family:var(--disp); font-weight:600;
+    font-size:16px; color:#1E0A3C;
+    margin-bottom:16px;
+  }
+  .offer-preview-list{
+    list-style:none; padding:0; margin:0;
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .offer-preview-list li{
+    font-size:14.5px; color:#3d2a6b;
+    display:flex; align-items:flex-start; gap:10px;
+    line-height:1.5;
+  }
+  .offer-preview-list li::before{
+    content:'✓';
+    color:#F59E0B; font-weight:700; font-size:14px;
+    flex-shrink:0; margin-top:1px;
+  }
+  @media (max-width:600px){
+    .offer-preview{ padding:22px 20px; }
+  }
+
   /* ---------- form shell ---------- */
   form{ padding-bottom:100px; }
   .form-section{
@@ -370,9 +405,21 @@
     <h1>Let's See If StoreFront Pro Is Right for Your Business</h1>
     <p>Tell us a bit about your business; what you sell, how you're currently taking orders, and what's not working. Takes about 2 minutes. We'll review your answers and follow up by email. If it looks like a good fit, we'll offer you a short call to walk through exactly what this would look like for you.</p>
   </div>
+</div>
 
   <!-- ============ FORM ============ -->
   <form id="leadForm" novalidate>
+  <div class="wrap">
+
+    <div class="offer-preview">
+      <p class="offer-preview-label">If we're a match, here's what we build for you:</p>
+      <ul class="offer-preview-list">
+        <li>A full online store with product pages, checkout, and order management</li>
+        <li>Local and international payment processing (no more bank transfers)</li>
+        <li>Automatic order notifications</li>
+        <li>Everything set up and live within 30 days</li>
+      </ul>
+    </div>
 
     <!-- SECTION 1 -->
     <div class="form-section">
@@ -552,9 +599,11 @@
 
     <div class="submit-row">
       <button type="submit" class="btn-submit" id="submitBtn" disabled>Submit my answers <i class="bi bi-arrow-right"></i></button>
-      <div class="submit-note">Takes about 2 minutes · We reply within 1–2 business days</div>
+      <div class="submit-note">We reply within 1–2 business days</div>
       <div class="error-note" id="formError">Please fill in all required fields before submitting.</div>
     </div>
+
+  </div><!-- /.wrap -->
   </form>
 
   <!-- ============ CONFIRMATION ============ -->
