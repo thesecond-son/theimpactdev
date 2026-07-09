@@ -6,7 +6,7 @@
 <title>StoreFront Pro — Let's See If It's Right for Your Business | ImpactDev</title>
 <meta name="description" content="Tell us about your business and we'll let you know if StoreFront Pro is the right fit — takes about 2 minutes." />
 <meta name="robots" content="noindex, follow" />
-<link rel="canonical" href="https://theimpactdev.vercel.app/storefront-pro-form" />
+<link rel="canonical" href="https://theimpactdev.com/storefrontpro" />
 
 <link rel="icon" type="image/png" href="logo-icon.png" />
 <link rel="apple-touch-icon" href="logo-icon.png" />
@@ -15,8 +15,28 @@
 <meta property="og:site_name" content="ImpactDev" />
 <meta property="og:title" content="StoreFront Pro — Is It Right for Your Business?" />
 <meta property="og:description" content="Tell us about your business and we'll let you know if StoreFront Pro is the right fit — takes about 2 minutes." />
-<meta property="og:image" content="https://theimpactdev.vercel.app/logo.png" />
-<meta property="og:url" content="https://theimpactdev.vercel.app/storefront-pro-form" />
+<meta property="og:image" content="https://theimpactdev.com/logo.png" />
+<meta property="og:url" content="https://theimpactdev.com/storefrontpro" />
+
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+   fbq('init', '1381492960504350'); 
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+   <img height="1" width="1" 
+  src="https://www.facebook.com/tr?id=1381492960504350&ev=PageView
+  &noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,26 +101,69 @@
   /* ---------- banner ---------- */
   .banner{
     width:100%;
-    aspect-ratio:16/6;
-    max-height:420px;
+    padding:64px 32px 60px;
     background:
-      radial-gradient(circle at 30% 20%, rgba(245,158,11,.16), transparent 55%),
-      linear-gradient(135deg, var(--surface-2), var(--void-2));
+      radial-gradient(ellipse 70% 80% at 15% 50%, rgba(245,158,11,.13), transparent 60%),
+      radial-gradient(ellipse 50% 60% at 85% 20%, rgba(124,92,255,.18), transparent 55%),
+      linear-gradient(160deg, #1c0a38 0%, #150626 50%, #1c0a38 100%);
     border-bottom:1px solid var(--line-soft);
-    display:flex; align-items:center; justify-content:center;
     position:relative;
     overflow:hidden;
   }
-  .banner img{
-    width:100%; height:100%; object-fit:cover;
+  /* subtle grid backdrop */
+  .banner::before{
+    content:'';
     position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse 90% 100% at 50% 50%, rgba(0,0,0,.5), transparent 80%);
+            mask-image: radial-gradient(ellipse 90% 100% at 50% 50%, rgba(0,0,0,.5), transparent 80%);
+    opacity:.45;
+    pointer-events:none;
   }
-  .banner .banner-placeholder{
-    position:relative; z-index:1; text-align:center;
-    font-family:var(--mono); font-size:12.5px; color:var(--muted);
-    letter-spacing:.06em; padding:0 20px;
+  .banner-inner{
+    position:relative; z-index:1;
+    max-width:680px; margin:0 auto; text-align:center;
   }
-  .banner .banner-placeholder i{ font-size:26px; color:var(--signal); display:block; margin-bottom:10px; }
+  .banner-kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:11.5px; color:var(--signal);
+    letter-spacing:.1em; text-transform:uppercase;
+    padding:5px 14px; border:1px solid rgba(245,158,11,.3);
+    border-radius:100px; background:rgba(245,158,11,.06);
+    margin-bottom:26px;
+  }
+  .banner-kicker span{
+    width:5px; height:5px; border-radius:50%; background:var(--signal);
+    box-shadow:0 0 6px rgba(245,158,11,.8);
+    animation:bpulse 2.2s ease-in-out infinite;
+  }
+  @keyframes bpulse{
+    0%,100%{ opacity:1; } 50%{ opacity:.35; }
+  }
+  .banner h1{
+    font-family:var(--disp); font-weight:700;
+    font-size:clamp(34px, 6vw, 58px);
+    line-height:1.04; letter-spacing:-.01em;
+    color:#fff; margin-bottom:18px;
+  }
+  .banner h1 em{
+    font-style:normal;
+    background:linear-gradient(90deg, var(--signal), var(--signal-2));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .banner-sub{
+    font-size:clamp(14.5px,2vw,17px); color:var(--bone-dim);
+    max-width:480px; margin:0 auto; line-height:1.65;
+  }
+  .banner-divider{
+    width:48px; height:3px; border-radius:2px;
+    background:linear-gradient(90deg, var(--signal), transparent);
+    margin:28px auto 0;
+  }
 
   /* ---------- intro ---------- */
   .intro{ padding:64px 0 48px; text-align:center; }
@@ -232,6 +295,45 @@
     margin-top:28px; font-family:var(--mono); font-size:12.5px; color:var(--muted);
   }
 
+  /* ---------- confirm checkbox ---------- */
+  .confirm-block{
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:14px; padding:22px 24px;
+    margin-bottom:24px; display:flex; align-items:flex-start; gap:14px;
+    transition:border-color .25s, background .25s, opacity .25s;
+  }
+  .confirm-block.locked{
+    opacity:.4; cursor:not-allowed;
+  }
+  .confirm-block.locked input[type="checkbox"]{ pointer-events:none; }
+  .confirm-block.unlocked{
+    opacity:1; cursor:pointer;
+    border-color:rgba(245,158,11,.4);
+    background:rgba(245,158,11,.04);
+  }
+  .confirm-block.unlocked:hover{ border-color:var(--signal); }
+  .confirm-block.confirmed{
+    opacity:1; cursor:pointer;
+    border-color:var(--signal); background:rgba(245,158,11,.07);
+  }
+  .confirm-block input[type="checkbox"]{
+    width:20px; height:20px; flex-shrink:0; margin-top:1px;
+    accent-color:var(--signal);
+  }
+  .confirm-block-text{ flex:1; }
+  .confirm-block-text strong{
+    display:block; font-family:var(--disp); font-weight:600;
+    font-size:14.5px; color:var(--bone); margin-bottom:4px;
+  }
+  .confirm-block-text span{
+    font-size:13px; color:var(--muted); line-height:1.5;
+  }
+  .confirm-lock-note{
+    display:none; font-family:var(--mono); font-size:11px;
+    color:var(--signal); letter-spacing:.03em; margin-top:8px;
+  }
+  .confirm-block.unlocked .confirm-lock-note{ display:block; }
+
   footer{
     padding:32px 0; border-top:1px solid var(--line-soft);
     text-align:center; font-family:var(--mono); font-size:11.5px; color:var(--muted);
@@ -247,15 +349,16 @@
 
 <nav>
   <div class="logo"><img src="logo-light.png" alt="ImpactDev Digital Solutions" class="nav-logo"></div>
-  <a href="index.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to site</a>
+  <!-- <a href="index.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to site</a> -->
 </nav>
 
 <!-- ============ BANNER ============ -->
 <div class="banner">
-  <!-- Replace this block with: <img src="storefront-pro-banner.jpg" alt="StoreFront Pro"> -->
-  <div class="banner-placeholder">
-    <i class="bi bi-image"></i>
-    Drop the StoreFront Pro banner graphic here — recommended 1600×600px
+  <div class="banner-inner">
+    <div class="banner-kicker"><span></span> ImpactDev Digital Solutions</div>
+    <h1>StoreFront <em>Pro</em></h1>
+    <p class="banner-sub">Your complete ecommerce system — built for businesses ready to stop selling manually and start running a real store.</p>
+    <div class="banner-divider"></div>
   </div>
 </div>
 
@@ -422,7 +525,7 @@
         <div class="options">
           <label class="option"><input type="checkbox" name="q13_payment_methods" value="Bank transfer"> Bank transfer</label>
           <label class="option"><input type="checkbox" name="q13_payment_methods" value="Card in person"> Card payment (in person)</label>
-          <label class="option"><input type="checkbox" name="q13_payment_methods" value="Card online"> Card payment (online, e.g. PayPal/Stripe link)</label>
+          <label class="option"><input type="checkbox" name="q13_payment_methods" value="Card online"> Card payment (online, e.g. PayPal/Square/Stripe link)</label>
           <label class="option"><input type="checkbox" name="q13_payment_methods" value="Cash"> Cash</label>
           <label class="option"><input type="checkbox" name="q13_payment_methods" value="No consistent method"> I don't have a consistent payment method yet</label>
         </div>
@@ -469,8 +572,18 @@
       </div>
     </div>
 
+    <!-- CONFIRM CHECKBOX -->
+    <label class="confirm-block locked" id="confirmBlock">
+      <input type="checkbox" id="confirmCheck" disabled>
+      <div class="confirm-block-text">
+        <strong>I confirm that I have filled this form accurately and legibly.</strong>
+        <span>Please tick this box before submitting — it helps our team review your answers quickly and follow up with the right information for your business.</span>
+        <span class="confirm-lock-note">&#10003; All required fields complete — you can now tick this box</span>
+      </div>
+    </label>
+
     <div class="submit-row">
-      <button type="submit" class="btn-submit" id="submitBtn">Submit my answers <i class="bi bi-arrow-right"></i></button>
+      <button type="submit" class="btn-submit" id="submitBtn" disabled>Submit my answers <i class="bi bi-arrow-right"></i></button>
       <div class="submit-note">Takes about 2 minutes · We reply within 1–2 business days</div>
       <div class="error-note" id="formError">Please fill in all required fields before submitting.</div>
     </div>
@@ -499,8 +612,62 @@
   const formError = document.getElementById('formError');
   const q8error = document.getElementById('q8error');
   const q13error = document.getElementById('q13error');
+  const confirmCheck = document.getElementById('confirmCheck');
+  const confirmBlock = document.getElementById('confirmBlock');
 
-  // Reveal Q7 when Q6 = "Something else"
+  window.addEventListener('load', () => {
+    if (typeof fbq === 'function') {
+        fbq('track', 'ViewContent');
+    }
+});
+  
+  // ── Checkbox group helpers ────────────────────────────────────
+  function checkboxGroupValid(name){
+    return Array.from(document.querySelectorAll(`input[name="${name}"]`)).some(i => i.checked);
+  }
+
+  // ── Check whether ALL required fields are filled ──────────────
+  function allRequiredFilled(){
+    // Native required inputs (text, email, tel, radio)
+    const nativeOk = form.checkValidity();
+    // Custom checkbox groups that aren't individually required
+    const q8ok  = checkboxGroupValid('q8_current_orders');
+    const q13ok = checkboxGroupValid('q13_payment_methods');
+    return nativeOk && q8ok && q13ok;
+  }
+
+  // ── Unlock / lock the confirmation checkbox ───────────────────
+  function refreshConfirmLock(){
+    const ready = allRequiredFilled();
+    if(ready){
+      confirmBlock.classList.remove('locked');
+      confirmBlock.classList.add('unlocked');
+      confirmCheck.disabled = false;
+    } else {
+      confirmBlock.classList.add('locked');
+      confirmBlock.classList.remove('unlocked', 'confirmed');
+      confirmCheck.disabled = true;
+      confirmCheck.checked  = false;
+      submitBtn.disabled    = true;
+    }
+  }
+
+  // Watch every input, select, and textarea in the form
+  form.addEventListener('input',  refreshConfirmLock);
+  form.addEventListener('change', refreshConfirmLock);
+
+  // ── Confirmation checkbox enables submit ──────────────────────
+  confirmCheck.addEventListener('change', () => {
+    submitBtn.disabled = !confirmCheck.checked;
+    confirmBlock.classList.toggle('confirmed', confirmCheck.checked);
+    if(confirmCheck.checked){
+      confirmBlock.classList.remove('unlocked');
+    } else {
+      confirmBlock.classList.add('unlocked');
+    }
+  });
+
+  // ── Reveal Q7 when Q6 = "Something else" ─────────────────────
   document.querySelectorAll('input[name="q6_what_you_sell"]').forEach(input => {
     input.addEventListener('change', () => {
       const q7wrap = document.getElementById('q7wrap');
@@ -508,10 +675,7 @@
     });
   });
 
-  function checkboxGroupValid(name){
-    return Array.from(document.querySelectorAll(`input[name="${name}"]`)).some(i => i.checked);
-  }
-
+  // ── Form submit ───────────────────────────────────────────────
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     formError.classList.remove('show');
@@ -538,6 +702,11 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting...';
 
+     // Fire Meta Lead event AFTER successful submission
+     if (typeof fbq === 'function') {
+          fbq('track', 'Lead');
+      }
+
     const formData = new FormData(form);
     const payload = {};
     formData.forEach((value, key) => {
@@ -549,9 +718,6 @@
     });
 
     try {
-      // mode: 'no-cors' + text/plain avoids a CORS preflight against Apps Script,
-      // which doesn't support one. We can't read the response back, so we just
-      // treat a fetch that doesn't throw as success.
       await fetch(SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -559,10 +725,11 @@
         body: JSON.stringify(payload)
       });
 
+     
       form.style.display = 'none';
       confirmation.classList.add('show');
     } catch (err) {
-      submitBtn.disabled = false;
+      submitBtn.disabled = !confirmCheck.checked;
       submitBtn.textContent = 'Submit my answers';
       formError.classList.add('show');
     }
