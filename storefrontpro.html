@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>StoreFront Pro — Let's See If It's Right for Your Business | ImpactDev</title>
-<meta name="description" content="Tell us about your business and we'll let you know if StoreFront Pro is the right fit — takes about 2 minutes." />
+<title>StoreFront Pro — Your Complete Ecommerce System | ImpactDev</title>
+<meta name="description" content="Stop selling manually. StoreFront Pro gives you a complete ecommerce system — built and live in 30 days. Book a call or tell us about your business." />
 <meta name="robots" content="noindex, follow" />
 <link rel="canonical" href="https://theimpactdev.com/storefrontpro" />
 
@@ -13,8 +13,8 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="ImpactDev" />
-<meta property="og:title" content="StoreFront Pro — Is It Right for Your Business?" />
-<meta property="og:description" content="Tell us about your business and we'll let you know if StoreFront Pro is the right fit — takes about 2 minutes." />
+<meta property="og:title" content="StoreFront Pro — Your Complete Ecommerce System" />
+<meta property="og:description" content="Stop selling manually. StoreFront Pro gives you a complete ecommerce system — built and live in 30 days." />
 <meta property="og:image" content="https://theimpactdev.com/logo.png" />
 <meta property="og:url" content="https://theimpactdev.com/storefrontpro" />
 
@@ -75,6 +75,100 @@
   a{ color:inherit; text-decoration:none; }
   img{ max-width:100%; display:block; }
   .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+
+
+  /* ---------- features strip ---------- */
+  .features-strip{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:14px;
+    margin:32px 0;
+  }
+  .feature-card{
+    background:#ffffff; border:1px solid #e0d9f5; border-radius:14px;
+    padding:18px 20px; display:flex; align-items:flex-start; gap:12px;
+  }
+  .feature-card .f-icon{
+    width:36px; height:36px; border-radius:10px;
+    background:rgba(245,158,11,.1); display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .feature-card .f-icon i{ color:#F59E0B; font-size:16px; }
+  .feature-card h4{
+    font-family:var(--disp); font-weight:600; font-size:14px;
+    color:#1E0A3C; margin-bottom:4px;
+  }
+  .feature-card p{ font-size:13px; color:#7c6fa0; line-height:1.5; }
+  @media(max-width:520px){
+    .features-strip{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- testimonials ---------- */
+  .testimonials-section{
+    padding:64px 0 80px;
+    border-top:1px solid #e0d9f5;
+    margin-top:20px;
+  }
+  .testimonials-section .sec-label{
+    font-family:var(--mono); font-size:12px; color:var(--signal);
+    letter-spacing:.1em; text-transform:uppercase;
+    display:flex; align-items:center; gap:8px;
+    margin-bottom:14px; justify-content:center;
+  }
+  .testimonials-section .sec-label::before{
+    content:''; width:6px; height:6px; border-radius:50%;
+    background:var(--signal);
+  }
+  .testimonials-section h2{
+    font-family:var(--disp); font-weight:600;
+    font-size:clamp(22px,3.5vw,32px); color:#1E0A3C;
+    text-align:center; margin-bottom:40px;
+  }
+  .testimonials-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+  }
+  .tcard{
+    background:#ffffff; border:1px solid #e0d9f5; border-radius:18px;
+    padding:28px 26px; display:flex; flex-direction:column; gap:18px;
+    box-shadow:0 2px 12px rgba(30,10,60,.04);
+  }
+  .tcard .quote-mark{
+    font-family:var(--disp); font-size:38px; color:rgba(245,158,11,.4);
+    line-height:1; display:block; margin-bottom:-8px;
+  }
+  .tcard p{
+    font-size:14.5px; color:#3d2a6b; line-height:1.7; flex:1;
+  }
+  .tcard .t-who{
+    display:flex; align-items:center; gap:12px;
+    padding-top:14px; border-top:1px solid #e0d9f5;
+  }
+  .tcard .t-avatar{
+    width:40px; height:40px; border-radius:50%;
+    background:linear-gradient(135deg,#4C1AA3,#8B3FD4);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--disp); font-weight:600; font-size:14px; color:#fff;
+    flex-shrink:0;
+  }
+  .tcard .t-name{
+    font-family:var(--disp); font-weight:600; font-size:14px; color:#1E0A3C;
+  }
+  .tcard .t-biz{
+    font-family:var(--mono); font-size:11px; color:var(--muted); margin-top:2px;
+  }
+  @media(max-width:720px){
+    .testimonials-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- bottom cta ---------- */
+  .bottom-cta{
+    text-align:center; padding:0 0 80px;
+  }
+  .bottom-cta h3{
+    font-family:var(--disp); font-weight:600; font-size:clamp(22px,3vw,30px);
+    color:#1E0A3C; margin-bottom:12px;
+  }
+  .bottom-cta p{
+    font-size:15px; color:#7c6fa0; margin-bottom:28px; max-width:420px; margin-left:auto; margin-right:auto;
+  }
 
   /* ---------- top bar ---------- */
   nav{
@@ -443,34 +537,71 @@
 <!-- ============ INTRO ============ -->
 <div class="wrap">
   <div class="intro">
-    <span class="eyebrow"><i class="bi bi-lightning-charge-fill"></i> 2-3 MINUTES FIT CHECK</span>
-    <h1>Let's See If StoreFront Pro Is Right for Your Business</h1>
-    <p>Tell us a bit about your business; what you sell, how you're currently taking orders, and what's not working. Takes about 2 minutes. We'll review your answers and follow up by email. If it looks like a good fit, we'll offer you a short call to walk through exactly what this would look like for you.</p>
+    <span class="eyebrow"><i class="bi bi-lightning-charge-fill"></i> IMPACTDEV · STOREFRONTPRO</span>
+    <h1>Your business deserves a store that works while you sleep.</h1>
+    <p>StoreFront Pro is a complete ecommerce system; product pages, checkout, payments, order management, and inventory, built specifically for your business and live within 30 days. No more DMs. No more manual bank transfers. No more missed orders.</p>
   </div>
 
+  <!-- Features strip -->
+  <div class="features-strip">
+    <div class="feature-card">
+      <div class="f-icon"><i class="bi bi-shop"></i></div>
+      <div>
+        <h4>Your own online store</h4>
+        <p>Product pages, categories, search, and a real checkout, all under your brand.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon"><i class="bi bi-credit-card"></i></div>
+      <div>
+        <h4>Local &amp; international payments</h4>
+        <p>Paystack for Nigerian customers. Card and bank transfer for UK &amp; global buyers.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon"><i class="bi bi-list-check"></i></div>
+      <div>
+        <h4>Order management dashboard</h4>
+        <p>Every order logged, tracked, and managed in one place. Wake up to a clear picture.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon"><i class="bi bi-whatsapp"></i></div>
+      <div>
+        <h4>Automatic WhatsApp notifications</h4>
+        <p>Order confirmations sent to you and your customer the moment a sale comes in.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon"><i class="bi bi-box-seam"></i></div>
+      <div>
+        <h4>Real-time inventory</h4>
+        <p>Stock updates itself with every sale. No more selling what you don't have.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon"><i class="bi bi-rocket-takeoff"></i></div>
+      <div>
+        <h4>Live in 30 days</h4>
+        <p>Built, tested, and handed over to you, fully working, within 30 days.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Book a call — PRIMARY CTA -->
   <div class="path-choice">
     <div class="direct-book">
-      <h3>Already know you want to talk?</h3>
-      <p>Skip the form and grab a slot on our calendar right now. We'll cover the same ground on the call.</p>
-      <a class="btn-submit" href="https://calendly.com/impactdevagency/storefrontpro-discovery" target="_blank" rel="noopener">Book a call directly <i class="bi bi-arrow-right"></i></a>
+      <h3>Ready to talk? Book a call directly.</h3>
+      <p>No forms, no waiting. Pick a slot and speak to our team, we'll walk you through exactly what StoreFront Pro looks like for your business.</p>
+      <a class="btn-submit" href="https://calendly.com/impactdevagency/storefrontpro-discovery" target="_blank" rel="noopener">Book your call now <i class="bi bi-arrow-right"></i></a>
     </div>
-    <div class="path-divider">or fill out the quick form first</div>
+    <div class="path-divider">or tell us about your business first</div>
   </div>
 </div>
 
   <!-- ============ FORM ============ -->
   <form id="leadForm" novalidate>
   <div class="wrap">
-
-    <div class="offer-preview">
-      <p class="offer-preview-label">If we're a match, here's what we build for you:</p>
-      <ul class="offer-preview-list">
-        <li>A full online store with product pages, checkout, and order management</li>
-        <li>Local and international payment processing (no more bank transfers)</li>
-        <li>Automatic order notifications</li>
-        <li>Everything set up and live within 30 days</li>
-      </ul>
-    </div>
 
     <!-- SECTION 1 -->
     <div class="form-section">
@@ -563,7 +694,7 @@
 
       <div class="field">
         <label class="q">How do you currently take orders or bookings? <span class="req">Required</span></label>
-        <div class="helper">Select all that apply; this is the single most important question for us.</div>
+        <div class="helper">Select all that apply — this helps us understand your setup so we can tailor the right solution for you.</div>
         <div class="options">
           <label class="option"><input type="checkbox" name="q8_current_orders" value="Instagram or Facebook DMs"> Instagram or Facebook DMs</label>
           <label class="option"><input type="checkbox" name="q8_current_orders" value="WhatsApp messages"> WhatsApp messages</label>
@@ -665,6 +796,61 @@
     <p>You'll also receive a copy of your answers at the email you provided. The next step is a short discovery call, pick a time that works for you below and we'll be there, ready to walk through exactly what StoreFront Pro would look like for your business. No pressure, no obligation.</p>
     <a class="btn-submit btn-book" href="https://calendly.com/impactdevagency/storefrontpro-discovery" target="_blank" rel="noopener">Book your discovery call <i class="bi bi-arrow-right"></i></a>
     <div class="sign">— The ImpactDev Team</div>
+  </div>
+</div>
+
+<!-- ============ TESTIMONIALS ============ -->
+<div class="wrap">
+  <div class="testimonials-section">
+    <div class="sec-label">Real businesses. Real results.</div>
+    <h2>What our clients say</h2>
+
+    <div class="testimonials-grid">
+
+      <div class="tcard">
+        <span class="quote-mark">"</span>
+        <p>We were taking every order through WhatsApp Status and DMs, it was exhausting. Since we launched our StoreFront Pro site, orders come in automatically. We've fully migrated and we're not going back.</p>
+        <div class="t-who">
+          <div class="t-avatar">JC</div>
+          <div>
+            <div class="t-name">Joy O. - Joyous Cakes N Accessories</div>
+            <div class="t-biz">BAKERY &amp; ACCESSORIES</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <span class="quote-mark">"</span>
+        <p>We had a physical store doing well, but there was a whole market of customers we couldn't reach because we had no way for them to order online. StoreFront Pro changed that. Our sales have genuinely improved since the site went live.</p>
+        <div class="t-who">
+          <div class="t-avatar">TF</div>
+          <div>
+            <div class="t-name">Tutu's Foods</div>
+            <div class="t-biz">FOOD &amp; BAKERY · NIGERIA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <span class="quote-mark">"</span>
+        <p>We needed a storefront that actually matched the quality of what we sell. Not just a shop, a space that communicates the brand. ImpactDev built exactly that. Our customers now experience the brand from the moment they land on the site.</p>
+        <div class="t-who">
+          <div class="t-avatar">HN</div>
+          <div>
+            <div class="t-name">David O. - H00lynation</div>
+            <div class="t-biz">PREMIUM CLOTHING · NIGERIA</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom CTA -->
+  <div class="bottom-cta">
+    <h3>Your store should be working for you, not the other way around.</h3>
+    <p>Book a call or fill out the form above. Either way, we'll be in touch.</p>
+    <a class="btn-submit" href="https://calendly.com/impactdevagency/storefrontpro-discovery" target="_blank" rel="noopener">Book a call now <i class="bi bi-arrow-right"></i></a>
   </div>
 </div>
 
