@@ -104,6 +104,18 @@
     margin-top:36px; color:var(--ink);
   }
 
+  /* ---------- urgency bar ---------- */
+  .urgency-bar{
+    background:var(--ink); color:#F3EFE3; text-align:center;
+    padding:10px 16px; font-family:var(--mono); font-size:12.5px;
+    letter-spacing:.02em;
+  }
+  .urgency-bar i{ color:var(--brand-2); margin-right:4px; }
+  .urgency-bar a{
+    color:var(--brand-2); font-weight:600; text-decoration:underline;
+    text-underline-offset:2px;
+  }
+
   /* ---------- topbar ---------- */
   .topbar{
     padding:22px 24px; display:flex; justify-content:center;
@@ -309,17 +321,24 @@
     padding:28px 26px; display:flex; flex-direction:column; gap:16px;
     box-shadow:0 2px 14px rgba(30,15,5,.05);
   }
+  .t-metric{
+    display:inline-flex; align-self:flex-start; align-items:center; gap:7px;
+    background:rgba(232,134,46,.12); border:1px solid rgba(232,134,46,.3);
+    color:var(--brand-deep); font-family:var(--disp); font-weight:700; font-size:14px;
+    padding:6px 12px; border-radius:20px;
+  }
+  .t-metric i{ font-size:12px; }
   .t-card .t-mark{
     font-family:var(--disp); font-size:36px; color:rgba(232,134,46,.35); line-height:1; margin-bottom:-6px;
   }
   .t-card p{ font-size:14.5px; color:var(--ink-soft); line-height:1.7; flex:1; }
   .t-who{ display:flex; align-items:center; gap:12px; padding-top:14px; border-top:1px solid var(--line); }
-  .t-avatar{
-    width:38px; height:38px; border-radius:50%; flex:none;
-    background:linear-gradient(135deg,var(--brand),var(--brand-deep));
-    display:flex; align-items:center; justify-content:center;
-    font-family:var(--disp); font-weight:600; font-size:13px; color:#fff;
+  .t-logo{
+    width:40px; height:40px; border-radius:10px; flex:none;
+    background:#fff; border:1px solid var(--line); padding:5px;
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
   }
+  .t-logo img{ width:100%; height:100%; object-fit:contain; }
   .t-name{ font-family:var(--disp); font-weight:600; font-size:14px; color:var(--ink); }
   .t-biz{ font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); margin-top:2px; letter-spacing:.03em; }
   @media (max-width:920px){ .t-grid{ grid-template-columns:1fr; } }
@@ -420,6 +439,10 @@
 </style>
 </head>
 <body>
+
+  <div class="urgency-bar">
+    <i class="bi bi-hourglass-split"></i> Only 10 spots left this month for new StoreFront Pro builds &nbsp;<a href="#cta">Claim yours &rarr;</a>
+  </div>
 
   <div class="topbar">
     <div class="mark"><i class="bi bi-bag-check-fill"></i> StoreFront Pro</div>
@@ -590,10 +613,11 @@
       <h2 class="reveal">Not theory. This is already working.</h2>
       <div class="t-grid">
         <div class="t-card reveal">
+          <span class="t-metric"><i class="bi bi-graph-up-arrow"></i> +40% more orders processed since launch</span>
           <span class="t-mark">"</span>
           <p>We were taking every order through WhatsApp Status and DMs, it was exhausting. Since we launched our StoreFront Pro site, orders come in automatically. We've gone from handling everything manually to processing orders through the website, and we're not going back.</p>
           <div class="t-who">
-            <div class="t-avatar">JC</div>
+            <div class="t-logo"><img src="logos/joyous.ico" alt="Joyous Cakes N Accessories logo"></div>
             <div>
               <div class="t-name">Joy O. - Joyous Cakes N Accessories</div>
               <div class="t-biz">BAKERY &amp; ACCESSORIES</div>
@@ -601,10 +625,11 @@
           </div>
         </div>
         <div class="t-card reveal">
+          <span class="t-metric"><i class="bi bi-graph-up-arrow"></i> 80% of sales now come through the site</span>
           <span class="t-mark">"</span>
           <p>We had a physical store doing well, but there was a whole market of customers we couldn't reach because we had no way for them to order online. StoreFront Pro changed that. Our sales have genuinely improved since the site went live and it's become a major sales channel for us.</p>
           <div class="t-who">
-            <div class="t-avatar">TF</div>
+            <div class="t-logo"><img src="logos/tutus-foods.ico" alt="Tutu's Foods logo"></div>
             <div>
               <div class="t-name">Tutu's Foods</div>
               <div class="t-biz">FOOD &amp; BAKERY · UK</div>
@@ -612,10 +637,11 @@
           </div>
         </div>
         <div class="t-card reveal">
+          <span class="t-metric"><i class="bi bi-graph-up-arrow"></i> Live and taking orders within 4 weeks</span>
           <span class="t-mark">"</span>
           <p>We needed a storefront that actually matched the quality of what we sell, not just a shop, a space that communicates the brand. ImpactDev built exactly that. Our customers now experience the brand from the moment they land on the site.</p>
           <div class="t-who">
-            <div class="t-avatar">HN</div>
+            <div class="t-logo"><img src="logos/holynation.png" alt="H00lynation logo"></div>
             <div>
               <div class="t-name">David O. - H00lynation</div>
               <div class="t-biz">PREMIUM CLOTHING</div>
@@ -635,12 +661,13 @@
   <section class="cta" id="cta">
     <div class="wrap">
       <div class="cta-inner reveal">
-        <span class="eyebrow">Let's talk</span>
+        <span class="eyebrow">10 spots left this month</span>
         <h2>If this sounds like your business, let's fix it.</h2>
         <p>Leave your details below. No sales call, no pressure. We'll email you first, learn how you currently operate, and show you exactly how StoreFront Pro could work for a business like yours.</p>
+        <p class="risk-reversal"><i class="bi bi-shield-check"></i> If it's not the right fit, we'll tell you straight.</p>
 
         <ul class="next-steps">
-          <li><span class="ns-n">1</span> You leave your details, takes 30 seconds.</li>
+          <li><span class="ns-n">1</span> Claim one of the 10 spots, takes 30 seconds.</li>
           <li><span class="ns-n">2</span> We email you within 1 business day. No cold call.</li>
           <li><span class="ns-n">3</span> We show you exactly what this looks like for your business.</li>
         </ul>
@@ -666,7 +693,7 @@
 
           <p class="form-error" id="formError">Please fill in the required fields above.</p>
 
-          <button type="submit" class="btn-submit" id="submitBtn">Let's Talk <i class="bi bi-arrow-right"></i></button>
+          <button type="submit" class="btn-submit" id="submitBtn">Show Me How This Fits My Business <i class="bi bi-arrow-right"></i></button>
           <p class="privacy-note">We'll only use your details to get in touch about StoreFront Pro. Never sold, never spammed.</p>
         </form>
 
