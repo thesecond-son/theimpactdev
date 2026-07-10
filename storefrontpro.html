@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>StoreFront Pro — Your Complete Ecommerce System | ImpactDev</title>
-<meta name="description" content="Stop selling manually. StoreFront Pro gives you a complete ecommerce system — built and live in 30 days. Book a call or tell us about your business." />
+<title>StoreFront Pro — Stop Running Your Business Through WhatsApp | ImpactDev</title>
+<meta name="description" content="If taking orders feels like chasing customers, digging through screenshots, and manually keeping your business together — StoreFront Pro is for you." />
 <meta name="robots" content="noindex, follow" />
 <link rel="canonical" href="https://theimpactdev.com/storefrontpro" />
 
@@ -13,8 +13,8 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="ImpactDev" />
-<meta property="og:title" content="StoreFront Pro — Your Complete Ecommerce System" />
-<meta property="og:description" content="Stop selling manually. StoreFront Pro gives you a complete ecommerce system — built and live in 30 days." />
+<meta property="og:title" content="Stop Running Your Business Through WhatsApp" />
+<meta property="og:description" content="StoreFront Pro helps your business sell — even when you're not working." />
 <meta property="og:image" content="https://theimpactdev.com/logo.png" />
 <meta property="og:url" content="https://theimpactdev.com/storefrontpro" />
 
@@ -40,825 +40,665 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:ital,wght@1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <style>
   :root{
-    --void:      #f7f5fc;
-    --void-2:    #ffffff;
-    --surface:   #ffffff;
-    --surface-2: #f0ecf9;
-    --line:      #ddd6f0;
-    --line-soft: #e8e3f4;
-    --signal:    #F59E0B;
-    --signal-2:  #FBBF24;
-    --lime:      #F59E0B;
-    --bone:      #1E0A3C;
-    --bone-dim:  #4C1AA3;
-    --muted:     #7c6fa0;
-    --danger:    #dc2626;
-    --mono:      'JetBrains Mono', monospace;
-    --disp:      'Space Grotesk', sans-serif;
-    --body:      'Inter', sans-serif;
-    --ease:      cubic-bezier(.16,1,.3,1);
+    --paper:      #F6F1E7;
+    --paper-2:    #EEE5D2;
+    --card:       #FFFFFF;
+    --ink:        #191330;
+    --ink-soft:   #5B5474;
+    --line:       #E1D6BC;
+    --brand:      #E8862E;
+    --brand-2:    #F4A947;
+    --brand-deep: #B85F14;
+    --wa-green:   #25D366;
+    --wa-out:     #DCF8C6;
+    --wa-dark:    #0B141A;
+    --wa-header:  #1F2C34;
+    --danger:     #C1443C;
+    --mono:  'JetBrains Mono', monospace;
+    --disp:  'Space Grotesk', sans-serif;
+    --serif: 'Fraunces', serif;
+    --body:  'Inter', sans-serif;
+    --ease:  cubic-bezier(.16,1,.3,1);
   }
 
   *,*::before,*::after{ margin:0; padding:0; box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
   body{
-    background:#f7f5fc;
-    color:#1E0A3C;
+    background:var(--paper);
+    color:var(--ink);
     font-family:var(--body);
     line-height:1.6;
+    overflow-x:hidden;
   }
-  a{ color:inherit; text-decoration:none; }
+  a{ color:inherit; }
   img{ max-width:100%; display:block; }
-  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; }
+  .narrow{ max-width:720px; margin:0 auto; }
 
+  ::selection{ background:var(--brand); color:#fff; }
 
-  /* ---------- features strip ---------- */
-  .features-strip{
-    display:grid; grid-template-columns:repeat(2,1fr); gap:14px;
-    margin:32px 0;
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
   }
-  .feature-card{
-    background:#ffffff; border:1px solid #e0d9f5; border-radius:14px;
-    padding:18px 20px; display:flex; align-items:flex-start; gap:12px;
+
+  /* ---------- reveal-on-scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- shared type ---------- */
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:12px; font-weight:500;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--brand-deep);
+    margin-bottom:16px;
   }
-  .feature-card .f-icon{
-    width:36px; height:36px; border-radius:10px;
-    background:rgba(245,158,11,.1); display:flex; align-items:center; justify-content:center;
-    flex-shrink:0;
+  .eyebrow::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--brand); flex:none; }
+  h1,h2,h3{ font-family:var(--disp); color:var(--ink); font-weight:700; letter-spacing:-.01em; }
+  .story-close{
+    font-family:var(--disp); font-size:clamp(22px,3vw,30px); font-weight:600;
+    margin-top:36px; color:var(--ink);
   }
-  .feature-card .f-icon i{ color:#F59E0B; font-size:16px; }
-  .feature-card h4{
-    font-family:var(--disp); font-weight:600; font-size:14px;
-    color:#1E0A3C; margin-bottom:4px;
+
+  /* ---------- topbar ---------- */
+  .topbar{
+    padding:22px 24px; display:flex; justify-content:center;
   }
-  .feature-card p{ font-size:13px; color:#7c6fa0; line-height:1.5; }
-  @media(max-width:520px){
-    .features-strip{ grid-template-columns:1fr; }
+  .topbar .mark{
+    font-family:var(--disp); font-weight:700; font-size:15px; letter-spacing:.02em;
+    display:flex; align-items:center; gap:8px; color:var(--ink);
+  }
+  .topbar .mark i{ color:var(--brand); font-size:16px; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:56px 24px 72px; text-align:center;
+  }
+  .hero h1{
+    font-size:clamp(34px, 6vw, 62px); line-height:1.05; max-width:920px; margin:0 auto 22px;
+  }
+  .hero h1 .hl{ color:var(--brand-deep); }
+  .hero-sub{
+    max-width:560px; margin:0 auto; font-size:17px; color:var(--ink-soft); line-height:1.65;
+  }
+  .audience-chip{
+    display:inline-block; margin:24px auto 0; background:var(--card); border:1px solid var(--line);
+    border-radius:20px; padding:9px 18px; font-family:var(--mono); font-size:12.5px;
+    color:var(--brand-deep); font-weight:500;
+  }
+  .scroll-cue{
+    margin-top:48px; font-family:var(--mono); font-size:11.5px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-soft); opacity:.75;
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+  }
+  .scroll-cue i{ animation:bob 1.8s ease-in-out infinite; }
+  @keyframes bob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(6px);} }
+
+  /* ---------- story sections general ---------- */
+  .story{ padding:88px 24px; }
+  .story h2{ font-size:clamp(26px,4vw,38px); margin-bottom:6px; max-width:640px; }
+
+  /* ---------- story 1: chaos / phone mockup ---------- */
+  .story-grid{
+    display:grid; grid-template-columns:1fr 420px; gap:64px; align-items:start;
+  }
+  .story-text{ padding-top:6px; }
+  .beat-list{ list-style:none; margin-top:32px; display:flex; flex-direction:column; gap:0; }
+  .beat-list li{
+    position:relative; padding:0 0 20px 28px; border-left:2px solid var(--line);
+    font-size:15px; color:var(--ink-soft);
+  }
+  .beat-list li:last-child{ border-left-color:transparent; padding-bottom:0; }
+  .beat-list li::before{
+    content:''; position:absolute; left:-5px; top:4px; width:8px; height:8px;
+    border-radius:50%; background:var(--line);
+  }
+  .beat-list li.quote{ color:var(--ink); font-weight:600; }
+  .beat-list li.quote::before{ background:var(--wa-green); }
+  .beat-list li.quote span{
+    display:inline-block; background:var(--card); border:1px solid var(--line);
+    border-radius:8px; padding:8px 12px; margin-top:4px; font-size:14.5px;
+  }
+
+  .phone-wrap{ position:sticky; top:32px; }
+  .phone{
+    width:100%; max-width:340px; margin:0 auto; background:var(--wa-dark);
+    border-radius:28px; border:8px solid #101820; box-shadow:0 30px 60px -20px rgba(20,10,40,.35);
+    overflow:hidden; position:relative;
+  }
+  .phone-header{
+    background:var(--wa-header); padding:16px 16px 12px; display:flex; align-items:center; gap:10px;
+  }
+  .phone-avatar{
+    width:34px; height:34px; border-radius:50%; background:linear-gradient(135deg,#3a4a52,#232e34);
+    display:flex; align-items:center; justify-content:center; color:#8fa3ad; font-size:14px; flex:none;
+  }
+  .phone-header .who{ font-family:var(--body); color:#E9EDEF; font-size:14px; font-weight:600; }
+  .phone-header .status{ font-family:var(--body); color:#8fa3ad; font-size:11.5px; }
+  .phone-badge{
+    position:absolute; top:14px; right:16px; background:var(--danger); color:#fff;
+    font-family:var(--mono); font-size:10.5px; font-weight:600; padding:3px 8px; border-radius:20px;
+    z-index:2;
+  }
+  .phone-body{
+    padding:16px 12px 20px; display:flex; flex-direction:column; gap:8px; min-height:420px;
+    background-image:radial-gradient(rgba(255,255,255,.02) 1px, transparent 1px);
+    background-size:14px 14px;
+  }
+  .bubble{
+    max-width:78%; padding:8px 11px 7px; border-radius:9px; font-size:13.5px; line-height:1.4;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; color:#0B141A;
+    position:relative;
+  }
+  .bubble.in{ background:#202C33; color:#E9EDEF; align-self:flex-start; border-top-left-radius:2px; }
+  .bubble.out{ background:var(--wa-out); align-self:flex-end; border-top-right-radius:2px; }
+  .bubble .time{ display:block; text-align:right; font-size:10px; opacity:.6; margin-top:3px; }
+  .bubble.attach{ display:flex; align-items:center; gap:8px; }
+  .bubble.attach i{ font-size:18px; }
+  .sysline{
+    align-self:center; font-family:var(--mono); font-size:10.5px; letter-spacing:.03em;
+    color:#7C8B93; text-transform:uppercase; margin:3px 0;
+  }
+
+  /* ---------- story 2: tax season ---------- */
+  .story-tax{ background:var(--paper-2); }
+  .tax-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; margin-top:40px;
+  }
+  .tax-card{
+    background:var(--card); border:1px solid var(--line); border-radius:18px; padding:32px;
+    box-shadow:0 2px 14px rgba(30,15,5,.05);
+  }
+  .tax-card-label{ font-family:var(--disp); font-weight:600; font-size:16px; margin-bottom:16px; }
+  .tax-questions{ list-style:none; display:flex; flex-direction:column; gap:13px; }
+  .tax-questions li{
+    display:flex; gap:10px; font-size:14.5px; color:var(--ink-soft);
+  }
+  .tax-questions li i{ color:var(--brand); font-size:15px; margin-top:2px; flex:none; }
+
+  .receipt-stack{ position:relative; height:260px; }
+  .receipt-chip{
+    position:absolute; width:78%; background:var(--card); border:1px solid var(--line);
+    border-radius:12px; padding:14px 16px; box-shadow:0 10px 24px rgba(30,15,5,.1);
+    font-family:var(--mono); font-size:11px; color:var(--ink-soft);
+  }
+  .receipt-chip .fname{ color:var(--ink); font-weight:600; display:block; margin-bottom:4px; }
+  .receipt-chip.c1{ top:0; left:2%; transform:rotate(-7deg); z-index:1; }
+  .receipt-chip.c2{ top:38px; left:20%; transform:rotate(4deg); z-index:2; }
+  .receipt-chip.c3{ top:84px; left:6%; transform:rotate(-3deg); z-index:3; }
+  .receipt-chip.c4{ top:132px; left:24%; transform:rotate(6deg); z-index:4; }
+
+  .instead-runner{
+    margin-top:52px; font-family:var(--mono); font-size:14px; color:var(--ink-soft);
+    display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+  }
+  .instead-runner strong{ color:var(--danger); text-transform:uppercase; letter-spacing:.06em; font-size:12px; }
+  .instead-runner span{
+    background:var(--card); border:1px solid var(--line); border-radius:20px;
+    padding:6px 14px;
+  }
+
+  /* ---------- story 3: missed revenue ---------- */
+  .missed-row{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:44px;
+  }
+  .missed-card{
+    background:var(--card); border:1px solid var(--line); border-radius:18px; padding:28px 24px;
+  }
+  .missed-card i{ font-size:22px; color:var(--danger); margin-bottom:16px; display:block; }
+  .missed-card h3{ font-size:19px; margin-bottom:8px; }
+  .missed-card p{ font-size:14px; color:var(--ink-soft); line-height:1.6; }
+
+  /* ---------- transform section ---------- */
+  .transform{ background:var(--ink); color:#F3EFE3; padding:96px 24px; }
+  .transform .eyebrow{ color:var(--brand-2); }
+  .transform .eyebrow::before{ background:var(--brand-2); }
+  .transform h2{ color:#fff; font-size:clamp(26px,4vw,38px); max-width:640px; margin-bottom:52px; }
+  .transform-grid{
+    display:grid; grid-template-columns:1fr 300px 1fr; gap:40px; align-items:start;
+  }
+  .transform-col h3{ color:#fff; font-size:17px; margin-bottom:20px; font-weight:600; }
+  .check-list{ list-style:none; display:flex; flex-direction:column; gap:16px; }
+  .check-list li{
+    display:flex; gap:12px; font-size:14.5px; color:#C9C3DD; line-height:1.5;
+  }
+  .check-badge{
+    width:20px; height:20px; border-radius:50%; background:rgba(232,134,46,.18);
+    border:1px solid var(--brand-2); color:var(--brand-2); display:flex; align-items:center;
+    justify-content:center; font-size:11px; flex:none; margin-top:1px;
+  }
+
+  .dash-mock{
+    background:#221B3D; border:1px solid #3A3160; border-radius:18px; padding:20px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+  }
+  .dash-mock .dm-head{
+    display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;
+  }
+  .dash-mock .dm-head span{ font-family:var(--mono); font-size:11px; color:#9088B0; text-transform:uppercase; letter-spacing:.08em; }
+  .dash-mock .dm-dots{ display:flex; gap:5px; }
+  .dash-mock .dm-dots i{ width:6px; height:6px; border-radius:50%; background:#4A4070; display:block; }
+  .dm-stats{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px; }
+  .dm-stat{ background:#2B2350; border-radius:10px; padding:12px; }
+  .dm-stat .n{ font-family:var(--disp); font-size:20px; font-weight:700; color:#fff; }
+  .dm-stat .l{ font-family:var(--mono); font-size:9.5px; color:#8F87AE; text-transform:uppercase; letter-spacing:.06em; margin-top:2px; }
+  .dm-list{ display:flex; flex-direction:column; gap:8px; }
+  .dm-row{
+    display:flex; justify-content:space-between; align-items:center;
+    background:#2B2350; border-radius:8px; padding:9px 12px; font-size:12px;
+  }
+  .dm-row .who{ color:#E4E0F4; font-weight:500; }
+  .dm-row .tag{
+    font-family:var(--mono); font-size:9.5px; padding:3px 8px; border-radius:20px;
+    background:rgba(37,211,102,.16); color:#4ADE80; text-transform:uppercase; letter-spacing:.04em;
   }
 
   /* ---------- testimonials ---------- */
-  .testimonials-section{
-    padding:64px 0 80px;
-    border-top:1px solid #e0d9f5;
-    margin-top:20px;
+  .testimonials{ padding:96px 24px; text-align:center; }
+  .testimonials h2{ font-size:clamp(26px,4vw,34px); max-width:600px; margin:0 auto 48px; }
+  .t-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:20px; text-align:left;
+    max-width:1080px; margin:0 auto;
   }
-  .testimonials-section .sec-label{
-    font-family:var(--mono); font-size:12px; color:var(--signal);
-    letter-spacing:.1em; text-transform:uppercase;
-    display:flex; align-items:center; gap:8px;
-    margin-bottom:14px; justify-content:center;
+  .t-card{
+    background:var(--card); border:1px solid var(--line); border-radius:18px;
+    padding:28px 26px; display:flex; flex-direction:column; gap:16px;
+    box-shadow:0 2px 14px rgba(30,15,5,.05);
   }
-  .testimonials-section .sec-label::before{
-    content:''; width:6px; height:6px; border-radius:50%;
-    background:var(--signal);
+  .t-card .t-mark{
+    font-family:var(--disp); font-size:36px; color:rgba(232,134,46,.35); line-height:1; margin-bottom:-6px;
   }
-  .testimonials-section h2{
-    font-family:var(--disp); font-weight:600;
-    font-size:clamp(22px,3.5vw,32px); color:#1E0A3C;
-    text-align:center; margin-bottom:40px;
-  }
-  .testimonials-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
-  }
-  .tcard{
-    background:#ffffff; border:1px solid #e0d9f5; border-radius:18px;
-    padding:28px 26px; display:flex; flex-direction:column; gap:18px;
-    box-shadow:0 2px 12px rgba(30,10,60,.04);
-  }
-  .tcard .quote-mark{
-    font-family:var(--disp); font-size:38px; color:rgba(245,158,11,.4);
-    line-height:1; display:block; margin-bottom:-8px;
-  }
-  .tcard p{
-    font-size:14.5px; color:#3d2a6b; line-height:1.7; flex:1;
-  }
-  .tcard .t-who{
-    display:flex; align-items:center; gap:12px;
-    padding-top:14px; border-top:1px solid #e0d9f5;
-  }
-  .tcard .t-avatar{
-    width:40px; height:40px; border-radius:50%;
-    background:linear-gradient(135deg,#4C1AA3,#8B3FD4);
+  .t-card p{ font-size:14.5px; color:var(--ink-soft); line-height:1.7; flex:1; }
+  .t-who{ display:flex; align-items:center; gap:12px; padding-top:14px; border-top:1px solid var(--line); }
+  .t-avatar{
+    width:38px; height:38px; border-radius:50%; flex:none;
+    background:linear-gradient(135deg,var(--brand),var(--brand-deep));
     display:flex; align-items:center; justify-content:center;
-    font-family:var(--disp); font-weight:600; font-size:14px; color:#fff;
-    flex-shrink:0;
+    font-family:var(--disp); font-weight:600; font-size:13px; color:#fff;
   }
-  .tcard .t-name{
-    font-family:var(--disp); font-weight:600; font-size:14px; color:#1E0A3C;
-  }
-  .tcard .t-biz{
-    font-family:var(--mono); font-size:11px; color:var(--muted); margin-top:2px;
-  }
-  @media(max-width:720px){
-    .testimonials-grid{ grid-template-columns:1fr; }
-  }
+  .t-name{ font-family:var(--disp); font-weight:600; font-size:14px; color:var(--ink); }
+  .t-biz{ font-family:var(--mono); font-size:10.5px; color:var(--ink-soft); margin-top:2px; letter-spacing:.03em; }
+  @media (max-width:920px){ .t-grid{ grid-template-columns:1fr; } }
 
-  /* ---------- bottom cta ---------- */
-  .bottom-cta{
-    text-align:center; padding:0 0 80px;
+  /* ---------- pull quote ---------- */
+  .pullquote{ padding:110px 24px; text-align:center; }
+  .pullquote p{
+    font-family:var(--serif); font-style:italic; font-weight:500;
+    font-size:clamp(24px,4vw,38px); max-width:760px; margin:0 auto; line-height:1.45;
+    color:var(--ink);
   }
-  .bottom-cta h3{
-    font-family:var(--disp); font-weight:600; font-size:clamp(22px,3vw,30px);
-    color:#1E0A3C; margin-bottom:12px;
-  }
-  .bottom-cta p{
-    font-size:15px; color:#7c6fa0; margin-bottom:28px; max-width:420px; margin-left:auto; margin-right:auto;
-  }
+  .pullquote em{ color:var(--brand-deep); font-style:italic; }
 
-  /* ---------- top bar ---------- */
-  nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:22px 32px;
-    border-bottom:1px solid var(--line-soft);
-    background:rgba(255,255,255,.95);
-  }
-  .logo{
-    display:flex; align-items:center; gap:10px;
-    font-family:var(--disp); font-weight:600; font-size:18px;
-  }
-  .logo img.nav-logo{ height:32px; width:auto; display:block; }
-  .logo span{ color:var(--muted); font-weight:400; }
-  .logo .dot{
-    width:8px; height:8px; border-radius:50%; background:var(--lime);
-  }
-  .back-link{
-    font-family:var(--mono); font-size:12.5px; color:var(--bone-dim);
-    display:flex; align-items:center; gap:6px;
-  }
-  .back-link:hover{ color:var(--bone); }
+  /* ---------- CTA ---------- */
+  .cta{ background:var(--paper-2); padding:96px 24px 110px; }
+  .cta-inner{ max-width:560px; margin:0 auto; text-align:center; }
+  .cta h2{ font-size:clamp(26px,4vw,34px); margin-bottom:14px; }
+  .cta > .cta-inner > p{ color:var(--ink-soft); font-size:15.5px; max-width:460px; margin:0 auto; }
 
-  /* ---------- banner ---------- */
-  .banner{
-    width:100%;
-    padding:64px 32px 60px;
-    background:
-      radial-gradient(ellipse 70% 80% at 15% 50%, rgba(245,158,11,.13), transparent 60%),
-      radial-gradient(ellipse 50% 60% at 85% 20%, rgba(124,92,255,.18), transparent 55%),
-      linear-gradient(160deg, #1c0a38 0%, #150626 50%, #1c0a38 100%);
-    border-bottom:1px solid var(--line-soft);
-    position:relative;
-    overflow:hidden;
-  }
-  /* subtle grid backdrop */
-  .banner::before{
-    content:'';
-    position:absolute; inset:0;
-    background-image:
-      linear-gradient(var(--line-soft) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-    background-size:56px 56px;
-    -webkit-mask-image: radial-gradient(ellipse 90% 100% at 50% 50%, rgba(0,0,0,.5), transparent 80%);
-            mask-image: radial-gradient(ellipse 90% 100% at 50% 50%, rgba(0,0,0,.5), transparent 80%);
-    opacity:.45;
-    pointer-events:none;
-  }
-  .banner-inner{
-    position:relative; z-index:1;
-    max-width:680px; margin:0 auto; text-align:center;
-  }
-  .banner-kicker{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:var(--mono); font-size:11.5px; color:var(--signal);
-    letter-spacing:.1em; text-transform:uppercase;
-    padding:5px 14px; border:1px solid rgba(245,158,11,.3);
-    border-radius:100px; background:rgba(245,158,11,.06);
-    margin-bottom:26px;
-  }
-  .banner-kicker span{
-    width:5px; height:5px; border-radius:50%; background:var(--signal);
-    box-shadow:0 0 6px rgba(245,158,11,.8);
-    animation:bpulse 2.2s ease-in-out infinite;
-  }
-  @keyframes bpulse{
-    0%,100%{ opacity:1; } 50%{ opacity:.35; }
-  }
-  .banner h1{
-    font-family:var(--disp); font-weight:700;
-    font-size:clamp(34px, 6vw, 58px);
-    line-height:1.04; letter-spacing:-.01em;
-    color:#fff; margin-bottom:18px;
-  }
-  .banner h1 em{
-    font-style:normal;
-    background:linear-gradient(90deg, var(--signal), var(--signal-2));
-    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-    background-clip:text;
-  }
-  .banner-sub{
-    font-size:clamp(14.5px,2vw,17px); color:rgba(255,255,255,0.72);
-    max-width:480px; margin:0 auto; line-height:1.65;
-  }
-  .banner-divider{
-    width:48px; height:3px; border-radius:2px;
-    background:linear-gradient(90deg, var(--signal), transparent);
-    margin:28px auto 0;
-  }
-
-  /* ---------- intro ---------- */
-  .intro{ padding:64px 0 48px; text-align:center; }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:var(--mono); font-size:12px; color:var(--lime);
-    letter-spacing:.08em; margin-bottom:22px;
-    padding:6px 14px; border:1px solid rgba(245,158,11,.3);
-    border-radius:100px; background:rgba(245,158,11,.06);
-  }
-  .intro h1{
-    font-family:var(--disp); font-weight:600;
-    font-size:clamp(28px,4.6vw,42px); line-height:1.15; color:var(--bone);
-    max-width:560px; margin:0 auto 20px;
-  }
-  .intro p{ color:var(--bone-dim); font-size:16px; max-width:520px; margin:0 auto; }
-
-
-  /* ---------- direct booking path ---------- */
-  .path-choice{
-    display:flex; flex-direction:column; align-items:center;
-    margin-bottom:36px;
-  }
-  .direct-book{
-    width:100%;
-    background:#ffffff;
-    border:1px solid #e0d9f5;
-    border-left:4px solid #F59E0B;
-    border-radius:18px;
-    padding:28px 32px;
-    text-align:center;
-    box-shadow:0 2px 12px rgba(30,10,60,.06);
-  }
-  .direct-book h3{
-    font-family:var(--disp); font-weight:600; font-size:17px;
-    color:#1E0A3C; margin-bottom:8px;
-  }
-  .direct-book p{
-    font-size:14px; color:#4C1AA3; max-width:440px;
-    margin:0 auto 20px; line-height:1.55;
-  }
-  .direct-book .btn-submit{
-    padding:13px 28px; font-size:14.5px;
-  }
-  .path-divider{
-    display:flex; align-items:center; gap:14px;
-    width:100%; max-width:440px;
-    margin:28px auto; font-family:var(--mono); font-size:11.5px;
-    color:var(--muted); letter-spacing:.08em; text-transform:uppercase;
-  }
-  .path-divider::before, .path-divider::after{
-    content:''; flex:1; height:1px; background:var(--line);
-  }
-  @media (max-width:600px){
-    .direct-book{ padding:22px 20px; }
-  }
-
-  /* ---------- offer preview ---------- */
-  .offer-preview{
-    background:#ffffff;
-    border:1px solid #e0d9f5;
-    border-left:4px solid #F59E0B;
-    border-radius:18px;
-    padding:28px 32px;
-    margin-bottom:24px;
-    text-align:left;
-    box-shadow:0 2px 12px rgba(30,10,60,.06);
-  }
-  .offer-preview-label{
-    font-family:var(--disp); font-weight:600;
-    font-size:16px; color:#1E0A3C;
-    margin-bottom:16px;
-  }
-  .offer-preview-list{
-    list-style:none; padding:0; margin:0;
+  .next-steps{
+    list-style:none; max-width:460px; margin:28px auto 0; text-align:left;
     display:flex; flex-direction:column; gap:12px;
   }
-  .offer-preview-list li{
-    font-size:14.5px; color:#3d2a6b;
-    display:flex; align-items:flex-start; gap:10px;
-    line-height:1.5;
+  .next-steps li{
+    display:flex; align-items:center; gap:12px; font-size:14px; color:var(--ink-soft);
+    background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 16px;
   }
-  .offer-preview-list li::before{
-    content:'✓';
-    color:#F59E0B; font-weight:700; font-size:14px;
-    flex-shrink:0; margin-top:1px;
+  .ns-n{
+    width:22px; height:22px; border-radius:50%; background:var(--brand); color:#fff;
+    font-family:var(--mono); font-size:11.5px; font-weight:600; flex:none;
+    display:flex; align-items:center; justify-content:center;
   }
-  @media (max-width:600px){
-    .offer-preview{ padding:22px 20px; }
-  }
-
-  /* ---------- form shell ---------- */
-  form{ padding-bottom:100px; }
-  .form-section{
-    background:#ffffff; border:1px solid #e0d9f5;
-    border-radius:18px; padding:36px 32px; margin-bottom:24px;
-    box-shadow:0 2px 12px rgba(30,10,60,.06);
-  }
-  .form-section h2{
-    font-family:var(--disp); font-weight:600; font-size:19px; color:#1E0A3C;
-    margin-bottom:6px;
-  }
-  .form-section .sec-note{
-    font-family:var(--mono); font-size:12px; color:var(--muted); margin-bottom:28px;
-    letter-spacing:.02em;
+  .privacy-note{
+    margin-top:16px; font-size:12px; color:var(--ink-soft); text-align:center; line-height:1.5;
   }
 
-  .field{ margin-bottom:30px; }
-  .field:last-child{ margin-bottom:0; }
-  .field label.q{
-    display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;
-    font-family:var(--disp); font-weight:500; font-size:15.5px; color:var(--bone);
-    margin-bottom:6px;
+  form#leadForm{
+    margin-top:40px; background:var(--card); border:1px solid var(--line); border-radius:20px;
+    padding:36px 32px; text-align:left; box-shadow:0 20px 50px -24px rgba(30,15,5,.18);
   }
-  .field .req{
-    font-family:var(--mono); font-size:10.5px; color:var(--signal-2);
-    border:1px solid rgba(245,158,11,.35); border-radius:100px;
-    padding:2px 8px; letter-spacing:.04em;
+  .field{ margin-bottom:20px; }
+  .field:last-of-type{ margin-bottom:0; }
+  .field label{
+    display:block; font-size:13.5px; font-weight:600; color:var(--ink); margin-bottom:7px;
   }
-  .field .opt{
-    font-family:var(--mono); font-size:10.5px; color:var(--muted);
-    border:1px solid var(--line); border-radius:100px;
-    padding:2px 8px; letter-spacing:.04em;
-  }
-  .field .helper{
-    font-size:13px; color:var(--muted); margin-bottom:12px; line-height:1.5;
-  }
- 
-  input[type="text"], input[type="email"], input[type="tel"], textarea, select{
-    width:100%; background:#faf8ff; border:1px solid #e0d9f5;
-    border-radius:10px; padding:13px 16px; color:#1E0A3C;
-    font-family:var(--body); font-size:14.5px;
+  .field .optional-tag{ font-weight:400; color:var(--ink-soft); }
+  .field input{
+    width:100%; background:#FBF8F1; border:1px solid var(--line); border-radius:10px;
+    padding:13px 15px; font-family:var(--body); font-size:16px; color:var(--ink);
     transition:border-color .2s, background .2s;
   }
-  select{
-    appearance:none; -webkit-appearance:none;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%238f7fac' stroke-width='1.6' fill='none' fill-rule='evenodd'/></svg>");
-    background-repeat:no-repeat;
-    background-position:right 14px center;
-    padding-right:36px;
-    cursor:pointer;
-  }
-  select option{ background:#ffffff; color:#1E0A3C; }
-  .phone-row{ display:flex; gap:10px; }
-  .phone-row select{ flex:0 0 190px; }
-  .phone-row input{ flex:1; min-width:0; }
-  @media (max-width:480px){
-    .phone-row{ flex-direction:column; }
-    .phone-row select{ flex:1; }
-  }
-  textarea{ resize:vertical; min-height:90px; }
-  input::placeholder, textarea::placeholder{ color:var(--muted); }
-  input:focus, textarea:focus, select:focus{
-    outline:none; border-color:var(--signal); background:var(--surface-2);
-  }
- 
-  .options{ display:flex; flex-direction:column; gap:10px; }
-  .option{
-    display:flex; align-items:flex-start; gap:12px;
-    background:#faf8ff; border:1px solid #e0d9f5;
-    border-radius:10px; padding:13px 16px; cursor:pointer;
-    transition:border-color .2s, background .2s;
-    font-size:14px; color:#3d2a6b;
-  }
-  .option:hover{ border-color:rgba(245,158,11,.35); }
-  .option input{ accent-color:var(--signal); margin-top:2px; width:16px; height:16px; flex-shrink:0; }
-  .option:has(input:checked){
-    border-color:var(--signal); background:rgba(245,158,11,.08); color:#1E0A3C;
-  }
-  
-  .conditional{ margin-top:14px; display:none; }
-  .conditional.show{ display:block; }
+  .field input:focus{ outline:none; border-color:var(--brand); background:#fff; }
+  .field-hint{ margin-top:7px; font-size:12.5px; color:var(--ink-soft); line-height:1.5; }
 
-  .submit-row{ text-align:center; margin-top:8px; }
+  .form-error{
+    display:none; background:#FBEAE8; border:1px solid #F0C6C1; color:var(--danger);
+    font-size:13px; border-radius:10px; padding:11px 14px; margin-top:18px;
+  }
+  .form-error.show{ display:block; }
+
   .btn-submit{
-    display:inline-flex; align-items:center; gap:10px;
-    background:var(--signal); color:var(--void-2);
-    font-family:var(--disp); font-weight:600; font-size:15.5px;
-    padding:17px 34px; border-radius:100px; border:none; cursor:pointer;
-    transition:transform .25s var(--ease), background .25s var(--ease);
+    margin-top:24px; width:100%; display:inline-flex; align-items:center; justify-content:center; gap:9px;
+    background:var(--brand); color:#fff; border:none; border-radius:12px;
+    padding:15px 28px; font-family:var(--disp); font-weight:600; font-size:15.5px;
+    cursor:pointer; transition:transform .15s, background .15s;
   }
-  .btn-submit:hover{ transform:translateY(-2px); background:var(--signal-2); }
+  .btn-submit:hover{ transform:translateY(-2px); background:var(--brand-deep); }
   .btn-submit:disabled{ opacity:.6; cursor:not-allowed; transform:none; }
-  .submit-note{
-    margin-top:16px; font-family:var(--mono); font-size:12px; color:var(--muted);
-  }
-  .error-note{
-    margin-top:16px; font-size:13.5px; color:var(--danger); display:none;
-  }
-  .error-note.show{ display:block; }
 
   /* ---------- confirmation ---------- */
-  .confirmation{
-    display:none; text-align:center; padding:100px 24px 120px;
-  }
+  .confirmation{ display:none; margin-top:40px; }
   .confirmation.show{ display:block; }
-  .confirmation > i{ font-size:44px; color:var(--signal); margin-bottom:24px; display:block; }
-  .confirmation h2{
-    font-family:var(--disp); font-weight:600; font-size:clamp(24px,4vw,34px);
-    color:#1E0A3C; margin-bottom:16px;
-  }
-  .confirmation p{ color:#4C1AA3; font-size:15.5px; max-width:460px; margin:0 auto; }
-  .confirmation .btn-book{
-    margin-top:32px; text-decoration:none;
-  }
-  .confirmation .sign{
-    margin-top:40px; font-family:var(--mono); font-size:12.5px; color:var(--muted);
-  }
-
-  /* ---------- confirm checkbox ---------- */
-  .confirm-block{
-    background:#ffffff; border:1px solid #e0d9f5;
-    border-radius:14px; padding:22px 24px;
-    margin-bottom:24px; display:flex; align-items:flex-start; gap:14px;
-    transition:border-color .25s, background .25s, opacity .25s;
-  }
-  .confirm-block.locked{
-    opacity:.4; cursor:not-allowed;
-  }
-  .confirm-block.locked input[type="checkbox"]{ pointer-events:none; }
-  .confirm-block.unlocked{
-    opacity:1; cursor:pointer;
-    border-color:rgba(245,158,11,.5);
-    background:rgba(245,158,11,.05);
-  }
-  .confirm-block.unlocked:hover{ border-color:var(--signal); }
-  .confirm-block.confirmed{
-    opacity:1; cursor:pointer;
-    border-color:var(--signal); background:rgba(245,158,11,.07);
-  }
-  .confirm-block input[type="checkbox"]{
-    width:20px; height:20px; flex-shrink:0; margin-top:1px;
-    accent-color:var(--signal);
-  }
-  .confirm-block-text{ flex:1; }
-  .confirm-block-text strong{
-    display:block; font-family:var(--disp); font-weight:600;
-    font-size:14.5px; color:var(--bone); margin-bottom:4px;
-  }
-  .confirm-block-text span{
-    font-size:13px; color:var(--muted); line-height:1.5;
-  }
-  .confirm-lock-note{
-    display:none; font-family:var(--mono); font-size:11px;
-    color:var(--signal); letter-spacing:.03em; margin-top:8px;
-  }
-  .confirm-block.unlocked .confirm-lock-note{ display:block; }
+  .confirmation i{ font-size:42px; color:var(--brand); margin-bottom:18px; display:block; }
+  .confirmation h3{ font-size:22px; margin-bottom:10px; }
+  .confirmation p{ color:var(--ink-soft); font-size:15px; max-width:420px; margin:0 auto; }
 
   footer{
-    padding:32px 0; border-top:1px solid #e0d9f5;
-    text-align:center; font-family:var(--mono); font-size:11.5px; color:#7c6fa0;
+    padding:36px 24px 48px; text-align:center; font-family:var(--mono); font-size:11.5px;
+    color:var(--ink-soft); letter-spacing:.04em;
   }
 
-  @media (max-width:600px){
-    .form-section{ padding:26px 20px; }
-    nav{ padding:18px 20px; }
+  /* ---------- responsive ---------- */
+  @media (max-width:920px){
+    .story-grid{ grid-template-columns:1fr; gap:40px; }
+    .phone-wrap{ position:static; order:-1; }
+    .phone{ max-width:300px; }
+    .tax-grid{ grid-template-columns:1fr; }
+    .receipt-stack{ height:200px; margin-top:8px; }
+    .transform-grid{ grid-template-columns:1fr; }
+    .dash-mock{ max-width:340px; margin:0 auto; order:-1; }
+    .missed-row{ grid-template-columns:1fr; }
+  }
+  @media (max-width:560px){
+    .story{ padding:64px 20px; }
+    .hero{ padding:44px 20px 56px; }
+    form#leadForm{ padding:28px 22px; }
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="logo"><img src="logo.png" alt="ImpactDev Digital Solutions" class="nav-logo"></div>
-  <!-- <a href="index.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to site</a> -->
-</nav>
-
-<!-- ============ BANNER ============ -->
-<div class="banner">
-  <div class="banner-inner">
-    <div class="banner-kicker"><span></span> ImpactDev Digital Solutions</div>
-    <h1>StoreFront <em>Pro</em></h1>
-    <p class="banner-sub">Sell online without manually chasing orders, payments, or customers. Built for businesses ready to stop selling manually and start running a real store.</p>
-    <div class="banner-divider"></div>
-  </div>
-</div>
-
-<!-- ============ INTRO ============ -->
-<div class="wrap">
-  <div class="intro">
-    <span class="eyebrow"><i class="bi bi-lightning-charge-fill"></i> IMPACTDEV · STOREFRONTPRO</span>
-    <h1>Your Physical Store Is Open 8 Hours. Your Online Store Should Be Open 24.</h1>
-    <p>StoreFront Pro is a complete ecommerce system; product pages, checkout, payments, order management, and inventory, built specifically for your business. No more DMs. No more manual bank transfers. No more missed orders.</p>
+  <div class="topbar">
+    <div class="mark"><i class="bi bi-bag-check-fill"></i> StoreFront Pro</div>
   </div>
 
-  <!-- Features strip -->
-  <div class="features-strip">
-    <div class="feature-card">
-      <div class="f-icon"><i class="bi bi-shop"></i></div>
-      <div>
-        <h4>Your own online store</h4>
-        <p>Product pages, categories, search, and a real checkout, all under your brand.</p>
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="f-icon"><i class="bi bi-credit-card"></i></div>
-      <div>
-        <h4>Local &amp; international payments</h4>
-        <p>Paystack for Nigerian customers. Card and bank transfer for UK &amp; global buyers.</p>
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="f-icon"><i class="bi bi-list-check"></i></div>
-      <div>
-        <h4>Order management dashboard</h4>
-        <p>Every order logged, tracked, and managed in one place. Wake up to a clear picture.</p>
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="f-icon"><i class="bi bi-whatsapp"></i></div>
-      <div>
-        <h4>Automatic WhatsApp notifications</h4>
-        <p>Order confirmations sent to you and your customer the moment a sale comes in.</p>
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="f-icon"><i class="bi bi-box-seam"></i></div>
-      <div>
-        <h4>Real-time inventory</h4>
-        <p>Stock updates itself with every sale. No more selling what you don't have.</p>
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="f-icon"><i class="bi bi-rocket-takeoff"></i></div>
-      <div>
-        <h4>Live in 30 days</h4>
-        <p>Built, tested, and handed over to you, fully working, within 30 days.</p>
-      </div>
-    </div>
-  </div>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <h1>Stop running your business <span class="hl">through WhatsApp.</span></h1>
+    <p class="hero-sub">Every screenshot you dig for. Every order you lose track of. Every customer left on read while you're serving someone else. That's not "just how it is" — that's revenue walking out the door. Fix it once, and it's fixed for good.</p>
+    <div class="audience-chip reveal">Built for businesses taking 20 orders a week — or 20,000.</div>
+    <div class="scroll-cue">Keep scrolling <i class="bi bi-chevron-down"></i></div>
+  </section>
 
-<!-- ============ TESTIMONIALS ============ -->
-<div class="wrap">
-  <div class="testimonials-section">
-    <div class="sec-label">Real businesses. Real results.</div>
-    <h2>What some of our clients say</h2>
-
-    <div class="testimonials-grid">
-
-      <div class="tcard">
-        <span class="quote-mark">"</span>
-        <p>We were taking every order through WhatsApp Status and DMs, it was exhausting. Since we launched our StoreFront Pro site, orders come in automatically. We've migrated from handling every order manually to processing orders through the website and we're not going back.</p>
-        <div class="t-who">
-          <div class="t-avatar">JC</div>
-          <div>
-            <div class="t-name">Joy O. - Joyous Cakes N Accessories</div>
-            <div class="t-biz">BAKERY &amp; ACCESSORIES</div>
+  <!-- ============ STORY 1: CHAOS ============ -->
+  <section class="story" id="story1">
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="story-text reveal">
+          <span class="eyebrow">A typical day</span>
+          <h2>Does your day look something like this?</h2>
+          <ol class="beat-list">
+            <li class="quote">A customer messages:<br><span>"Is this still available?"</span></li>
+            <li>You reply. They ask for your account details. You wait.</li>
+            <li class="quote">They send a payment screenshot.</li>
+            <li>Now you're scrolling through dozens of WhatsApp chats trying to find it.</li>
+            <li class="quote">Then you ask:<br><span>"Please send your delivery address."</span></li>
+            <li>Later... you can't remember if that order has already been delivered.</li>
+            <li class="quote">Someone else asks:<br><span>"Have you shipped my order?"</span></li>
+            <li>You scroll again — while another customer waits for a reply, because you were busy serving someone in your physical store.</li>
+          </ol>
+          <p class="story-close">Sound familiar?</p>
+        </div>
+        <div class="phone-wrap reveal">
+          <div class="phone">
+            <div class="phone-badge">47 unread</div>
+            <div class="phone-header">
+              <div class="phone-avatar"><i class="bi bi-person-fill"></i></div>
+              <div>
+                <div class="who">Customer</div>
+                <div class="status">online</div>
+              </div>
+            </div>
+            <div class="phone-body">
+              <div class="bubble in">Is this still available?<span class="time">10:42 AM</span></div>
+              <div class="sysline">you replied · they asked for account details</div>
+              <div class="bubble in attach"><i class="bi bi-file-earmark-image"></i> payment_screenshot.jpg<span class="time">10:58 AM</span></div>
+              <div class="sysline">scrolling through chats to find the order...</div>
+              <div class="bubble out">Please send your delivery address<span class="time">11:04 AM</span></div>
+              <div class="sysline">later that day</div>
+              <div class="bubble in">Have you shipped my order?<span class="time">9:14 PM</span></div>
+              <div class="sysline">scrolling again...</div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="tcard">
-        <span class="quote-mark">"</span>
-        <p>We had a physical store doing well, but there was a whole market of customers we couldn't reach because we had no way for them to order online. StoreFront Pro changed that. Our sales have genuinely improved since the site went live. The website has become a major sales channel for us.</p>
-        <div class="t-who">
-          <div class="t-avatar">TF</div>
-          <div>
-            <div class="t-name">Tutu's Foods</div>
-            <div class="t-biz">FOOD &amp; BAKERY · UK</div>
+  <!-- ============ STORY 2: TAX SEASON ============ -->
+  <section class="story story-tax" id="story2">
+    <div class="wrap">
+      <span class="eyebrow reveal">Then the books need doing</span>
+      <h2 class="reveal">Then it's time to work out what you actually sold.</h2>
+      <div class="tax-grid">
+        <div class="tax-card reveal">
+          <p class="tax-card-label">You need to know:</p>
+          <ul class="tax-questions">
+            <li><i class="bi bi-question-circle-fill"></i> How much did we actually sell this month?</li>
+            <li><i class="bi bi-question-circle-fill"></i> Which customers paid?</li>
+            <li><i class="bi bi-question-circle-fill"></i> Which orders were cancelled?</li>
+            <li><i class="bi bi-question-circle-fill"></i> Which products sold the most?</li>
+          </ul>
+        </div>
+        <div class="receipt-stack reveal">
+          <div class="receipt-chip c1"><span class="fname">IMG_2847.jpg</span>payment screenshot</div>
+          <div class="receipt-chip c2"><span class="fname">Bank Alert — Monzo</span>payment received, 9:41pm</div>
+          <div class="receipt-chip c3"><span class="fname">IMG_2903.jpg</span>payment screenshot</div>
+          <div class="receipt-chip c4"><span class="fname">Chat: +44 7700 900xxx</span>"sent the money already"</div>
+        </div>
+      </div>
+      <p class="instead-runner reveal">
+        <strong>Instead...</strong>
+        <span>Opening WhatsApp</span>
+        <span>Checking screenshots</span>
+        <span>Looking through bank alerts</span>
+        <span>Piecing it together manually</span>
+      </p>
+      <p class="story-close reveal">Your business deserves better than that.</p>
+    </div>
+  </section>
+
+  <!-- ============ STORY 3: MISSED REVENUE ============ -->
+  <section class="story story-missed" id="story3">
+    <div class="wrap">
+      <span class="eyebrow reveal">The cost of closing</span>
+      <h2 class="reveal">Every day your store closes&hellip; your business stops selling.</h2>
+      <div class="missed-row">
+        <div class="missed-card reveal">
+          <i class="bi bi-moon-stars-fill"></i>
+          <h3>10:30pm</h3>
+          <p>Someone wants to order. Your shop is closed.</p>
+        </div>
+        <div class="missed-card reveal">
+          <i class="bi bi-calendar-x-fill"></i>
+          <h3>Sunday</h3>
+          <p>Someone wants to buy. You're unavailable.</p>
+        </div>
+        <div class="missed-card reveal">
+          <i class="bi bi-geo-alt-fill"></i>
+          <h3>Another city</h3>
+          <p>Someone discovers your business. There's no easy way for them to order. So they leave.</p>
+        </div>
+      </div>
+      <p class="story-close reveal">Every missed order is revenue you never even knew you lost.</p>
+    </div>
+  </section>
+
+  <!-- ============ TRANSFORM ============ -->
+  <section class="transform">
+    <div class="wrap">
+      <span class="eyebrow reveal">Here's what changes</span>
+      <h2 class="reveal">Here's what this actually looks like once it's fixed.</h2>
+      <div class="transform-grid">
+        <div class="transform-col reveal">
+          <h3>Your customers could:</h3>
+          <ul class="check-list">
+            <li><span class="check-badge"><i class="bi bi-check-lg"></i></span> Browse your products anytime.</li>
+            <li><span class="check-badge"><i class="bi bi-check-lg"></i></span> Place orders without messaging you first.</li>
+            <li><span class="check-badge"><i class="bi bi-check-lg"></i></span> Pay online instantly.</li>
+            <li><span class="check-badge"><i class="bi bi-check-lg"></i></span> Receive confirmation automatically.</li>
+          </ul>
+        </div>
+
+        <div class="dash-mock reveal">
+          <div class="dm-head">
+            <span>Dashboard</span>
+            <div class="dm-dots"><i></i><i></i><i></i></div>
+          </div>
+          <div class="dm-stats">
+            <div class="dm-stat"><div class="n">£2,840</div><div class="l">Revenue today</div></div>
+            <div class="dm-stat"><div class="n">12</div><div class="l">New orders</div></div>
+          </div>
+          <div class="dm-list">
+            <div class="dm-row"><span class="who">Sarah M.</span><span class="tag">Paid</span></div>
+            <div class="dm-row"><span class="who">James O.</span><span class="tag">Paid</span></div>
+            <div class="dm-row"><span class="who">Priya K.</span><span class="tag">Paid</span></div>
+          </div>
+        </div>
+
+        <div class="transform-col reveal">
+          <h3>While you&hellip;</h3>
+          <ul class="check-list">
+            <li><span class="check-badge"><i class="bi bi-check-lg"></i></span> See every order in one dashboard.</li>
+            <li><span class="check-badge"><i class="bi bi-check-lg"></i></span> Track payments without screenshots.</li>
+            <li><span class="check-badge"><i class="bi bi-check-lg"></i></span> Know exactly what's been sold.</li>
+            <li><span class="check-badge"><i class="bi bi-check-lg"></i></span> Manage inventory automatically.</li>
+            <li><span class="check-badge"><i class="bi bi-check-lg"></i></span> Wake up to new orders instead of new messages.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials">
+    <div class="wrap">
+      <span class="eyebrow reveal" style="justify-content:center;">Real businesses. Real results.</span>
+      <h2 class="reveal">Not theory. This is already working.</h2>
+      <div class="t-grid">
+        <div class="t-card reveal">
+          <span class="t-mark">"</span>
+          <p>We were taking every order through WhatsApp Status and DMs — it was exhausting. Since we launched our StoreFront Pro site, orders come in automatically. We've gone from handling everything manually to processing orders through the website, and we're not going back.</p>
+          <div class="t-who">
+            <div class="t-avatar">JC</div>
+            <div>
+              <div class="t-name">Joy O. — Joyous Cakes N Accessories</div>
+              <div class="t-biz">BAKERY &amp; ACCESSORIES</div>
+            </div>
+          </div>
+        </div>
+        <div class="t-card reveal">
+          <span class="t-mark">"</span>
+          <p>We had a physical store doing well, but there was a whole market of customers we couldn't reach because we had no way for them to order online. StoreFront Pro changed that. Our sales have genuinely improved since the site went live — it's become a major sales channel for us.</p>
+          <div class="t-who">
+            <div class="t-avatar">TF</div>
+            <div>
+              <div class="t-name">Tutu's Foods</div>
+              <div class="t-biz">FOOD &amp; BAKERY · UK</div>
+            </div>
+          </div>
+        </div>
+        <div class="t-card reveal">
+          <span class="t-mark">"</span>
+          <p>We needed a storefront that actually matched the quality of what we sell — not just a shop, a space that communicates the brand. ImpactDev built exactly that. Our customers now experience the brand from the moment they land on the site.</p>
+          <div class="t-who">
+            <div class="t-avatar">HN</div>
+            <div>
+              <div class="t-name">David O. — H00lynation</div>
+              <div class="t-biz">PREMIUM CLOTHING</div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="tcard">
-        <span class="quote-mark">"</span>
-        <p>We needed a storefront that actually matched the quality of what we sell. Not just a shop, a space that communicates the brand. ImpactDev built exactly that. Our customers now experience the brand from the moment they land on the site.</p>
-        <div class="t-who">
-          <div class="t-avatar">HN</div>
-          <div>
-            <div class="t-name">David O. - H00lynation</div>
-            <div class="t-biz">PREMIUM CLOTHING</div>
+  <!-- ============ PULL QUOTE ============ -->
+  <section class="pullquote">
+    <p class="reveal">This isn't just a website.<br><em>It's a system that helps your business sell</em>&mdash;even when you're not working.</p>
+  </section>
+
+  <!-- ============ CTA / FORM ============ -->
+  <section class="cta" id="cta">
+    <div class="wrap">
+      <div class="cta-inner reveal">
+        <span class="eyebrow">Let's talk</span>
+        <h2>If this sounds like your business, let's fix it.</h2>
+        <p>Leave your details below. No sales call, no pressure — we'll email you first, learn how you currently operate, and show you exactly how StoreFront Pro could work for a business like yours.</p>
+
+        <ul class="next-steps">
+          <li><span class="ns-n">1</span> You leave your details — takes 30 seconds.</li>
+          <li><span class="ns-n">2</span> We email you within 1 business day. No cold call.</li>
+          <li><span class="ns-n">3</span> We show you exactly what this looks like for your business.</li>
+        </ul>
+
+        <form id="leadForm" novalidate>
+          <div class="field">
+            <label for="first_name">First Name*</label>
+            <input type="text" id="first_name" name="first_name" autocomplete="given-name" required>
           </div>
-        </div>
-      </div>
+          <div class="field">
+            <label for="business_name">Business Name*</label>
+            <input type="text" id="business_name" name="business_name" autocomplete="organization" required>
+          </div>
+          <div class="field">
+            <label for="work_email">Work Email*</label>
+            <input type="email" id="work_email" name="work_email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone / WhatsApp Number <span class="optional-tag">(Optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+            <p class="field-hint">We'll email you first either way. Prefer WhatsApp instead? Add your number here and we'll reach out there.</p>
+          </div>
 
-    </div>
-  </div>
+          <p class="form-error" id="formError">Please fill in the required fields above.</p>
 
-  <!-- Book a call — PRIMARY CTA -->
-  <div class="path-choice">
-    <div class="direct-book">
-      <h3>Ready to talk? Book a call directly.</h3>
-      <p>No forms, no waiting. Pick a slot and speak to our team, we'll walk you through exactly what StoreFront Pro looks like for your business.</p>
-      <a class="btn-submit" href="https://calendly.com/impactdevagency/storefrontpro-discovery" target="_blank" rel="noopener">Book a Free Ecommerce Strategy Call Now <i class="bi bi-arrow-right"></i></a>
-    </div>
-    <div class="path-divider">or tell us about your business first</div>
-  </div>
-</div>
+          <button type="submit" class="btn-submit" id="submitBtn">Let's Talk <i class="bi bi-arrow-right"></i></button>
+          <p class="privacy-note">We'll only use your details to get in touch about StoreFront Pro. Never sold, never spammed.</p>
+        </form>
 
-  <!-- ============ FORM ============ -->
-  <form id="leadForm" novalidate>
-  <div class="wrap">
-
-    <!-- SECTION 1 -->
-    <div class="form-section">
-      <h2>Let's start with the basics</h2>
-
-      <div class="field">
-        <label class="q" for="q1">What's your name? <span class="req">Required</span></label>
-        <input type="text" id="q1" name="q1_name" required placeholder="Your full name">
-      </div>
-
-      <div class="field">
-        <label class="q" for="q2">What's your business called? <span class="req">Required</span></label>
-        <input type="text" id="q2" name="q2_business_name" required placeholder="Business name">
-      </div>
-
-      <div class="field">
-        <label class="q" for="q3">What's your email address? <span class="req">Required</span></label>
-        <input type="email" id="q3" name="q3_email" required placeholder="you@business.com">
-      </div>
-
-      <div class="field">
-        <label class="q" for="q4number">What's the best phone number to reach you on? <span class="req">Required</span></label>
-        <div class="helper">We won't call without your permission, this is just in case email isn't working.</div>
-        <div class="phone-row">
-          <select id="q4code" name="q4_country_code" required>
-            <option value="" disabled selected>Code</option>
-            <option value="+44">🇬🇧 +44</option>
-            <option value="+353">🇮🇪 +353</option>
-            <option value="+33">🇫🇷 +33</option>
-            <option value="+49">🇩🇪 +49</option>
-            <option value="+34">🇪🇸 +34</option>
-            <option value="+39">🇮🇹 +39</option>
-            <option value="+31">🇳🇱 +31</option>
-            <option value="+351">🇵🇹 +351</option>
-            <option value="+32">🇧🇪 +32</option>
-            <option value="+41">🇨🇭 +41</option>
-            <option value="+43">🇦🇹 +43</option>
-            <option value="+46">🇸🇪 +46</option>
-            <option value="+45">🇩🇰 +45</option>
-            <option value="+47">🇳🇴 +47</option>
-            <option value="+48">🇵🇱 +48</option>
-            <option value="+30">🇬🇷 +30</option>
-            <option value="+234">🇳🇬 +234</option>
-            <option value="+233">🇬🇭 +233</option>
-            <option value="+254">🇰🇪 +254</option>
-            <option value="+27">🇿🇦 +27</option>
-            <option value="+20">🇪🇬 +20</option>
-            <option value="+212">🇲🇦 +212</option>
-            <option value="+256">🇺🇬 +256</option>
-            <option value="+255">🇹🇿 +255</option>
-            <option value="+1">🇺🇸 +1</option>
-            <option value="other">Other - enter code manually</option>
-          </select>
-          <input type="tel" id="q4number" name="q4_phone_number" required placeholder="Phone number" inputmode="tel">
-        </div>
-        <div class="conditional" id="q4otherwrap">
-          <input type="text" id="q4othercode" name="q4_country_code_other" placeholder="Enter your country's dial code, e.g. +254">
-        </div>
-        <div class="helper">We will never share your information. No spam.</div>
-      </div>
-
-      <div class="field">
-        <label class="q">Where is your business based? <span class="req">Required</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="q5_location" value="United Kingdom" required> United Kingdom</label>
-          <label class="option"><input type="radio" name="q5_location" value="Europe (outside UK)" required> Europe (outside UK)</label>
-          <label class="option"><input type="radio" name="q5_location" value="Nigeria" required> Nigeria</label>
-          <label class="option"><input type="radio" name="q5_location" value="Other" required> Other</label>
+        <div class="confirmation" id="confirmation">
+          <i class="bi bi-check-circle-fill"></i>
+          <h3>Got it — thank you.</h3>
+          <p>We'll email you first — no sales call — to learn how you currently operate and show you exactly how StoreFront Pro could work for your business.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- SECTION 2 -->
-    <div class="form-section">
-      <h2>Tell us about your business</h2>
-
-      <div class="field">
-        <label class="q">What does your business sell? <span class="req">Required</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="q6_what_you_sell" value="Physical products" required data-reveals="q7wrap"> Physical products (clothing, food, beauty, home goods, etc.)</label>
-          <label class="option"><input type="radio" name="q6_what_you_sell" value="A service" required data-reveals="q7wrap-hide"> A service (consulting, coaching, trade work, etc.)</label>
-          <label class="option"><input type="radio" name="q6_what_you_sell" value="Both products and services" required data-reveals="q7wrap-hide"> Both products and services</label>
-          <label class="option"><input type="radio" name="q6_what_you_sell" value="Something else" required data-reveals="q7wrap"> Something else (please specify below)</label>
-        </div>
-        <div class="conditional" id="q7wrap">
-          <label class="q" for="q7">If "something else," please describe <span class="opt">Optional</span></label>
-          <input type="text" id="q7" name="q7_something_else" placeholder="Tell us what you sell">
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="q">How do you currently take orders or bookings? <span class="req">Required</span></label>
-        <div class="helper">Select all that apply — this helps us understand your setup so we can tailor the right solution for you.</div>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="q8_current_orders" value="Instagram or Facebook DMs"> Instagram or Facebook DMs</label>
-          <label class="option"><input type="checkbox" name="q8_current_orders" value="WhatsApp messages"> WhatsApp messages</label>
-          <label class="option"><input type="checkbox" name="q8_current_orders" value="Phone calls or texts"> Phone calls or texts</label>
-          <label class="option"><input type="checkbox" name="q8_current_orders" value="In person only"> In person only (physical shop/location)</label>
-          <label class="option"><input type="checkbox" name="q8_current_orders" value="Website not working well"> I already have a website, but it's not working well</label>
-          <label class="option"><input type="checkbox" name="q8_current_orders" value="Proper ecommerce site already"> I already have a proper ecommerce website</label>
-          <label class="option"><input type="checkbox" name="q8_current_orders" value="Other"> Other</label>
-        </div>
-        <div class="error-note" id="q8error">Please select at least one option.</div>
-      </div>
-
-
-      <div class="field">
-        <label class="q">Roughly how many orders or enquiries do you get in an average month? <span class="req">Required</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="q10_monthly_volume" value="Under 10" required> Under 10</label>
-          <label class="option"><input type="radio" name="q10_monthly_volume" value="10-30" required> 10–30</label>
-          <label class="option"><input type="radio" name="q10_monthly_volume" value="30-60" required> 30–60</label>
-          <label class="option"><input type="radio" name="q10_monthly_volume" value="60-150" required> 60–150</label>
-          <label class="option"><input type="radio" name="q10_monthly_volume" value="150+" required> 150+</label>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION 3 -->
-    <div class="form-section">
-      <h2>How things work now</h2>
-
-      <!-- <div class="field">
-        <label class="q" for="q11">What's the most frustrating part of how you currently take orders? <span class="opt">Optional</span></label>
-        <div class="helper">Be honest. This helps us understand exactly what to fix.</div>
-        <textarea id="q11" name="q11_frustration" required placeholder="Tell us what's not working..."></textarea>
-      </div> -->
-
-      <div class="field">
-        <label class="q">Have you lost a sale or customer recently because of how you currently take orders or payments? <span class="req">Required</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="q12_lost_sale" value="Yes, definitely" required> Yes, definitely</label>
-          <label class="option"><input type="radio" name="q12_lost_sale" value="Maybe, not sure" required> Maybe, I'm not sure</label>
-          <label class="option"><input type="radio" name="q12_lost_sale" value="No, not that I know of" required> No, not that I know of</label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="q">How are customers currently paying you? <span class="req">Required</span></label>
-        <div class="helper">Select all that apply.</div>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="q13_payment_methods" value="Bank transfer"> Bank transfer</label>
-          <label class="option"><input type="checkbox" name="q13_payment_methods" value="Card in person"> Card payment (in person)</label>
-          <label class="option"><input type="checkbox" name="q13_payment_methods" value="Card online"> Card payment (online, e.g. PayPal/Square/Stripe link)</label>
-          <label class="option"><input type="checkbox" name="q13_payment_methods" value="Cash"> Cash</label>
-          <label class="option"><input type="checkbox" name="q13_payment_methods" value="No consistent method"> I don't have a consistent payment method yet</label>
-        </div>
-        <div class="error-note" id="q13error">Please select at least one option.</div>
-      </div>
-    </div>
-
-    <!-- SECTION 4 -->
-    <div class="form-section">
-      <h2>One last thing</h2>
-
-
-
-      <div class="field">
-        <label class="q">If we showed you exactly how this would work for your specific business, how soon would you want to get started? <span class="req">Required</span></label>
-        <div class="options">
-          <label class="option"><input type="radio" name="q16_urgency" value="As soon as possible" required> As soon as possible</label>
-          <label class="option"><input type="radio" name="q16_urgency" value="Within 1-3 months" required> Within the next 1–3 months</label>
-          <label class="option"><input type="radio" name="q16_urgency" value="Just exploring" required> Just exploring options for now</label>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- CONFIRM CHECKBOX -->
-    <label class="confirm-block locked" id="confirmBlock">
-      <input type="checkbox" id="confirmCheck" disabled>
-      <div class="confirm-block-text">
-        <strong>I confirm that I have filled this form accurately.</strong>
-        <span>Please tick this box before submitting, it helps our team review your answers quickly and follow up with the right information for your business.</span>
-        <span class="confirm-lock-note">&#10003; All required fields complete. You can now tick this box</span>
-      </div>
-    </label>
-
-    <div class="submit-row">
-      <button type="submit" class="btn-submit" id="submitBtn" disabled>Submit my answers <i class="bi bi-arrow-right"></i></button>
-      <div class="submit-note">We reply within 1–2 business days</div>
-      <div class="error-note" id="formError">Please fill in all required fields before submitting.</div>
-    </div>
-
-  </div><!-- /.wrap -->
-  </form>
-
-  <!-- ============ CONFIRMATION ============ -->
-  <div class="confirmation" id="confirmation">
-    <i class="bi bi-check-circle-fill"></i>
-    <h2>Thanks! We've got everything we need.</h2>
-    <p>You'll also receive a copy of your answers at the email you provided. The next step is a short discovery call, pick a time that works for you below and we'll be there, ready to walk through exactly what StoreFront Pro would look like for your business. No pressure, no obligation.</p>
-    <a class="btn-submit btn-book" href="https://calendly.com/impactdevagency/storefrontpro-discovery" target="_blank" rel="noopener">Book your discovery call <i class="bi bi-arrow-right"></i></a>
-    <div class="sign">— The ImpactDev Team</div>
-  </div>
-</div>
-
-  <!-- Bottom CTA -->
-  <div class="bottom-cta">
-    <h3>Your store should be working for you, not the other way around.</h3>
-    <p>Book a call or fill out the form above. Either way, we'll be in touch.</p>
-    <a class="btn-submit" href="https://calendly.com/impactdevagency/storefrontpro-discovery" target="_blank" rel="noopener">Book a call now <i class="bi bi-arrow-right"></i></a>
-  </div>
-</div>
-
-<footer>
-  <div class="wrap">© 2026 ImpactDev Digital Solutions. All rights reserved.</div>
-</footer>
+  <footer>ImpactDev — StoreFront Pro</footer>
 
 <script>
+  // ── Scroll reveal ──────────────────────────────────────────────
+  const revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.15, rootMargin:'0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  // ── Form submit ───────────────────────────────────────────────
   // TODO: replace with your deployed Google Apps Script Web App URL (ends in /exec)
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxJ6wZwv0qlG8c8JaiHbsz9xhZM-0SIUON9UsBJxXcrKefXoewgNzCo-fyf_TBaTVk/exec';
 
@@ -866,90 +706,18 @@
   const confirmation = document.getElementById('confirmation');
   const submitBtn = document.getElementById('submitBtn');
   const formError = document.getElementById('formError');
-  const q8error = document.getElementById('q8error');
-  const q13error = document.getElementById('q13error');
-  const confirmCheck = document.getElementById('confirmCheck');
-  const confirmBlock = document.getElementById('confirmBlock');
 
   window.addEventListener('load', () => {
     if (typeof fbq === 'function') {
-        fbq('track', 'ViewContent');
-    }
-});
-  
-  // ── Checkbox group helpers ────────────────────────────────────
-  function checkboxGroupValid(name){
-    return Array.from(document.querySelectorAll(`input[name="${name}"]`)).some(i => i.checked);
-  }
-
-  // ── Check whether ALL required fields are filled ──────────────
-  function allRequiredFilled(){
-    // Native required inputs (text, email, tel, radio)
-    const nativeOk = form.checkValidity();
-    // Custom checkbox groups that aren't individually required
-    const q8ok  = checkboxGroupValid('q8_current_orders');
-    const q13ok = checkboxGroupValid('q13_payment_methods');
-    return nativeOk && q8ok && q13ok;
-  }
-
-  // ── Unlock / lock the confirmation checkbox ───────────────────
-  function refreshConfirmLock(){
-    const ready = allRequiredFilled();
-    if(ready){
-      confirmBlock.classList.remove('locked');
-      confirmBlock.classList.add('unlocked');
-      confirmCheck.disabled = false;
-    } else {
-      confirmBlock.classList.add('locked');
-      confirmBlock.classList.remove('unlocked', 'confirmed');
-      confirmCheck.disabled = true;
-      confirmCheck.checked  = false;
-      submitBtn.disabled    = true;
-    }
-  }
-
-  // Watch every input, select, and textarea in the form
-  form.addEventListener('input',  refreshConfirmLock);
-  form.addEventListener('change', refreshConfirmLock);
-
-  // ── Confirmation checkbox enables submit ──────────────────────
-  confirmCheck.addEventListener('change', () => {
-    submitBtn.disabled = !confirmCheck.checked;
-    confirmBlock.classList.toggle('confirmed', confirmCheck.checked);
-    if(confirmCheck.checked){
-      confirmBlock.classList.remove('unlocked');
-    } else {
-      confirmBlock.classList.add('unlocked');
+      fbq('track', 'ViewContent');
     }
   });
 
-  // ── Reveal Q7 when Q6 = "Something else" ─────────────────────
-  document.querySelectorAll('input[name="q6_what_you_sell"]').forEach(input => {
-    input.addEventListener('change', () => {
-      const q7wrap = document.getElementById('q7wrap');
-      q7wrap.classList.toggle('show', input.value === 'Something else');
-    });
-  });
-
-  // ── Form submit ───────────────────────────────────────────────
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     formError.classList.remove('show');
-    q8error.classList.remove('show');
-    q13error.classList.remove('show');
 
-    let valid = form.checkValidity();
-
-    if (!checkboxGroupValid('q8_current_orders')) {
-      q8error.classList.add('show');
-      valid = false;
-    }
-    if (!checkboxGroupValid('q13_payment_methods')) {
-      q13error.classList.add('show');
-      valid = false;
-    }
-
-    if (!valid) {
+    if (!form.checkValidity()) {
       form.reportValidity();
       formError.classList.add('show');
       return;
@@ -958,20 +726,13 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting...';
 
-     // Fire Meta Lead event AFTER successful submission
-     if (typeof fbq === 'function') {
-          fbq('track', 'Lead');
-      }
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead');
+    }
 
     const formData = new FormData(form);
     const payload = {};
-    formData.forEach((value, key) => {
-      if (payload[key]) {
-        payload[key] = Array.isArray(payload[key]) ? [...payload[key], value] : [payload[key], value];
-      } else {
-        payload[key] = value;
-      }
-    });
+    formData.forEach((value, key) => { payload[key] = value; });
 
     try {
       await fetch(SCRIPT_URL, {
@@ -981,12 +742,12 @@
         body: JSON.stringify(payload)
       });
 
-     
       form.style.display = 'none';
       confirmation.classList.add('show');
+      confirmation.scrollIntoView({ behavior:'smooth', block:'center' });
     } catch (err) {
-      submitBtn.disabled = !confirmCheck.checked;
-      submitBtn.textContent = 'Submit my answers';
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Let's Talk";
       formError.classList.add('show');
     }
   });
