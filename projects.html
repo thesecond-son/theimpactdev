@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Our Work — ImpactDev</title>
+<meta name="description" content="Every project ImpactDev has designed and built — websites, ecommerce stores, brand platforms, and custom applications across Nigeria, the UK, and beyond." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+:root{
+  --void:     #0c0818;
+  --void-2:   #110b22;
+  --surface:  #161029;
+  --surface-2:#1d1638;
+  --line:     #2a2348;
+  --line-soft:#221c3d;
+  --signal:   #F59E0B;
+  --signal-2: #FBBF24;
+  --bone:     #f3f1fa;
+  --bone-dim: #b8b2d4;
+  --muted:    #8a82a8;
+  --mono:     'JetBrains Mono',monospace;
+  --disp:     'Space Grotesk',sans-serif;
+  --body:     'Inter',sans-serif;
+  --ease:     cubic-bezier(.16,1,.3,1);
+  --radius:   16px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--void);color:var(--bone);font-family:var(--body);overflow-x:hidden;line-height:1.6;}
+::selection{background:var(--signal);color:var(--void);}
+a{color:inherit;text-decoration:none;}
+
+/* ── GRID FIELD ─────────────────────────────── */
+.grid-field{
+  position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(42,35,72,.4) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(42,35,72,.4) 1px,transparent 1px);
+  background-size:72px 72px;
+  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,0,0,.6),transparent 70%);
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,0,0,.6),transparent 70%);
+  opacity:.6;
+}
+
+/* ── NAV ────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 36px;
+  background:rgba(12,8,24,.7);
+  backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid var(--line-soft);
+}
+.logo{font-family:var(--disp);font-weight:600;font-size:17px;letter-spacing:.01em;display:flex;align-items:center;gap:10px;}
+.logo .dot{width:7px;height:7px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 0 rgba(245,158,11,.6);animation:pulse 2.6s var(--ease) infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(245,158,11,.55);}70%{box-shadow:0 0 0 8px rgba(245,158,11,0);}100%{box-shadow:0 0 0 0 rgba(245,158,11,0);}}
+.logo span{color:var(--muted);font-weight:400;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:13px;color:var(--bone-dim);font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--bone);}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--signal);color:var(--void);
+  font-family:var(--disp);font-weight:600;font-size:13px;
+  padding:9px 18px;border-radius:100px;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(245,158,11,.3);}
+@media(max-width:720px){.nav-links{display:none;}}
+
+/* ── WRAP ───────────────────────────────────── */
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+
+/* ── HERO ───────────────────────────────────── */
+.hero{
+  padding:140px 0 80px;
+  text-align:center;
+  position:relative;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--mono);font-size:11.5px;color:var(--signal);
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:6px 14px;border:1px solid rgba(245,158,11,.25);
+  border-radius:100px;background:rgba(245,158,11,.05);
+  margin-bottom:26px;
+}
+.hero-kicker .dot-sm{width:5px;height:5px;border-radius:50%;background:var(--signal);}
+.hero h1{
+  font-family:var(--disp);font-weight:700;
+  font-size:clamp(36px,6.5vw,76px);
+  line-height:1.02;letter-spacing:-.015em;
+  color:var(--bone);margin-bottom:22px;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(90deg,var(--signal),var(--signal-2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{font-size:clamp(15px,2vw,18px);color:var(--bone-dim);max-width:560px;margin:0 auto 48px;line-height:1.7;}
+.stats-row{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:0;
+  border:1px solid var(--line);border-radius:14px;
+  overflow:hidden;max-width:640px;margin:0 auto;
+}
+.stat{
+  flex:1;min-width:120px;padding:20px 16px;text-align:center;
+  border-right:1px solid var(--line);
+}
+.stat:last-child{border-right:none;}
+.stat strong{display:block;font-family:var(--disp);font-size:22px;font-weight:600;color:var(--bone);}
+.stat span{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.06em;}
+
+/* ── FILTER BAR ─────────────────────────────── */
+.filter-section{padding:48px 0 0;}
+.filter-bar{
+  display:flex;flex-wrap:wrap;gap:10px;
+  border-bottom:1px solid var(--line-soft);
+  padding-bottom:32px;margin-bottom:64px;
+}
+.filter-btn{
+  font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+  color:var(--muted);padding:8px 18px;border-radius:100px;
+  border:1px solid var(--line);background:transparent;cursor:pointer;
+  transition:all .2s var(--ease);
+}
+.filter-btn:hover{color:var(--bone);border-color:rgba(245,158,11,.3);}
+.filter-btn.active{
+  color:var(--void);background:var(--signal);border-color:var(--signal);font-weight:600;
+}
+.category-count{
+  margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--muted);
+  display:flex;align-items:center;
+}
+
+/* ── CATEGORY GROUP ─────────────────────────── */
+.cat-group{margin-bottom:80px;}
+.cat-label{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:28px;
+}
+.cat-label-text{font-family:var(--mono);font-size:12px;color:var(--signal);letter-spacing:.1em;text-transform:uppercase;}
+.cat-label-line{flex:1;height:1px;background:var(--line-soft);}
+.cat-label-count{font-family:var(--mono);font-size:11px;color:var(--muted);}
+
+/* ── PROJECT GRID ───────────────────────────── */
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.project-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;
+  text-decoration:none;
+  transition:transform .35s var(--ease),border-color .3s var(--ease),background .3s var(--ease);
+  position:relative;
+}
+.project-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(245,158,11,.35);
+  background:var(--surface-2);
+}
+/* screenshot preview area */
+.project-thumb{
+  width:100%;aspect-ratio:16/9;
+  background:var(--void-2);
+  border-bottom:1px solid var(--line);
+  overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;
+}
+.project-thumb iframe{
+  width:175%;height:175%;
+  transform:scale(0.571);transform-origin:top left;
+  border:none;pointer-events:none;
+  position:absolute;top:0;left:0;
+}
+.project-thumb .thumb-placeholder{
+  width:100%;height:100%;
+  background:linear-gradient(135deg,var(--void-2),var(--surface-2));
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:10px;
+}
+.project-thumb .thumb-placeholder i{font-size:28px;color:var(--line);}
+.project-thumb .thumb-placeholder span{font-family:var(--mono);font-size:11px;color:var(--muted);}
+/* screenshot via screenshot service */
+.project-thumb img{
+  width:100%;height:100%;object-fit:cover;object-position:top;
+  transition:transform .5s var(--ease);
+}
+.project-card:hover .project-thumb img{transform:scale(1.03);}
+
+.project-body{padding:22px 22px 20px;flex:1;display:flex;flex-direction:column;gap:10px;}
+.project-top{display:flex;align-items:center;justify-content:space-between;}
+.project-status{
+  display:flex;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:10.5px;color:#22C55E;letter-spacing:.06em;
+}
+.project-status .led{width:5px;height:5px;border-radius:50%;background:#22C55E;box-shadow:0 0 5px rgba(34,197,94,.8);}
+.project-arrow{font-size:13px;color:var(--muted);transition:transform .3s var(--ease),color .3s;}
+.project-card:hover .project-arrow{color:var(--signal);transform:translate(3px,-3px);}
+.project-name{font-family:var(--disp);font-weight:600;font-size:17px;color:var(--bone);}
+.project-type{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.05em;}
+.project-desc{font-size:13.5px;color:var(--bone-dim);line-height:1.6;flex:1;}
+.project-url{
+  font-family:var(--mono);font-size:11px;color:rgba(245,158,11,.7);
+  padding-top:14px;border-top:1px solid var(--line-soft);
+  word-break:break-all;
+  transition:color .2s;
+}
+.project-card:hover .project-url{color:var(--signal);}
+
+/* FEATURED card — spans 2 columns */
+.project-card.featured{
+  grid-column:span 2;
+}
+.project-card.featured .project-thumb{aspect-ratio:21/9;}
+
+/* ── FEATURED SCREENSHOT PAIR ───────────────── */
+.screenshot-pair{
+  display:grid;grid-template-columns:1fr 1fr;gap:18px;
+  margin-bottom:80px;
+}
+.screenshot-card{
+  border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--line);position:relative;
+}
+.screenshot-card img{width:100%;display:block;}
+.screenshot-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(12,8,24,.85) 0%,transparent 60%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:24px;
+}
+.screenshot-overlay h3{font-family:var(--disp);font-weight:600;font-size:18px;color:var(--bone);margin-bottom:4px;}
+.screenshot-overlay p{font-size:13px;color:var(--bone-dim);}
+
+/* ── CTA BAND ───────────────────────────────── */
+.cta-band{
+  padding:100px 0;text-align:center;
+  border-top:1px solid var(--line-soft);
+  margin-top:40px;
+  position:relative;overflow:hidden;
+}
+.cta-band::before{
+  content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,158,11,.1),transparent 65%);
+  pointer-events:none;
+}
+.cta-band-inner{position:relative;z-index:1;}
+.cta-band h2{font-family:var(--disp);font-weight:600;font-size:clamp(28px,4.5vw,48px);color:var(--bone);margin-bottom:18px;}
+.cta-band p{font-size:16px;color:var(--bone-dim);max-width:460px;margin:0 auto 36px;}
+.cta-buttons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--bone);color:var(--void);
+  font-family:var(--disp);font-weight:600;font-size:14.5px;
+  padding:15px 26px;border-radius:100px;
+  transition:transform .25s var(--ease),background .25s;
+}
+.btn-primary:hover{transform:translateY(-2px);background:var(--signal);}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:9px;
+  color:var(--bone-dim);font-size:14px;font-weight:500;
+  padding:15px 6px;border-bottom:1px solid var(--line);
+  transition:color .25s,border-color .25s;
+}
+.btn-ghost:hover{color:var(--bone);border-color:var(--signal-2);}
+
+/* ── FOOTER ─────────────────────────────────── */
+footer{
+  padding:44px 0 32px;border-top:1px solid var(--line-soft);
+  text-align:center;font-family:var(--mono);font-size:11.5px;color:var(--muted);
+}
+footer a{color:var(--muted);transition:color .2s;}
+footer a:hover{color:var(--bone);}
+
+/* ── REVEAL ──────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.reveal.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .project-grid{grid-template-columns:repeat(2,1fr);}
+  .project-card.featured{grid-column:span 1;}
+  .project-card.featured .project-thumb{aspect-ratio:16/9;}
+  .screenshot-pair{grid-template-columns:1fr;}
+}
+@media(max-width:580px){
+  .project-grid{grid-template-columns:1fr;}
+  .wrap{padding:0 20px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;}
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important;}
+}
+</style>
+</head>
+<body>
+
+<div class="grid-field" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Impact<span>Dev</span><span class="dot" aria-hidden="true"></span></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#offers">Solutions</a>
+    <a href="index.html#services">Capabilities</a>
+    <a href="projects.html" aria-current="page">Work</a>
+  </div>
+  <a href="index.html#contact" class="nav-cta">Start a project <i class="bi bi-arrow-up-right"></i></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-kicker"><span class="dot-sm"></span> Every project, live and verified</div>
+    <h1>Built by ImpactDev.<br><em>Live in the wild.</em></h1>
+    <p class="hero-sub">Every site, application, and platform we've shipped — across ecommerce, services, healthcare, fintech, and beyond.</p>
+    <div class="stats-row reveal">
+      <div class="stat"><strong>20+</strong><span>PROJECTS LIVE</span></div>
+      <div class="stat"><strong>8</strong><span>INDUSTRIES</span></div>
+      <div class="stat"><strong>NG / UK / US</strong><span>MARKETS</span></div>
+      <div class="stat"><strong>WEB · MOBILE · FINTECH</strong><span>CAPABILITIES</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOT PAIR — two visual anchors -->
+<div class="wrap">
+  <div class="screenshot-pair reveal">
+    <div class="screenshot-card">
+      <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.shameresilience.com.ng&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Shame Resilience website preview" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--surface-2);width:100%;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;\'><span style=\'font-family:var(--mono);font-size:12px;color:var(--muted)\'>shameresilience.com.ng</span></div>'">
+      <div class="screenshot-overlay">
+        <h3>Shame Resilience</h3>
+        <p>Short film · Campaign &amp; waitlist platform</p>
+      </div>
+    </div>
+    <div class="screenshot-card">
+      <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.easyembglobal.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="EasyEmb Global website preview" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--surface-2);width:100%;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;\'><span style=\'font-family:var(--mono);font-size:12px;color:var(--muted)\'>easyembglobal.com</span></div>'">
+      <div class="screenshot-overlay">
+        <h3>EasyEmb Global</h3>
+        <p>Industrial fire &amp; safety · AuthoritySite</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section class="filter-section">
+<div class="wrap">
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="ecommerce">Ecommerce</button>
+    <button class="filter-btn" data-filter="authority">AuthoritySite</button>
+    <button class="filter-btn" data-filter="food">Food &amp; Beverage</button>
+    <button class="filter-btn" data-filter="brand">Brand &amp; Creative</button>
+    <button class="filter-btn" data-filter="services">Professional Services</button>
+    <button class="filter-btn" data-filter="launch">LaunchSite</button>
+    <span class="category-count" id="countLabel">20 projects</span>
+  </div>
+
+  <!-- CATEGORY: ECOMMERCE ─────────────────────── -->
+  <div class="cat-group" data-category="ecommerce">
+    <div class="cat-label">
+      <span class="cat-label-text">Ecommerce &amp; Online Stores</span>
+      <div class="cat-label-line"></div>
+      <span class="cat-label-count">5 projects</span>
+    </div>
+    <div class="project-grid">
+
+      <a href="https://www.h00lynation.com" target="_blank" rel="noopener" class="project-card featured reveal" data-tags="ecommerce">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.h00lynation.com&viewport_width=1400&viewport_height=700&image_quality=80&format=jpg"
+               alt="H00lynation storefront"
+               loading="lazy"
+               onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none">
+            <i class="bi bi-image"></i><span>h00lynation.com</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-status"><span class="led"></span>LIVE</span>
+            <i class="bi bi-arrow-up-right project-arrow"></i>
+          </div>
+          <div class="project-name">H00lynation</div>
+          <div class="project-type">FASHION · ECOMMERCE · STOREFRONT PRO</div>
+          <p class="project-desc">A premium clothing brand's dedicated storefront — built so the visual experience matches the quality of the product. Men's and women's collections with full browse-and-order capability.</p>
+          <div class="project-url">h00lynation.com</div>
+        </div>
+      </a>
+
+      <a href="https://tutusfoods.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="ecommerce food">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://tutusfoods.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Tutu's Foods" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>tutusfoods.com</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">Tutu's Foods</div>
+          <div class="project-type">BAKERY · ECOMMERCE · STOREFRONT PRO</div>
+          <p class="project-desc">Moved from a physical-store-only model to a full ecommerce operation — customers now order from anywhere, not just those who can walk in.</p>
+          <div class="project-url">tutusfoods.com</div>
+        </div>
+      </a>
+
+      <a href="https://joyouscakesnaccessories.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="ecommerce food">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://joyouscakesnaccessories.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Joyous Cakes" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>joyouscakesnaccessories.com</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">Joyous Cakes N Accessories</div>
+          <div class="project-type">BAKERY · ECOMMERCE · STOREFRONT PRO</div>
+          <p class="project-desc">Fully migrated from WhatsApp Status ordering to a real ecommerce store. Orders now process automatically — no more manual back-and-forth per sale.</p>
+          <div class="project-url">joyouscakesnaccessories.com</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CATEGORY: AUTHORITY SITES ─────────────── -->
+  <div class="cat-group" data-category="authority">
+    <div class="cat-label">
+      <span class="cat-label-text">AuthoritySite — Service &amp; Professional Businesses</span>
+      <div class="cat-label-line"></div>
+      <span class="cat-label-count">6 projects</span>
+    </div>
+    <div class="project-grid">
+
+      <a href="https://www.megaloiteprojects.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.megaloiteprojects.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Megaloite Projects" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>megaloiteprojects.com</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">Megaloite Projects</div>
+          <div class="project-type">ELECTRICAL ENGINEERING · AUTHORITYSITE</div>
+          <p class="project-desc">An electrical contractor that went from word-of-mouth only to fully discoverable online — client base growing steadily through Google.</p>
+          <div class="project-url">megaloiteprojects.com</div>
+        </div>
+      </a>
+
+      <a href="https://cavalcare.org" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://cavalcare.org&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="CavalCare" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>cavalcare.org</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">CavalCare</div>
+          <div class="project-type">HEALTHCARE · BOOKING PLATFORM</div>
+          <p class="project-desc">An in-home nursing and care services platform with a full booking and patient intake system — built to convert trust into action.</p>
+          <div class="project-url">cavalcare.org</div>
+        </div>
+      </a>
+
+      <a href="https://stormvestsolar.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://stormvestsolar.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="StormVest Solar" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>stormvestsolar.com</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">StormVest Solar</div>
+          <div class="project-type">ENERGY · AUTHORITYSITE</div>
+          <p class="project-desc">A solar energy company positioned as a credible, established option — designed to win serious clients before a word is spoken.</p>
+          <div class="project-url">stormvestsolar.com</div>
+        </div>
+      </a>
+
+      <a href="https://jachinlatex.com.ng" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://jachinlatex.com.ng&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Jachin Latex" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>jachinlatex.com.ng</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">Jachin Latex</div>
+          <div class="project-type">LATEX TYPESETTING · AUTHORITY SITE</div>
+          <p class="project-desc">A LaTeX Typesetting business with a professional website that handles collection of documents and payments.</p>
+          <div class="project-url">jachinlatex.com.ng</div>
+        </div>
+      </a>
+
+      <a href="https://www.easyembglobal.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.easyembglobal.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="EasyEmb Global" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>easyembglobal.com</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">EasyEmb Global Resources</div>
+          <div class="project-type">INDUSTRIAL SAFETY · AUTHORITYSITE</div>
+          <p class="project-desc">Fire protection and industrial safety engineering — built to present technical capability and win procurement contracts from oil &amp; gas and corporate clients.</p>
+          <div class="project-url">easyembglobal.com</div>
+        </div>
+      </a>
+
+      <a href="https://www.sjnovexlimited.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.sjnovexlimited.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="SJ Novex Limited" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>sjnovexlimited.com</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">SJ Novex Limited</div>
+          <div class="project-type">LOGISTICS &amp; SUPPLY CHAIN · AUTHORITYSITE</div>
+          <p class="project-desc">Courier, logistics, procurement and supply services across Nigeria and Ghana — positioned to serve SMEs, corporates, and government organisations.</p>
+          <div class="project-url">sjnovexlimited.com</div>
+        </div>
+      </a>
+
+      <a href="https://www.drjtutorsglobal.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.drjtutorsglobal.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Dr J Tutors Global" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>drjtutorsglobal.com</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">Dr. J Tutors Global</div>
+          <div class="project-type">EDUCATION · GLOBAL PLATFORM</div>
+          <p class="project-desc">A tutoring platform serving students across Nigeria, the UK, US, and Canada — courses, booking, and a parent transparency portal built in.</p>
+          <div class="project-url">drjtutorsglobal.com</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CATEGORY: BRAND & CREATIVE ─────────────── -->
+  <div class="cat-group" data-category="brand">
+    <div class="cat-label">
+      <span class="cat-label-text">Brand &amp; Creative Platforms</span>
+      <div class="cat-label-line"></div>
+      <span class="cat-label-count">3 projects</span>
+    </div>
+    <div class="project-grid">
+
+      <a href="https://madetolastbrands.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="brand">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://madetolastbrands.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Made to Last Brands" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>madetolastbrands.com</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">Made to Last Brands</div>
+          <div class="project-type">RETAIL · LAUNCHSITE</div>
+          <p class="project-desc">A strategy-first marketing and advertising agency for DTC founders ready to build right.</p>
+          <div class="project-url">madetolastbrands.com</div>
+        </div>
+      </a>
+
+      <a href="https://www.thev3fixer.com" target="_blank" rel="noopener" class="project-card featured reveal" data-tags="brand authority">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.thev3fixer.com&viewport_width=1400&viewport_height=700&image_quality=80&format=jpg" alt="The V3 Fixer" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>thev3fixer.com</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">The V3 Fixer</div>
+          <div class="project-type">PERSONAL BRAND · COMMUNICATION COACH · AUTHORITYSITE</div>
+          <p class="project-desc">Winfrey Agbelese's personal brand site — communication architect, trainer, and author. Built to attract clients, establish authority, and pre-sell a book launch.</p>
+          <div class="project-url">thev3fixer.com</div>
+        </div>
+      </a>
+
+      <a href="https://www.shameresilience.com.ng" target="_blank" rel="noopener" class="project-card reveal" data-tags="brand">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.shameresilience.com.ng&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Shame Resilience" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>shameresilience.com.ng</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">Shame Resilience</div>
+          <div class="project-type">SHORT FILM · CAMPAIGN PLATFORM</div>
+          <p class="project-desc">A campaign and waitlist platform for a powerful short drama exploring silence, trauma, and healing. Includes pre-release community building and partnership features.</p>
+          <div class="project-url">shameresilience.com.ng</div>
+        </div>
+      </a>
+
+      <a href="https://www.fadigaskiya.vercel.app" target="_blank" rel="noopener" class="project-card reveal" data-tags="brand">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.fadigaskiya.vercel.app&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Fadi Gaskiya" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>fadigaskiya.vercel.app</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">Fadi Gaskiya</div>
+          <div class="project-type">PERSONAL BRAND · CREATIVE SITE</div>
+          <p class="project-desc">A creative personal platform built to present a distinct voice and portfolio to the right audience.</p>
+          <div class="project-url">fadigaskiya.vercel.app</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CATEGORY: FOOD & BEVERAGE ──────────────── -->
+  <div class="cat-group" data-category="food">
+    <div class="cat-label">
+      <span class="cat-label-text">Food &amp; Beverage</span>
+      <div class="cat-label-line"></div>
+      <span class="cat-label-count">2 projects</span>
+    </div>
+    <div class="project-grid">
+
+      <a href="https://www.mosjuicebar.com.ng" target="_blank" rel="noopener" class="project-card reveal" data-tags="food launch">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.mosjuicebar.com.ng&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="MO's Juice Bar" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>mosjuicebar.com.ng</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">MO's Juice Bar</div>
+          <div class="project-type">WELLNESS · FOOD &amp; BEVERAGE · LAUNCHSITE</div>
+          <p class="project-desc">Cold-pressed, 100% natural juices in Lagos Mainland — a vibrant LaunchSite with a WhatsApp-first ordering flow, product menu, and customer reviews.</p>
+          <div class="project-url">mosjuicebar.com.ng</div>
+        </div>
+      </a>
+
+      <a href="https://eatwithdas.vercel.app" target="_blank" rel="noopener" class="project-card reveal" data-tags="food launch">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://eatwithdas.vercel.app&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Eat With Das" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>eatwithdas.vercel.app</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">Eat With Das</div>
+          <div class="project-type">FOOD · LAUNCHSITE</div>
+          <p class="project-desc">A food brand's first step online — fast, clean, and built to start attracting orders.</p>
+          <div class="project-url">eatwithdas.vercel.app</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CATEGORY: INDIVIDUAL / PORTFOLIO ───────── -->
+  <div class="cat-group" data-category="launch">
+    <div class="cat-label">
+      <span class="cat-label-text">LaunchSite &amp; Personal Portfolio</span>
+      <div class="cat-label-line"></div>
+      <span class="cat-label-count">4 projects</span>
+    </div>
+    <div class="project-grid">
+
+      <a href="https://www.joelcarelimited.vercel.app" target="_blank" rel="noopener" class="project-card reveal" data-tags="launch services">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.joelcarelimited.vercel.app&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Joel Care Limited" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>joelcarelimited.vercel.app</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">Joel Care Limited</div>
+          <div class="project-type">CARE SERVICES · LAUNCHSITE</div>
+          <p class="project-desc">A care services company's professional online presence — built to establish credibility and make contact straightforward.</p>
+          <div class="project-url">joelcarelimited.vercel.app</div>
+        </div>
+      </a>
+
+      <a href="https://jaynet-va.vercel.app" target="_blank" rel="noopener" class="project-card reveal" data-tags="launch">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://jaynet-va.vercel.app&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Jaynet VA" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>jaynet-va.vercel.app</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">Jaynet VA</div>
+          <div class="project-type">VIRTUAL ASSISTANT · PORTFOLIO</div>
+          <p class="project-desc">A clean, fast LaunchSite for a virtual assistant — clear service offering, strong personality, and a direct enquiry path.</p>
+          <div class="project-url">jaynet-va.vercel.app</div>
+        </div>
+      </a>
+
+      <a href="https://george-ojeanelo.vercel.app" target="_blank" rel="noopener" class="project-card reveal" data-tags="launch brand">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://george-ojeanelo.vercel.app&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="George Ojeanelo" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>george-ojeanelo.vercel.app</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">George Ojeanelo</div>
+          <div class="project-type">PERSONAL PORTFOLIO · PORTFOLIO</div>
+          <p class="project-desc">A personal portfolio site for a creative professional — built to make an immediate, strong impression on anyone who visits.</p>
+          <div class="project-url">george-ojeanelo.vercel.app</div>
+        </div>
+      </a>
+
+      <a href="https://gbosstech.vercel.app" target="_blank" rel="noopener" class="project-card reveal" data-tags="launch services">
+        <div class="project-thumb">
+          <img src="https://api.screenshotone.com/take?access_key=public&url=https://gbosstech.vercel.app&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="GBoss Tech" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>gbosstech.vercel.app</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right project-arrow"></i></div>
+          <div class="project-name">GBoss Tech</div>
+          <div class="project-type">TECH SERVICES · LAUNCHSITE</div>
+          <p class="project-desc">A tech services business online presence — built fast, clean, and ready to receive enquiries from day one.</p>
+          <div class="project-url">gbosstech.vercel.app</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <h2 class="reveal">Your project belongs on this page.</h2>
+    <p class="reveal">Whether you need a first website, a full ecommerce system, a mobile application, or something custom — let's build it.</p>
+    <div class="cta-buttons reveal">
+      <a href="https://wa.me/2349026487958" target="_blank" class="btn-primary">Message us on WhatsApp <i class="bi bi-whatsapp"></i></a>
+      <a href="index.html#offers" class="btn-ghost">See our solutions <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 ImpactDev Digital Solutions &nbsp;&middot;&nbsp; <a href="index.html">theimpactdev.com</a> &nbsp;&middot;&nbsp; +234 902 648 7958</p>
+  </div>
+</footer>
+
+<script>
+// scroll reveal
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach((el,i)=>{
+  el.style.transitionDelay=(i%5)*55+'ms';
+  io.observe(el);
+});
+
+// filter
+const btns   = document.querySelectorAll('.filter-btn');
+const groups = document.querySelectorAll('[data-category]');
+const cards  = document.querySelectorAll('.project-card');
+const countEl= document.getElementById('countLabel');
+
+btns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    btns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+
+    let visible = 0;
+    cards.forEach(card=>{
+      const tags = card.dataset.tags || '';
+      const show = f==='all' || tags.includes(f);
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+
+    // show/hide whole groups
+    groups.forEach(g=>{
+      const visibleInGroup = [...g.querySelectorAll('.project-card')].some(c=>c.style.display!=='none');
+      g.style.display = visibleInGroup ? '' : 'none';
+    });
+
+    countEl.textContent = visible + (visible===1?' project':' projects');
+  });
+});
+</script>
+</body>
+</html>
