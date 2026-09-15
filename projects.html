@@ -47,30 +47,372 @@ a{color:inherit;text-decoration:none;}
 }
 
 /* ── NAV ────────────────────────────────────── */
+
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:20px 36px;
-  background:rgba(12,8,24,.7);
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+
+  height:76px;
+  padding:0 32px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
+
+  background:rgba(12,8,24,.72);
   backdrop-filter:blur(16px) saturate(140%);
-  border-bottom:1px solid var(--line-soft);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+
+  border-bottom:1px solid transparent;
+
+  transition:
+    background .35s var(--ease),
+    border-color .35s var(--ease);
 }
-.logo{font-family:var(--disp);font-weight:600;font-size:17px;letter-spacing:.01em;display:flex;align-items:center;gap:10px;}
-.logo .dot{width:7px;height:7px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 0 rgba(245,158,11,.6);animation:pulse 2.6s var(--ease) infinite;}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(245,158,11,.55);}70%{box-shadow:0 0 0 8px rgba(245,158,11,0);}100%{box-shadow:0 0 0 0 rgba(245,158,11,0);}}
-.logo span{color:var(--muted);font-weight:400;}
-.nav-links{display:flex;align-items:center;gap:28px;}
-.nav-links a{font-size:13px;color:var(--bone-dim);font-weight:500;transition:color .2s;}
-.nav-links a:hover{color:var(--bone);}
+
+nav.scrolled{
+  background:rgba(12,8,24,.94);
+  border-bottom-color:var(--line-soft);
+}
+
+
+/* ── LOGO ──────────────────────────────────── */
+
+.logo{
+  flex:0 0 auto;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-family:var(--disp);
+  font-weight:600;
+  font-size:17px;
+  letter-spacing:.01em;
+}
+
+.logo .dot{
+  width:7px;
+  height:7px;
+
+  flex:0 0 auto;
+
+  border-radius:50%;
+  background:var(--signal);
+
+  box-shadow:0 0 0 0 rgba(245,158,11,.6);
+
+  animation:pulse 2.6s var(--ease) infinite;
+}
+
+@keyframes pulse{
+  0%{
+    box-shadow:0 0 0 0 rgba(245,158,11,.55);
+  }
+
+  70%{
+    box-shadow:0 0 0 8px rgba(245,158,11,0);
+  }
+
+  100%{
+    box-shadow:0 0 0 0 rgba(245,158,11,0);
+  }
+}
+
+.logo span:not(.dot){
+  color:var(--muted);
+  font-weight:400;
+}
+
+
+/* ── DESKTOP LINKS ─────────────────────────── */
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:32px;
+
+  margin-left:auto;
+}
+
+.nav-links a{
+  position:relative;
+
+  display:inline-flex;
+  align-items:center;
+
+  padding:8px 0;
+
+  color:var(--bone-dim);
+
+  font-family:var(--disp);
+  font-size:13px;
+  font-weight:500;
+
+  white-space:nowrap;
+
+  transition:color .25s var(--ease);
+}
+
+.nav-links a::after{
+  content:"";
+
+  position:absolute;
+  left:0;
+  bottom:0;
+
+  width:0;
+  height:2px;
+
+  background:var(--signal);
+  border-radius:10px;
+
+  transition:width .25s var(--ease);
+}
+
+.nav-links a:hover{
+  color:var(--bone);
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+.nav-links a[aria-current="page"]{
+  color:var(--bone);
+}
+
+.nav-links a[aria-current="page"]::after{
+  width:100%;
+}
+
+
+/* ── DESKTOP CTA ───────────────────────────── */
+
 .nav-cta{
-  display:inline-flex;align-items:center;gap:7px;
-  background:var(--signal);color:var(--void);
-  font-family:var(--disp);font-weight:600;font-size:13px;
-  padding:9px 18px;border-radius:100px;
-  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+  flex:0 0 auto;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  padding:10px 18px;
+
+  background:var(--signal);
+  color:var(--void);
+
+  border-radius:100px;
+
+  font-family:var(--disp);
+  font-size:13px;
+  font-weight:600;
+
+  white-space:nowrap;
+
+  transition:
+    transform .25s var(--ease),
+    box-shadow .25s var(--ease),
+    background .25s var(--ease);
 }
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(245,158,11,.3);}
-@media(max-width:720px){.nav-links{display:none;}}
+
+.nav-cta:hover{
+  transform:translateY(-1px);
+
+  background:var(--signal-2);
+
+  box-shadow:
+    0 8px 24px rgba(245,158,11,.3);
+}
+
+
+/* ── MOBILE NAV TOGGLE ─────────────────────── */
+
+.mobile-menu-toggle{
+  display:none;
+
+  flex:0 0 auto;
+
+  width:44px;
+  height:44px;
+
+  padding:0;
+
+  border:1px solid var(--line);
+  border-radius:12px;
+
+  background:rgba(255,255,255,.04);
+  color:var(--bone);
+
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+
+  transition:
+    background .25s var(--ease),
+    border-color .25s var(--ease),
+    transform .25s var(--ease);
+}
+
+.mobile-menu-toggle:hover{
+  background:rgba(245,158,11,.08);
+  border-color:rgba(245,158,11,.35);
+}
+
+.mobile-menu-toggle i{
+  font-size:21px;
+  line-height:1;
+}
+
+
+/* ── MOBILE MENU ───────────────────────────── */
+
+.mobile-menu{
+  display:none;
+}
+
+
+/* ── TABLET / MOBILE ───────────────────────── */
+
+@media(max-width:860px){
+
+  nav{
+    height:70px;
+    padding:0 20px;
+  }
+
+  .nav-links,
+  nav > .nav-cta{
+    display:none !important;
+  }
+
+  .mobile-menu-toggle{
+    display:flex;
+  }
+
+  .mobile-menu{
+    position:absolute;
+
+    top:calc(100% + 10px);
+    left:16px;
+    right:16px;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:10px;
+
+    background:rgba(12,8,24,.98);
+
+    border:1px solid var(--line);
+    border-radius:18px;
+
+    box-shadow:
+      0 20px 50px rgba(0,0,0,.4),
+      0 0 0 1px rgba(255,255,255,.02);
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(-10px) scale(.98);
+    transform-origin:top center;
+
+    pointer-events:none;
+
+    transition:
+      opacity .25s var(--ease),
+      visibility .25s var(--ease),
+      transform .25s var(--ease);
+  }
+
+  nav.menu-open .mobile-menu{
+    opacity:1;
+    visibility:visible;
+
+    transform:translateY(0) scale(1);
+
+    pointer-events:auto;
+  }
+
+  .mobile-menu a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    min-height:52px;
+
+    padding:0 15px;
+
+    color:var(--bone-dim);
+
+    font-family:var(--disp);
+    font-size:14px;
+    font-weight:500;
+
+    border-radius:11px;
+
+    transition:
+      color .2s,
+      background .2s;
+  }
+
+  .mobile-menu a:hover{
+    color:var(--bone);
+    background:rgba(255,255,255,.05);
+  }
+
+  .mobile-menu a i{
+    color:var(--muted);
+    font-size:13px;
+  }
+
+  .mobile-menu .mobile-cta{
+    margin-top:8px;
+
+    justify-content:center;
+
+    background:var(--signal);
+    color:var(--void);
+
+    font-weight:600;
+  }
+
+  .mobile-menu .mobile-cta i{
+    color:var(--void);
+  }
+
+  .mobile-menu .mobile-cta:hover{
+    background:var(--signal-2);
+    color:var(--void);
+  }
+}
+
+
+/* ── SMALL PHONES ──────────────────────────── */
+
+@media(max-width:420px){
+
+  nav{
+    height:66px;
+    padding:0 16px;
+  }
+
+  .mobile-menu{
+    left:12px;
+    right:12px;
+  }
+
+  .mobile-menu-toggle{
+    width:42px;
+    height:42px;
+  }
+}
 
 /* ── WRAP ───────────────────────────────────── */
 .wrap{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
@@ -303,16 +645,80 @@ footer a:hover{color:var(--bone);}
 <div class="grid-field" aria-hidden="true"></div>
 
 <!-- NAV -->
-<nav>
-  <div class="logo">Impact<span>Dev</span><span class="dot" aria-hidden="true"></span></div>
+<!-- NAV -->
+<nav id="nav">
+
+  <div class="logo">
+    Impact<span>Dev</span>
+    <span class="dot" aria-hidden="true"></span>
+  </div>
+
+  <!-- Desktop navigation -->
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="index.html#offers">Solutions</a>
     <a href="index.html#services">Capabilities</a>
+    <a href="about.html">
+      About
+    </a>
     <a href="projects.html" aria-current="page">Work</a>
   </div>
-  <a href="index.html#contact" class="nav-cta">Start a project <i class="bi bi-arrow-up-right"></i></a>
+
+  <!-- Desktop CTA -->
+  <a href="index.html#contact" class="nav-cta">
+    Start a project
+    <i class="bi bi-arrow-up-right"></i>
+  </a>
+
+  <!-- Mobile hamburger -->
+  <button
+    type="button"
+    class="mobile-menu-toggle"
+    id="mobile-menu-toggle"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+  >
+    <i class="bi bi-list"></i>
+  </button>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+
+    <a href="index.html">
+      <span>Home</span>
+      <i class="bi bi-arrow-right"></i>
+    </a>
+
+    <a href="index.html#offers">
+      <span>Solutions</span>
+      <i class="bi bi-arrow-right"></i>
+    </a>
+
+    <a href="index.html#services">
+      <span>Capabilities</span>
+      <i class="bi bi-arrow-right"></i>
+    </a>
+
+    <a href="about.html" aria-current="page">
+      <span>About</span>
+      <i class="bi bi-arrow-right"></i>
+    </a>
+
+    <a href="projects.html">
+      <span>Work</span>
+      <i class="bi bi-arrow-right"></i>
+    </a>
+
+    <a href="index.html#contact" class="mobile-cta">
+      <span>Start a project</span>
+      <i class="bi bi-arrow-up-right"></i>
+    </a>
+
+  </div>
+
 </nav>
+
 
 <!-- HERO -->
 <section class="hero">
@@ -333,14 +739,14 @@ footer a:hover{color:var(--bone);}
 <div class="wrap">
   <div class="screenshot-pair reveal">
     <div class="screenshot-card">
-      <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.shameresilience.com.ng&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Shame Resilience website preview" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--surface-2);width:100%;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;\'><span style=\'font-family:var(--mono);font-size:12px;color:var(--muted)\'>shameresilience.com.ng</span></div>'">
+      <img src="images/shame-resilience.png">
       <div class="screenshot-overlay">
         <h3>Shame Resilience</h3>
         <p>Short film · Campaign &amp; waitlist platform</p>
       </div>
     </div>
     <div class="screenshot-card">
-      <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.easyembglobal.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="EasyEmb Global website preview" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'background:var(--surface-2);width:100%;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;\'><span style=\'font-family:var(--mono);font-size:12px;color:var(--muted)\'>easyembglobal.com</span></div>'">
+      <img src="images/easyemb.png">
       <div class="screenshot-overlay">
         <h3>EasyEmb Global</h3>
         <p>Industrial fire &amp; safety · AuthoritySite</p>
@@ -398,7 +804,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://tutusfoods.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="ecommerce food">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://tutusfoods.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Tutu's Foods" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/tutusfoods.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>tutusfoods.com</span></div>
         </div>
         <div class="project-body">
@@ -412,7 +818,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://joyouscakesnaccessories.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="ecommerce food">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://joyouscakesnaccessories.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Joyous Cakes" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/joyouscakes.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>joyouscakesnaccessories.com</span></div>
         </div>
         <div class="project-body">
@@ -438,7 +844,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://www.megaloiteprojects.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.megaloiteprojects.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Megaloite Projects" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/megaloite.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>megaloiteprojects.com</span></div>
         </div>
         <div class="project-body">
@@ -450,9 +856,9 @@ footer a:hover{color:var(--bone);}
         </div>
       </a>
 
-      <!-- <a href="https://cavalcare.org" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
+      <a href="https://cavalcare.org" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://cavalcare.org&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="CavalCare" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/cavalcare.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>cavalcare.org</span></div>
         </div>
         <div class="project-body">
@@ -462,11 +868,11 @@ footer a:hover{color:var(--bone);}
           <p class="project-desc">An in-home nursing and care services platform with a full booking and patient intake system — built to convert trust into action.</p>
           <div class="project-url">cavalcare.org</div>
         </div>
-      </a> -->
+      </a>
 
       <a href="https://stormvestsolar.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://stormvestsolar.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="StormVest Solar" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/stormvest.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>stormvestsolar.com</span></div>
         </div>
         <div class="project-body">
@@ -480,7 +886,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://jachinlatex.com.ng" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://jachinlatex.com.ng&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Jachin Latex" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/jachinlatex.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>jachinlatex.com.ng</span></div>
         </div>
         <div class="project-body">
@@ -494,7 +900,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://www.easyembglobal.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.easyembglobal.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="EasyEmb Global" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/easyemb.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>easyembglobal.com</span></div>
         </div>
         <div class="project-body">
@@ -508,7 +914,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://www.sjnovexlimited.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.sjnovexlimited.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="SJ Novex Limited" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/sjnovex.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>sjnovexlimited.com</span></div>
         </div>
         <div class="project-body">
@@ -522,7 +928,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://www.drjtutorsglobal.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="authority services">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.drjtutorsglobal.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Dr J Tutors Global" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/drjtutors.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>drjtutorsglobal.com</span></div>
         </div>
         <div class="project-body">
@@ -548,7 +954,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://madetolastbrands.com" target="_blank" rel="noopener" class="project-card reveal" data-tags="brand">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://madetolastbrands.com&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Made to Last Brands" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/madetolast.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>madetolastbrands.com</span></div>
         </div>
         <div class="project-body">
@@ -562,7 +968,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://www.thev3fixer.com" target="_blank" rel="noopener" class="project-card featured reveal" data-tags="brand authority">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.thev3fixer.com&viewport_width=1400&viewport_height=700&image_quality=80&format=jpg" alt="The V3 Fixer" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/v3fixer.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>thev3fixer.com</span></div>
         </div>
         <div class="project-body">
@@ -576,7 +982,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://www.shameresilience.com.ng" target="_blank" rel="noopener" class="project-card reveal" data-tags="brand">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.shameresilience.com.ng&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Shame Resilience" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/shame-resilience.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>shameresilience.com.ng</span></div>
         </div>
         <div class="project-body">
@@ -590,7 +996,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://www.fadigaskiya.vercel.app" target="_blank" rel="noopener" class="project-card reveal" data-tags="brand">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.fadigaskiya.vercel.app&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Fadi Gaskiya" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/fadigaskiya.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>fadigaskiya.vercel.app</span></div>
         </div>
         <div class="project-body">
@@ -616,7 +1022,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://www.mosjuicebar.com.ng" target="_blank" rel="noopener" class="project-card reveal" data-tags="food launch">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.mosjuicebar.com.ng&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="MO's Juice Bar" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/mosjuice.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>mosjuicebar.com.ng</span></div>
         </div>
         <div class="project-body">
@@ -630,7 +1036,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://eatwithdas.vercel.app" target="_blank" rel="noopener" class="project-card reveal" data-tags="food launch">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://eatwithdas.vercel.app&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Eat With Das" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/eatwithdas.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>eatwithdas.vercel.app</span></div>
         </div>
         <div class="project-body">
@@ -656,7 +1062,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://www.joelcarelimited.vercel.app" target="_blank" rel="noopener" class="project-card reveal" data-tags="launch services">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://www.joelcarelimited.vercel.app&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Joel Care Limited" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/joelcare.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>joelcarelimited.vercel.app</span></div>
         </div>
         <div class="project-body">
@@ -670,7 +1076,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://jaynet-va.vercel.app" target="_blank" rel="noopener" class="project-card reveal" data-tags="launch">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://jaynet-va.vercel.app&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="Jaynet VA" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/jaynet-va.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>jaynet-va.vercel.app</span></div>
         </div>
         <div class="project-body">
@@ -684,7 +1090,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://george-ojeanelo.vercel.app" target="_blank" rel="noopener" class="project-card reveal" data-tags="launch brand">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://george-ojeanelo.vercel.app&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="George Ojeanelo" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/george.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>george-ojeanelo.vercel.app</span></div>
         </div>
         <div class="project-body">
@@ -698,7 +1104,7 @@ footer a:hover{color:var(--bone);}
 
       <a href="https://gbosstech.vercel.app" target="_blank" rel="noopener" class="project-card reveal" data-tags="launch services">
         <div class="project-thumb">
-          <img src="https://api.screenshotone.com/take?access_key=public&url=https://gbosstech.vercel.app&viewport_width=1400&viewport_height=900&image_quality=80&format=jpg" alt="GBoss Tech" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.thumb-placeholder').style.display='flex'">
+          <img src="images/gbosstech.png">
           <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>gbosstech.vercel.app</span></div>
         </div>
         <div class="project-body">
@@ -735,44 +1141,121 @@ footer a:hover{color:var(--bone);}
 </footer>
 
 <script>
-// scroll reveal
-const io = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach((el,i)=>{
-  el.style.transitionDelay=(i%5)*55+'ms';
-  io.observe(el);
-});
-
-// filter
-const btns   = document.querySelectorAll('.filter-btn');
-const groups = document.querySelectorAll('[data-category]');
-const cards  = document.querySelectorAll('.project-card');
-const countEl= document.getElementById('countLabel');
-
-btns.forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    btns.forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-
-    let visible = 0;
-    cards.forEach(card=>{
-      const tags = card.dataset.tags || '';
-      const show = f==='all' || tags.includes(f);
-      card.style.display = show ? '' : 'none';
-      if(show) visible++;
-    });
-
-    // show/hide whole groups
-    groups.forEach(g=>{
-      const visibleInGroup = [...g.querySelectorAll('.project-card')].some(c=>c.style.display!=='none');
-      g.style.display = visibleInGroup ? '' : 'none';
-    });
-
-    countEl.textContent = visible + (visible===1?' project':' projects');
+  /* ── NAV ───────────────────────────────────── */
+  const nav = document.getElementById('nav');
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 24);
   });
-});
-</script>
+  
+  mobileMenuToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('menu-open');
+  
+    mobileMenuToggle.setAttribute('aria-expanded', isOpen);
+    mobileMenuToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Close navigation menu' : 'Open navigation menu'
+    );
+  
+    mobileMenuToggle.innerHTML = isOpen
+      ? '<i class="bi bi-x-lg"></i>'
+      : '<i class="bi bi-list"></i>';
+  });
+  
+  /* Close menu when a navigation link is clicked */
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('menu-open');
+  
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      mobileMenuToggle.setAttribute(
+        'aria-label',
+        'Open navigation menu'
+      );
+  
+      mobileMenuToggle.innerHTML = '<i class="bi bi-list"></i>';
+    });
+  });
+  
+  /* Close menu when clicking outside */
+  document.addEventListener('click', event => {
+    if (
+      nav.classList.contains('menu-open') &&
+      !nav.contains(event.target)
+    ) {
+      nav.classList.remove('menu-open');
+  
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      mobileMenuToggle.setAttribute(
+        'aria-label',
+        'Open navigation menu'
+      );
+  
+      mobileMenuToggle.innerHTML = '<i class="bi bi-list"></i>';
+    }
+  });
+  
+  
+  /* ── SCROLL REVEAL ─────────────────────────── */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.08});
+  
+  document.querySelectorAll('.reveal').forEach((el,i)=>{
+    el.style.transitionDelay = (i % 5) * 55 + 'ms';
+    io.observe(el);
+  });
+  
+  
+  /* ── FILTER ────────────────────────────────── */
+  const btns = document.querySelectorAll('.filter-btn');
+  const groups = document.querySelectorAll('[data-category]');
+  const cards = document.querySelectorAll('.project-card');
+  const countEl = document.getElementById('countLabel');
+  
+  btns.forEach(btn => {
+  
+    btn.addEventListener('click', () => {
+  
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+  
+      const f = btn.dataset.filter;
+  
+      let visible = 0;
+  
+      cards.forEach(card => {
+  
+        const tags = card.dataset.tags || '';
+        const show = f === 'all' || tags.includes(f);
+  
+        card.style.display = show ? '' : 'none';
+  
+        if(show) visible++;
+      });
+  
+      /* Show/hide whole category groups */
+      groups.forEach(g => {
+  
+        const visibleInGroup = [
+          ...g.querySelectorAll('.project-card')
+        ].some(c => c.style.display !== 'none');
+  
+        g.style.display = visibleInGroup ? '' : 'none';
+      });
+  
+      countEl.textContent =
+        visible + (visible === 1 ? ' project' : ' projects');
+    });
+  
+  });
+  </script>
 </body>
 </html>

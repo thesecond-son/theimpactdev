@@ -1,0 +1,2415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About ImpactDev — We Build With You</title>
+  <meta name="description" content="Meet ImpactDev — a team of experienced digital professionals who partner with businesses to build websites, digital experiences and systems that create real impact.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <style>
+
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
+    :root{
+      --void:#0c0818;
+      --void-2:#110b22;
+      --surface:#161029;
+      --surface-2:#1d1638;
+
+      --line:#2a2348;
+      --line-soft:#221c3d;
+
+      --signal:#F59E0B;
+      --signal-2:#FBBF24;
+
+      --bone:#f3f1fa;
+      --bone-dim:#b8b2d4;
+      --muted:#8a82a8;
+
+      --mono:'JetBrains Mono',monospace;
+      --disp:'Space Grotesk',sans-serif;
+      --body:'Inter',sans-serif;
+
+      --ease:cubic-bezier(.16,1,.3,1);
+      --radius:16px;
+    }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--void);
+      color:var(--bone);
+      font-family:var(--body);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button{
+      font:inherit;
+    }
+
+
+    /* =========================================================
+       BACKGROUND
+    ========================================================= */
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+
+      background:
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(245,158,11,.06),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 45%,
+          rgba(91,33,182,.09),
+          transparent 32%
+        );
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      opacity:.18;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.025) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.025) 1px,
+          transparent 1px
+        );
+
+      background-size:70px 70px;
+
+      mask-image:linear-gradient(
+        to bottom,
+        black,
+        transparent 85%
+      );
+    }
+
+
+    /* =========================================================
+   NAV
+========================================================= */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+
+  height:76px;
+  padding:0 32px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
+
+  background:rgba(12,8,24,.72);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+
+  border-bottom:1px solid transparent;
+
+  transition:
+    background .35s var(--ease),
+    border-color .35s var(--ease);
+}
+
+nav.scrolled{
+  background:rgba(12,8,24,.94);
+  border-bottom-color:var(--line-soft);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo{
+  flex:0 0 auto;
+
+  display:flex;
+  align-items:center;
+}
+
+.logo img.nav-logo{
+  display:block;
+
+  width:auto;
+  height:36px;
+  max-width:180px;
+
+  object-fit:contain;
+}
+
+
+/* =========================================================
+   DESKTOP NAV LINKS
+========================================================= */
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:32px;
+  margin-left:auto;
+}
+
+.nav-links a{
+  position:relative;
+
+  display:inline-flex;
+  align-items:center;
+
+  padding:8px 0;
+
+  color:var(--bone-dim);
+
+  font-family:var(--disp);
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.01em;
+
+  transition:color .25s var(--ease);
+}
+
+.nav-links a::after{
+  content:"";
+
+  position:absolute;
+  left:0;
+  bottom:0;
+
+  width:0;
+  height:2px;
+
+  background:var(--signal);
+  border-radius:10px;
+
+  transition:width .25s var(--ease);
+}
+
+.nav-links a:hover{
+  color:var(--bone);
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+.nav-links a[aria-current="page"]{
+  color:var(--bone);
+}
+
+.nav-links a[aria-current="page"]::after{
+  width:100%;
+}
+
+
+/* =========================================================
+   DESKTOP CTA
+========================================================= */
+
+.nav-cta{
+  flex:0 0 auto;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  padding:10px 18px;
+
+  background:var(--signal);
+  color:var(--void);
+
+  border-radius:100px;
+
+  font-family:var(--disp);
+  font-size:13px;
+  font-weight:600;
+
+  white-space:nowrap;
+
+  transition:
+    transform .25s var(--ease),
+    box-shadow .25s var(--ease),
+    background .25s var(--ease);
+}
+
+.nav-cta:hover{
+  transform:translateY(-1px);
+
+  background:var(--signal-2);
+
+  box-shadow:
+    0 8px 24px rgba(245,158,11,.3);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu-toggle{
+  display:none;
+
+  flex:0 0 auto;
+
+  width:44px;
+  height:44px;
+
+  padding:0;
+
+  border:1px solid var(--line);
+  border-radius:12px;
+
+  background:rgba(255,255,255,.04);
+  color:var(--bone);
+
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+
+  transition:
+    background .25s var(--ease),
+    border-color .25s var(--ease),
+    transform .25s var(--ease);
+}
+
+.mobile-menu-toggle:hover{
+  background:rgba(245,158,11,.08);
+  border-color:rgba(245,158,11,.35);
+}
+
+.mobile-menu-toggle i{
+  font-size:21px;
+  line-height:1;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu{
+  display:none;
+}
+
+
+/* =========================================================
+   RESPONSIVE NAV
+========================================================= */
+
+@media (max-width:860px){
+
+  nav{
+    height:70px;
+    padding:0 20px;
+  }
+
+  .logo img.nav-logo{
+    height:31px;
+    max-width:160px;
+  }
+
+  .nav-links,
+  nav > .nav-cta{
+    display:none !important;
+  }
+
+  .mobile-menu-toggle{
+    display:flex;
+  }
+
+  .mobile-menu{
+    position:absolute;
+
+    top:calc(100% + 10px);
+    left:16px;
+    right:16px;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:10px;
+
+    background:rgba(12,8,24,.98);
+
+    border:1px solid var(--line);
+    border-radius:18px;
+
+    box-shadow:
+      0 20px 50px rgba(0,0,0,.4),
+      0 0 0 1px rgba(255,255,255,.02);
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(-10px) scale(.98);
+    transform-origin:top center;
+
+    pointer-events:none;
+
+    transition:
+      opacity .25s var(--ease),
+      visibility .25s var(--ease),
+      transform .25s var(--ease);
+  }
+
+  nav.menu-open .mobile-menu{
+    opacity:1;
+    visibility:visible;
+
+    transform:translateY(0) scale(1);
+
+    pointer-events:auto;
+  }
+
+  .mobile-menu a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    min-height:52px;
+
+    padding:0 15px;
+
+    color:var(--bone-dim);
+
+    font-family:var(--disp);
+    font-size:14px;
+    font-weight:500;
+
+    border-radius:11px;
+
+    transition:
+      color .2s,
+      background .2s;
+  }
+
+  .mobile-menu a:hover{
+    color:var(--bone);
+    background:rgba(255,255,255,.05);
+  }
+
+  .mobile-menu a i{
+    color:var(--muted);
+    font-size:13px;
+  }
+
+  .mobile-menu .mobile-cta{
+    margin-top:8px;
+
+    justify-content:center;
+
+    background:var(--signal);
+    color:var(--void);
+
+    font-weight:600;
+  }
+
+  .mobile-menu .mobile-cta i{
+    color:var(--void);
+  }
+
+  .mobile-menu .mobile-cta:hover{
+    background:var(--signal-2);
+    color:var(--void);
+  }
+}
+
+@media (max-width:420px){
+
+  nav{
+    height:66px;
+    padding:0 16px;
+  }
+
+  .logo img.nav-logo{
+    height:29px;
+    max-width:145px;
+  }
+
+  .mobile-menu{
+    left:12px;
+    right:12px;
+  }
+
+  .mobile-menu-toggle{
+    width:42px;
+    height:42px;
+  }
+}
+
+
+    /* =========================================================
+       GENERAL
+    ========================================================= */
+
+    .container{
+      width:min(1180px, calc(100% - 48px));
+      margin:0 auto;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+
+      font-family:var(--mono);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+
+      color:var(--signal);
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:22px;
+      height:1px;
+      background:var(--signal);
+    }
+
+    .section{
+      padding:120px 0;
+    }
+
+    .section-header{
+      max-width:700px;
+      margin-bottom:55px;
+    }
+
+    .section-header h2{
+      margin-top:18px;
+
+      font-family:var(--disp);
+      font-size:clamp(34px,5vw,58px);
+      line-height:1.05;
+      letter-spacing:-.04em;
+    }
+
+    .section-header p{
+      margin-top:22px;
+
+      color:var(--bone-dim);
+      font-size:16px;
+      line-height:1.8;
+      max-width:620px;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero{
+      position:relative;
+      min-height:90vh;
+
+      display:flex;
+      align-items:center;
+
+      padding:170px 0 120px;
+
+      border-bottom:1px solid var(--line-soft);
+    }
+
+    .hero-content{
+      max-width:920px;
+    }
+
+    .hero h1{
+      margin-top:24px;
+
+      font-family:var(--disp);
+      font-size:clamp(48px,8vw,94px);
+      line-height:.98;
+      letter-spacing:-.055em;
+      font-weight:600;
+    }
+
+    .hero h1 .accent{
+      color:var(--signal);
+    }
+
+    .hero-description{
+      max-width:700px;
+
+      margin-top:30px;
+
+      color:var(--bone-dim);
+      font-size:18px;
+      line-height:1.8;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+
+      margin-top:38px;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+
+      padding:13px 20px;
+      border-radius:100px;
+
+      font-family:var(--disp);
+      font-size:13px;
+      font-weight:600;
+
+      transition:
+        transform .25s var(--ease),
+        background .25s var(--ease),
+        border-color .25s var(--ease);
+    }
+
+    .btn-primary{
+      background:var(--signal);
+      color:var(--void);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      background:var(--signal-2);
+    }
+
+    .btn-secondary{
+      border:1px solid var(--line);
+      color:var(--bone-dim);
+      background:rgba(255,255,255,.02);
+    }
+
+    .btn-secondary:hover{
+      transform:translateY(-2px);
+      border-color:rgba(245,158,11,.4);
+      color:var(--bone);
+    }
+
+
+    /* =========================================================
+       TRUST STRIP
+    ========================================================= */
+
+    .trust-strip{
+      border-bottom:1px solid var(--line-soft);
+      background:rgba(255,255,255,.015);
+    }
+
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+    }
+
+    .trust-item{
+      padding:34px 30px;
+
+      border-right:1px solid var(--line-soft);
+    }
+
+    .trust-item:first-child{
+      padding-left:0;
+    }
+
+    .trust-item:last-child{
+      border-right:0;
+    }
+
+    .trust-number{
+      font-family:var(--mono);
+      color:var(--signal);
+      font-size:12px;
+      margin-bottom:9px;
+    }
+
+    .trust-item h3{
+      font-family:var(--disp);
+      font-size:18px;
+      margin-bottom:7px;
+    }
+
+    .trust-item p{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.7;
+    }
+
+
+    /* =========================================================
+       OUR STORY
+    ========================================================= */
+
+    .story-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:90px;
+      align-items:start;
+    }
+
+    .story-label{
+      position:sticky;
+      top:130px;
+    }
+
+    .story-label h2{
+      margin-top:18px;
+
+      font-family:var(--disp);
+      font-size:clamp(36px,5vw,58px);
+      line-height:1.02;
+      letter-spacing:-.045em;
+    }
+
+    .story-copy{
+      color:var(--bone-dim);
+      font-size:16px;
+      line-height:1.9;
+    }
+
+    .story-copy p + p{
+      margin-top:24px;
+    }
+
+    .story-highlight{
+      margin-top:38px;
+
+      padding:28px;
+
+      border-left:2px solid var(--signal);
+      background:linear-gradient(
+        90deg,
+        rgba(245,158,11,.07),
+        transparent
+      );
+    }
+
+    .story-highlight p{
+      color:var(--bone);
+      font-family:var(--disp);
+      font-size:22px;
+      line-height:1.45;
+    }
+
+
+    /* =========================================================
+       PHILOSOPHY
+    ========================================================= */
+
+    .philosophy{
+      background:var(--void-2);
+      border-top:1px solid var(--line-soft);
+      border-bottom:1px solid var(--line-soft);
+    }
+
+    .philosophy-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1px;
+
+      background:var(--line);
+      border:1px solid var(--line);
+    }
+
+    .philosophy-card{
+      padding:40px 34px;
+      background:var(--surface);
+    }
+
+    .philosophy-icon{
+      width:44px;
+      height:44px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border:1px solid var(--line);
+      border-radius:12px;
+
+      color:var(--signal);
+      font-size:18px;
+
+      margin-bottom:28px;
+    }
+
+    .philosophy-card h3{
+      font-family:var(--disp);
+      font-size:21px;
+      margin-bottom:13px;
+    }
+
+    .philosophy-card p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
+    }
+
+
+    /* =========================================================
+       TEAM
+    ========================================================= */
+
+    .team-intro{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:end;
+
+      margin-bottom:55px;
+    }
+
+    .team-intro h2{
+      margin-top:18px;
+
+      font-family:var(--disp);
+      font-size:clamp(36px,5vw,58px);
+      line-height:1.03;
+      letter-spacing:-.045em;
+    }
+
+    .team-intro p{
+      color:var(--bone-dim);
+      font-size:16px;
+      line-height:1.8;
+    }
+
+    .team-card{
+      position:relative;
+      overflow:hidden;
+
+      padding:42px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(245,158,11,.08),
+          rgba(255,255,255,.015) 45%,
+          rgba(91,33,182,.08)
+        );
+
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+    }
+
+    .team-card::before{
+      content:"";
+      position:absolute;
+
+      width:300px;
+      height:300px;
+
+      top:-160px;
+      right:-120px;
+
+      border-radius:50%;
+
+      background:rgba(245,158,11,.07);
+      filter:blur(20px);
+
+      pointer-events:none;
+    }
+
+    .team-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:30px;
+
+      margin-bottom:35px;
+    }
+
+    .team-mark{
+      width:58px;
+      height:58px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:16px;
+
+      background:var(--signal);
+      color:var(--void);
+
+      font-family:var(--disp);
+      font-size:22px;
+      font-weight:700;
+    }
+
+    .team-location{
+      font-family:var(--mono);
+      font-size:11px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .team-card h3{
+      font-family:var(--disp);
+      font-size:28px;
+      margin-bottom:15px;
+    }
+
+    .team-card p{
+      max-width:850px;
+
+      color:var(--bone-dim);
+      font-size:15px;
+      line-height:1.85;
+    }
+
+    .team-values{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+
+      margin-top:28px;
+    }
+
+    .team-value{
+      padding:7px 11px;
+
+      border:1px solid var(--line);
+      border-radius:100px;
+
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:10px;
+    }
+
+
+    /* =========================================================
+       PARTNERSHIP
+    ========================================================= */
+
+    .partnership{
+      background:var(--surface);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .partnership-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+      align-items:center;
+    }
+
+    .partnership-title h2{
+      margin-top:18px;
+
+      font-family:var(--disp);
+      font-size:clamp(38px,5vw,62px);
+      line-height:1.02;
+      letter-spacing:-.05em;
+    }
+
+    .partnership-title h2 span{
+      color:var(--signal);
+    }
+
+    .partnership-copy p{
+      color:var(--bone-dim);
+      font-size:16px;
+      line-height:1.9;
+    }
+
+    .partnership-copy p + p{
+      margin-top:22px;
+    }
+
+    .partnership-points{
+      margin-top:30px;
+
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+    }
+
+    .partnership-point{
+      display:flex;
+      align-items:flex-start;
+      gap:13px;
+
+      color:var(--bone-dim);
+      font-size:14px;
+    }
+
+    .partnership-point i{
+      color:var(--signal);
+      margin-top:3px;
+    }
+
+
+    /* =========================================================
+       TRANSPARENCY
+    ========================================================= */
+
+    .transparency-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .transparency-card{
+      padding:32px;
+
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+
+      background:rgba(255,255,255,.015);
+
+      transition:
+        transform .3s var(--ease),
+        border-color .3s var(--ease),
+        background .3s var(--ease);
+    }
+
+    .transparency-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(245,158,11,.3);
+      background:rgba(245,158,11,.025);
+    }
+
+    .transparency-card .number{
+      font-family:var(--mono);
+      color:var(--signal);
+      font-size:11px;
+    }
+
+    .transparency-card h3{
+      margin-top:16px;
+
+      font-family:var(--disp);
+      font-size:20px;
+    }
+
+    .transparency-card p{
+      margin-top:10px;
+
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
+    }
+
+
+    /* =========================================================
+       CLOSING STATEMENT
+    ========================================================= */
+
+    .closing{
+      padding:140px 0;
+
+      text-align:center;
+
+      border-top:1px solid var(--line-soft);
+    }
+
+    .closing-content{
+      max-width:850px;
+      margin:0 auto;
+    }
+
+    .closing h2{
+      margin-top:20px;
+
+      font-family:var(--disp);
+      font-size:clamp(42px,7vw,78px);
+      line-height:.98;
+      letter-spacing:-.055em;
+    }
+
+    .closing h2 span{
+      color:var(--signal);
+    }
+
+    .closing p{
+      max-width:650px;
+      margin:25px auto 0;
+
+      color:var(--bone-dim);
+      font-size:16px;
+      line-height:1.8;
+    }
+
+    .closing .btn-primary{
+      margin-top:35px;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer{
+      padding:34px 0;
+
+      border-top:1px solid var(--line-soft);
+    }
+
+    .footer-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .footer-brand{
+      font-family:var(--disp);
+      font-size:15px;
+      font-weight:600;
+    }
+
+    .footer-brand span{
+      color:var(--muted);
+      font-weight:400;
+    }
+
+    .footer-meta{
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.04em;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:20px;
+    }
+
+    .footer-links a{
+      color:var(--muted);
+      font-size:12px;
+
+      transition:color .2s;
+    }
+
+    .footer-links a:hover{
+      color:var(--bone);
+    }
+
+
+    /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+
+      transition:
+        opacity .8s var(--ease),
+        transform .8s var(--ease);
+    }
+
+    .reveal.in{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media(max-width:720px){
+
+      nav{
+        padding:16px 20px;
+      }
+
+      .nav-links,
+      nav > .nav-cta{
+        display:none;
+      }
+
+      .mobile-menu-toggle{
+        display:flex;
+      }
+
+      .mobile-menu{
+        position:absolute;
+
+        top:calc(100% + 10px);
+        left:16px;
+        right:16px;
+
+        display:flex;
+        flex-direction:column;
+
+        padding:10px;
+
+        background:rgba(12,8,24,.97);
+
+        border:1px solid var(--line);
+        border-radius:18px;
+
+        box-shadow:
+          0 20px 50px rgba(0,0,0,.35),
+          0 0 0 1px rgba(255,255,255,.02);
+
+        opacity:0;
+        visibility:hidden;
+
+        transform:
+          translateY(-10px)
+          scale(.98);
+
+        transform-origin:top center;
+
+        pointer-events:none;
+
+        transition:
+          opacity .25s var(--ease),
+          visibility .25s var(--ease),
+          transform .25s var(--ease);
+      }
+
+      nav.menu-open .mobile-menu{
+        opacity:1;
+        visibility:visible;
+
+        transform:
+          translateY(0)
+          scale(1);
+
+        pointer-events:auto;
+      }
+
+      .mobile-menu a{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+
+        min-height:52px;
+
+        padding:0 15px;
+
+        color:var(--bone-dim);
+
+        font-family:var(--disp);
+        font-size:14px;
+        font-weight:500;
+
+        border-radius:11px;
+
+        transition:
+          color .2s,
+          background .2s;
+      }
+
+      .mobile-menu a:hover{
+        color:var(--bone);
+        background:rgba(255,255,255,.05);
+      }
+
+      .mobile-menu a i{
+        color:var(--muted);
+        font-size:13px;
+      }
+
+      .mobile-menu .mobile-cta{
+        margin-top:8px;
+
+        justify-content:center;
+
+        background:var(--signal);
+        color:var(--void);
+
+        font-weight:600;
+      }
+
+      .mobile-menu .mobile-cta i{
+        color:var(--void);
+      }
+
+      .mobile-menu .mobile-cta:hover{
+        background:var(--signal-2);
+        color:var(--void);
+      }
+
+
+      .container{
+        width:min(100% - 32px, 1180px);
+      }
+
+      .section{
+        padding:90px 0;
+      }
+
+
+      /* Hero */
+
+      .hero{
+        min-height:auto;
+
+        padding:
+          150px 0
+          90px;
+      }
+
+      .hero h1{
+        font-size:
+          clamp(45px, 13vw, 70px);
+      }
+
+      .hero-description{
+        font-size:16px;
+      }
+
+
+      /* Trust */
+
+      .trust-grid{
+        grid-template-columns:1fr;
+      }
+
+      .trust-item,
+      .trust-item:first-child{
+        padding:27px 0;
+
+        border-right:0;
+        border-bottom:1px solid var(--line-soft);
+      }
+
+      .trust-item:last-child{
+        border-bottom:0;
+      }
+
+
+      /* Story */
+
+      .story-grid{
+        grid-template-columns:1fr;
+        gap:45px;
+      }
+
+      .story-label{
+        position:static;
+      }
+
+      .story-highlight p{
+        font-size:19px;
+      }
+
+
+      /* Philosophy */
+
+      .philosophy-grid{
+        grid-template-columns:1fr;
+      }
+
+
+      /* Team */
+
+      .team-intro{
+        grid-template-columns:1fr;
+        gap:25px;
+      }
+
+      .team-card{
+        padding:28px;
+      }
+
+      .team-top{
+        margin-bottom:28px;
+      }
+
+
+      /* Partnership */
+
+      .partnership-grid{
+        grid-template-columns:1fr;
+        gap:45px;
+      }
+
+
+      /* Transparency */
+
+      .transparency-grid{
+        grid-template-columns:1fr;
+      }
+
+
+      /* Closing */
+
+      .closing{
+        padding:100px 0;
+      }
+
+
+      /* Footer */
+
+      .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .footer-links{
+        flex-wrap:wrap;
+      }
+    }
+
+
+    /* Smaller phones */
+
+    @media(max-width:420px){
+
+      nav{
+        padding:14px 16px;
+      }
+
+      .mobile-menu{
+        left:12px;
+        right:12px;
+      }
+
+      .mobile-menu-toggle{
+        width:42px;
+        height:42px;
+      }
+
+      .hero{
+        padding-top:135px;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .btn-primary,
+      .btn-secondary{
+        justify-content:center;
+      }
+
+      .team-top{
+        flex-direction:column;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =======================================================
+       NAV
+  ======================================================== -->
+
+  <nav id="nav">
+
+    <div class="logo">
+      Impact<span>Dev</span>
+      <span class="dot" aria-hidden="true"></span>
+    </div>
+
+
+    <!-- Desktop navigation -->
+
+    <div class="nav-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="index.html#offers">
+        Solutions
+      </a>
+
+      <a href="index.html#services">
+        Capabilities
+      </a>
+
+      <a href="about.html" aria-current="page">
+        About
+      </a>
+
+      <a href="projects.html">
+        Work
+      </a>
+
+    </div>
+
+
+    <!-- Desktop CTA -->
+
+    <a href="index.html#contact" class="nav-cta">
+      Start a project
+      <i class="bi bi-arrow-up-right"></i>
+    </a>
+
+
+    <!-- Mobile toggle -->
+
+    <button
+      type="button"
+      class="mobile-menu-toggle"
+      id="mobile-menu-toggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <i class="bi bi-list"></i>
+    </button>
+
+
+    <!-- Mobile menu -->
+
+    <div class="mobile-menu" id="mobile-menu">
+
+      <a href="index.html">
+        <span>Home</span>
+        <i class="bi bi-arrow-right"></i>
+      </a>
+
+      <a href="index.html#offers">
+        <span>Solutions</span>
+        <i class="bi bi-arrow-right"></i>
+      </a>
+
+      <a href="index.html#services">
+        <span>Capabilities</span>
+        <i class="bi bi-arrow-right"></i>
+      </a>
+
+      <a href="about.html" aria-current="page">
+        <span>About</span>
+        <i class="bi bi-arrow-right"></i>
+      </a>
+
+      <a href="projects.html">
+        <span>Work</span>
+        <i class="bi bi-arrow-right"></i>
+      </a>
+
+      <a href="index.html#contact" class="mobile-cta">
+        <span>Start a project</span>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="hero-content reveal">
+
+          <div class="eyebrow">
+            About ImpactDev
+          </div>
+
+          <h1>
+            We build with you.
+            <span class="accent">
+              Not just for you.
+            </span>
+          </h1>
+
+          <p class="hero-description">
+            We're a team of experienced digital professionals who believe
+            a website should do more than look good. It should help a
+            business communicate better, serve people better, and move
+            forward.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              href="index.html#contact"
+              class="btn-primary"
+            >
+              Let's work together
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+
+            <a
+              href="projects.html"
+              class="btn-secondary"
+            >
+              See our work
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TRUST STRIP
+    ====================================================== -->
+
+    <section class="trust-strip">
+
+      <div class="container">
+
+        <div class="trust-grid">
+
+          <div class="trust-item reveal">
+
+            <div class="trust-number">
+              01 / PEOPLE
+            </div>
+
+            <h3>
+              Real people behind the work.
+            </h3>
+
+            <p>
+              You're not handing your business to an anonymous
+              production line. There's a team of people thinking
+              about your project.
+            </p>
+
+          </div>
+
+
+          <div class="trust-item reveal">
+
+            <div class="trust-number">
+              02 / PARTNERSHIP
+            </div>
+
+            <h3>
+              Your goals matter to us.
+            </h3>
+
+            <p>
+              We take time to understand what you're actually
+              trying to accomplish before deciding what we should
+              build.
+            </p>
+
+          </div>
+
+
+          <div class="trust-item reveal">
+
+            <div class="trust-number">
+              03 / TRANSPARENCY
+            </div>
+
+            <h3>
+              No unnecessary mystery.
+            </h3>
+
+            <p>
+              We believe clients deserve to understand what we're
+              doing, why we're doing it, and what they're paying for.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         OUR STORY
+    ====================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="story-grid">
+
+          <div class="story-label reveal">
+
+            <div class="eyebrow">
+              Why ImpactDev
+            </div>
+
+            <h2>
+              The name says what we believe.
+            </h2>
+
+          </div>
+
+
+          <div class="story-copy reveal">
+
+            <p>
+              ImpactDev was built around a simple idea: technology
+              should create impact.
+            </p>
+
+            <p>
+              There are plenty of people who can build a website.
+              But a website isn't the reason most businesses come
+              looking for one.
+            </p>
+
+            <p>
+              You might need more customers. You might need to
+              establish credibility. You might need to make it
+              easier for people to buy from you, book your service,
+              understand what you offer, or simply take your
+              business seriously.
+            </p>
+
+            <p>
+              That's where our thinking begins.
+            </p>
+
+            <p>
+              We don't want to simply take your instructions,
+              build a few pages, send an invoice and disappear.
+              We want to understand the business behind the
+              project so that what we build actually has a reason
+              to exist.
+            </p>
+
+            <div class="story-highlight">
+
+              <p>
+                "Impact" is the outcome we're interested in.
+                "Dev" is how we help you get there.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PHILOSOPHY
+    ====================================================== -->
+
+    <section class="section philosophy">
+
+      <div class="container">
+
+        <div class="section-header reveal">
+
+          <div class="eyebrow">
+            How we work
+          </div>
+
+          <h2>
+            Good work starts before the first line of code.
+          </h2>
+
+          <p>
+            The technology matters. But understanding the problem
+            matters first.
+          </p>
+
+        </div>
+
+
+        <div class="philosophy-grid">
+
+          <article class="philosophy-card reveal">
+
+            <div class="philosophy-icon">
+              <i class="bi bi-chat-square-text"></i>
+            </div>
+
+            <h3>
+              We listen first.
+            </h3>
+
+            <p>
+              Before we start talking about pages, features and
+              technology, we want to understand your business,
+              your audience and what you're trying to achieve.
+            </p>
+
+          </article>
+
+
+          <article class="philosophy-card reveal">
+
+            <div class="philosophy-icon">
+              <i class="bi bi-lightbulb"></i>
+            </div>
+
+            <h3>
+              We think with you.
+            </h3>
+
+            <p>
+              If we see a better way to solve a problem, we'll
+              tell you. We're not here simply to execute instructions.
+              We're here to contribute ideas and experience.
+            </p>
+
+          </article>
+
+
+          <article class="philosophy-card reveal">
+
+            <div class="philosophy-icon">
+              <i class="bi bi-graph-up-arrow"></i>
+            </div>
+
+            <h3>
+              We build for outcomes.
+            </h3>
+
+            <p>
+              A beautiful interface is useful. A digital product
+              that helps the business grow, communicate or operate
+              better is even more useful.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TEAM
+    ====================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="team-intro">
+
+          <div class="reveal">
+
+            <div class="eyebrow">
+              The people
+            </div>
+
+            <h2>
+              Different people.
+              <br>
+              One standard.
+            </h2>
+
+          </div>
+
+
+          <div class="reveal">
+
+            <p>
+              ImpactDev is made up of experienced individuals with
+              different skills, perspectives and backgrounds,
+              working together across locations.
+            </p>
+
+            <p style="margin-top:18px;">
+              That diversity matters. Your project doesn't need
+              one person's perspective. It benefits from people
+              who can look at the problem from different angles
+              and still care about the same outcome.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="team-card reveal">
+
+          <div class="team-top">
+
+            <div class="team-mark">
+              ID
+            </div>
+
+            <div class="team-location">
+              A distributed team
+              <br>
+              working across borders
+            </div>
+
+          </div>
+
+
+          <h3>
+            Experienced people, working personally.
+          </h3>
+
+          <p>
+            We're not interested in making our team sound bigger
+            than it is. What matters to us is the quality of the
+            people involved and the care they bring to the work.
+            Our team combines experience across design, development,
+            digital strategy and the practical realities of building
+            online businesses.
+          </p>
+
+          <p style="margin-top:18px;">
+            And when you work with ImpactDev, you're not just
+            sending a brief into a machine. There are people
+            asking questions, solving problems, reviewing details
+            and thinking about whether the final result actually
+            makes sense for you.
+          </p>
+
+
+          <div class="team-values">
+
+            <span class="team-value">
+              EXPERIENCE
+            </span>
+
+            <span class="team-value">
+              CURIOSITY
+            </span>
+
+            <span class="team-value">
+              OWNERSHIP
+            </span>
+
+            <span class="team-value">
+              COMMUNICATION
+            </span>
+
+            <span class="team-value">
+              CARE
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PARTNERSHIP
+    ====================================================== -->
+
+    <section class="section partnership">
+
+      <div class="container">
+
+        <div class="partnership-grid">
+
+          <div class="partnership-title reveal">
+
+            <div class="eyebrow">
+              More than a website
+            </div>
+
+            <h2>
+              Your business isn't a
+              <span>project number.</span>
+            </h2>
+
+          </div>
+
+
+          <div class="partnership-copy reveal">
+
+            <p>
+              When you trust us with a project, we understand that
+              you're trusting us with something bigger than a list
+              of pages.
+            </p>
+
+            <p>
+              It's your business. Your reputation. Your customers.
+              Sometimes it's an idea you've spent years building.
+            </p>
+
+            <p>
+              We take that seriously.
+            </p>
+
+
+            <div class="partnership-points">
+
+              <div class="partnership-point">
+                <i class="bi bi-check2"></i>
+                <span>
+                  We ask questions when something isn't clear.
+                </span>
+              </div>
+
+              <div class="partnership-point">
+                <i class="bi bi-check2"></i>
+                <span>
+                  We explain our recommendations instead of
+                  hiding behind technical language.
+                </span>
+              </div>
+
+              <div class="partnership-point">
+                <i class="bi bi-check2"></i>
+                <span>
+                  We tell you when something may not be worth
+                  spending money on.
+                </span>
+              </div>
+
+              <div class="partnership-point">
+                <i class="bi bi-check2"></i>
+                <span>
+                  We care about what happens after the website
+                  goes live.
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TRANSPARENCY
+    ====================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-header reveal">
+
+          <div class="eyebrow">
+            Transparency
+          </div>
+
+          <h2>
+            You should always know
+            what you're getting.
+          </h2>
+
+          <p>
+            Trust isn't something we expect you to give us because
+            we said we're trustworthy. It's something we believe
+            should be built through how we work.
+          </p>
+
+        </div>
+
+
+        <div class="transparency-grid">
+
+          <article class="transparency-card reveal">
+
+            <div class="number">
+              01
+            </div>
+
+            <h3>
+              Clear scope
+            </h3>
+
+            <p>
+              We define what we're building and what is included
+              so that expectations aren't left to assumptions.
+            </p>
+
+          </article>
+
+
+          <article class="transparency-card reveal">
+
+            <div class="number">
+              02
+            </div>
+
+            <h3>
+              Honest recommendations
+            </h3>
+
+            <p>
+              We won't recommend a feature simply because it sounds
+              impressive. If there is a simpler or more appropriate
+              solution, we'll say so.
+            </p>
+
+          </article>
+
+
+          <article class="transparency-card reveal">
+
+            <div class="number">
+              03
+            </div>
+
+            <h3>
+              Open communication
+            </h3>
+
+            <p>
+              Questions, changes and challenges are part of building
+              something properly. We'd rather talk about them early
+              than allow them to become expensive problems later.
+            </p>
+
+          </article>
+
+
+          <article class="transparency-card reveal">
+
+            <div class="number">
+              04
+            </div>
+
+            <h3>
+              No disappearing act
+            </h3>
+
+            <p>
+              Our relationship with you shouldn't end the moment
+              the final page is delivered. We care about the result
+              and what comes next.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CLOSING CTA
+    ====================================================== -->
+
+    <section class="closing">
+
+      <div class="container">
+
+        <div class="closing-content reveal">
+
+          <div class="eyebrow">
+            Let's build something meaningful
+          </div>
+
+          <h2>
+            Your next project could
+            create real <span>impact.</span>
+          </h2>
+
+          <p>
+            Tell us what you're building, where you are now,
+            and where you want to go. We'll bring the technical
+            expertise, ask the right questions, and figure out
+            what we can build together.
+          </p>
+
+          <a
+            href="index.html#contact"
+            class="btn-primary"
+          >
+            Start a conversation
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <div class="footer-brand">
+          Impact<span>Dev</span>
+        </div>
+
+        <div class="footer-meta">
+          DIGITAL SOLUTIONS · BUILT FOR IMPACT
+        </div>
+
+        <div class="footer-links">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="projects.html">
+            Work
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="index.html#contact">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+    /* ── NAV ───────────────────────────────────── */
+
+    const nav = document.getElementById('nav');
+
+    const mobileMenuToggle =
+      document.getElementById('mobile-menu-toggle');
+
+    const mobileMenu =
+      document.getElementById('mobile-menu');
+
+
+    window.addEventListener('scroll', () => {
+
+      nav.classList.toggle(
+        'scrolled',
+        window.scrollY > 24
+      );
+
+    });
+
+
+    mobileMenuToggle.addEventListener('click', () => {
+
+      const isOpen =
+        nav.classList.toggle('menu-open');
+
+
+      mobileMenuToggle.setAttribute(
+        'aria-expanded',
+        isOpen
+      );
+
+
+      mobileMenuToggle.setAttribute(
+        'aria-label',
+        isOpen
+          ? 'Close navigation menu'
+          : 'Open navigation menu'
+      );
+
+
+      mobileMenuToggle.innerHTML = isOpen
+        ? '<i class="bi bi-x-lg"></i>'
+        : '<i class="bi bi-list"></i>';
+
+    });
+
+
+    /* Close menu when navigation link is clicked */
+
+    mobileMenu
+      .querySelectorAll('a')
+      .forEach(link => {
+
+        link.addEventListener('click', () => {
+
+          nav.classList.remove('menu-open');
+
+          mobileMenuToggle.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+
+          mobileMenuToggle.setAttribute(
+            'aria-label',
+            'Open navigation menu'
+          );
+
+          mobileMenuToggle.innerHTML =
+            '<i class="bi bi-list"></i>';
+
+        });
+
+      });
+
+
+    /* Close menu when clicking outside */
+
+    document.addEventListener('click', event => {
+
+      if(
+        nav.classList.contains('menu-open') &&
+        !nav.contains(event.target)
+      ){
+
+        nav.classList.remove('menu-open');
+
+        mobileMenuToggle.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
+        mobileMenuToggle.setAttribute(
+          'aria-label',
+          'Open navigation menu'
+        );
+
+        mobileMenuToggle.innerHTML =
+          '<i class="bi bi-list"></i>';
+
+      }
+
+    });
+
+
+
+    /* ── SCROLL REVEAL ─────────────────────────── */
+
+    const io =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+              entry.target.classList.add('in');
+
+              io.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold:.08
+        }
+      );
+
+
+    document
+      .querySelectorAll('.reveal')
+      .forEach((el, i) => {
+
+        el.style.transitionDelay =
+          (i % 5) * 55 + 'ms';
+
+        io.observe(el);
+
+      });
+
+  </script>
+
+</body>
+</html>
