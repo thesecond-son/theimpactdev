@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Our Work — ImpactDev</title>
+<title>Our Work — Problems Solved, Results Delivered | ImpactDev</title>
 <meta name="description" content="Every project ImpactDev has designed and built — websites, ecommerce stores, brand platforms, and custom applications across Nigeria, the UK, and beyond." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -638,6 +638,30 @@ footer a:hover{color:var(--bone);}
   .reveal{opacity:1;transform:none;}
   *{animation-duration:.001ms!important;transition-duration:.001ms!important;}
 }
+
+/* ===== v2 additions ===== */
+.cases{padding:30px 0 70px;position:relative;z-index:1;}
+.cases-head{text-align:center;max-width:640px;margin:0 auto 44px;}
+.sec-tag2{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--signal-2);margin-bottom:12px;}
+.cases-head h2{font-family:var(--disp);font-weight:600;font-size:clamp(28px,4vw,44px);line-height:1.1;}
+.cases-head p{margin-top:14px;color:var(--bone-dim);font-size:16px;}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.case-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:16px;transition:border-color .3s var(--ease),transform .3s var(--ease);}
+.case-card:hover{border-color:rgba(245,158,11,.4);transform:translateY(-3px);}
+.case-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--signal-2);}
+.case-head h3{font-family:var(--disp);font-size:21px;font-weight:600;margin-top:6px;}
+.case-row{padding-top:14px;border-top:1px solid var(--line-soft);}
+.case-k{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;padding:3px 9px;border-radius:100px;margin-bottom:8px;}
+.case-k.before{color:#f0a3a3;background:rgba(239,100,100,.1);}
+.case-k.built{color:var(--bone-dim);background:rgba(255,255,255,.06);}
+.case-k.after{color:#4ade80;background:rgba(34,197,94,.1);}
+.case-row p{font-size:14px;color:var(--bone-dim);line-height:1.6;}
+.case-link{margin-top:auto;font-size:13.5px;font-weight:600;color:var(--bone);display:inline-flex;gap:8px;align-items:center;}
+.case-link:hover{color:var(--signal-2);}
+.project-result{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;font-weight:500;color:#4ade80;padding-top:10px;border-top:1px solid var(--line-soft);}
+.project-result i{margin-top:2px;}
+@media(max-width:960px){.case-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:620px){.case-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -649,8 +673,11 @@ footer a:hover{color:var(--bone);}
 <nav id="nav">
 
   <div class="logo">
-    Impact<span>Dev</span>
-    <span class="dot" aria-hidden="true"></span>
+    <img
+      src="logo-light.png"
+      alt="ImpactDev Digital Solutions"
+      class="nav-logo"
+    >
   </div>
 
   <!-- Desktop navigation -->
@@ -666,7 +693,7 @@ footer a:hover{color:var(--bone);}
 
   <!-- Desktop CTA -->
   <a href="index.html#contact" class="nav-cta">
-    Start a project
+    Book a consultation
     <i class="bi bi-arrow-up-right"></i>
   </a>
 
@@ -711,7 +738,7 @@ footer a:hover{color:var(--bone);}
     </a>
 
     <a href="index.html#contact" class="mobile-cta">
-      <span>Start a project</span>
+      <span>Book a consultation</span>
       <i class="bi bi-arrow-up-right"></i>
     </a>
 
@@ -723,14 +750,14 @@ footer a:hover{color:var(--bone);}
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-kicker"><span class="dot-sm"></span> Every project, live and verified</div>
-    <h1>Built by ImpactDev.<br><em>Live in the wild.</em></h1>
-    <p class="hero-sub">Every site, application, and platform we've shipped — across ecommerce, services, healthcare, fintech, and beyond.</p>
+    <div class="hero-kicker"><span class="dot-sm"></span> Case studies &amp; live solutions</div>
+    <h1>Real problems.<br><em>Solved and live.</em></h1>
+    <p class="hero-sub">Every project here started with a business that was held back by something: invisibility, manual work, lost orders, or lack of trust. See what we built and what changed.</p>
     <div class="stats-row reveal">
-      <div class="stat"><strong>20+</strong><span>PROJECTS LIVE</span></div>
+      <div class="stat"><strong>20+</strong><span>SOLUTIONS LIVE</span></div>
       <div class="stat"><strong>8</strong><span>INDUSTRIES</span></div>
       <div class="stat"><strong>NG / UK / US</strong><span>MARKETS</span></div>
-      <div class="stat"><strong>WEB · MOBILE · FINTECH</strong><span>CAPABILITIES</span></div>
+      <div class="stat"><strong>BUILD · AUTOMATE · PROTECT</strong><span>OUR APPROACH</span></div>
     </div>
   </div>
 </section>
@@ -755,9 +782,65 @@ footer a:hover{color:var(--bone);}
   </div>
 </div>
 
+<!-- CASE STUDIES -->
+<section class="cases">
+  <div class="wrap">
+    <div class="cases-head reveal">
+      <div class="sec-tag2">Featured outcomes</div>
+      <h2>From the constraint to the result.</h2>
+      <p>The problem each client came with, what we built, and how the business runs now.</p>
+    </div>
+    <div class="case-grid">
+    <article class="case-card reveal">
+      <div class="case-head"><span class="case-tag">ECOMMERCE · OPERATIONS</span><h3>Joyous Cakes N Accessories</h3></div>
+      <div class="case-row"><span class="case-k before">BEFORE</span><p>Every order came through WhatsApp Status, handled manually, one back-and-forth at a time.</p></div>
+      <div class="case-row"><span class="case-k built">WHAT WE BUILT</span><p>A full online store with order tracking and automatic payment confirmation.</p></div>
+      <div class="case-row"><span class="case-k after">NOW</span><p>Customers order and pay on their own, and the owner runs the business instead of chasing messages.</p></div>
+      <a href="https://joyouscakesnaccessories.com" target="_blank" rel="noopener" class="case-link">Visit live solution <i class="bi bi-arrow-up-right"></i></a>
+    </article>
+    <article class="case-card reveal">
+      <div class="case-head"><span class="case-tag">ECOMMERCE · GROWTH</span><h3>Tutu's Foods</h3></div>
+      <div class="case-row"><span class="case-k before">BEFORE</span><p>Sales were limited to people who could walk into the physical store.</p></div>
+      <div class="case-row"><span class="case-k built">WHAT WE BUILT</span><p>A complete online ordering system for handcrafted sourdough and baked goods.</p></div>
+      <div class="case-row"><span class="case-k after">NOW</span><p>The bakery now sells to customers anywhere, not just those nearby.</p></div>
+      <a href="https://tutusfoods.com" target="_blank" rel="noopener" class="case-link">Visit live solution <i class="bi bi-arrow-up-right"></i></a>
+    </article>
+    <article class="case-card reveal">
+      <div class="case-head"><span class="case-tag">AUTHORITY · LEAD GENERATION</span><h3>Megaloite Projects</h3></div>
+      <div class="case-row"><span class="case-k before">BEFORE</span><p>An electrical contractor relying entirely on word-of-mouth, invisible to new clients.</p></div>
+      <div class="case-row"><span class="case-k built">WHAT WE BUILT</span><p>A professional, search-optimised AuthoritySite built to inspire trust.</p></div>
+      <div class="case-row"><span class="case-k after">NOW</span><p>Now discoverable on Google, with a client base growing steadily from search.</p></div>
+      <a href="https://www.megaloiteprojects.com" target="_blank" rel="noopener" class="case-link">Visit live solution <i class="bi bi-arrow-up-right"></i></a>
+    </article>
+    <article class="case-card reveal">
+      <div class="case-head"><span class="case-tag">AUTHORITY · B2B CREDIBILITY</span><h3>EasyEmb Global Resources</h3></div>
+      <div class="case-row"><span class="case-k before">BEFORE</span><p>Technical fire-safety capability was hard to prove to oil &amp; gas and corporate buyers.</p></div>
+      <div class="case-row"><span class="case-k built">WHAT WE BUILT</span><p>A site that presents engineering expertise clearly and professionally.</p></div>
+      <div class="case-row"><span class="case-k after">NOW</span><p>Positioned to compete for procurement contracts with serious clients.</p></div>
+      <a href="https://www.easyembglobal.com" target="_blank" rel="noopener" class="case-link">Visit live solution <i class="bi bi-arrow-up-right"></i></a>
+    </article>
+    <article class="case-card reveal">
+      <div class="case-head"><span class="case-tag">PLATFORM · SERVICE DELIVERY</span><h3>Dr. J Tutors Global</h3></div>
+      <div class="case-row"><span class="case-k before">BEFORE</span><p>Serving students across continents without a single, trusted place to learn, book, and track.</p></div>
+      <div class="case-row"><span class="case-k built">WHAT WE BUILT</span><p>A global platform with courses, booking, and a parent transparency portal.</p></div>
+      <div class="case-row"><span class="case-k after">NOW</span><p>Families in Nigeria, the UK, US, and Canada get one organised experience.</p></div>
+      <a href="https://www.drjtutorsglobal.com" target="_blank" rel="noopener" class="case-link">Visit live solution <i class="bi bi-arrow-up-right"></i></a>
+    </article>
+    <article class="case-card reveal">
+      <div class="case-head"><span class="case-tag">HEALTHCARE · BOOKING</span><h3>CavalCare</h3></div>
+      <div class="case-row"><span class="case-k before">BEFORE</span><p>In-home care enquiries needed an easy, trustworthy way to turn interest into bookings.</p></div>
+      <div class="case-row"><span class="case-k built">WHAT WE BUILT</span><p>A care platform with full booking and patient intake built in.</p></div>
+      <div class="case-row"><span class="case-k after">NOW</span><p>Trust converts into action without phone-tag or paperwork delays.</p></div>
+      <a href="https://cavalcare.org" target="_blank" rel="noopener" class="case-link">Visit live solution <i class="bi bi-arrow-up-right"></i></a>
+    </article>
+    </div>
+  </div>
+</section>
+
 <!-- PROJECTS -->
 <section class="filter-section">
 <div class="wrap">
+  <div class="cases-head" style="text-align:left;margin-bottom:28px"><div class="sec-tag2">The full portfolio</div><h2 style="font-size:clamp(24px,3.4vw,36px)">Every solution we've shipped.</h2></div>
 
   <!-- FILTER BAR -->
   <div class="filter-bar">
@@ -768,7 +851,7 @@ footer a:hover{color:var(--bone);}
     <button class="filter-btn" data-filter="brand">Brand &amp; Creative</button>
     <button class="filter-btn" data-filter="services">Professional Services</button>
     <button class="filter-btn" data-filter="launch">LaunchSite</button>
-    <span class="category-count" id="countLabel">20 projects</span>
+    <span class="category-count" id="countLabel">21 projects</span>
   </div>
 
   <!-- CATEGORY: ECOMMERCE ─────────────────────── -->
@@ -812,6 +895,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">Tutu's Foods</div>
           <div class="project-type">BAKERY · ECOMMERCE · STOREFRONT PRO</div>
           <p class="project-desc">Moved from a physical-store-only model to a full ecommerce operation — customers now order from anywhere, not just those who can walk in.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Sells online beyond the store's walls</span></div>
           <div class="project-url">tutusfoods.com</div>
         </div>
       </a>
@@ -826,6 +910,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">Joyous Cakes N Accessories</div>
           <div class="project-type">BAKERY · ECOMMERCE · STOREFRONT PRO</div>
           <p class="project-desc">Fully migrated from WhatsApp Status ordering to a real ecommerce store. Orders now process automatically — no more manual back-and-forth per sale.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Manual WhatsApp orders replaced by automated checkout</span></div>
           <div class="project-url">joyouscakesnaccessories.com</div>
         </div>
       </a>
@@ -838,7 +923,7 @@ footer a:hover{color:var(--bone);}
     <div class="cat-label">
       <span class="cat-label-text">AuthoritySite — Service &amp; Professional Businesses</span>
       <div class="cat-label-line"></div>
-      <span class="cat-label-count">6 projects</span>
+      <span class="cat-label-count">8 projects</span>
     </div>
     <div class="project-grid">
 
@@ -852,6 +937,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">Megaloite Projects</div>
           <div class="project-type">ELECTRICAL ENGINEERING · AUTHORITYSITE</div>
           <p class="project-desc">An electrical contractor that went from word-of-mouth only to fully discoverable online — client base growing steadily through Google.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Found by new clients through Google</span></div>
           <div class="project-url">megaloiteprojects.com</div>
         </div>
       </a>
@@ -866,6 +952,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">CavalCare</div>
           <div class="project-type">HEALTHCARE · BOOKING PLATFORM</div>
           <p class="project-desc">An in-home nursing and care services platform with a full booking and patient intake system — built to convert trust into action.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Booking and intake handled online</span></div>
           <div class="project-url">cavalcare.org</div>
         </div>
       </a>
@@ -880,6 +967,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">StormVest Solar</div>
           <div class="project-type">ENERGY · AUTHORITYSITE</div>
           <p class="project-desc">A solar energy company positioned as a credible, established option — designed to win serious clients before a word is spoken.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Seen as a credible, established option</span></div>
           <div class="project-url">stormvestsolar.com</div>
         </div>
       </a>
@@ -894,6 +982,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">Jachin Latex</div>
           <div class="project-type">LATEX TYPESETTING · AUTHORITY SITE</div>
           <p class="project-desc">A LaTeX Typesetting business with a professional website that handles collection of documents and payments.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Documents and payments collected in one place</span></div>
           <div class="project-url">jachinlatex.com.ng</div>
         </div>
       </a>
@@ -908,6 +997,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">EasyEmb Global Resources</div>
           <div class="project-type">INDUSTRIAL SAFETY · AUTHORITYSITE</div>
           <p class="project-desc">Fire protection and industrial safety engineering — built to present technical capability and win procurement contracts from oil &amp; gas and corporate clients.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Ready to win corporate procurement</span></div>
           <div class="project-url">easyembglobal.com</div>
         </div>
       </a>
@@ -922,6 +1012,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">SJ Novex Limited</div>
           <div class="project-type">LOGISTICS &amp; SUPPLY CHAIN · AUTHORITYSITE</div>
           <p class="project-desc">Courier, logistics, procurement and supply services across Nigeria and Ghana — positioned to serve SMEs, corporates, and government organisations.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Clear proof of capability for SME, corporate, and government buyers</span></div>
           <div class="project-url">sjnovexlimited.com</div>
         </div>
       </a>
@@ -936,9 +1027,39 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">Dr. J Tutors Global</div>
           <div class="project-type">EDUCATION · GLOBAL PLATFORM</div>
           <p class="project-desc">A tutoring platform serving students across Nigeria, the UK, US, and Canada — courses, booking, and a parent transparency portal built in.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>One trusted hub for families across four countries</span></div>
           <div class="project-url">drjtutorsglobal.com</div>
         </div>
       </a>
+
+      <div href="https://www.jedopabconsult.com" class="project-card reveal" data-tags="launch services">
+        <div class="project-thumb">
+          <img src="images/jedopab.png" alt="Jedopab website" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>Jedopab</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span></div>
+          <div class="project-name">Jedopab</div>
+          <div class="project-type">CAPACITY BUILDING · PROJECT EXECUTION · AUTHORITYSITE</div>
+          <p class="project-desc">Building capability that powers progress. A website that showcases the business and its services in human capacity building, project execution and supplies for government parastatals, corporate bodies and NGOs.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Capabilities made clear to government, corporate and NGO buyers</span></div>
+        </div>
+      </div>
+
+      <div href="https://www.asutext.com" class="project-card reveal" data-tags="authority services">
+        <div class="project-thumb">
+          <img src="images/asutext.png" alt="Asutext Group website" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="thumb-placeholder" style="display:none"><i class="bi bi-image"></i><span>Asutext Group</span></div>
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="project-status"><span class="led"></span>LIVE</span></div>
+          <div class="project-name">Asutext Group</div>
+          <div class="project-type">MULTI-SERVICE GROUP · AUTHORITYSITE</div>
+          <p class="project-desc">One company, eight services. Cleaning, laundry, transport, fast food, branding, fashion and more, presented clearly and strategically so customers reach the right service fast, across Lagos, Cross River State and nationwide.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Eight services presented clearly, with customers routed to the right one</span></div>
+        </div>
+      </div>
+
 
     </div>
   </div>
@@ -962,6 +1083,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">Made to Last Brands</div>
           <div class="project-type">RETAIL · LAUNCHSITE</div>
           <p class="project-desc">A strategy-first marketing and advertising agency for DTC founders ready to build right.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>A strategy-first brand presence for DTC founders</span></div>
           <div class="project-url">madetolastbrands.com</div>
         </div>
       </a>
@@ -976,6 +1098,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">The V3 Fixer</div>
           <div class="project-type">PERSONAL BRAND · COMMUNICATION COACH · AUTHORITYSITE</div>
           <p class="project-desc">Winfrey Agbelese's personal brand site — communication architect, trainer, and author. Built to attract clients, establish authority, and pre-sell a book launch.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Authority built and a book launch pre-sold</span></div>
           <div class="project-url">thev3fixer.com</div>
         </div>
       </a>
@@ -990,6 +1113,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">Shame Resilience</div>
           <div class="project-type">SHORT FILM · CAMPAIGN PLATFORM</div>
           <p class="project-desc">A campaign and waitlist platform for a powerful short drama exploring silence, trauma, and healing. Includes pre-release community building and partnership features.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Community and partners built before release</span></div>
           <div class="project-url">shameresilience.com.ng</div>
         </div>
       </a>
@@ -1004,6 +1128,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">Fadi Gaskiya</div>
           <div class="project-type">PERSONAL BRAND · CREATIVE SITE</div>
           <p class="project-desc">A creative personal platform built to present a distinct voice and portfolio to the right audience.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>A distinct voice presented with clarity</span></div>
           <div class="project-url">fadigaskiya.vercel.app</div>
         </div>
       </a>
@@ -1030,6 +1155,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">MO's Juice Bar</div>
           <div class="project-type">WELLNESS · FOOD &amp; BEVERAGE · LAUNCHSITE</div>
           <p class="project-desc">Cold-pressed, 100% natural juices in Lagos Mainland — a vibrant LaunchSite with a WhatsApp-first ordering flow, product menu, and customer reviews.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>WhatsApp-first ordering made simple</span></div>
           <div class="project-url">mosjuicebar.com.ng</div>
         </div>
       </a>
@@ -1044,6 +1170,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">Eat With Das</div>
           <div class="project-type">FOOD · LAUNCHSITE</div>
           <p class="project-desc">A food brand's first step online — fast, clean, and built to start attracting orders.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Online and ready for orders from day one</span></div>
           <div class="project-url">eatwithdas.vercel.app</div>
         </div>
       </a>
@@ -1070,6 +1197,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">Joel Care Limited</div>
           <div class="project-type">CARE SERVICES · LAUNCHSITE</div>
           <p class="project-desc">A care services company's professional online presence — built to establish credibility and make contact straightforward.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Credibility established, contact made easy</span></div>
           <div class="project-url">joelcarelimited.vercel.app</div>
         </div>
       </a>
@@ -1084,6 +1212,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">Jaynet VA</div>
           <div class="project-type">VIRTUAL ASSISTANT · PORTFOLIO</div>
           <p class="project-desc">A clean, fast LaunchSite for a virtual assistant — clear service offering, strong personality, and a direct enquiry path.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Clear services and a direct enquiry path</span></div>
           <div class="project-url">jaynet-va.vercel.app</div>
         </div>
       </a>
@@ -1098,6 +1227,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">George Ojeanelo</div>
           <div class="project-type">PERSONAL PORTFOLIO · PORTFOLIO</div>
           <p class="project-desc">A personal portfolio site for a creative professional — built to make an immediate, strong impression on anyone who visits.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>A strong first impression for every visitor</span></div>
           <div class="project-url">george-ojeanelo.vercel.app</div>
         </div>
       </a>
@@ -1112,6 +1242,7 @@ footer a:hover{color:var(--bone);}
           <div class="project-name">GBoss Tech</div>
           <div class="project-type">TECH SERVICES · LAUNCHSITE</div>
           <p class="project-desc">A tech services business online presence — built fast, clean, and ready to receive enquiries from day one.</p>
+          <div class="project-result"><i class="bi bi-graph-up-arrow"></i> <span>Ready to receive enquiries from day one</span></div>
           <div class="project-url">gbosstech.vercel.app</div>
         </div>
       </a>
@@ -1125,10 +1256,10 @@ footer a:hover{color:var(--bone);}
 <!-- CTA BAND -->
 <section class="cta-band">
   <div class="wrap cta-band-inner">
-    <h2 class="reveal">Your project belongs on this page.</h2>
-    <p class="reveal">Whether you need a first website, a full ecommerce system, a mobile application, or something custom — let's build it.</p>
+    <h2 class="reveal">Your success story could be next.</h2>
+    <p class="reveal">Tell us what's holding your business back, whether it's visibility, manual work, or security risk. We'll show you how we'd fix it.</p>
     <div class="cta-buttons reveal">
-      <a href="https://wa.me/2349026487958" target="_blank" class="btn-primary">Message us on WhatsApp <i class="bi bi-whatsapp"></i></a>
+      <a href="index.html#contact" class="btn-primary">Book a free consultation <i class="bi bi-whatsapp"></i></a>
       <a href="index.html#offers" class="btn-ghost">See our solutions <i class="bi bi-arrow-right"></i></a>
     </div>
   </div>

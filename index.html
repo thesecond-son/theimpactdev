@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ImpactDev — Digital Products & Custom Solutions for Global Businesses</title>
-<meta name="description" content="ImpactDev builds websites, ecommerce platforms, mobile applications, and custom digital solutions for businesses across Africa, Europe, and beyond." />
+<title>ImpactDev — Digital, Software & Cybersecurity Solutions for Growing Businesses</title>
+<meta name="description" content="ImpactDev solves business problems with websites, ecommerce systems, mobile and web apps, fintech platforms, and cybersecurity awareness training for organizations." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://theimpactdev.vercel.app/" />
 
@@ -15,16 +15,16 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="ImpactDev" />
-<meta property="og:title" content="ImpactDev — Digital Products & Custom Solutions for Global Businesses" />
-<meta property="og:description" content="ImpactDev builds websites, ecommerce platforms, mobile applications, and custom digital solutions for businesses across Africa, Europe, and beyond." />
+<meta property="og:title" content="ImpactDev — Digital, Software & Cybersecurity Solutions for Growing Businesses" />
+<meta property="og:description" content="ImpactDev solves business problems with websites, ecommerce systems, mobile and web apps, fintech platforms, and cybersecurity awareness training for organizations." />
 <meta property="og:image" content="https://theimpactdev.vercel.app/logo.png" />
 <meta property="og:url" content="https://theimpactdev.vercel.app/" />
 <meta property="og:locale" content="en_GB" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="ImpactDev — Digital Products & Custom Solutions for Global Businesses" />
-<meta name="twitter:description" content="ImpactDev builds websites, ecommerce platforms, mobile applications, and custom digital solutions for global businesses." />
+<meta name="twitter:title" content="ImpactDev — Digital, Software & Cybersecurity Solutions for Growing Businesses" />
+<meta name="twitter:description" content="ImpactDev solves business problems with websites, ecommerce systems, mobile and web apps, fintech platforms, and cybersecurity awareness training for organizations." />
 <meta name="twitter:image" content="https://theimpactdev.vercel.app/logo.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,7 @@
   "name": "ImpactDev",
   "url": "https://theimpactdev.vercel.app/",
   "logo": "https://theimpactdev.vercel.app/logo.png",
-  "description": "ImpactDev builds websites, ecommerce platforms, mobile applications, and custom digital solutions for global businesses.",
+  "description": "ImpactDev solves business problems with websites, ecommerce systems, mobile and web apps, fintech platforms, and cybersecurity awareness training for organizations.",
   "sameAs": []
 }
 </script>
@@ -875,6 +875,104 @@ nav.scrolled{
     .offers, .services, .network, .testimonials, .cta-band{ padding:90px 0; }
     .log-entry{ padding:28px 22px; }
   }
+
+  /* ===== v2 additions ===== */
+  .hero h1 .out{ -webkit-text-stroke:0; color:var(--bone-dim); }
+  .hero::after{ content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:radial-gradient(ellipse 60% 55% at 28% 48%, rgba(21,6,38,.75), transparent 75%); }
+  .hero-sub{ color:var(--bone); opacity:.88; max-width:620px; }
+  .scan-mark{ z-index:2; }
+  .trust-line{ margin-top:22px; font-size:13.5px; color:var(--bone-dim); display:flex; flex-wrap:wrap; gap:8px 22px; }
+  .trust-line span{ display:inline-flex; align-items:center; gap:7px; }
+  .trust-line i{ color:var(--signal); }
+  .problems{ padding:120px 0 40px; }
+  .pain-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .pain-card{ background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:30px 28px;
+    display:flex; flex-direction:column; gap:12px; transition:border-color .3s var(--ease), transform .3s var(--ease); }
+  .pain-card:hover{ border-color:rgba(245,158,11,.4); transform:translateY(-3px); }
+  .pain-card .cap-icon{ margin-bottom:6px; }
+  .pain-card .k{ font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; color:var(--muted); text-transform:uppercase; }
+  .pain-card h4{ font-family:var(--disp); font-size:19px; font-weight:600; line-height:1.25; }
+  .pain-card .fix{ margin-top:auto; padding-top:14px; border-top:1px solid var(--line-soft); font-size:14px; color:var(--bone-dim); }
+  .pain-card .fix b{ color:var(--signal-2); font-weight:600; }
+  @media(max-width:900px){ .pain-grid{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:600px){ .pain-grid{ grid-template-columns:1fr; } .problems{ padding:90px 0 20px; } }
+  .cyber-band{ margin-top:20px; display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:center;
+    background:linear-gradient(135deg,var(--surface-2),var(--surface)); border:1px solid rgba(245,158,11,.35);
+    border-radius:18px; padding:44px; position:relative; overflow:hidden; }
+  .cyber-band::before{ content:''; position:absolute; top:-50%; right:-10%; width:320px; height:320px;
+    background:radial-gradient(circle, rgba(245,158,11,.18), transparent 70%); pointer-events:none; }
+  .cyber-band h3{ font-family:var(--disp); font-size:clamp(24px,3vw,32px); font-weight:600; margin:10px 0 14px; line-height:1.15; }
+  .cyber-band p{ color:var(--bone-dim); font-size:15px; margin-bottom:24px; }
+  .cyber-band ul{ list-style:none; position:relative; }
+  .cyber-band li{ display:flex; gap:12px; padding:11px 0; border-top:1px solid var(--line-soft); font-size:14.5px; color:var(--bone-dim); }
+  .cyber-band li:first-child{ border-top:none; }
+  .cyber-band li i{ color:var(--signal); margin-top:3px; }
+  .cyber-band .btn-primary{ background:var(--signal); }
+  .cyber-band .btn-primary:hover{ background:var(--signal-2); }
+  @media(max-width:860px){ .cyber-band{ grid-template-columns:1fr; padding:30px 24px; gap:24px; } }
+  .offers{ padding:100px 0 140px; }
+  .form-card{
+    position:relative; z-index:2; max-width:760px; margin:0 auto;
+    background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:44px 40px;
+  }
+  .form-card h3{ font-family:var(--disp); font-weight:600; font-size:26px; color:var(--bone); margin-bottom:10px; }
+  .form-card > p{ color:var(--bone-dim); font-size:15px; margin-bottom:32px; }
+  .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .field{ display:flex; flex-direction:column; gap:8px; }
+  .field.full{ grid-column:1 / -1; }
+  .field label{ font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; color:var(--bone-dim); text-transform:uppercase; }
+  .field label .req{ color:var(--signal-2); }
+  .field input, .field select, .field textarea{
+    width:100%; padding:14px 16px;
+    background:var(--void); color:var(--bone);
+    border:1px solid var(--line); border-radius:12px;
+    font-family:var(--body); font-size:15px;
+    transition:border-color .25s var(--ease), background .25s var(--ease);
+  }
+  .field textarea{ min-height:110px; resize:vertical; }
+  .field input::placeholder, .field textarea::placeholder{ color:var(--muted); }
+  .field input:focus, .field select:focus, .field textarea:focus{ outline:none; border-color:var(--signal); background:var(--void-2); }
+  .field select{ appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238f7fac' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; padding-right:40px; }
+  .field input[type="date"]{ color-scheme:dark; }
+  .radio-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .radio-row label{
+    display:inline-flex; align-items:center; gap:8px; cursor:pointer;
+    padding:11px 16px; border:1px solid var(--line); border-radius:100px; background:var(--void);
+    font-family:var(--body); font-size:14px; letter-spacing:0; text-transform:none; color:var(--bone-dim);
+    transition:border-color .2s, color .2s, background .2s;
+  }
+  .radio-row input{ position:absolute; opacity:0; width:0; height:0; }
+  .radio-row label:has(input:checked){ border-color:var(--signal); color:var(--bone); background:rgba(245,158,11,.08); }
+  .radio-row label:has(input:focus-visible){ outline:2px solid var(--lime); outline-offset:3px; }
+  .form-submit{ margin-top:28px; display:flex; flex-direction:column; gap:14px; align-items:flex-start; }
+  .form-submit .btn-primary{ width:100%; justify-content:center; background:var(--signal); border:0; cursor:pointer; font-family:var(--disp); }
+  .form-submit .btn-primary:hover{ background:var(--signal-2); }
+  .form-submit .btn-primary:disabled{ opacity:.6; cursor:wait; }
+  .form-hint{ font-size:12.5px; color:var(--muted); }
+  .form-error{ display:none; color:#fca5a5; font-size:13.5px; }
+  .form-error.show{ display:block; }
+  .form-success{ display:none; text-align:center; padding:20px 0; }
+  .form-success.show{ display:block; }
+  .form-success i{ font-size:42px; color:var(--signal); }
+  .form-success h3{ margin-top:14px; }
+  .form-success p{ color:var(--bone-dim); margin-top:10px; font-size:15px; }
+  .form-success a{ color:var(--signal-2); border-bottom:1px solid var(--line); }
+
+  .cta-top{ position:relative; z-index:2; text-align:center; margin-bottom:48px; }
+  .cta-top h2{ font-family:var(--disp); font-weight:600; font-size:clamp(30px,5vw,52px); max-width:760px; margin:0 auto 20px; line-height:1.08; }
+  .cta-top p{ color:var(--bone-dim); font-size:16px; max-width:540px; margin:0 auto; }
+  .cta-band{ text-align:left; }
+  .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden; }
+  .step{ background:var(--surface); padding:30px 26px; }
+  .step .n{ font-family:var(--mono); font-size:12px; color:var(--signal-2); }
+  .step h4{ font-family:var(--disp); font-size:18px; font-weight:600; margin:14px 0 8px; }
+  .step p{ font-size:14px; color:var(--bone-dim); }
+  .svc-simple{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px 40px; margin-bottom:56px; }
+  .svc-simple .svc-item{ padding:20px 0; }
+  .svc-simple .svc-item p{ font-size:13.5px; color:var(--bone-dim); margin-top:4px; }
+  @media(max-width:900px){ .steps{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:700px){ .steps{ grid-template-columns:1fr; } .svc-simple{ grid-template-columns:1fr; } .form-card{ padding:30px 22px; } .form-grid{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -902,7 +1000,7 @@ nav.scrolled{
 
   <!-- Desktop CTA -->
   <a href="#contact" class="nav-cta">
-    Start a project
+    Book a consultation
     <i class="bi bi-arrow-up-right"></i>
   </a>
 
@@ -921,7 +1019,7 @@ nav.scrolled{
   <!-- Mobile Navigation -->
   <div class="mobile-menu" id="mobile-menu">
 
-    <a href="index.html">
+    <a href="index.html" aria-current="page">
       <span>Home</span>
       <i class="bi bi-arrow-right"></i>
     </a>
@@ -936,7 +1034,7 @@ nav.scrolled{
       <i class="bi bi-arrow-right"></i>
     </a>
 
-    <a href="about.html" aria-current="page">
+    <a href="about.html">
       <span>About</span>
       <i class="bi bi-arrow-right"></i>
     </a>
@@ -946,8 +1044,8 @@ nav.scrolled{
       <i class="bi bi-arrow-right"></i>
     </a>
 
-    <a href="index.html#contact" class="mobile-cta">
-      <span>Start a project</span>
+    <a href="#contact" class="mobile-cta">
+      <span>Book a consultation</span>
       <i class="bi bi-arrow-up-right"></i>
     </a>
 
@@ -964,29 +1062,54 @@ nav.scrolled{
   <div class="wrap hero-inner">
     <div class="eyebrow">
       <span class="bar" aria-hidden="true"><span></span><span></span><span></span></span>
-      SIGNAL ACQUIRED — READY TO BUILD
+      YOUR DIGITAL &amp; SECURITY SOLUTIONS PARTNER
     </div>
 
     <h1 class="reveal">
-      We build the<br>
-      <span class="accent">digital infrastructure</span><br>
-      <span class="out">serious businesses run on.</span>
+      Technology that<br>
+      <span class="accent">solves real business problems</span><br>
+      <span class="out">so you can grow with confidence.</span>
     </h1>
 
     <p class="hero-sub reveal">
-      ImpactDev designs and engineers websites, ecommerce platforms, mobile applications, and custom digital systems for businesses across Africa, Europe, and beyond — built to perform at any scale.
+      Losing customers to a weak online presence? Drowning in manual processes? Worried about your team being the weakest link in security? ImpactDev designs, builds, and protects the systems that fix it — for businesses and organizations across Africa, Europe, and beyond.
     </p>
 
     <div class="hero-cta-row reveal">
-      <a href="#offers" class="btn-primary">Explore our solutions <i class="bi bi-arrow-down"></i></a>
-      <a href="#network" class="btn-ghost">View live builds <i class="bi bi-arrow-right"></i></a>
+      <a href="#contact" class="btn-primary">Book a free consultation <i class="bi bi-arrow-right"></i></a>
+      <a href="projects.html" class="btn-ghost">See the results we've delivered <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <div class="trust-line reveal">
+      <span><i class="bi bi-check-circle-fill"></i> Free, no-pressure discovery call</span>
+      <span><i class="bi bi-check-circle-fill"></i> Launch in 4 to 60 days, depending on your package</span>
+      <span><i class="bi bi-check-circle-fill"></i> Support after launch</span>
     </div>
 
     <div class="hero-meta reveal">
-      <div><strong>20+</strong>PRODUCTS LAUNCHED</div>
+      <div><strong>20+</strong>BUSINESS PROBLEMS SOLVED</div>
       <div><strong>3+</strong>CONTINENTS SERVED</div>
       <div><strong>NG / UK / US / GLOBAL</strong>MARKETS ACTIVE</div>
-      <div><strong>FINTECH · WEB · MOBILE</strong>CAPABILITIES</div>
+      <div><strong>BUILD · AUTOMATE · PROTECT</strong>OUR APPROACH</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEMS ============ -->
+<section class="problems" id="problems">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Does this sound familiar?</div>
+      <h2>Most businesses don't need "a website." They need a problem gone.</h2>
+      <p>Here's what we hear most often — and what changes once the right solution is in place.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal"><div class="cap-icon"><i class="bi bi-search"></i></div><div class="k">The problem</div><h4>Customers can't find you, or don't trust what they find.</h4><div class="fix"><b>What changes:</b> a credible, search-visible presence that turns visitors into enquiries.</div></div>
+      <div class="pain-card reveal"><div class="cap-icon"><i class="bi bi-chat-dots"></i></div><div class="k">The problem</div><h4>Orders and payments are scattered across DMs and spreadsheets.</h4><div class="fix"><b>What changes:</b> one system for orders, payments, inventory, and delivery tracking.</div></div>
+      <div class="pain-card reveal"><div class="cap-icon"><i class="bi bi-gear-wide-connected"></i></div><div class="k">The problem</div><h4>Manual processes eat your team's time and cause errors.</h4><div class="fix"><b>What changes:</b> custom portals and automation that give hours back every week.</div></div>
+      <div class="pain-card reveal"><div class="cap-icon"><i class="bi bi-shield-lock"></i></div><div class="k">The problem</div><h4>One careless click from an employee could expose the whole organization.</h4><div class="fix"><b>What changes:</b> a trained team that spots phishing and scams before they cause damage.</div></div>
+      <div class="pain-card reveal"><div class="cap-icon"><i class="bi bi-diagram-3"></i></div><div class="k">The problem</div><h4>Your tools don't talk to each other, and growth keeps breaking things.</h4><div class="fix"><b>What changes:</b> your tools connected and ready to grow with you.</div></div>
+      <div class="pain-card reveal"><div class="cap-icon"><i class="bi bi-credit-card-2-front"></i></div><div class="k">The problem</div><h4>You want to move money or serve customers digitally, securely.</h4><div class="fix"><b>What changes:</b> secure payment platforms customers can trust.</div></div>
     </div>
   </div>
 </section>
@@ -995,9 +1118,9 @@ nav.scrolled{
 <section class="offers" id="offers">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-tag">Offers &amp; Solutions</div>
-      <h2>From first launch to enterprise-grade — built for where your business is going.</h2>
-      <p>Packaged offers for businesses ready to get online fast, and custom-engineered solutions for those building something the market has never seen.</p>
+      <div class="sec-tag">Solutions</div>
+      <h2>The right solution for where you are — built for where you're going.</h2>
+      <p>Fast, packaged solutions to get you moving, custom systems for complex needs, and training that protects your people.</p>
     </div>
 
     <div class="offer-grid offer-grid-4">
@@ -1013,7 +1136,7 @@ nav.scrolled{
           <li><i class="bi bi-check"></i> WhatsApp-integrated contact</li>
           <li><i class="bi bi-check"></i> Delivered in days, not months</li>
         </ul>
-        <a href="#contact" class="learn">Start here <i class="bi bi-arrow-right"></i></a>
+        <a href="#contact" data-package="LaunchSite" class="learn">Start here <i class="bi bi-arrow-right"></i></a>
       </div>
 
       <div class="offer-card feature reveal">
@@ -1028,7 +1151,7 @@ nav.scrolled{
           <li><i class="bi bi-check"></i> Lead capture built in</li>
           <li><i class="bi bi-check"></i> Google Business setup + growth guide</li>
         </ul>
-        <a href="#contact" class="learn">Explore AuthoritySite <i class="bi bi-arrow-right"></i></a>
+        <a href="#contact" data-package="AuthoritySite System" class="learn">Explore AuthoritySite <i class="bi bi-arrow-right"></i></a>
       </div>
 
       <div class="offer-card reveal">
@@ -1042,24 +1165,38 @@ nav.scrolled{
           <li><i class="bi bi-check"></i> Inventory &amp; delivery automation</li>
           <li><i class="bi bi-check"></i> 30 days of launch support</li>
         </ul>
-        <a href="storefrontpro.html" class="learn">Explore StoreFront Pro <i class="bi bi-arrow-right"></i></a>
+        <a href="#contact" data-package="StoreFront Pro" class="learn">Get StoreFront Pro <i class="bi bi-arrow-right"></i></a>
       </div>
 
       <div class="offer-card custom-card reveal">
         <div class="idx">04 / CUSTOM</div>
         <h3>Custom Solutions</h3>
         <div class="tagline">Built from scratch, built to scale.</div>
-        <p class="desc">For businesses with requirements that go beyond a packaged product — fintech platforms, mobile applications, web applications, and complex system integrations engineered to your exact specification.</p>
+        <p class="desc">For businesses with requirements that go beyond a packaged product — mobile apps, payment platforms, business portals, and custom tools built around exactly how you work.</p>
         <ul>
           <li><i class="bi bi-check"></i> Mobile apps (iOS &amp; Android)</li>
-          <li><i class="bi bi-check"></i> Fintech &amp; payment platforms</li>
-          <li><i class="bi bi-check"></i> Web applications &amp; portals</li>
-          <li><i class="bi bi-check"></i> API design &amp; system integration</li>
+          <li><i class="bi bi-check"></i> Payment &amp; money platforms</li>
+          <li><i class="bi bi-check"></i> Business portals &amp; web apps</li>
+          <li><i class="bi bi-check"></i> Connecting your existing tools</li>
         </ul>
-        <a href="#contact" class="learn">Discuss your project <i class="bi bi-arrow-right"></i></a>
+        <a href="#contact" data-package="Custom Solutions" class="learn">Discuss your project <i class="bi bi-arrow-right"></i></a>
       </div>
 
+        <div class="cyber-band reveal">
+      <div>
+        <span class="badge-flag" style="position:static;display:inline-block">NEW · FOR ORGANIZATIONS</span>
+        <h3>Cybersecurity Awareness Training for Organizations</h3>
+        <p>Technology can't protect you if your people don't know what to look for. We train your team to recognise and respond to the threats that target everyday employees, so human error stops being your biggest risk.</p>
+        <a href="cybersecurity-awareness.html#enquiry" class="btn-primary">Book training for your team <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <ul>
+        <li><i class="bi bi-check-circle-fill"></i> Spot phishing, scams, and social engineering</li>
+        <li><i class="bi bi-check-circle-fill"></i> Build safer password and data-handling habits</li>
+        <li><i class="bi bi-check-circle-fill"></i> Practical sessions shaped around your organization</li>
+        <li><i class="bi bi-check-circle-fill"></i> A security-aware culture across every department</li>
+      </ul>
     </div>
+  </div>
   </div>
 </section>
 
@@ -1067,52 +1204,28 @@ nav.scrolled{
 <section class="services" id="services">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-tag">Capabilities</div>
-      <h2>Everything we build, under the hood.</h2>
+      <div class="sec-tag">What we can do for you</div>
+      <h2>One partner to build, grow, and protect your business.</h2>
     </div>
-
-    <div class="svc-row">
-      <div class="svc-list reveal">
-        <div class="svc-item">
-          <div class="name"><span class="num">01</span><h4>Website design &amp; build</h4></div>
-          <i class="bi bi-arrow-up-right"></i>
-        </div>
-        <div class="svc-item">
-          <div class="name"><span class="num">02</span><h4>Ecommerce &amp; order systems</h4></div>
-          <i class="bi bi-arrow-up-right"></i>
-        </div>
-        <div class="svc-item">
-          <div class="name"><span class="num">03</span><h4>Mobile application development</h4></div>
-          <i class="bi bi-arrow-up-right"></i>
-        </div>
-        <div class="svc-item">
-          <div class="name"><span class="num">04</span><h4>Fintech &amp; payment platforms</h4></div>
-          <i class="bi bi-arrow-up-right"></i>
-        </div>
-        <div class="svc-item">
-          <div class="name"><span class="num">05</span><h4>Web applications &amp; portals</h4></div>
-          <i class="bi bi-arrow-up-right"></i>
-        </div>
-        <div class="svc-item">
-          <div class="name"><span class="num">06</span><h4>API design &amp; integrations</h4></div>
-          <i class="bi bi-arrow-up-right"></i>
-        </div>
-        <div class="svc-item">
-          <div class="name"><span class="num">07</span><h4>SEO &amp; digital growth strategy</h4></div>
-          <i class="bi bi-arrow-up-right"></i>
-        </div>
-      </div>
-
-      <div class="svc-panel reveal">
-        <span class="label">CURRENTLY DEPLOYING</span>
-        <h3>Engineered to spec. Not assembled from templates.</h3>
-        <p>From a simple business website to a multi-channel fintech platform, every build at ImpactDev is written from the ground up — designed around the business, the market, and the problem it solves. No limitations on what we can build.</p>
-        <div class="stat-row">
-          <div class="stat"><strong>4–90</strong><span>DAYS TO LAUNCH</span></div>
-          <div class="stat"><strong>NG / UK / US / GLOBAL</strong><span>MARKETS SUPPORTED</span></div>
-          <div class="stat"><strong>WEB · MOBILE · FINTECH</strong><span>CAPABILITIES</span></div>
-        </div>
-      </div>
+    <div class="svc-simple reveal">
+      <div class="svc-item"><div><div class="name"><span class="num">01</span><h4>A professional website</h4></div><p>So customers can find you and trust you.</p></div></div>
+      <div class="svc-item"><div><div class="name"><span class="num">02</span><h4>An online store</h4></div><p>Take orders and payments without the DMs.</p></div></div>
+      <div class="svc-item"><div><div class="name"><span class="num">03</span><h4>A mobile app</h4></div><p>For your customers or your team.</p></div></div>
+      <div class="svc-item"><div><div class="name"><span class="num">04</span><h4>Payment &amp; money platforms</h4></div><p>Secure ways to collect and move money.</p></div></div>
+      <div class="svc-item"><div><div class="name"><span class="num">05</span><h4>Custom tools for your business</h4></div><p>Portals and systems that save you time.</p></div></div>
+      <div class="svc-item"><div><div class="name"><span class="num">06</span><h4>Connected tools</h4></div><p>Your existing apps working together.</p></div></div>
+      <div class="svc-item"><div><div class="name"><span class="num">07</span><h4>Getting found on Google</h4></div><p>More people discovering you online.</p></div></div>
+      <div class="svc-item"><div><div class="name"><span class="num">08</span><h4>Cybersecurity awareness training</h4></div><p>A team that spots threats before they hurt.</p></div></div>
+    </div>
+    <div class="sec-head reveal" style="margin-bottom:28px">
+      <div class="sec-tag">How it works</div>
+      <h2>Four simple steps from enquiry to launch.</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><div class="n">01</div><h4>Tell us what you need</h4><p>Fill in the short form below and pick the package you're interested in.</p></div>
+      <div class="step"><div class="n">02</div><h4>Book your consultation</h4><p>We'll reach out to agree a time and talk through your goals. It's free.</p></div>
+      <div class="step"><div class="n">03</div><h4>We build it</h4><p>You get a clear scope and price, then your solution is delivered in 4 to 60 days, depending on the package.</p></div>
+      <div class="step"><div class="n">04</div><h4>Launch &amp; support</h4><p>We go live together and stay on hand to help you after launch.</p></div>
     </div>
   </div>
 </section>
@@ -1121,9 +1234,9 @@ nav.scrolled{
 <section class="network" id="network">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-tag">Live Network</div>
-      <h2>Businesses we've put on the map.</h2>
-      <p>A sample of sites currently live and running - across food, fashion, healthcare, energy, and professional services.</p>
+      <div class="sec-tag">Proven results</div>
+      <h2>Real businesses. Real problems solved.</h2>
+      <p>A sample of solutions live today across food, healthcare, energy, logistics, education, and professional services. <a href="projects.html" style="color:var(--signal-2);border-bottom:1px solid">See the full before-and-after stories</a>.</p>
     </div>
 
     <div class="node-grid">
@@ -1227,8 +1340,6 @@ nav.scrolled{
         <span class="node-url">eatwithdas.vercel.app</span>
       </a>
 
-    </div>
-
 
       <a href="https://www.drjtutorsglobal.com" target="_blank" rel="noopener" class="node-card reveal">
         <div class="node-top">
@@ -1264,8 +1375,8 @@ nav.scrolled{
 <section class="testimonials" id="testimonials">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-tag">Transmissions Received</div>
-      <h2>What it sounds like once the site is live.</h2>
+      <div class="sec-tag">Client feedback</div>
+      <h2>What changes once the right solution is live.</h2>
     </div>
 
     <div class="log-window reveal">
@@ -1319,11 +1430,36 @@ nav.scrolled{
 <!-- ============ CTA BAND ============ -->
 <section class="cta-band" id="contact">
   <div class="wrap cta-band-inner">
-    <h2 class="reveal">Your vision deserves<br>the right engineering team.</h2>
-    <p class="reveal">Tell us what you're building — whether it's a first website, a full ecommerce system, a mobile application, or something custom. We'll tell you exactly how we'd approach it.</p>
-    <div class="cta-buttons reveal">
-      <a href="https://wa.me/2349026487958" target="_blank" class="btn-primary">Message us on WhatsApp <i class="bi bi-whatsapp"></i></a>
-      <a href="#offers" class="btn-ghost">See all solutions <i class="bi bi-arrow-up"></i></a>
+    <div class="cta-top">
+      <h2 class="reveal">Tell us the problem.<br>We'll show you the solution.</h2>
+      <p class="reveal">Choose the package you're interested in and share a few details. We'll get in touch to book your free consultation.</p>
+    </div>
+    <div class="form-card reveal">
+      <form id="enquiry-form" action="https://formspree.io/f/mwlvrgnk" method="POST" novalidate>
+        <h3>Book your free consultation</h3>
+        <p>It takes about a minute. No payment or commitment needed.</p>
+        <div class="form-grid">
+          <div class="field"><label for="f-name">Name <span class="req">*</span></label><input type="text" id="f-name" name="name" autocomplete="name" required placeholder="Your full name"></div>
+          <div class="field"><label for="f-org">Business / organization <span class="req">*</span></label><input type="text" id="f-org" name="organization" autocomplete="organization" required placeholder="Your business name"></div>
+          <div class="field"><label for="f-email">Email <span class="req">*</span></label><input type="email" id="f-email" name="email" autocomplete="email" required placeholder="you@business.com"></div>
+          <div class="field"><label for="f-phone">Phone / WhatsApp <span class="req">*</span></label><input type="tel" id="f-phone" name="phone" autocomplete="tel" required placeholder="+234 …"></div>
+          <div class="field"><label for="f-package">Package you're interested in <span class="req">*</span></label>
+            <select id="f-package" name="package"><option value="Not sure yet">Not sure yet</option><option value="LaunchSite">LaunchSite</option><option value="AuthoritySite System">AuthoritySite System</option><option value="StoreFront Pro">StoreFront Pro</option><option value="Custom Solutions">Custom Solutions</option><option value="Cybersecurity Awareness Training">Cybersecurity Awareness Training</option></select></div>
+          <div class="field"><label for="f-date">Preferred consultation date</label><input type="date" id="f-date" name="date"></div>
+          <div class="field full"><label for="f-message">What would you like to solve or achieve?</label><textarea id="f-message" name="message" placeholder="Tell us a little about your business and what you need."></textarea></div>
+        </div>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" aria-hidden="true">
+        <div class="form-submit">
+          <div class="form-error" id="form-error" role="alert"></div>
+          <button type="submit" class="btn-primary">Book my consultation <i class="bi bi-arrow-up-right"></i></button>
+          <span class="form-hint">Your details are only used to follow up on this enquiry.</span>
+        </div>
+      </form>
+      <div class="form-success" id="form-success" aria-live="polite">
+        <i class="bi bi-check-circle"></i>
+        <h3>Thank you.</h3>
+        <p>We've received your request and will be in touch shortly to book your consultation.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1334,7 +1470,7 @@ nav.scrolled{
     <div class="footer-top">
       <div class="footer-brand">
         <div class="logo"><img src="logo-light.png" alt="ImpactDev Digital Solutions" class="nav-logo"></div>
-        <p>We build websites, ecommerce platforms, mobile applications, and custom digital systems for businesses across Africa, Europe, and beyond.</p>
+        <p>We solve business problems with websites, ecommerce, custom software, fintech, and cybersecurity awareness training, for organizations across Africa, Europe, and beyond.</p>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
@@ -1343,12 +1479,13 @@ nav.scrolled{
           <a href="#offers">AuthoritySite System</a>
           <a href="#offers">StoreFront Pro</a>
           <a href="#offers">Custom Solutions</a>
+          <a href="cybersecurity-awareness.html">Cybersecurity Training</a>
         </div>
         <div class="footer-col">
           <h5>Studio</h5>
           <a href="#network">Our work</a>
           <a href="#testimonials">Testimonials</a>
-          <a href="#contact">Start a project</a>
+          <a href="#contact">Book a consultation</a>
         </div>
         <div class="footer-col">
           <h5>Contact</h5>
@@ -1460,7 +1597,51 @@ nav.scrolled{
     io.observe(el);
 
   });
-</script>
 
+  // ================= CONSULTATION FORM =================
+  const FORM_ENDPOINT = 'https://formspree.io/f/mwlvrgnk';
+  const WHATSAPP_NUMBER = '2349026487958'; // fallback only if sending fails
+  const form = document.getElementById('enquiry-form');
+  const formError = document.getElementById('form-error');
+  const formSuccess = document.getElementById('form-success');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const submitLabel = submitBtn.innerHTML;
+
+  document.querySelectorAll('[data-package]').forEach(a => a.addEventListener('click', () => {
+    document.getElementById('f-package').value = a.dataset.package;
+  }));
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+    const missing = ['name','organization','email','phone'].some(k => !String(data[k] || '').trim());
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.email || '').trim());
+    if (missing || !emailOk){
+      formError.textContent = missing ? 'Please fill in your name, business, email and phone number.' : 'Please enter a valid email address.';
+      formError.classList.add('show');
+      return;
+    }
+    formError.classList.remove('show');
+    data._subject = 'Consultation request (' + data.package + '): ' + data.organization;
+    data._replyto = data.email;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending…';
+    try {
+      const res = await fetch(FORM_ENDPOINT, { method:'POST', headers:{ 'Accept':'application/json','Content-Type':'application/json' }, body: JSON.stringify(data) });
+      if (!res.ok) throw new Error('Submission failed');
+      if (typeof gtag === 'function') gtag('event', 'generate_lead', { event_category: 'consultation_request', package: data.package });
+      form.style.display = 'none';
+      formSuccess.classList.add('show');
+      formSuccess.scrollIntoView({ behavior:'smooth', block:'center' });
+    } catch (err) {
+      const text = 'Hello ImpactDev, I would like to book a consultation about ' + data.package + '. I am ' + data.name + ' from ' + data.organization + '.';
+      const wa = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+      formError.innerHTML = 'Something went wrong sending your request. Please try again, or <a href="' + wa + '" target="_blank" rel="noopener" style="text-decoration:underline">message us on WhatsApp</a>.';
+      formError.classList.add('show');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = submitLabel;
+    }
+  });
+</script>
 </body>
 </html>
