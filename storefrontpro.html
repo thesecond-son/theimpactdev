@@ -439,6 +439,19 @@
   @media (max-width:980px){ .t-grid{ grid-template-columns:1fr 1fr; } }
   @media (max-width:640px){ .t-grid{ grid-template-columns:1fr; } }
 
+
+  /* ================= UPDATE: pricing display, enterprise card, trust band ================= */
+  .pkg-price small{ font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-right:4px; vertical-align:middle; }
+  .pkg.wide{ grid-column:1 / -1; }
+  .pkg.wide .pkg-list{ display:grid; grid-template-columns:1fr 1fr; gap:0 28px; }
+  .pkg.wide .pkg-desc{ max-width:640px; }
+  .trust{ padding:70px 0; }
+  .trust-inner{ text-align:center; max-width:760px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:18px; }
+  .trust-inner .sec-tag{ margin-bottom:0; }
+  .trust-inner h2{ font-family:var(--disp); font-weight:600; font-size:clamp(24px,3.6vw,38px); line-height:1.15; }
+  .trust-line{ font-family:var(--disp); font-weight:500; font-size:clamp(19px,2.6vw,26px); line-height:1.4; color:var(--accent-text); padding-top:18px; border-top:2px solid var(--signal); max-width:640px; }
+  @media (max-width:860px){ .pkg.wide .pkg-list{ grid-template-columns:1fr; } }
+
   /* ================= REVEAL ================= */
   .reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
   .reveal.in{ opacity:1; transform:none; }
@@ -504,6 +517,18 @@
         <div class="frame-bar"><span></span><span></span><span></span></div>
         <img src="images/storefront-pro/ops-overview.webp" alt="The StoreFront Pro dashboard showing sales, orders, low stock and store status" width="1252" height="665" loading="lazy">
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY WORK WITH US ================= -->
+<section class="sec alt trust" id="why-us">
+  <div class="wrap">
+    <div class="trust-inner reveal">
+      <div class="sec-tag">Why ImpactDev</div>
+      <h2>Before you go ahead, why should you work with us?</h2>
+      <p class="trust-line">We believe that a good name is worth more than great wealth.</p>
+      <a href="#testimonials" class="btn-ghost">See what our clients say <i class="bi bi-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -617,9 +642,9 @@
       <figure class="t-card reveal"><blockquote>ImpactDev designed an highly professional and all encompassing website for us, this really improved our customer's accessibility and customer base.</blockquote><figcaption><span class="t-av">DR</span><span><b>Damilola Runsewe</b>Logistics company</span></figcaption></figure>
       <figure class="t-card reveal"><blockquote>The design is very clean and eye-catching. From the moment I opened it, it made me want to keep looking around. Everything is well arranged and easy to understand. … Overall, the website is simple, detailed, and very easy to use. It truly represents me and my work well.</blockquote><figcaption><span class="t-av">JA</span><span><b>Janet Akolade</b>Virtual Assistant</span></figcaption></figure>
       <figure class="t-card reveal"><blockquote>I love how the website design is simple yet sophisticated and more importantly user friendly as it is easy to navigate. Your services was great. I love how you paid attention to details, listened to my own input and also the timely delivery of the job.</blockquote><figcaption><span class="t-av">EA</span><span><b>Eirene Arierhie</b>ImpactDev client</span></figcaption></figure>
-      <figure class="t-card reveal"><blockquote>First, I would say thank you, you have very excellent customer service and it's so good to see. All I had to do was give you the UI and it was exact design I envisioned, it was really nice working with you.</blockquote><figcaption><span class="t-av">C</span><span><b>Comfort</b>ImpactDev client</span></figcaption></figure>
-      <figure class="t-card reveal"><blockquote>You really exceeded my expectations. I didn't think there could be a company like yours in Nigeria.</blockquote><figcaption><span class="t-av">AD</span><span><b>Mr Adedotun</b>ImpactDev client</span></figcaption></figure>
-      <figure class="t-card reveal"><blockquote>The services I received was nothing short of excellent, The teams commitment to attention to detail is impeccable.</blockquote><figcaption><span class="t-av">SC</span><span><b>ImpactDev client</b>Solar company</span></figcaption></figure>
+      <figure class="t-card reveal"><blockquote>First, I would say thank you, you have very excellent customer service and it's so good to see. All I had to do was give you the UI and it was exact design I envisioned, it was really nice working with you.</blockquote><figcaption><span class="t-av">C</span><span><b>Comfort</b>Brand Strategist</span></figcaption></figure>
+      <figure class="t-card reveal"><blockquote>You really exceeded my expectations. I didn't think there could be a company like yours in Nigeria.</blockquote><figcaption><span class="t-av">AD</span><span><b>Mr Adedotun</b>Consulting Firm</span></figcaption></figure>
+      <figure class="t-card reveal"><blockquote>The services I received was nothing short of excellent, The teams commitment to attention to detail is impeccable.</blockquote><figcaption><span class="t-av">SC</span><span><b>Bianca</b>Solar company</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -637,9 +662,11 @@
       <details><summary>Can customers pay through bank transfer?</summary><p>Yes. Paystack is built into every package and accepts debit cards, bank transfers and USSD, with instant confirmation.</p></details>
       <details><summary>Can I receive international payments?</summary><p>Yes, from the Growth Store upward. It adds Paystack International, Stripe, Square or PayPal, plus multi-currency pricing and custom shipping zones for different regions. The Standard Store is built for local payments.</p></details>
       <details><summary>Will my online store work on mobile phones?</summary><p>Yes. Every page, product and checkout step is designed phone-first.</p></details>
-      <details><summary>Do I need to pay monthly?</summary><p>Not for the store itself. Your package price covers the build, your first year of domain registration and an included hosting period (1 month on Standard and Growth, 3 months on Scale, 6 months on Brand Commerce). After that, hosting is ₦11,500 monthly, ₦33,200 quarterly or ₦119,500 annually (best value). A monthly maintenance plan is also available if you'd like us to keep looking after the store. Payment providers charge their own fee on each transaction.</p></details>
+      <details><summary>Do I need to pay monthly?</summary><p>Not for the store itself. Your package price covers the build, your first year of domain registration and an included hosting period (1 month on Standard and Growth, 3 months on Scale, 6 months on Brand Commerce). After that, hosting is ₦11,500 monthly, ₦33,200 quarterly or ₦119,500 annually (best value). The optional Growth Partner Maintenance Plan, ₦10,000 per month after your post-launch support period, is available if you'd like us to keep looking after the store. Payment providers charge their own fee on each transaction.</p></details>
+
+      <details><summary>Why do some packages start "from" a price?</summary><p>Scale Store, Brand Commerce and Enterprise Commerce are scoped after a discovery conversation, so the final price depends on your catalogue, integrations, fulfilment requirements and the scope of the work. Third-party fees, such as APIs, WhatsApp, email and subscriptions, are separate. The consultation is where we agree the exact scope and price with you.</p></details>
       <details><summary>What happens after my first year?</summary><p>Your domain renews at ₦25,000 per year. We send renewal reminders well before it expires, so your store never goes dark unexpectedly.</p></details>
-      <details><summary>How long does it take to launch?</summary><p>Standard and Growth stores go live within 10 business days of receiving your content. Scale Store takes 4–5 weeks and Brand Commerce 6–8 weeks, counted from receipt of your content.</p></details>
+      <details><summary>How long does it take to launch?</summary><p>Standard and Growth stores go live within 10 business days of receiving your content. Scale Store takes 4–5 weeks and Brand Commerce 6–8 weeks, counted from receipt of your content. Enterprise Commerce projects are scheduled by milestone in a written proposal.</p></details>
       <details><summary>Will you help me set up my store?</summary><p>Yes. We build it, test it and hand it over fully working, with training, your Google Business Profile setup, a launch flyer and an Ecommerce Marketing Guide. For accounts billed directly by providers, such as payments, WhatsApp messaging or couriers, we'll guide you through setting each one up.</p></details>
     </div>
   </div>
@@ -720,17 +747,17 @@
           <div class="pkg-intro">
             <p>Whether you're just getting started with ecommerce or managing an established brand with hundreds of products, there's a StoreFront Pro package designed to meet your needs.</p>
             <p>Choose the option that best describes where your business is today. Not sure which package is right for you? Select the option for guidance, and we'll help you decide.</p>
-            <p><b>Selecting a package doesn't require payment.</b> Your 50% initial payment is only required when you decide to proceed.</p>
+            <p><b>Selecting a package doesn't require payment.</b> Any initial payment is only required when you decide to proceed.</p>
           </div>
 
           <div class="pkg-grid" role="radiogroup" aria-label="Package">
             <label class="pkg">
-              <input type="radio" name="package" value="Standard Store (Tier 1, local payments) - ₦300,000" data-price="300000" data-name="Standard Store">
+              <input type="radio" name="package" value="Standard Store (Tier 1, local payments) - ₦450,000" data-price="450000" data-name="Standard Store">
               <span class="pkg-body">
                 <span class="pkg-tier">Tier 1 · Local payments</span>
                 <span class="pkg-name">Standard Store</span>
                 <span class="pkg-best">Best for businesses starting online</span>
-                <span class="pkg-price">₦300,000</span>
+                <span class="pkg-price">₦450,000</span>
                 <span class="pkg-desc">Everything you need to sell online to customers in Nigeria.</span>
                 <ul class="pkg-list">
                   <li><i class="bi bi-check2"></i>Up to 100 products with live stock status</li>
@@ -744,16 +771,16 @@
             </label>
 
             <label class="pkg">
-              <input type="radio" name="package" value="Growth Store (Tier 2, international payments) - ₦500,000" data-price="500000" data-name="Growth Store">
+              <input type="radio" name="package" value="Growth Store (Tier 2, international payments) - ₦700,000" data-price="700000" data-name="Growth Store">
               <span class="pkg-body">
                 <span class="pkg-tier">Tier 2 · International payments</span>
                 <span class="pkg-name">Growth Store</span>
                 <span class="pkg-best">Best for businesses selling locally and internationally</span>
-                <span class="pkg-price">₦500,000</span>
+                <span class="pkg-price">₦700,000</span>
                 <span class="pkg-desc">For businesses that also sell to customers abroad.</span>
                 <ul class="pkg-list">
                   <li><i class="bi bi-check2"></i>Everything in Standard Store, with up to 300 products</li>
-                  <li><i class="bi bi-check2"></i>International payments: Paystack International, Stripe, Square or PayPal</li>
+                  <li><i class="bi bi-check2"></i>International payments (subject to eligibility): Paystack International, Stripe, Square or PayPal</li>
                   <li><i class="bi bi-check2"></i>Multi-currency pricing and custom shipping zones</li>
                   <li><i class="bi bi-check2"></i>Promo codes and discounts, plus 12 days of launch social content</li>
                 </ul>
@@ -763,18 +790,18 @@
             </label>
 
             <label class="pkg">
-              <input type="radio" name="package" value="Scale Store - ₦1,000,000" data-price="1000000" data-name="Scale Store">
+              <input type="radio" name="package" value="Scale Store - from ₦1,250,000" data-price="from 1250000" data-name="Scale Store">
               <span class="pkg-body">
                 <span class="pkg-tier">Advanced · More depth and control</span>
                 <span class="pkg-name">Scale Store</span>
                 <span class="pkg-best">Best for businesses with larger product catalogues</span>
-                <span class="pkg-price">₦1,000,000</span>
+                <span class="pkg-price"><small>From</small> ₦1,250,000</span>
                 <span class="pkg-desc">For established businesses with a growing catalogue and repeat customers.</span>
                 <ul class="pkg-list">
                   <li><i class="bi bi-check2"></i>Everything in Growth Store, with up to 1,000 products and CSV bulk import</li>
                   <li><i class="bi bi-check2"></i>Customer accounts, wishlists and product reviews</li>
                   <li><i class="bi bi-check2"></i>Team logins with roles, plus sales reports and repeat-customer insights</li>
-                  <li><i class="bi bi-check2"></i>Dedicated email delivery for order confirmations and receipts</li>
+                  <li><i class="bi bi-check2"></i>Email integration for order confirmations and receipts</li>
                 </ul>
                 <span class="pkg-time">LIVE IN 4–5 WEEKS · 3 MONTHS SUPPORT &amp; HOSTING</span>
                 <span class="pkg-pick">Select this package</span>
@@ -782,21 +809,44 @@
             </label>
 
             <label class="pkg">
-              <input type="radio" name="package" value="Brand Commerce - ₦2,000,000" data-price="2000000" data-name="Brand Commerce">
+              <input type="radio" name="package" value="Brand Commerce - from ₦2,500,000" data-price="from 2500000" data-name="Brand Commerce">
               <span class="pkg-body">
                 <span class="pkg-tier">Advanced · Fully bespoke</span>
                 <span class="pkg-name">Brand Commerce</span>
                 <span class="pkg-best">Best for established brands needing custom ecommerce functionality</span>
-                <span class="pkg-price">₦2,000,000</span>
+                <span class="pkg-price"><small>From</small> ₦2,500,000</span>
                 <span class="pkg-desc">For brands that want a store that looks and feels unmistakably their own.</span>
                 <ul class="pkg-list">
                   <li><i class="bi bi-check2"></i>Everything in Scale Store, with a fully bespoke brand design</li>
                   <li><i class="bi bi-check2"></i>Abandoned cart recovery by email and WhatsApp</li>
-                  <li><i class="bi bi-check2"></i>WhatsApp order notifications and courier integration (where the courier provides one)</li>
-                  <li><i class="bi bi-check2"></i>Wholesale pricing, pre-orders, bundles and multi-location inventory</li>
+                  <li><i class="bi bi-check2"></i>WhatsApp order notifications and logistics integrations</li>
+                  <li><i class="bi bi-check2"></i>B2B pricing, pre-orders, bundles, subscriptions and multi-location inventory</li>
                   <li><i class="bi bi-check2"></i>Product copywriting and launch campaign, with 6 months of support</li>
                 </ul>
                 <span class="pkg-time">LIVE IN 6–8 WEEKS · 6 MONTHS SUPPORT &amp; HOSTING</span>
+                <span class="pkg-pick">Select this package</span>
+              </span>
+            </label>
+
+            <label class="pkg wide">
+              <input type="radio" name="package" value="Enterprise Commerce - from ₦5,000,000" data-price="from 5000000" data-name="Enterprise Commerce">
+              <span class="pkg-body">
+                <span class="pkg-tier">Custom · Enterprise projects</span>
+                <span class="pkg-name">Enterprise Commerce</span>
+                <span class="pkg-best">Best for large operations that need a custom platform</span>
+                <span class="pkg-price"><small>From</small> ₦5,000,000</span>
+                <span class="pkg-desc">A platform engineered around how your business operates. Built for projects from ₦5M to ₦10M and beyond, and scoped by written proposal.</span>
+                <ul class="pkg-list">
+                  <li><i class="bi bi-check2"></i>Everything in Brand Commerce</li>
+                  <li><i class="bi bi-check2"></i>Paid discovery workshop, with milestone-based payments set out in your proposal</li>
+                  <li><i class="bi bi-check2"></i>Custom modules and an operations dashboard</li>
+                  <li><i class="bi bi-check2"></i>ERP, CRM and accounting integrations</li>
+                  <li><i class="bi bi-check2"></i>Multi-storefront or multi-region setup</li>
+                  <li><i class="bi bi-check2"></i>Security hardening, performance and load testing</li>
+                  <li><i class="bi bi-check2"></i>Dedicated project manager, full documentation and source handover</li>
+                  <li><i class="bi bi-check2"></i>12 months of priority support, with Growth Partner included for 12 months</li>
+                </ul>
+                <span class="pkg-time">SCOPED BY WRITTEN PROPOSAL · MILESTONE-BASED PAYMENTS</span>
                 <span class="pkg-pick">Select this package</span>
               </span>
             </label>
@@ -807,7 +857,7 @@
           <div class="included">
             <div class="included-title">Included in every package</div>
             <p>First year of domain registration · Full build and QA testing · Training and tutorial recordings · Launch flyer and Ecommerce Marketing Guide · Post-launch support</p>
-            <p class="included-sub">One price, paid in two instalments: 50% to start, 50% at handover. Payment providers (Paystack, Stripe, Square or PayPal) charge their own fee on each transaction.</p>
+            <p class="included-sub">Standard Store and Growth Store are paid in two instalments: 50% to start, 50% at handover. Scale Store and Brand Commerce are scoped after a discovery conversation, with the payment schedule agreed then. Enterprise Commerce uses milestone-based payments. Payment providers (Paystack, Stripe, Square or PayPal) charge their own fee on each transaction.</p>
           </div>
           <div class="pkg-error" id="pkg-error" role="alert">Please choose a package, or select "I'm not sure yet".</div>
         </div>
