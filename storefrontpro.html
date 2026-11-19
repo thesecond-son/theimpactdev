@@ -309,22 +309,6 @@
   .form-error.show{ display:block; }
   .form-error a{ text-decoration:underline; }
 
-  /* Booking step (after submit) */
-  .booking{ display:none; }
-  .booking.show{ display:block; }
-  .booking-head{ text-align:center; margin-bottom:22px; }
-  .booking-head i{ font-size:40px; color:var(--signal); }
-  .booking-head h3{ font-family:var(--disp); font-weight:600; font-size:26px; margin-top:12px; }
-  .booking-head p{ color:var(--bone-dim); font-size:15px; margin-top:8px; max-width:560px; margin-left:auto; margin-right:auto; }
-  #calendly-embed{ min-width:300px; height:700px; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff; }
-  .booking-fallback{ margin-top:14px; text-align:center; font-size:13px; color:var(--muted); }
-  .booking-fallback a{ color:var(--accent-text); border-bottom:1px solid var(--line); }
-  .booked{ display:none; text-align:center; padding:28px 0 6px; }
-  .booked.show{ display:block; }
-  .booked i{ font-size:44px; color:#15803d; }
-  .booked h3{ font-family:var(--disp); font-weight:600; font-size:26px; margin-top:12px; }
-  .booked p{ color:var(--bone-dim); margin-top:10px; font-size:15px; }
-
   /* ================= FOOTER ================= */
   footer{ padding:40px 0 34px; border-top:1px solid var(--line-soft); }
   .footer-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px; }
@@ -452,6 +436,78 @@
   .trust-line{ font-family:var(--disp); font-weight:500; font-size:clamp(19px,2.6vw,26px); line-height:1.4; color:var(--accent-text); padding-top:18px; border-top:2px solid var(--signal); max-width:640px; }
   @media (max-width:860px){ .pkg.wide .pkg-list{ grid-template-columns:1fr; } }
 
+
+  /* ================= UPDATE: trust, channels, value, steps, costs ================= */
+  .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .trust{ padding:80px 0; }
+  .trust-lead{ text-align:center; max-width:720px; margin:54px auto 34px; }
+  .trust-lead h3{ font-family:var(--disp); font-weight:600; font-size:clamp(20px,2.6vw,26px); line-height:1.25; margin-bottom:10px; }
+  .trust-lead p{ color:var(--bone-dim); font-size:15.5px; line-height:1.7; }
+  .trust-foot{ max-width:760px; margin:34px auto 0; text-align:center; color:var(--bone-dim); font-size:14.5px; line-height:1.75; }
+  .trust-link{ text-align:center; margin-top:10px; }
+
+  .flow{ display:grid; grid-template-columns:minmax(0,1.25fr) 72px minmax(0,.85fr); align-items:center; }
+  .flow-list{ display:flex; flex-direction:column; gap:12px; }
+  .flow-item{ display:flex; gap:14px; align-items:flex-start; background:#fff; border:1px solid var(--line); border-radius:14px; padding:15px 18px; box-shadow:var(--shadow); }
+  .flow-item i{ font-size:21px; color:var(--accent-text); margin-top:2px; flex:0 0 auto; }
+  .flow-item b{ display:block; font-family:var(--disp); font-size:15px; margin-bottom:1px; }
+  .flow-item span{ font-size:14px; color:var(--bone-dim); line-height:1.5; }
+  .flow-arrow{ text-align:center; color:var(--signal); font-size:34px; }
+  .flow-store{ background:var(--ink); color:#fff; border-radius:20px; padding:34px 28px; box-shadow:0 24px 50px rgba(58,48,104,.22); }
+  .flow-store-tag{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--signal-2); margin-bottom:12px; }
+  .flow-store h3{ font-family:var(--disp); font-weight:600; font-size:22px; line-height:1.2; margin-bottom:18px; }
+  .flow-store ul{ list-style:none; }
+  .flow-store li{ display:flex; gap:10px; align-items:center; padding:8px 0; border-top:1px solid rgba(255,255,255,.12); font-size:14.5px; }
+  .flow-store li i{ color:var(--signal-2); }
+  .flow-note{ margin-top:28px; font-family:var(--disp); font-size:17px; font-weight:500; color:var(--accent-text); max-width:760px; }
+
+  .invest{ margin-top:34px; background:#fff; border:1px solid var(--line); border-radius:18px; padding:30px 30px 26px; box-shadow:var(--shadow); }
+  .invest-head{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:12px 20px; margin-bottom:22px; }
+  .invest-head h3{ font-family:var(--disp); font-weight:600; font-size:20px; line-height:1.25; max-width:520px; }
+  .invest-tag{ font-family:var(--mono); font-size:11px; letter-spacing:.05em; color:var(--accent-text); background:#FFF3D6; border:1px solid rgba(245,158,11,.35); border-radius:100px; padding:5px 12px; }
+  .invest-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px; }
+  .invest-grid > div{ border:1px solid var(--line-soft); border-radius:14px; padding:18px 20px; background:var(--void); }
+  .invest-grid span{ display:block; font-size:13.5px; color:var(--bone-dim); line-height:1.45; margin-bottom:8px; }
+  .invest-grid b{ font-family:var(--disp); font-size:30px; font-weight:700; }
+  .invest-grid .result{ background:#FFF8E6; border-color:rgba(245,158,11,.4); }
+  .invest-grid .result b{ color:var(--accent-text); }
+  .invest-note{ margin-top:18px; font-size:13px; color:var(--muted); line-height:1.65; }
+
+  .steps{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px; }
+  .step-card{ background:#fff; border:1px solid var(--line); border-radius:16px; padding:26px 24px; box-shadow:var(--shadow); }
+  .step-no{ display:inline-flex; width:34px; height:34px; border-radius:50%; align-items:center; justify-content:center; background:var(--ink); color:#fff; font-family:var(--disp); font-weight:600; margin-bottom:14px; }
+  .step-card h4{ font-family:var(--disp); font-weight:600; font-size:18px; margin-bottom:6px; }
+  .step-card p{ font-size:14.5px; color:var(--bone-dim); line-height:1.6; }
+  .steps-note{ margin-top:22px; font-size:15px; color:var(--bone-dim); max-width:700px; }
+  .gallery-head{ margin-top:64px; margin-bottom:26px; }
+  .gallery-head p{ margin-top:0; }
+  .shot figcaption b{ font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.07em; text-transform:uppercase; color:var(--accent-text); margin-bottom:4px; }
+  .shot figcaption{ font-size:14.5px; color:var(--bone); }
+
+  .costs{ margin:6px 0 28px; padding:24px 24px 22px; border:1px solid var(--line); border-radius:16px; background:var(--void-2); }
+  .costs-head h4{ font-family:var(--disp); font-weight:600; font-size:18px; }
+  .costs-head p{ color:var(--bone-dim); font-size:14px; margin:4px 0 16px; }
+  .costs-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:12px; background:#fff; }
+  .costs-table{ width:100%; border-collapse:collapse; min-width:620px; font-size:13.5px; }
+  .costs-table th, .costs-table td{ text-align:left; padding:11px 14px; border-top:1px solid var(--line-soft); color:var(--bone-dim); vertical-align:top; }
+  .costs-table thead th{ border-top:none; background:var(--surface-2); font-family:var(--disp); font-weight:600; font-size:13.5px; color:var(--bone); }
+  .costs-table tbody th{ font-weight:600; color:var(--bone); width:28%; }
+  .costs-table tbody tr:first-child td{ font-family:var(--disp); font-weight:700; color:var(--accent-text); font-size:15px; }
+  .glossary{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:14px; margin-top:16px; }
+  .glossary dt{ font-family:var(--mono); font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--accent-text); margin-bottom:2px; }
+  .glossary dd{ font-size:13px; color:var(--bone-dim); line-height:1.5; }
+  .pkg-custom{ margin-top:12px; font-size:13.5px; color:var(--bone-dim); }
+  .tz-note{ margin-top:10px; font-size:13px; color:var(--muted); }
+  .field-grid.when{ margin-top:20px; }
+
+  @media (max-width:980px){
+    .flow{ grid-template-columns:1fr; gap:14px; }
+    .flow-arrow{ transform:rotate(90deg); }
+    .steps{ grid-template-columns:1fr; }
+    .invest-grid{ grid-template-columns:1fr; }
+    .glossary{ grid-template-columns:1fr 1fr; }
+  }
+
   /* ================= REVEAL ================= */
   .reveal{ opacity:0; transform:translateY(22px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
   .reveal.in{ opacity:1; transform:none; }
@@ -474,7 +530,6 @@
     .form-card{ padding:30px 20px; }
     .field-grid{ grid-template-columns:1fr; }
     .step-sub{ margin-left:0; }
-    #calendly-embed{ height:760px; }
   }
 </style>
 </head>
@@ -526,38 +581,114 @@
   <div class="wrap">
     <div class="trust-inner reveal">
       <div class="sec-tag">Why ImpactDev</div>
-      <h2>Before you go ahead, why should you work with us?</h2>
+      <h2>Before you go ahead, what is one reason why you should work with us?</h2>
       <p class="trust-line">We believe that a good name is worth more than great wealth.</p>
-      <a href="#testimonials" class="btn-ghost">See what our clients say <i class="bi bi-arrow-right"></i></a>
     </div>
+
+    <div class="trust-lead reveal">
+      <h3>Your business deserves a development partner you can count on.</h3>
+      <p>We understand that investing in technology requires trust. That's why we don't just build your online store and disappear. Here's what working with ImpactDev means:</p>
+    </div>
+
+    <div class="benefit-grid">
+      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-file-earmark-text"></i></div><h4>A defined project scope</h4><p>Know what you're paying for before development begins.</p></div>
+      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-signpost-split"></i></div><h4>Milestone-based delivery</h4><p>Your project follows an agreed development and delivery process. Standard and Growth stores are paid 50% to start and 50% at handover.</p></div>
+      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-patch-check"></i></div><h4>Testing before handover</h4><p>We test the store's essential functionality, including payments, before launch.</p></div>
+      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-mortarboard"></i></div><h4>Practical training</h4><p>Learn how to manage your products, orders and inventory.</p></div>
+      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-life-preserver"></i></div><h4>Post-launch support</h4><p>Get assistance during your agreed support period, with clear ways to reach us.</p></div>
+      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-people"></i></div><h4>A real team behind your store</h4><p>You have a team you can contact when you need assistance.</p></div>
+    </div>
+
+    <p class="trust-foot reveal">Your store is built for the everyday reality of running a business: payments are integrated and tested, orders and transactions are recorded in your dashboard, stock is tracked for you, and you're trained on processing orders. We can't promise that nothing will ever go wrong, but you'll always know what to do and who to contact when something unexpected happens.</p>
+    <p class="trust-link reveal"><a href="#testimonials" class="btn-ghost">See what our clients say <i class="bi bi-arrow-right"></i></a></p>
   </div>
 </section>
 
-<!-- ================= BENEFITS ================= -->
-<section class="sec" id="benefits">
+<!-- ================= CHANNELS ================= -->
+<section class="sec" id="channels">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-tag">What you get</div>
-      <h2>A store that sells while you get on with your day.</h2>
-      <p>StoreFront Pro gives your business a professional online store that handles orders, payments and inventory automatically, so you can spend less time managing sales and more time growing your business.</p>
+      <div class="sec-tag">Works with how you already sell</div>
+      <h2>Your customers are already online. Give them somewhere to shop.</h2>
+      <p>Your online store doesn't replace Instagram, WhatsApp or your advertising. It gives them somewhere to send customers, so every channel you already use works harder for you.</p>
+    </div>
+
+    <div class="flow reveal">
+      <div class="flow-list">
+        <div class="flow-item"><i class="bi bi-instagram"></i><div><b>Instagram</b><span>Your bio link takes followers straight to your store.</span></div></div>
+        <div class="flow-item"><i class="bi bi-whatsapp"></i><div><b>WhatsApp</b><span>Catalogue conversations lead customers to your store.</span></div></div>
+        <div class="flow-item"><i class="bi bi-facebook"></i><div><b>Facebook ads</b><span>Advertisements lead to specific product pages.</span></div></div>
+        <div class="flow-item"><i class="bi bi-share"></i><div><b>Shared links</b><span>Customers share product links with friends.</span></div></div>
+        <div class="flow-item"><i class="bi bi-arrow-repeat"></i><div><b>Repeat customers</b><span>Existing customers revisit the store to reorder.</span></div></div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+      <div class="flow-store">
+        <div class="flow-store-tag">YOUR ONLINE STORE</div>
+        <h3>One place to browse, order and pay.</h3>
+        <ul>
+          <li><i class="bi bi-check2"></i>Browse products</li>
+          <li><i class="bi bi-check2"></i>Place orders</li>
+          <li><i class="bi bi-check2"></i>Make payments</li>
+          <li><i class="bi bi-check2"></i>Receive confirmations</li>
+        </ul>
+      </div>
+    </div>
+    <p class="flow-note reveal">Think of it as the infrastructure that makes social media selling more effective, not a replacement for it.</p>
+  </div>
+</section>
+
+<!-- ================= BUSINESS VALUE ================= -->
+<section class="sec alt" id="value">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Business value</div>
+      <h2>More ways for customers to buy from you.</h2>
+      <p>An online store can't guarantee sales, but it gives your business practical ways to grow.</p>
     </div>
     <div class="benefit-grid">
-      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-moon-stars"></i></div><h4>Sell around the clock</h4><p>Customers can place orders even when you're busy, sleeping, or offline.</p></div>
-      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-credit-card-2-front"></i></div><h4>Get paid automatically</h4><p>Accept online payments without manually confirming every transaction.</p></div>
-      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-box-seam"></i></div><h4>Stay on top of your stock</h4><p>Inventory updates as orders come in, helping you avoid overselling.</p></div>
-      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-phone"></i></div><h4>Give your brand a professional online presence</h4><p>A mobile-friendly store designed around your products and brand identity.</p></div>
-      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-rocket-takeoff"></i></div><h4>Get started without a long wait</h4><p>Your Standard or Growth store can be ready within 10 business days of receiving your content.</p></div>
+      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-bag-plus"></i></div><h4>Another way to buy</h4><p>It creates another channel through which customers can purchase.</p></div>
+      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-hand-index-thumb"></i></div><h4>Easier for customers</h4><p>It makes purchasing easier for customers who don't want to start a conversation.</p></div>
+      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-hourglass-split"></i></div><h4>Less time on orders</h4><p>It reduces the time spent manually processing orders.</p></div>
+      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-search"></i></div><h4>Easier discovery</h4><p>It makes product discovery easier.</p></div>
+      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-moon-stars"></i></div><h4>Open outside business hours</h4><p>It allows customers to purchase outside normal business hours.</p></div>
+      <div class="benefit reveal"><div class="benefit-icon"><i class="bi bi-megaphone"></i></div><h4>A foundation for marketing</h4><p>It provides a structured foundation for marketing campaigns.</p></div>
+    </div>
+
+    <div class="invest reveal">
+      <div class="invest-head">
+        <h3>What does your online store need to generate to justify its cost?</h3>
+        <span class="invest-tag">Illustrative calculation, not a sales forecast</span>
+      </div>
+      <div class="invest-grid">
+        <div><span>Store investment (Standard Store)</span><b>₦400,000</b></div>
+        <div><span>Profit per additional order</span><b>₦15,000</b></div>
+        <div class="result"><span>Additional orders needed to equal the initial investment in profit</span><b>30</b></div>
+      </div>
+      <p class="invest-note">This excludes advertising, hosting, maintenance, transaction fees, taxes and other costs. It also assumes the additional orders are genuinely incremental. It shows what it would take for the investment to make sense for your business, not what your store will generate.</p>
     </div>
   </div>
 </section>
 
 <!-- ================= SEE IT ================= -->
-<section class="sec alt" id="see-it">
+<section class="sec" id="see-it">
   <div class="wrap">
     <div class="sec-head reveal">
+      <div class="sec-tag">Easy to run</div>
+      <h2>You don't need to understand technology to run your online store.</h2>
+      <p>Managing your store comes down to three simple things, all from one dashboard.</p>
+    </div>
+
+    <div class="steps reveal">
+      <div class="step-card"><span class="step-no">1</span><h4>Add your products</h4><p>Upload product images, descriptions, prices and stock information.</p></div>
+      <div class="step-card"><span class="step-no">2</span><h4>Manage incoming orders</h4><p>View customer orders, payment statuses and fulfilment details.</p></div>
+      <div class="step-card"><span class="step-no">3</span><h4>Keep your store updated</h4><p>Update prices, stock and product information from your dashboard.</p></div>
+    </div>
+    <p class="steps-note reveal">Every store comes with a 1-hour live training session and tutorial recordings you can watch again whenever you need.</p>
+    <!-- DEMO VIDEO SLOT: when the StoreFront Pro demo video is ready, embed it here (a 60-90 second walkthrough of managing a store). -->
+
+    <div class="sec-head reveal gallery-head">
       <div class="sec-tag">See it in action</div>
-      <h2>A store your customers enjoy using. A dashboard you'll enjoy running.</h2>
-      <p>Real screens from stores we've built on StoreFront Pro. Tap any image to enlarge it.</p>
+      <p>Real screens from stores we've built on StoreFront Pro, and the everyday problem each one solves. Tap any image to enlarge it.</p>
     </div>
 
     <div class="tabs reveal" role="tablist" aria-label="Product screens">
@@ -568,30 +699,30 @@
     <div class="shots" id="panel-customers" role="tabpanel" aria-labelledby="tab-customers">
       <figure class="shot">
         <button type="button" class="shot-btn" data-full="images/storefront-pro/storefront-home.webp"><img src="images/storefront-pro/storefront-home.webp" alt="Online store homepage with featured products and an English and French language switch" loading="lazy" width="1400" height="673"></button>
-        <figcaption><b>Storefront</b>Fast and easy to browse, in English and French.</figcaption>
+        <figcaption><b>Always open</b>Customers can browse your full range any time, without messaging you first.</figcaption>
       </figure>
       <figure class="shot">
         <button type="button" class="shot-btn" data-full="images/storefront-pro/pickup-slot.webp"><img src="images/storefront-pro/pickup-slot.webp" alt="Checkout screen where a customer chooses a pickup day and time" loading="lazy" width="800" height="685"></button>
-        <figcaption><b>Checkout</b>Customers choose their own pickup slot.</figcaption>
+        <figcaption><b>Fewer back-and-forth messages</b>Customers choose their own pickup time, so you stop arranging it chat by chat.</figcaption>
       </figure>
       <figure class="shot">
         <button type="button" class="shot-btn" data-full="images/storefront-pro/checkout-payments.webp"><img src="images/storefront-pro/checkout-payments.webp" alt="Checkout payment methods including card, Apple Pay, Google Pay and bank transfer" loading="lazy" width="884" height="375"></button>
-        <figcaption><b>Payments</b>Clear payment options at checkout.</figcaption>
+        <figcaption><b>Paid at checkout</b>Customers pay as they order, so you never chase payment details over chat.</figcaption>
       </figure>
     </div>
 
     <div class="shots" id="panel-manage" role="tabpanel" aria-labelledby="tab-manage" hidden>
       <figure class="shot">
-        <button type="button" class="shot-btn" data-full="images/storefront-pro/orders-and-stock.webp"><img src="images/storefront-pro/orders-and-stock.webp" alt="Dashboard showing urgent orders to pack and low-stock alerts" loading="lazy" width="1271" height="690"></button>
-        <figcaption><b>Orders &amp; stock</b>Urgent orders and low-stock alerts at a glance.</figcaption>
+        <button type="button" class="shot-btn" data-full="images/storefront-pro/orders-and-stock-alerts.webp"><img src="images/storefront-pro/orders-and-stock-alerts.webp" alt="Dashboard showing urgent orders to pack and low-stock alerts" loading="lazy" width="1271" height="690"></button>
+        <figcaption><b>Nothing slips through</b>Know which orders need attention without searching through WhatsApp conversations.</figcaption>
       </figure>
       <figure class="shot">
-        <button type="button" class="shot-btn" data-full="images/storefront-pro/payments-admin.webp"><img src="images/storefront-pro/payments-admin.webp" alt="Admin panel showing orders, payment receipts and the Paystack and bank transfer payment gateways" loading="lazy" width="1240" height="624"></button>
-        <figcaption><b>Payments</b>Orders and payment receipts in one place.</figcaption>
+        <button type="button" class="shot-btn" data-full="images/storefront-pro/payments-admin.webp"><img src="images/storefront-pro/payments-admin.webp" alt="Admin panel showing orders, payment receipts and the Paystack and bank transfer payment gateways" loading="lazy" width="1240" height="474"></button>
+        <figcaption><b>Clear payment records</b>See which orders have been paid and review their payment records from one dashboard.</figcaption>
       </figure>
       <figure class="shot">
-        <button type="button" class="shot-btn" data-full="images/storefront-pro/inventory-overview.webp"><img src="images/storefront-pro/inventory-overview.webp" alt="Products and inventory overview with totals, filters and stock states" loading="lazy" width="1252" height="441"></button>
-        <figcaption><b>Catalogue</b>Your whole catalogue and stock levels, easy to scan.</figcaption>
+        <button type="button" class="shot-btn" data-full="images/storefront-pro/products-and-inventory.webp"><img src="images/storefront-pro/products-and-inventory.webp" alt="Products and inventory overview with totals, filters and stock states" loading="lazy" width="1252" height="441"></button>
+        <figcaption><b>Stock at a glance</b>See your whole catalogue and stock levels without counting or keeping notes.</figcaption>
       </figure>
     </div>
     <p class="shots-note">Screens come from stores built for different clients. Features vary by package.</p>
@@ -599,7 +730,7 @@
 </section>
 
 <!-- ================= CASE STUDIES ================= -->
-<section class="sec work" id="work">
+<section class="sec alt work" id="work">
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="sec-tag">Stores we've built</div>
@@ -608,29 +739,41 @@
     </div>
 
     <div class="work-grid">
-      <div class="work-card story reveal">
+      <a href="https://tutusfoods.com" target="_blank" rel="noopener" class="work-card reveal">
+        <div class="work-thumb">
+          <img src="images/tutusfoods.png" alt="Tutu's Foods online store" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ph"><i class="bi bi-shop"></i><span>tutusfoods.com</span></div>
+        </div>
         <div class="work-body">
-          <div class="work-top"><span class="work-icon"><i class="bi bi-shop"></i></span><span class="work-status"><span class="led"></span>LIVE</span></div>
-          <div class="work-type">FOOD BUSINESS · ECOMMERCE · STOREFRONT PRO</div>
+          <div class="work-top"><span class="work-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right work-arrow"></i></div>
+          <div class="work-name">Tutu's Foods</div>
+          <div class="work-type">BAKERY · ECOMMERCE · STOREFRONT PRO</div>
           <h3 class="work-hook">From walk-in customers to online orders.</h3>
-          <p class="work-desc">This food business moved beyond relying solely on physical-store customers. With its own ecommerce store, customers can now browse and order products online, regardless of whether they can visit the shop.</p>
+          <p class="work-desc">Tutu's Foods moved beyond relying solely on physical-store customers. With its own ecommerce store, customers can now browse and order products online, regardless of whether they can visit the shop.</p>
         </div>
-      </div>
+      </a>
 
-      <div class="work-card story reveal">
-        <div class="work-body">
-          <div class="work-top"><span class="work-icon"><i class="bi bi-whatsapp"></i></span><span class="work-status"><span class="led"></span>LIVE</span></div>
-          <div class="work-type">CAKES &amp; ACCESSORIES · ECOMMERCE · STOREFRONT PRO</div>
-          <h3 class="work-hook">From WhatsApp conversations to a proper online store.</h3>
-          <p class="work-desc">This business no longer has to depend entirely on WhatsApp conversations to process orders. Customers can browse products and complete purchases through its dedicated online store.</p>
+      <a href="https://joyouscakesnaccessories.com" target="_blank" rel="noopener" class="work-card reveal">
+        <div class="work-thumb">
+          <img src="images/joyouscakes.png" alt="Joyous Cakes N Accessories online store" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ph"><i class="bi bi-shop"></i><span>joyouscakesnaccessories.com</span></div>
         </div>
-      </div>
+        <div class="work-body">
+          <div class="work-top"><span class="work-status"><span class="led"></span>LIVE</span><i class="bi bi-arrow-up-right work-arrow"></i></div>
+          <div class="work-name">Joyous Cakes N Accessories</div>
+          <div class="work-type">BAKERY · ECOMMERCE · STOREFRONT PRO</div>
+          <h3 class="work-hook">From WhatsApp conversations to a proper online store.</h3>
+          <p class="work-desc">Joyous Cakes N Accessories no longer has to depend entirely on WhatsApp conversations to process orders. Customers can browse products and complete purchases through its dedicated online store.</p>
+        </div>
+      </a>
     </div>
+
+    <p class="work-more reveal"><a href="projects.html">Explore More Online Stores We've Built <i class="bi bi-arrow-right"></i></a></p>
   </div>
 </section>
 
 <!-- ================= TESTIMONIALS ================= -->
-<section class="sec alt" id="testimonials">
+<section class="sec" id="testimonials">
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="sec-tag">Client feedback</div>
@@ -657,17 +800,18 @@
       <h2>Everything you may want to know before you get started.</h2>
     </div>
     <div class="faq reveal">
-      <details><summary>Do I need technical knowledge to manage my store?</summary><p>No. Every store comes with a 1-hour live training walkthrough plus tutorial recordings you can watch again whenever you need. You also get post-launch support: 30 days on Standard and Growth, 3 months on Scale, and 6 months on Brand Commerce.</p></details>
-      <details><summary>Can I manage my products and orders myself?</summary><p>Yes. Every order, payment and delivery detail sits in one dashboard, and your stock updates itself as items sell. Scale Store and Brand Commerce also let you give team members their own logins with the right level of access.</p></details>
+      <details><summary>Can I continue selling through WhatsApp and Instagram?</summary><p>Absolutely. Your online store doesn't replace your existing sales channels. You can continue using WhatsApp, Instagram and other platforms to reach customers while directing them to your store to browse products, place orders and make payments.</p></details>
+      <details><summary>Do I need technical knowledge to manage my store?</summary><p>No. Every store comes with a 1-hour live training walkthrough plus tutorial recordings you can watch again whenever you need. You also get post-launch support: 30 days on Standard and Growth, and 3 months on Scale.</p></details>
+      <details><summary>Can I manage my products and orders myself?</summary><p>Yes. Every order, payment and delivery detail sits in one dashboard, and your stock updates itself as items sell. Scale Store also lets you give team members their own logins with the right level of access.</p></details>
       <details><summary>Can customers pay through bank transfer?</summary><p>Yes. Paystack is built into every package and accepts debit cards, bank transfers and USSD, with instant confirmation.</p></details>
-      <details><summary>Can I receive international payments?</summary><p>Yes, from the Growth Store upward. It adds Paystack International, Stripe, Square or PayPal, plus multi-currency pricing and custom shipping zones for different regions. The Standard Store is built for local payments.</p></details>
+      <details><summary>Can I receive international payments?</summary><p>Yes, from the Growth Store upward. It adds Paystack International, Stripe, Square or PayPal (subject to eligibility), plus multi-currency pricing and custom shipping zones for different regions. The Standard Store is built for local payments.</p></details>
       <details><summary>Will my online store work on mobile phones?</summary><p>Yes. Every page, product and checkout step is designed phone-first.</p></details>
-      <details><summary>Do I need to pay monthly?</summary><p>Not for the store itself. Your package price covers the build, your first year of domain registration and an included hosting period (1 month on Standard and Growth, 3 months on Scale, 6 months on Brand Commerce). After that, hosting is ₦11,500 monthly, ₦33,200 quarterly or ₦119,500 annually (best value). The optional Growth Partner Maintenance Plan, ₦10,000 per month after your post-launch support period, is available if you'd like us to keep looking after the store. Payment providers charge their own fee on each transaction.</p></details>
-
-      <details><summary>Why do some packages start "from" a price?</summary><p>Scale Store, Brand Commerce and Enterprise Commerce are scoped after a discovery conversation, so the final price depends on your catalogue, integrations, fulfilment requirements and the scope of the work. Third-party fees, such as APIs, WhatsApp, email and subscriptions, are separate. The consultation is where we agree the exact scope and price with you.</p></details>
-      <details><summary>What happens after my first year?</summary><p>Your domain renews at ₦25,000 per year. We send renewal reminders well before it expires, so your store never goes dark unexpectedly.</p></details>
-      <details><summary>How long does it take to launch?</summary><p>Standard and Growth stores go live within 10 business days of receiving your content. Scale Store takes 4–5 weeks and Brand Commerce 6–8 weeks, counted from receipt of your content. Enterprise Commerce projects are scheduled by milestone in a written proposal.</p></details>
+      <details><summary>What happens if I need help after my store launches?</summary><p>Every package includes a defined post-launch support period. During this period, you can contact our team for assistance within the agreed support scope. We also offer an optional Growth Partner Maintenance Plan for businesses that want continued technical assistance after their included support period.</p></details>
+      <details><summary>Will I keep paying you after the store is built?</summary><p>Your package fee is a one-time fee for building the store. A few ongoing costs follow, and we show all of them in the cost breakdown above the packages: hosting keeps your store online (₦11,500 monthly, ₦33,200 quarterly or ₦119,500 annually after your included hosting period), your domain renews at ₦25,000 per year after the first year, and the optional Growth Partner Maintenance Plan is ₦10,000 per month after your support period. Payment providers also charge their own fee on each transaction.</p></details>
+      <details><summary>What if I don't have all my product information ready?</summary><p>You can discuss your current level of preparation with our team during the consultation. We'll explain the content, product information and business materials required before development begins, and agree on a realistic project timeline.</p></details>
+      <details><summary>How long does it take to launch?</summary><p>Standard and Growth stores go live within 10 business days of receiving your content. Scale Store takes 4–5 weeks from receipt of your content.</p></details>
       <details><summary>Will you help me set up my store?</summary><p>Yes. We build it, test it and hand it over fully working, with training, your Google Business Profile setup, a launch flyer and an Ecommerce Marketing Guide. For accounts billed directly by providers, such as payments, WhatsApp messaging or couriers, we'll guide you through setting each one up.</p></details>
+      <details><summary>Why does Scale Store start "from" a price?</summary><p>Scale Store is scoped after a discovery conversation, so the final price depends on your catalogue, integrations, fulfilment requirements and the scope of the work. Third-party fees, such as APIs, WhatsApp, email and subscriptions, are separate. The consultation is where we agree the exact scope and price with you.</p></details>
     </div>
   </div>
 </section>
@@ -745,9 +889,35 @@
         <div class="step">
           <div class="step-title"><span class="step-num">3</span> Find the right online store for your business.</div>
           <div class="pkg-intro">
-            <p>Whether you're just getting started with ecommerce or managing an established brand with hundreds of products, there's a StoreFront Pro package designed to meet your needs.</p>
+            <p>Whether you're just getting started with ecommerce or managing a growing business with hundreds of products, there's a StoreFront Pro package designed to meet your needs.</p>
             <p>Choose the option that best describes where your business is today. Not sure which package is right for you? Select the option for guidance, and we'll help you decide.</p>
             <p><b>Selecting a package doesn't require payment.</b> Any initial payment is only required when you decide to proceed.</p>
+          </div>
+
+          <div class="costs">
+            <div class="costs-head">
+              <h4>Your investment and ongoing costs</h4>
+              <p>No surprises. Here is everything, before you choose a package.</p>
+            </div>
+            <div class="costs-wrap">
+              <table class="costs-table">
+                <thead><tr><th scope="col"><span class="sr-only">Cost</span></th><th scope="col">Standard Store</th><th scope="col">Growth Store</th><th scope="col">Scale Store</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">One-time package fee</th><td>₦400,000</td><td>₦700,000</td><td>From ₦1,250,000</td></tr>
+                  <tr><th scope="row">Domain</th><td colspan="3">First year included, then ₦25,000 per year</td></tr>
+                  <tr><th scope="row">Hosting included at launch</th><td>1 month</td><td>1 month</td><td>3 months</td></tr>
+                  <tr><th scope="row">Ongoing hosting after that</th><td colspan="3">₦11,500 per month, ₦33,200 per quarter or ₦119,500 per year</td></tr>
+                  <tr><th scope="row">Post-launch support</th><td>30 days</td><td>30 days</td><td>3 months</td></tr>
+                  <tr><th scope="row">Optional maintenance, after support</th><td colspan="3">Growth Partner Maintenance Plan, ₦10,000 per month</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <dl class="glossary">
+              <div><dt>Hosting</dt><dd>Keeps your website online.</dd></div>
+              <div><dt>Domain</dt><dd>Your website's internet address.</dd></div>
+              <div><dt>Maintenance</dt><dd>Ongoing technical care and updates.</dd></div>
+              <div><dt>Support</dt><dd>Assistance during your agreed post-launch period.</dd></div>
+            </dl>
           </div>
 
           <div class="pkg-grid" role="radiogroup" aria-label="Package">
@@ -756,8 +926,8 @@
               <span class="pkg-body">
                 <span class="pkg-tier">Tier 1 · Local payments</span>
                 <span class="pkg-name">Standard Store</span>
-                <span class="pkg-best">Best for businesses starting online</span>
-                <span class="pkg-price">₦450,000</span>
+                <span class="pkg-best">Your first proper ecommerce system</span>
+                <span class="pkg-price">₦400,000</span>
                 <span class="pkg-desc">Everything you need to sell online to customers in Nigeria.</span>
                 <ul class="pkg-list">
                   <li><i class="bi bi-check2"></i>Up to 100 products with live stock status</li>
@@ -775,7 +945,7 @@
               <span class="pkg-body">
                 <span class="pkg-tier">Tier 2 · International payments</span>
                 <span class="pkg-name">Growth Store</span>
-                <span class="pkg-best">Best for businesses selling locally and internationally</span>
+                <span class="pkg-best">Selling locally and internationally</span>
                 <span class="pkg-price">₦700,000</span>
                 <span class="pkg-desc">For businesses that also sell to customers abroad.</span>
                 <ul class="pkg-list">
@@ -789,14 +959,14 @@
               </span>
             </label>
 
-            <label class="pkg">
+            <label class="pkg wide">
               <input type="radio" name="package" value="Scale Store - from ₦1,250,000" data-price="from 1250000" data-name="Scale Store">
               <span class="pkg-body">
                 <span class="pkg-tier">Advanced · More depth and control</span>
                 <span class="pkg-name">Scale Store</span>
-                <span class="pkg-best">Best for businesses with larger product catalogues</span>
-                <span class="pkg-price"><small>From</small> ₦1,250,000</span>
-                <span class="pkg-desc">For established businesses with a growing catalogue and repeat customers.</span>
+                <span class="pkg-best">Managing a growing catalogue and team</span>
+                <span class="pkg-price"><small>From</small> ₦1,200,000</span>
+                <span class="pkg-desc">For established businesses with a growing catalogue, repeat customers and a team to run the store.</span>
                 <ul class="pkg-list">
                   <li><i class="bi bi-check2"></i>Everything in Growth Store, with up to 1,000 products and CSV bulk import</li>
                   <li><i class="bi bi-check2"></i>Customer accounts, wishlists and product reviews</li>
@@ -807,57 +977,15 @@
                 <span class="pkg-pick">Select this package</span>
               </span>
             </label>
-
-            <label class="pkg">
-              <input type="radio" name="package" value="Brand Commerce - from ₦2,500,000" data-price="from 2500000" data-name="Brand Commerce">
-              <span class="pkg-body">
-                <span class="pkg-tier">Advanced · Fully bespoke</span>
-                <span class="pkg-name">Brand Commerce</span>
-                <span class="pkg-best">Best for established brands needing custom ecommerce functionality</span>
-                <span class="pkg-price"><small>From</small> ₦2,500,000</span>
-                <span class="pkg-desc">For brands that want a store that looks and feels unmistakably their own.</span>
-                <ul class="pkg-list">
-                  <li><i class="bi bi-check2"></i>Everything in Scale Store, with a fully bespoke brand design</li>
-                  <li><i class="bi bi-check2"></i>Abandoned cart recovery by email and WhatsApp</li>
-                  <li><i class="bi bi-check2"></i>WhatsApp order notifications and logistics integrations</li>
-                  <li><i class="bi bi-check2"></i>B2B pricing, pre-orders, bundles, subscriptions and multi-location inventory</li>
-                  <li><i class="bi bi-check2"></i>Product copywriting and launch campaign, with 6 months of support</li>
-                </ul>
-                <span class="pkg-time">LIVE IN 6–8 WEEKS · 6 MONTHS SUPPORT &amp; HOSTING</span>
-                <span class="pkg-pick">Select this package</span>
-              </span>
-            </label>
-
-            <label class="pkg wide">
-              <input type="radio" name="package" value="Enterprise Commerce - from ₦5,000,000" data-price="from 5000000" data-name="Enterprise Commerce">
-              <span class="pkg-body">
-                <span class="pkg-tier">Custom · Enterprise projects</span>
-                <span class="pkg-name">Enterprise Commerce</span>
-                <span class="pkg-best">Best for large operations that need a custom platform</span>
-                <span class="pkg-price"><small>From</small> ₦5,000,000</span>
-                <span class="pkg-desc">A platform engineered around how your business operates. Built for projects from ₦5M to ₦10M and beyond, and scoped by written proposal.</span>
-                <ul class="pkg-list">
-                  <li><i class="bi bi-check2"></i>Everything in Brand Commerce</li>
-                  <li><i class="bi bi-check2"></i>Paid discovery workshop, with milestone-based payments set out in your proposal</li>
-                  <li><i class="bi bi-check2"></i>Custom modules and an operations dashboard</li>
-                  <li><i class="bi bi-check2"></i>ERP, CRM and accounting integrations</li>
-                  <li><i class="bi bi-check2"></i>Multi-storefront or multi-region setup</li>
-                  <li><i class="bi bi-check2"></i>Security hardening, performance and load testing</li>
-                  <li><i class="bi bi-check2"></i>Dedicated project manager, full documentation and source handover</li>
-                  <li><i class="bi bi-check2"></i>12 months of priority support, with Growth Partner included for 12 months</li>
-                </ul>
-                <span class="pkg-time">SCOPED BY WRITTEN PROPOSAL · MILESTONE-BASED PAYMENTS</span>
-                <span class="pkg-pick">Select this package</span>
-              </span>
-            </label>
           </div>
 
           <label class="pkg-unsure"><input type="radio" name="package" value="Not sure yet" data-price="" data-name="Not sure yet"> I'm not sure yet, help me choose</label>
+          <p class="pkg-custom">Looking for a more customised shopping and business experience? Mention it when you book and we'll scope it with you.</p>
 
           <div class="included">
             <div class="included-title">Included in every package</div>
             <p>First year of domain registration · Full build and QA testing · Training and tutorial recordings · Launch flyer and Ecommerce Marketing Guide · Post-launch support</p>
-            <p class="included-sub">Standard Store and Growth Store are paid in two instalments: 50% to start, 50% at handover. Scale Store and Brand Commerce are scoped after a discovery conversation, with the payment schedule agreed then. Enterprise Commerce uses milestone-based payments. Payment providers (Paystack, Stripe, Square or PayPal) charge their own fee on each transaction.</p>
+            <p class="included-sub">Standard Store and Growth Store are paid in two instalments: 50% to start, 50% at handover. Scale Store is scoped after a discovery conversation, with the payment schedule agreed then. Payment providers (Paystack, Stripe, Square or PayPal) charge their own fee on each transaction.</p>
           </div>
           <div class="pkg-error" id="pkg-error" role="alert">Please choose a package, or select "I'm not sure yet".</div>
         </div>
@@ -865,7 +993,7 @@
         <!-- 4 -->
         <div class="step">
           <div class="step-title"><span class="step-num">4</span> Schedule your consultation</div>
-          <p class="step-sub">After you submit, you'll pick a time from our live availability, shown in your local time zone.</p>
+          <p class="step-sub">Tell us how and when you'd like to talk. We'll confirm your slot.</p>
           <div class="field">
             <span class="lbl" id="contact-label">How would you prefer us to contact you? <span class="req">*</span></span>
             <div class="radio-row" role="radiogroup" aria-labelledby="contact-label">
@@ -874,13 +1002,24 @@
               <label><input type="radio" name="contact_preference" value="Regular phone call"> Regular phone call</label>
             </div>
           </div>
+          <div class="field-grid when">
+            <div class="field">
+              <label for="f-date">Preferred date <span class="req">*</span></label>
+              <input type="date" id="f-date" name="preferred_date" required>
+            </div>
+            <div class="field">
+              <label for="f-time">Preferred time <span class="req">*</span></label>
+              <input type="time" id="f-time" name="preferred_time" required>
+            </div>
+          </div>
+          <p class="tz-note">Please use your local time zone. Times are subject to availability, and we'll confirm.</p>
         </div>
 
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" aria-hidden="true">
 
         <div class="almost">
           <h4>You're almost there!</h4>
-          <p>Once you submit, you'll choose a time for your consultation and our team will review your details and confirm it.</p>
+          <p>Once you submit, our team will review your details and confirm your consultation.</p>
         </div>
 
         <div class="form-submit">
@@ -890,22 +1029,7 @@
         </div>
       </form>
 
-      <!-- Step 2: booking (shown after the lead is saved) -->
-      <div class="booking" id="booking" aria-live="polite">
-        <div class="booking-head">
-          <i class="bi bi-check-circle"></i>
-          <h3>Thanks, your details are in. Now pick a time.</h3>
-          <p>Choose a slot that suits you to confirm your consultation. Times are shown in your local time zone.</p>
-        </div>
-        <div id="calendly-embed"></div>
-        <p class="booking-fallback">Calendar not loading? <a href="https://calendly.com/impactdevagency/storefront-pro" target="_blank" rel="noopener">Open the booking page</a>. Our team will also be in touch using the details you shared.</p>
-        <div class="booked" id="booked">
-          <i class="bi bi-calendar-check"></i>
-          <h3>Your consultation is booked.</h3>
-          <p>You'll receive a confirmation by email. We look forward to talking about your store.</p>
-        </div>
-      </div>
-
+      
     </div>
   </div>
 </section>
@@ -965,7 +1089,7 @@
 
   // ================= LEAD FORM =================
   const FORM_ENDPOINT = 'https://formspree.io/f/mwlvrgnk';
-  const CALENDLY_URL  = 'https://calendly.com/impactdevagency/storefront-pro';
+  const THANK_YOU_PAGE = 'storefront-pro-thank-you.html';
   const WHATSAPP_NUMBER = '2349026487958'; // fallback only
 
   const form = document.getElementById('lead');
@@ -973,7 +1097,11 @@
   const pkgError = document.getElementById('pkg-error');
   const submitBtn = document.getElementById('submit-btn');
   const submitLabel = submitBtn.innerHTML;
-  const booking = document.getElementById('booking');
+  // Preferred date can't be in the past
+  const dateInput = document.getElementById('f-date');
+  const now = new Date();
+  const todayStr = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+  dateInput.min = todayStr;
 
   // Ad tracking: capture campaign parameters so each lead shows where it came from
   const params = new URLSearchParams(location.search);
@@ -987,7 +1115,7 @@
     if (el) el.closest('.field').classList.toggle('invalid', bad);
   }
 
-  ['f-name','f-phone','f-email','f-type'].forEach(id => {
+  ['f-name','f-phone','f-email','f-type','f-date','f-time'].forEach(id => {
     document.getElementById(id).addEventListener('input', () => setInvalid(id, false));
     document.getElementById(id).addEventListener('change', () => setInvalid(id, false));
   });
@@ -1003,7 +1131,9 @@
       'f-name':  String(data.name || '').trim().length > 1,
       'f-phone': phoneDigits.length >= 7,
       'f-email': /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.email || '').trim()),
-      'f-type':  !!data.business_type
+      'f-type':  !!data.business_type,
+      'f-date':  !!data.preferred_date && data.preferred_date >= todayStr,
+      'f-time':  !!data.preferred_time
     };
     let ok = true, firstBad = null;
     Object.entries(checks).forEach(([id, valid]) => {
@@ -1048,8 +1178,14 @@
       });
       if (!res.ok) throw new Error('Submission failed');
 
-      if (typeof gtag === 'function') gtag('event', 'generate_lead', { event_category: 'storefront_pro', package_name: picked.dataset.name });
-      showBooking(payload);
+      // Hand the details to the thank-you page, which also fires the conversion event
+      try {
+        sessionStorage.setItem('sfpLead', JSON.stringify({
+          name: data.name, package: picked.dataset.name, contact: data.contact_preference,
+          date: data.preferred_date, time: data.preferred_time
+        }));
+      } catch (e) {}
+      window.location.href = THANK_YOU_PAGE;
     } catch (err) {
       const text = 'Hello ImpactDev, I would like to enquire about StoreFront Pro. I am ' + data.name + '.';
       const wa = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
@@ -1057,39 +1193,6 @@
       formError.classList.add('show');
       submitBtn.disabled = false;
       submitBtn.innerHTML = submitLabel;
-    }
-  });
-
-  // ================= CALENDLY (live availability, handles time zones) =================
-  function showBooking(p){
-    form.style.display = 'none';
-    booking.classList.add('show');
-    booking.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://assets.calendly.com/assets/external/widget.css';
-    document.head.appendChild(link);
-
-    const s = document.createElement('script');
-    s.src = 'https://assets.calendly.com/assets/external/widget.js';
-    s.async = true;
-    s.onload = () => {
-      const summary = 'Package: ' + p.package_name + ' | Contact via: ' + p.contact_preference + ' | Phone: ' + p.phone + (p.business_name ? ' | Business: ' + p.business_name : '');
-      Calendly.initInlineWidget({
-        url: CALENDLY_URL + '?hide_gdpr_banner=1&background_color=ffffff&text_color=1c0a38&primary_color=3a3068',
-        parentElement: document.getElementById('calendly-embed'),
-        prefill: { name: p.name, email: p.email, customAnswers: { a1: summary } },
-        utm: { utmSource: p.utm_source, utmMedium: p.utm_medium, utmCampaign: p.utm_campaign, utmContent: p.utm_content, utmTerm: p.utm_term }
-      });
-    };
-    document.body.appendChild(s);
-  }
-
-  window.addEventListener('message', (e) => {
-    if (e.origin === 'https://calendly.com' && e.data && e.data.event === 'calendly.event_scheduled'){
-      if (typeof gtag === 'function') gtag('event', 'schedule', { event_category: 'storefront_pro' });
-      document.getElementById('booked').classList.add('show');
     }
   });
 </script>
