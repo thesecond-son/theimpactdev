@@ -1204,7 +1204,8 @@ src="https://www.facebook.com/tr?id=2013017630104228&ev=PageView&noscript=1"/></
       } catch (e) {}
       window.location.href = THANK_YOU_PAGE;
     } catch (err) {
-      const text = 'Hello ImpactDev, I would like to enquire about StoreFront Pro. I am ' + data.name + '.';
+      if (typeof gtag === 'function') gtag('event', 'form_error', { error_type: 'submit_failed' });
+      const text ='Hello ImpactDev, I would like to enquire about StoreFront Pro. I am ' + data.name + '.';
       const wa = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
       formError.innerHTML = 'Something went wrong sending your request. Please try again, or <a href="' + wa + '" target="_blank" rel="noopener">message us on WhatsApp</a>.';
       formError.classList.add('show');
@@ -1212,6 +1213,57 @@ src="https://www.facebook.com/tr?id=2013017630104228&ev=PageView&noscript=1"/></
       submitBtn.innerHTML = submitLabel;
     }
   });
+</script>
+<script>
+/* Engagement tracking for GA4: CTA clicks, sections seen, package choice, form attempts */
+(function () {
+  function track(name, params) { if (typeof gtag === 'function') gtag('event', name, params || {}); }
+
+  // CTA clicks: labelled by where the click goes
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a, summary');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var text = (a.textContent || '').trim().slice(0, 80);
+    var label = null;
+    if (a.tagName === 'SUMMARY') { track('faq_open', { question: text }); return; }
+    if (href === '#lead-form') label = a.classList.contains('nav-cta') ? 'nav_get_store' : (a.classList.contains('btn-ghost') ? 'hero_explore_packages' : 'hero_get_store');
+    else if (href === '#testimonials') label = 'see_testimonials';
+    else if (href.indexOf('wa.me') !== -1) label = 'whatsapp';
+    else if (a.classList.contains('work-card')) label = 'portfolio_' + href.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+    if (label) track('cta_click', { cta: label, link_text: text });
+  });
+
+  // Sections seen: fires once per section when it reaches the middle of the screen
+  var sections = { 'why-us': 'why_us', 'channels': 'channels', 'value': 'calculator', 'see-it': 'features', 'work': 'portfolio', 'testimonials': 'testimonials', 'faq': 'faq', 'lead-form': 'form' };
+  var costs = document.querySelector('.costs');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        track('section_view', { section: en.target === costs ? 'pricing' : sections[en.target.id] });
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -50% 0px' });
+    Object.keys(sections).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+    if (costs) io.observe(costs);
+  }
+
+  // Form: first interaction, package chosen, submit attempt
+  var form = document.getElementById('lead');
+  if (form) {
+    var started = false;
+    form.addEventListener('focusin', function () { if (!started) { started = true; track('form_begin'); } });
+    form.addEventListener('change', function (e) {
+      if (e.target.name === 'package') track('package_select', { package_name: e.target.dataset.name || e.target.value });
+    });
+    form.addEventListener('submit', function () {
+      var invalid = form.querySelectorAll(':invalid').length;
+      var pkg = form.querySelector('input[name="package"]:checked');
+      track('form_submit_attempt', { has_errors: (invalid > 0 || !pkg) ? 'yes' : 'no' });
+    });
+  }
+})();
 </script>
 
 </body>

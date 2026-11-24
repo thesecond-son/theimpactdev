@@ -152,13 +152,18 @@ src="https://www.facebook.com/tr?id=2013017630104228&ev=PageView&noscript=1"/></
 <footer>© 2026 ImpactDev Digital Solutions. All rights reserved.</footer>
 
 <script>
-  // Conversion event: fires only when the visitor actually reaches this page after submitting the form
-  if (typeof gtag === 'function') gtag('event', 'generate_lead', { event_category: 'storefront_pro' });
+  // Only count a conversion when the form saved sfpLead just before redirecting here.
+  // Direct visits, bots, ad reviewers and new tabs have no sfpLead, so nothing fires.
+  let fromForm = false;
+  try { fromForm = !!sessionStorage.getItem('sfpLead'); } catch (e) {}
+
+  // GA4 conversion event
+  if (fromForm && typeof gtag === 'function') gtag('event', 'generate_lead', { event_category: 'storefront_pro' });
 
   // Meta Lead: sent from the browser (Pixel) and the server (/api/meta-event) with the same
   // event_id so Meta deduplicates them. Skipped if this tab already sent it (e.g. page refresh).
   try {
-    if (!sessionStorage.getItem('sfpMetaLeadSent')) {
+    if (fromForm && !sessionStorage.getItem('sfpMetaLeadSent')) {
       const eventId = 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
       const customData = { content_name: 'StoreFront Pro consultation' };
       if (typeof fbq === 'function') fbq('track', 'Lead', customData, { eventID: eventId });
