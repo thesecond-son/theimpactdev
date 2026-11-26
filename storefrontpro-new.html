@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StoreFront Pro: Your Online Store, Open 24/7 | ImpactDev</title>
+<meta name="description" content="StoreFront Pro is a complete online store for product businesses. Customers browse, pay and get confirmed on their own. One-time fee, with domain, hosting, training and launch support included." />
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="https://theimpactdev.vercel.app/storefrontpro" />
+
+<link rel="icon" type="image/png" href="logo-icon.png" />
+<link rel="apple-touch-icon" href="logo-icon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="ImpactDev" />
+<meta property="og:title" content="StoreFront Pro: Your Online Store, Open 24/7 | ImpactDev" />
+<meta property="og:description" content="Customers browse, pay and get confirmed on their own. Domain, hosting, training and launch support included." />
+<meta property="og:image" content="https://theimpactdev.vercel.app/images/tutusfoods.png" />
+<meta property="og:url" content="https://theimpactdev.vercel.app/storefrontpro" />
+<meta property="og:locale" content="en_GB" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-817KQV5XYZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-817KQV5XYZ');
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2013017630104228');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=2013017630104228&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+  /* Layout: one strong column per section, alternating light and deep-violet bands; the value stack and the
+     "what you don't need" list are the two persuasion anchors, the demo videos sit straight after the hero. */
+  :root{
+    color-scheme:light;
+    --paper:#FBF9FF;        /* page */
+    --paper-2:#F3EEFB;      /* alt band */
+    --card:#FFFFFF;
+    --ink:#1C0A38;          /* headings, deep band */
+    --ink-2:#4B3F66;        /* body */
+    --muted:#766A92;
+    --line:#E3DAF1;
+    --amber:#F59E0B;        /* brand accent */
+    --amber-2:#FBBF24;
+    --amber-text:#B45309;
+    --green:#15803D;
+    --green-bg:#E8F6EC;
+    --red:#B42318;
+    --deep:#1C0A38;         /* dark band */
+    --deep-2:#2A1650;
+    --on-deep:#F4EFFF;
+    --on-deep-dim:#C9BDE6;
+    --shadow:0 18px 44px rgba(42,22,80,.12);
+    --disp:'Space Grotesk', system-ui, sans-serif;
+    --body:'Inter', system-ui, sans-serif;
+    --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{background:var(--paper);color:var(--ink-2);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img,video{max-width:100%;height:auto;display:block}
+  h1,h2,h3,h4{font-family:var(--disp);color:var(--ink);line-height:1.15;text-wrap:balance}
+  .wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+  .narrow{max-width:760px}
+  section{padding-block:88px}
+  .band-alt{background:var(--paper-2)}
+  .band-deep{background:var(--deep);color:var(--on-deep-dim)}
+  .band-deep h2,.band-deep h3,.band-deep h4{color:var(--on-deep)}
+  .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-text);margin-bottom:14px}
+  .band-deep .tag{color:var(--amber-2)}
+  .head{max-width:740px;margin-bottom:44px}
+  .head.center{margin-inline:auto;text-align:center}
+  .head h2{font-size:clamp(28px,4vw,42px);margin-bottom:14px}
+  .head p{font-size:17px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--amber-text);outline-offset:3px;border-radius:6px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:100px;font-family:var(--disp);font-weight:600;font-size:16px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s}
+  .btn-amber{background:var(--amber);color:var(--ink);box-shadow:0 10px 26px rgba(245,158,11,.35)}
+  .btn-amber:hover{transform:translateY(-2px);background:var(--amber-2)}
+  .btn-line{border:1.5px solid var(--line);color:var(--ink);background:var(--card)}
+  .btn-line:hover{border-color:var(--ink)}
+  .band-deep .btn-line{background:transparent;color:var(--on-deep);border-color:rgba(255,255,255,.25)}
+
+  .reveal{opacity:1;transform:none}
+  @media (prefers-reduced-motion:no-preference){
+    .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+    .js .reveal.in{opacity:1;transform:none}
+  }
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(251,249,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+  .nav-row img{height:36px;width:auto}
+  .nav-row .btn{padding:10px 18px;font-size:14px}
+
+  /* HERO */
+  .hero{padding-top:140px;padding-bottom:72px;background:
+      radial-gradient(900px 420px at 85% 0%, rgba(245,158,11,.16), transparent 60%),
+      radial-gradient(700px 400px at 0% 20%, rgba(124,92,214,.12), transparent 60%), var(--paper)}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .hero-grid > *{min-width:0}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:100px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--ink);margin-bottom:22px}
+  .pill i{color:var(--green)}
+  .hero h1{font-size:clamp(36px,5.4vw,60px);letter-spacing:-.02em;margin-bottom:20px}
+  .hero h1 em{font-style:normal;color:var(--amber-text)}
+  .hero-sub{font-size:18px;max-width:560px;margin-bottom:26px}
+  .wins{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;max-width:580px}
+  .win{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+  .win b{display:block;font-family:var(--disp);font-size:26px;color:var(--ink);line-height:1.1;font-variant-numeric:tabular-nums}
+  .win span{font-size:13px;color:var(--muted);line-height:1.35;display:block;margin-top:4px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .cta-note{font-size:13px;color:var(--muted);margin-top:14px}
+  .cta-note i{color:var(--green)}
+  .hero-shot{position:relative}
+  .browser{background:var(--card);border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
+  .browser-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--paper)}
+  .browser-bar span{width:9px;height:9px;border-radius:50%;background:var(--line)}
+  .browser-bar em{font-style:normal;font-size:12px;color:var(--muted);margin-left:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .hero-shot{padding-bottom:70px}
+  .hero-phone{position:absolute;right:-18px;bottom:0;width:150px;border:7px solid #0d0620;border-radius:26px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+  .hero-phone img{width:100%;aspect-ratio:390/700;object-fit:cover;object-position:top}
+  .float-card{position:absolute;left:-26px;bottom:20px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:12px 16px;display:flex;gap:12px;align-items:center;max-width:270px}
+  .float-card i{font-size:22px;color:var(--green)}
+  .float-card b{display:block;color:var(--ink);font-size:14px}
+  .float-card span{font-size:12px;color:var(--muted)}
+
+  /* DEMO */
+  .demo{padding-block:80px}
+  .demo-grid{display:grid;grid-template-columns:1fr 300px;gap:36px;align-items:end}
+  .demo-grid > *{min-width:0}
+  .vid-desk{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:#000;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+  .phone{border:10px solid #0d0620;border-radius:38px;overflow:hidden;background:#000;box-shadow:0 30px 70px rgba(0,0,0,.4);aspect-ratio:390/844;max-width:300px;margin-inline:auto}
+  .phone video,.vid-desk video{width:100%;height:100%;object-fit:cover}
+  .vid-cap{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:14px;color:var(--on-deep-dim)}
+  .vid-cap b{color:var(--on-deep)}
+  .vid-cap i{color:var(--amber-2);margin-top:2px}
+  .demo-foot{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12)}
+  .demo-foot div{display:flex;gap:10px;align-items:center;font-size:15px;color:var(--on-deep)}
+  .demo-foot i{color:var(--amber-2)}
+
+  /* PROBLEM / MONEY */
+  .swap{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .swap > div{border-radius:18px;padding:28px;min-width:0}
+  .swap .before{background:var(--card);border:1px solid var(--line)}
+  .swap .after{background:var(--green-bg);border:1px solid #BFE5CB}
+  .swap h3{font-size:20px;margin-bottom:14px;display:flex;gap:10px;align-items:center}
+  .swap .before h3 i{color:var(--red)}
+  .swap .after h3 i{color:var(--green)}
+  .swap ul{list-style:none;display:grid;gap:12px}
+  .swap li{display:flex;gap:10px;font-size:15.5px}
+  .swap li i{margin-top:3px;flex-shrink:0}
+  .swap .before li i{color:var(--red)}
+  .swap .after li i{color:var(--green)}
+  .found-money{margin-top:28px;background:var(--card);border:1px dashed var(--amber);border-radius:18px;padding:26px 28px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
+  .found-money .big{font-family:var(--disp);font-size:44px;font-weight:700;color:var(--amber-text);line-height:1;font-variant-numeric:tabular-nums}
+  .found-money p{font-size:15.5px}
+  .found-money b{color:var(--ink)}
+
+  /* LEAK: cost of no store */
+  .leaks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .leak{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px;min-width:0}
+  .leak i{font-size:22px;color:#FCA5A5}
+  .leak h3{font-size:17px;margin:10px 0 6px}
+  .leak p{font-size:14.5px;color:var(--on-deep-dim)}
+  .calc{margin-top:28px;background:var(--card);color:var(--ink-2);border-radius:20px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+  .calc > *{min-width:0}
+  .calc h3{color:var(--ink);font-size:21px;margin-bottom:6px}
+  .calc .intro{font-size:14.5px;margin-bottom:18px}
+  .calc label{display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px}
+  .calc .row{margin-bottom:18px}
+  .calc input[type=range]{width:100%;accent-color:var(--amber)}
+  .calc .val{font-family:var(--disp);font-weight:700;color:var(--amber-text);font-size:18px;float:right;font-variant-numeric:tabular-nums}
+  .calc input[type=number]{font:inherit;width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink)}
+  .loss{background:#FFF4F2;border:1px solid #F7C9C2;border-radius:16px;padding:22px}
+  .loss small{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+  .loss .yr{font-family:var(--disp);font-size:clamp(32px,4.4vw,44px);font-weight:700;color:var(--red);line-height:1.1;margin:6px 0 4px;font-variant-numeric:tabular-nums}
+  .loss .mo{font-size:14.5px;color:var(--ink)}
+  .loss .vs{margin-top:14px;padding-top:14px;border-top:1px solid #F7C9C2;font-size:14.5px;color:var(--ink)}
+  .loss .vs b{color:var(--green)}
+  .calc-note{font-size:12.5px;color:var(--muted);margin-top:10px}
+
+  /* CTA STRIPS */
+  .cta-strip{margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:24px 28px;border-radius:20px;background:var(--card);border:1px solid var(--line)}
+  .cta-strip p{font-family:var(--disp);font-size:20px;font-weight:600;color:var(--ink);max-width:620px}
+  .cta-strip p span{display:block;font-family:var(--body);font-size:14.5px;font-weight:400;color:var(--muted);margin-top:4px}
+  .cta-strip .btns{display:flex;flex-wrap:wrap;gap:10px}
+  .band-deep .cta-strip{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+  .band-deep .cta-strip p{color:var(--on-deep)}
+  .band-deep .cta-strip p span{color:var(--on-deep-dim)}
+  .cta-strip.center{justify-content:center;text-align:center;flex-direction:column}
+
+  /* GALLERY */
+  .stores{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+  .store{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s var(--ease);min-width:0}
+  .store:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .store.s-lg{grid-column:span 7}
+  .store.s-md{grid-column:span 5}
+  .store.s-third{grid-column:span 4}
+  .store-img{aspect-ratio:16/9;overflow:hidden;background:var(--paper-2);border-bottom:1px solid var(--line)}
+  .store-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .store-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .store-meta{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .store h3{font-size:20px}
+  .store p{font-size:15px}
+  .store .go{margin-top:auto;padding-top:8px;font-weight:600;color:var(--amber-text);font-size:14px;display:inline-flex;gap:6px;align-items:center}
+  .flag{display:inline-block;font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px;background:var(--green-bg);color:var(--green);margin-left:6px;vertical-align:middle;letter-spacing:.04em}
+  .screens{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+  .screen{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;min-width:0}
+  .screen img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top left;border-bottom:1px solid var(--line)}
+  .screen figcaption{padding:14px 16px;font-size:14px}
+  .screen figcaption b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+
+  /* VALUE STACK (bundle) */
+  .stack-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+  .stack-wrap > *{min-width:0}
+  .stack{background:var(--card);border:2px solid var(--ink);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+  .stack-top{background:var(--ink);color:var(--on-deep);padding:22px 26px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .stack-top h3{color:var(--on-deep);font-size:22px}
+  .stack-top .price{font-family:var(--disp);font-size:30px;font-weight:700;color:var(--amber-2);font-variant-numeric:tabular-nums}
+  .stack-top small{display:block;font-size:12px;color:var(--on-deep-dim);font-weight:500;font-family:var(--body)}
+  .stack ul{list-style:none}
+  .stack li{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 26px;border-bottom:1px solid var(--line);font-size:15px}
+  .stack li:last-child{border-bottom:0}
+  .stack li i{color:var(--green);font-size:18px}
+  .stack li b{color:var(--ink);font-weight:600}
+  .stack li span.sub{display:block;font-size:13px;color:var(--muted)}
+  .free{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--green);background:var(--green-bg);padding:4px 10px;border-radius:100px;white-space:nowrap}
+  .free s{color:var(--muted);font-weight:500;margin-right:6px}
+  .stack-foot{background:var(--paper-2);padding:18px 26px;font-size:14.5px;color:var(--ink)}
+  .stack-foot b{color:var(--green)}
+  .side-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 26px}
+  .side-card + .side-card{margin-top:18px}
+  .side-card h4{font-size:18px;margin-bottom:8px}
+  .side-card p{font-size:15px}
+  .payback{display:flex;gap:18px;align-items:center;margin-top:12px}
+  .payback .n{font-family:var(--disp);font-size:48px;font-weight:700;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums}
+  .payback small{display:block;font-size:12px;color:var(--muted);margin-top:8px}
+
+  /* GHOST: what you don't need */
+  .nope-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .nope{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:24px 26px;display:grid;grid-template-columns:auto 1fr;gap:16px;min-width:0}
+  .nope .x{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(245,158,11,.14);color:var(--amber-2);font-size:20px}
+  .nope h3{font-size:18px;margin-bottom:6px}
+  .nope p{font-size:15px;color:var(--on-deep-dim)}
+  .nope p b{color:var(--on-deep);font-weight:600}
+  .nope-foot{margin-top:30px;font-size:17px;color:var(--on-deep);max-width:760px}
+
+  /* PRESCRIPTION: first week */
+  .week{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:d}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0}
+  .day .when{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-text)}
+  .day h3{font-size:18px;margin:8px 0}
+  .day p{font-size:14.5px}
+  .day .habit{margin-top:12px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+  .day .habit b{color:var(--ink)}
+
+  /* PACKAGES */
+  .pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+  .pk{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:10px;position:relative;min-width:0}
+  .pk.pop{border:2px solid var(--amber);box-shadow:var(--shadow)}
+  .pk .badge{position:absolute;top:-13px;left:24px;background:var(--amber);color:var(--ink);font-size:12px;font-weight:700;padding:5px 12px;border-radius:100px}
+  .pk .who{font-size:13px;color:var(--muted);font-weight:600}
+  .pk h3{font-size:22px}
+  .pk .amt{font-family:var(--disp);font-size:32px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+  .pk .amt small{font-size:14px;color:var(--muted);font-weight:500}
+  .pk .split{font-size:13px;color:var(--green);font-weight:600}
+  .pk ul{list-style:none;display:grid;gap:9px;margin:6px 0 4px}
+  .pk li{display:flex;gap:9px;font-size:14.5px}
+  .pk li i{color:var(--green);margin-top:3px}
+  .pk .bonus{margin-top:auto;background:var(--paper-2);border-radius:12px;padding:12px 14px;font-size:13.5px;color:var(--ink)}
+  .pk .bonus b{color:var(--green)}
+  .pk .btn{margin-top:12px}
+  .budget{margin-top:30px;display:grid;grid-template-columns:auto 1fr;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 26px;align-items:start}
+  .budget i{font-size:26px;color:var(--amber-text)}
+  .budget h4{font-size:18px;margin-bottom:6px}
+  .budget p{font-size:15px}
+  .budget p + p{margin-top:8px}
+
+  /* RISK / PROMISE */
+  .promise{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .pr{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0}
+  .pr i{font-size:24px;color:var(--amber-text)}
+  .pr h3{font-size:17px;margin:10px 0 6px}
+  .pr p{font-size:14.5px}
+
+  /* TESTIMONIALS */
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .tc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:16px;min-width:0}
+  .tc .stars{color:var(--amber);font-size:14px;letter-spacing:2px}
+  .tc blockquote{font-size:15.5px;color:var(--ink)}
+  .tc figcaption{margin-top:auto;display:flex;gap:12px;align-items:center;font-size:13px;color:var(--muted)}
+  .tc figcaption b{display:block;color:var(--ink);font-size:14px}
+  .av{width:38px;height:38px;border-radius:50%;background:var(--paper-2);display:grid;place-items:center;font-weight:700;color:var(--ink);font-size:13px;flex-shrink:0}
+
+  /* FAQ */
+  .faq{max-width:820px;margin-inline:auto;display:grid;gap:10px}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px 20px}
+  .faq summary{cursor:pointer;list-style:none;padding:16px 0;font-family:var(--disp);font-weight:600;color:var(--ink);font-size:16.5px;display:flex;justify-content:space-between;gap:14px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+';font-size:22px;line-height:1;color:var(--amber-text)}
+  .faq details[open] summary::after{content:'−'}
+  .faq details p{padding-bottom:18px;font-size:15px}
+
+  /* FORM (same structure and field ids as the live page) */
+  .lead{background:linear-gradient(180deg,var(--paper-2),var(--paper))}
+  .form-card{max-width:880px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--shadow)}
+  .form-card h2{font-size:clamp(26px,3.6vw,36px);margin-bottom:10px}
+  .lede{font-size:16.5px;margin-bottom:22px}
+  .reassure{display:flex;gap:14px;background:var(--green-bg);border-radius:14px;padding:16px 18px;margin-bottom:26px;font-size:14.5px}
+  .reassure i{font-size:22px;color:var(--green)}
+  .reassure b{color:var(--ink)}
+  .step{border-top:1px solid var(--line);padding-top:24px;margin-top:24px}
+  .step-title{display:flex;gap:12px;align-items:center;font-family:var(--disp);font-weight:600;color:var(--ink);font-size:18px;margin-bottom:16px}
+  .step-num{width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--on-deep);display:grid;place-items:center;font-size:14px;flex-shrink:0}
+  .step-sub{font-size:14.5px;margin:-8px 0 14px}
+  .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{display:flex;flex-direction:column;gap:7px;min-width:0}
+  .field.full{grid-column:1/-1}
+  .field label,.field .lbl{font-size:14px;font-weight:600;color:var(--ink)}
+  .req{color:var(--red)}
+  .opt{font-weight:500;color:var(--muted);font-size:12px}
+  .field input,.field select{font:inherit;font-size:15.5px;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);width:100%}
+  .field input:focus,.field select:focus{border-color:var(--amber);outline:none;background:var(--card)}
+  .field.invalid input,.field.invalid select{border-color:var(--red);background:#FFF5F4}
+  .radio-row{display:flex;flex-wrap:wrap;gap:10px}
+  .radio-row label{display:flex;gap:8px;align-items:center;padding:10px 14px;border:1.5px solid var(--line);border-radius:100px;font-size:14.5px;cursor:pointer;color:var(--ink);font-weight:500}
+  .radio-row label:has(input:checked){border-color:var(--amber);background:#FFF8EB}
+  .when{margin-top:14px}
+  .tz-note{font-size:13px;color:var(--muted);margin-top:10px}
+  .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .pkg{position:relative;cursor:pointer;display:block}
+  .pkg input{position:absolute;opacity:0;pointer-events:none}
+  .pkg-body{display:flex;flex-direction:column;gap:4px;height:100%;border:1.5px solid var(--line);border-radius:14px;padding:16px;transition:border-color .2s,background .2s}
+  .pkg:hover .pkg-body{border-color:var(--muted)}
+  .pkg input:checked + .pkg-body{border-color:var(--amber);background:#FFF8EB;box-shadow:0 0 0 3px rgba(245,158,11,.18)}
+  .pkg input:focus-visible + .pkg-body{outline:2px solid var(--amber-text);outline-offset:2px}
+  .pkg-name{font-family:var(--disp);font-weight:600;color:var(--ink);font-size:16.5px}
+  .pkg-price{font-family:var(--disp);font-weight:700;color:var(--ink);font-size:20px}
+  .pkg-desc{font-size:13.5px}
+  .pkg-pick{margin-top:auto;padding-top:8px;font-size:13px;font-weight:600;color:var(--amber-text)}
+  .pkg input:checked + .pkg-body .pkg-pick::before{content:'✓ ';}
+  .pkg-unsure{display:flex;gap:10px;align-items:center;margin-top:12px;font-size:14.5px;color:var(--ink);cursor:pointer;padding:12px 14px;border:1.5px dashed var(--line);border-radius:12px}
+  .pkg-unsure:has(input:checked){border-color:var(--amber);background:#FFF8EB}
+  .pkg-error,.form-error{display:none;color:var(--red);font-size:14px;margin-top:10px;font-weight:500}
+  .pkg-error.show,.form-error.show{display:block}
+  .form-error a{text-decoration:underline}
+  .form-submit{margin-top:28px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+  .form-submit .btn{font-size:17px;padding:17px 30px}
+  .form-hint{font-size:13px;color:var(--muted)}
+
+  footer{background:var(--deep);color:var(--on-deep-dim);padding-block:28px;font-size:14px}
+  .foot-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+  .foot-row a{color:var(--on-deep);display:inline-flex;gap:8px;align-items:center}
+  .foot-row a i{color:#4ADE80}
+
+  .mobile-cta{display:none}
+
+  @media (max-width:980px){
+    .hero-grid,.stack-wrap,.demo-grid{grid-template-columns:1fr}
+    .hero-shot{max-width:620px}
+    .float-card{left:12px;bottom:10px}
+    .hero-phone{right:8px;width:120px}
+    .week,.promise,.leaks{grid-template-columns:repeat(2,1fr)}
+    .calc{grid-template-columns:1fr}
+    .pkgs,.tgrid{grid-template-columns:1fr}
+    .store.s-lg,.store.s-md,.store.s-third{grid-column:span 12}
+    .screens{grid-template-columns:1fr 1fr}
+    .phone{max-width:260px}
+  }
+  @media (max-width:640px){
+    section{padding-block:64px}
+    .hero{padding-top:108px}
+    .wins{grid-template-columns:1fr 1fr 1fr;gap:8px}
+    .win{padding:10px}
+    .win b{font-size:20px}
+    .win span{font-size:12px}
+    .swap,.nope-grid,.week,.promise,.screens,.field-grid,.pkg-grid,.leaks{grid-template-columns:1fr}
+    .calc{padding:20px}
+    .cta-strip{padding:20px}
+    .cta-strip .btns,.cta-strip .btn{width:100%}
+    .found-money{grid-template-columns:1fr}
+    .form-card{padding:24px 18px;border-radius:18px}
+    .stack li{padding:12px 16px;grid-template-columns:auto 1fr}
+    .stack li .free{grid-column:2;justify-self:start}
+    .stack-top,.stack-foot{padding-left:16px;padding-right:16px}
+    .nav-row .btn{display:none}
+    .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px max(16px,env(safe-area-inset-left,0px)) calc(10px + env(safe-area-inset-bottom,0px));background:rgba(251,249,255,.96);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
+    .mobile-cta .btn{width:100%;padding:14px}
+    footer{padding-bottom:96px}
+  }
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<nav>
+  <div class="wrap nav-row">
+    <a href="index.html" aria-label="ImpactDev home"><img src="logo-color.png" alt="ImpactDev Digital Solutions"></a>
+    <a href="#lead-form" class="btn btn-amber">Book my free consultation</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="pill reveal"><i class="bi bi-patch-check-fill"></i> Live in 10 business days · One-time fee</div>
+      <h1 class="reveal">Your shop, open <em>168 hours a week.</em> Customers browse, pay and get confirmed without you.</h1>
+      <p class="hero-sub reveal">StoreFront Pro is a complete online store for product businesses. Keep every WhatsApp and Instagram customer you already have, and add the ones who would rather tap "Buy" than send a message.</p>
+      <div class="wins reveal">
+        <div class="win"><b>100%</b><span>of payments confirmed for you at checkout</span></div>
+        <div class="win"><b>24/7</b><span>orders taken while you sleep or work</span></div>
+        <div class="win"><b>1 place</b><span>for every order, payment and stock count</span></div>
+      </div>
+      <div class="cta-row reveal">
+        <a href="#lead-form" class="btn btn-amber">Book my free consultation <i class="bi bi-arrow-right"></i></a>
+        <a href="#demo" class="btn btn-line"><i class="bi bi-play-circle"></i> Watch a real store</a>
+      </div>
+      <p class="cta-note reveal"><i class="bi bi-shield-check"></i> Free consultation. Pay half to start and the rest only when your store is working.</p>
+    </div>
+
+    <div class="hero-shot reveal">
+      <div class="browser">
+        <div class="browser-bar"><span></span><span></span><span></span><em>isaleeeko.com</em></div>
+        <img src="images/isaleeeko.png" alt="Ìsàlèè Èkó, an African and Caribbean grocery store in Canada built on StoreFront Pro, showing its search bar, categories and weekly specials" width="1584" height="763">
+      </div>
+      <div class="hero-phone"><img src="videos/tutus-mobile-poster.jpg" alt="Tutu's Foods store on a phone, built on StoreFront Pro" width="390" height="844"></div>
+      <div class="float-card">
+        <i class="bi bi-bag-check-fill"></i>
+        <div><b>New order paid</b><span>Confirmed automatically, stock updated</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEMO VIDEOS ================= -->
+<section class="band-deep demo" id="demo">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">See a real StoreFront Pro store</span>
+      <h2>Watch a customer shop at Tutu's Foods, on a laptop and on a phone.</h2>
+      <p>Tutu's Foods is a cupcake and sourdough studio in Essex, UK. Before StoreFront Pro, people could only buy if they walked in. These are unedited recordings of the live store.</p>
+    </div>
+    <div class="demo-grid">
+      <div>
+        <div class="vid-desk">
+          <video id="vid-desktop" src="videos/tutus-desktop.mp4" poster="videos/tutus-desktop-poster.jpg" muted loop playsinline controls preload="none" width="1280" height="720" aria-label="Desktop demo of the Tutu's Foods online store"></video>
+        </div>
+        <div class="vid-cap"><i class="bi bi-laptop"></i><span><b>On a laptop:</b> browsing the range, choosing a pickup slot and paying at checkout.</span></div>
+      </div>
+      <div>
+        <div class="phone">
+          <video id="vid-mobile" src="videos/tutus-mobile.mp4" poster="videos/tutus-mobile-poster.jpg" muted loop playsinline controls preload="none" width="390" height="844" aria-label="Mobile demo of the Tutu's Foods online store"></video>
+        </div>
+        <div class="vid-cap"><i class="bi bi-phone"></i><span><b>On a phone:</b> where most of your customers will shop.</span></div>
+      </div>
+    </div>
+    <div class="demo-foot">
+      <div><i class="bi bi-check-circle-fill"></i> Every page built phone-first</div>
+      <div><i class="bi bi-check-circle-fill"></i> Payment taken before the order reaches you</div>
+      <div><i class="bi bi-check-circle-fill"></i> Your products, your brand, your domain</div>
+    </div>
+    <div class="cta-strip reveal">
+      <p>Want a store like this for your products?<span>Live in 10 business days. Pay half to start.</span></p>
+      <div class="btns"><a href="#lead-form" class="btn btn-amber" data-cta="demo_cta">Get a store like Tutu's <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BEFORE / AFTER + FOUND MONEY ================= -->
+<section id="value">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">What changes on day one</span>
+      <h2>Stop running your shop from your chat list.</h2>
+      <p>You don't have to change how you find customers. You only change where they go to buy.</p>
+    </div>
+    <div class="swap">
+      <div class="before reveal">
+        <h3><i class="bi bi-x-circle-fill"></i> Selling through DMs</h3>
+        <ul>
+          <li><i class="bi bi-dash-circle"></i><span>"How much is this?" asked 40 times a day</span></li>
+          <li><i class="bi bi-dash-circle"></i><span>Matching bank alerts to orders by hand</span></li>
+          <li><i class="bi bi-dash-circle"></i><span>Selling an item you ran out of yesterday</span></li>
+          <li><i class="bi bi-dash-circle"></i><span>Losing buyers who message after you've gone to bed</span></li>
+        </ul>
+      </div>
+      <div class="after reveal">
+        <h3><i class="bi bi-check-circle-fill"></i> Selling through StoreFront Pro</h3>
+        <ul>
+          <li><i class="bi bi-check2"></i><span>Prices, photos and options on every product page</span></li>
+          <li><i class="bi bi-check2"></i><span>Card, transfer and USSD payments confirmed instantly by Paystack</span></li>
+          <li><i class="bi bi-check2"></i><span>Stock counts drop as items sell, so you only sell what you have</span></li>
+          <li><i class="bi bi-check2"></i><span>Orders keep coming in at 2am, already paid</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="found-money reveal">
+      <div class="big">20</div>
+      <p><b>orders is all it takes.</b> At ₦20,000 profit per extra order, a Standard Store (₦400,000) has paid for itself after 20 sales. Most owners also get back the hours they spend replying "still available?" every evening. That is time you can put into making and sourcing stock. <span style="color:var(--muted)">(Illustrative maths, not a sales forecast. It excludes ads, hosting and fees.)</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COST OF NO STORE ================= -->
+<section class="band-deep" id="leak">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">The cost of waiting</span>
+      <h2>Without a store, you're already paying. You just don't get a receipt.</h2>
+      <p>Lost sales don't show up in your bank alerts. They're the customers who meant to buy and didn't. Here is where that money goes.</p>
+    </div>
+    <div class="leaks">
+      <div class="leak reveal"><i class="bi bi-moon-stars"></i><h3>The late-night buyer</h3><p>They message at 11pm, you reply at 8am, and by then they've bought from someone who let them pay straight away.</p></div>
+      <div class="leak reveal"><i class="bi bi-chat-left-dots"></i><h3>The "how much?" that goes quiet</h3><p>Many people don't want a conversation to buy. Once the price is a DM away, a lot of them never ask.</p></div>
+      <div class="leak reveal"><i class="bi bi-search"></i><h3>The search you don't show up in</h3><p>Someone searches for what you sell near them. With no website, the result they click is your competitor's.</p></div>
+      <div class="leak reveal"><i class="bi bi-shield-exclamation"></i><h3>The buyer who doesn't trust a DM shop</h3><p>Sending money to a personal account feels risky to a new customer. A proper checkout with Paystack feels safe.</p></div>
+      <div class="leak reveal"><i class="bi bi-inboxes"></i><h3>The order buried in your chats</h3><p>A paid order slips under 50 new messages. The refund, and the review, cost more than the sale made.</p></div>
+      <div class="leak reveal"><i class="bi bi-box-seam"></i><h3>The item you'd already sold out of</h3><p>Without live stock counts, you take money for something you don't have, then spend the evening apologising.</p></div>
+    </div>
+
+    <div class="calc reveal" id="loss-calc">
+      <div>
+        <h3>What are missed sales costing you?</h3>
+        <p class="intro">Move the sliders to match your business. Be conservative.</p>
+        <div class="row">
+          <label for="c-missed">Sales you miss per week <span class="val" id="c-missed-out">3</span></label>
+          <input type="range" id="c-missed" min="1" max="30" value="3">
+        </div>
+        <div class="row">
+          <label for="c-profit">Your average profit per sale (₦)</label>
+          <input type="number" id="c-profit" min="500" step="500" value="5000" inputmode="numeric">
+        </div>
+      </div>
+      <div>
+        <div class="loss" aria-live="polite">
+          <small>Estimated profit lost per year</small>
+          <div class="yr" id="c-year">₦780,000</div>
+          <div class="mo">That's about <b id="c-month">₦65,000</b> every month.</div>
+          <div class="vs" id="c-vs">A Standard Store costs ₦400,000 once. At this rate it would pay for itself in about <b>27 weeks</b>.</div>
+        </div>
+        <p class="calc-note">An illustrative estimate from your own numbers, not a promise of sales. A store won't win back every missed sale.</p>
+      </div>
+    </div>
+
+    <div class="cta-strip reveal">
+      <p>Stop losing sales to slow replies and closed hours.<span>Book a free call and we'll show you what your store would look like.</span></p>
+      <div class="btns"><a href="#lead-form" class="btn btn-amber" data-cta="leak_cta">Book my free consultation <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REAL STORES GALLERY ================= -->
+<section class="band-alt" id="work">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">Stores we've built</span>
+      <h2>Real product businesses, now selling online from Canada to the UK to Liberia.</h2>
+      <p>Each of these started where you are: good products, sold one conversation at a time.</p>
+    </div>
+    <div class="stores">
+      <a class="store s-lg reveal" href="https://isaleeeko.com" target="_blank" rel="noopener">
+        <div class="store-img"><img src="images/isaleeeko.png" alt="Ìsàlèè Èkó homepage with grocery categories, search and a 'What's cooking this week' banner" loading="lazy" width="1584" height="763"></div>
+        <div class="store-body">
+          <span class="store-meta">Groceries · Saint John, Canada <span class="flag">NEW</span></span>
+          <h3>Ìsàlèè Èkó: a taste of home, ordered online</h3>
+          <p>African and Caribbean groceries with shelves by country, recipes that add every ingredient to the cart in one tap, and delivery or pickup in English or French.</p>
+          <span class="go">Visit the live store <i class="bi bi-arrow-up-right"></i></span>
+        </div>
+      </a>
+      <a class="store s-md reveal" href="https://tutusfoods.com" target="_blank" rel="noopener">
+        <div class="store-img"><img src="images/tutusfoods.png" alt="Tutu's Foods homepage showing sourdough and cupcake products" loading="lazy"></div>
+        <div class="store-body">
+          <span class="store-meta">Bakery · Essex, UK</span>
+          <h3>Tutu's Foods: from walk-ins to UK-wide orders</h3>
+          <p>Sourdough, cupcakes and seasonal boxes, with pickup slots and postal delivery chosen at checkout.</p>
+          <span class="go">Visit the live store <i class="bi bi-arrow-up-right"></i></span>
+        </div>
+      </a>
+      <a class="store s-md reveal" href="https://joyouscakesnaccessories.com" target="_blank" rel="noopener">
+        <div class="store-img"><img src="images/joyouscakes.png" alt="Joyous Cakes N Accessories store with baking ingredients, tools and packaging" loading="lazy"></div>
+        <div class="store-body">
+          <span class="store-meta">Baking supplies · Liberia</span>
+          <h3>Joyous Cakes: out of WhatsApp Status, into a real store</h3>
+          <p>Home bakers browse ingredients and tools, then pay by card, transfer or mobile money in LRD, USD or NGN.</p>
+          <span class="go">Visit the live store <i class="bi bi-arrow-up-right"></i></span>
+        </div>
+      </a>
+      <div class="store s-lg reveal">
+        <div class="store-img"><img src="images/storefront-pro/ops-overview.webp" alt="StoreFront Pro owner dashboard with today's sales, orders to pack, low-stock alerts and store status" loading="lazy" width="1252" height="665"></div>
+        <div class="store-body">
+          <span class="store-meta">What you see as the owner</span>
+          <h3>One dashboard instead of five chat threads</h3>
+          <p>Today's sales, orders waiting to be packed and items running low, on one screen. Open it on your phone between customers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="screens">
+      <figure class="screen reveal">
+        <img src="images/storefront-pro/pickup-slot.webp" alt="Checkout step where the customer picks a pickup day and time" loading="lazy" width="800" height="685">
+        <figcaption><b>Customers pick their own time</b>No more "what time are you coming?" messages.</figcaption>
+      </figure>
+      <figure class="screen reveal">
+        <img src="images/storefront-pro/checkout-payments.webp" alt="Checkout payment options: card, Apple Pay, Google Pay and bank transfer" loading="lazy" width="884" height="375">
+        <figcaption><b>Paid before you pack</b>Card, transfer, Apple Pay or Google Pay at checkout.</figcaption>
+      </figure>
+      <figure class="screen reveal">
+        <img src="images/storefront-pro/orders-and-stock-alerts.webp" alt="Orders list with urgent orders flagged and low-stock alerts" loading="lazy" width="1271" height="690">
+        <figcaption><b>Nothing slips through</b>Urgent orders and low stock are flagged for you.</figcaption>
+      </figure>
+    </div>
+    <div class="cta-strip reveal">
+      <p>Your business could be the next one on this page.<span>Tell us what you sell. We'll show you how your store would work.</span></p>
+      <div class="btns"><a href="#lead-form" class="btn btn-amber" data-cta="portfolio_cta">Start my store <i class="bi bi-arrow-right"></i></a><a href="projects.html" class="btn btn-line">See more of our work</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VALUE STACK (BUNDLE) ================= -->
+<section id="offer">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">What you get</span>
+      <h2>Your store for ₦400,000, and everything you need to launch it, free.</h2>
+      <p>You pay for the store. The things you'd otherwise pay for separately to launch it come included.</p>
+    </div>
+    <div class="stack-wrap">
+      <div class="stack reveal">
+        <div class="stack-top">
+          <h3>Standard Store</h3>
+          <div class="price">₦400,000<small>one-time · pay 50% to start</small></div>
+        </div>
+        <ul>
+          <li><i class="bi bi-shop"></i><div><b>Your complete online store</b><span class="sub">Up to 100 products, live stock, Paystack checkout, order dashboard</span></div><span class="free">INCLUDED</span></li>
+          <li><i class="bi bi-gift-fill"></i><div><b>Your .com or .ng domain, first year</b><span class="sub">Your own web address</span></div><span class="free"><s>₦25,000</s>FREE</span></li>
+          <li><i class="bi bi-gift-fill"></i><div><b>Hosting for your first month</b><span class="sub">Keeps your store online</span></div><span class="free"><s>₦11,500</s>FREE</span></li>
+          <li><i class="bi bi-gift-fill"></i><div><b>30 days of post-launch support</b><span class="sub">A real team to call when something needs fixing</span></div><span class="free"><s>₦10,000</s>FREE</span></li>
+          <li><i class="bi bi-gift-fill"></i><div><b>1-hour live training + recordings</b><span class="sub">Watch again whenever you add products</span></div><span class="free">FREE</span></li>
+          <li><i class="bi bi-gift-fill"></i><div><b>Google Business Profile setup</b><span class="sub">So people searching nearby find you</span></div><span class="free"><s>₦15,000</s>FREE</span></li>
+          <li><i class="bi bi-gift-fill"></i><div><b>Launch flyer + Ecommerce Marketing Guide</b><span class="sub">Ready to post the day you go live</span></div><span class="free"><s>₦20,000</s>FREE</span></li>
+        </ul>
+        <div class="stack-foot">You pay for the store. <b>Over ₦81,500 of launch extras come with it.</b></div>
+      </div>
+
+      <div>
+        <div class="side-card reveal">
+          <h4>Pay half now, half when it works</h4>
+          <p>Standard and Growth stores are paid 50% to start and 50% at handover, after we've tested payments with you. You never pay in full for something you haven't seen working.</p>
+        </div>
+        <div class="side-card reveal">
+          <h4>What it takes to pay for itself</h4>
+          <div class="payback"><span class="n">20</span><p>extra orders at ₦20,000 profit each covers the full ₦400,000.<small>Illustrative, not a forecast.</small></p></div>
+        </div>
+        <div class="side-card reveal">
+          <h4>Selling abroad too?</h4>
+          <p>The Growth Store (₦700,000) adds international payments, multi-currency prices and shipping zones, and comes with promo codes and 12 days of launch social content at no extra cost.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT YOU DON'T NEED (trust) ================= -->
+<section class="band-deep" id="dont-need">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">Honest advice before you spend</span>
+      <h2>Things you don't need to buy, from us or anyone else.</h2>
+      <p>We'd rather you spend on what actually brings orders. Here's what you can skip.</p>
+    </div>
+    <div class="nope-grid">
+      <div class="nope reveal"><span class="x"><i class="bi bi-x-lg"></i></span><div><h3>A new logo</h3><p>If customers already recognise yours, keep it. <b>We build your store around the brand you have.</b></p></div></div>
+      <div class="nope reveal"><span class="x"><i class="bi bi-x-lg"></i></span><div><h3>A professional photoshoot</h3><p>Clear phone photos in daylight, on a plain background, sell well. <b>Start with those and upgrade later if you want.</b></p></div></div>
+      <div class="nope reveal"><span class="x"><i class="bi bi-x-lg"></i></span><div><h3>The Growth Store, if you only sell locally</h3><p>International payments are only worth it if you ship abroad. <b>The Standard Store covers customers in Nigeria fully.</b></p></div></div>
+      <div class="nope reveal"><span class="x"><i class="bi bi-x-lg"></i></span><div><h3>The Scale Store, until you have a team</h3><p>Team logins and 1,000 products matter later. <b>If you run the shop yourself, Standard or Growth is enough.</b></p></div></div>
+      <div class="nope reveal"><span class="x"><i class="bi bi-x-lg"></i></span><div><h3>A big ad budget on day one</h3><p>Your WhatsApp contacts and Instagram followers are your first customers. <b>Send them your store link before you pay for ads.</b></p></div></div>
+      <div class="nope reveal"><span class="x"><i class="bi bi-x-lg"></i></span><div><h3>To stop selling on WhatsApp</h3><p>Keep chatting with customers. <b>Just send them a product link to pay, instead of your account number.</b></p></div></div>
+    </div>
+    <p class="nope-foot reveal">What you do need is one place where customers can see what you sell, pay, and get confirmed without waiting for you. That's the part we build.</p>
+    <div class="cta-strip reveal">
+      <p>Get honest advice on what your business actually needs.<span>On the call we'll tell you what to build and what to skip. No payment needed.</span></p>
+      <div class="btns"><a href="#lead-form" class="btn btn-amber" data-cta="dont_need_cta">Get my free advice <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FIRST WEEK (prescription) ================= -->
+<section class="band-alt" id="see-it">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">Your first week</span>
+      <h2>No new habits. Your store fits into what you already do.</h2>
+      <p>You won't have to remember to "do ecommerce". Each step attaches to something you already do every day.</p>
+    </div>
+    <div class="week">
+      <div class="day reveal"><span class="when">Launch day</span><h3>Post your store link</h3><p>Share the launch flyer we design for you on your WhatsApp Status and Instagram.</p><p class="habit"><b>You already</b> post your products every morning.</p></div>
+      <div class="day reveal"><span class="when">Every DM</span><h3>Reply with a link</h3><p>When someone asks "how much?", send the product page. They see the price, pick, and pay.</p><p class="habit"><b>You already</b> reply to these messages.</p></div>
+      <div class="day reveal"><span class="when">Each evening</span><h3>Open your dashboard</h3><p>See what was paid today and what needs packing. No matching bank alerts to names.</p><p class="habit"><b>You already</b> check your bank alerts.</p></div>
+      <div class="day reveal"><span class="when">When stock arrives</span><h3>Update the count</h3><p>Change the number once. The store stops selling it when it runs out.</p><p class="habit"><b>You already</b> count new stock in.</p></div>
+    </div>
+    <div class="cta-strip reveal">
+      <p>Pick your launch day.<span>Book a call, send your products, and you could be live in 10 business days.</span></p>
+      <div class="btns"><a href="#lead-form" class="btn btn-amber" data-cta="week_cta">Plan my launch <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PACKAGES ================= -->
+<section id="packages">
+  <div class="wrap">
+    <div class="head center">
+      <span class="tag">Choose your store</span>
+      <h2>One-time fee. Launch extras included in every package.</h2>
+      <p>Pick the one that fits where your business is today. Not sure? Choose "help me choose" in the form and we'll recommend one on the call.</p>
+    </div>
+    <div class="pkgs">
+      <div class="pk pop reveal">
+        <span class="badge">Most businesses start here</span>
+        <span class="who">Selling to customers in Nigeria</span>
+        <h3>Standard Store</h3>
+        <div class="amt">₦400,000 <small>one-time</small></div>
+        <span class="split">₦200,000 to start · ₦200,000 at handover</span>
+        <ul>
+          <li><i class="bi bi-check2"></i>Up to 100 products with live stock</li>
+          <li><i class="bi bi-check2"></i>Paystack: card, transfer and USSD, confirmed instantly</li>
+          <li><i class="bi bi-check2"></i>One dashboard for orders, payments and delivery</li>
+          <li><i class="bi bi-check2"></i>Live in 10 business days</li>
+        </ul>
+        <div class="bonus"><b>Free with it:</b> domain (1st year), 1 month hosting, 30 days support, training, Google Business Profile, launch flyer.</div>
+        <a href="#lead-form" class="btn btn-amber" data-pkg="Standard Store">Choose Standard</a>
+      </div>
+      <div class="pk reveal">
+        <span class="who">Selling locally and abroad</span>
+        <h3>Growth Store</h3>
+        <div class="amt">₦700,000 <small>one-time</small></div>
+        <span class="split">₦350,000 to start · ₦350,000 at handover</span>
+        <ul>
+          <li><i class="bi bi-check2"></i>Everything in Standard, up to 300 products</li>
+          <li><i class="bi bi-check2"></i>International payments: Paystack International, Stripe, Square or PayPal (subject to eligibility)</li>
+          <li><i class="bi bi-check2"></i>Multi-currency prices and shipping zones</li>
+          <li><i class="bi bi-check2"></i>Live in 10 business days</li>
+        </ul>
+        <div class="bonus"><b>Free with it:</b> everything in Standard's bundle, plus promo codes and 12 days of launch social content.</div>
+        <a href="#lead-form" class="btn btn-line" data-pkg="Growth Store">Choose Growth</a>
+      </div>
+      <div class="pk reveal">
+        <span class="who">Growing catalogue and a team</span>
+        <h3>Scale Store</h3>
+        <div class="amt"><small>from</small> ₦1,200,000</div>
+        <span class="split">Scoped with you on a discovery call</span>
+        <ul>
+          <li><i class="bi bi-check2"></i>Everything in Growth, up to 1,000 products and CSV import</li>
+          <li><i class="bi bi-check2"></i>Customer accounts, wishlists and reviews</li>
+          <li><i class="bi bi-check2"></i>Team logins, sales reports and repeat-customer insights</li>
+          <li><i class="bi bi-check2"></i>Live in 4 to 5 weeks</li>
+        </ul>
+        <div class="bonus"><b>Free with it:</b> 3 months of hosting and 3 months of support, plus the full launch bundle.</div>
+        <a href="#lead-form" class="btn btn-line" data-pkg="Scale Store">Talk about Scale</a>
+      </div>
+    </div>
+
+    <div class="budget reveal">
+      <i class="bi bi-piggy-bank"></i>
+      <div>
+        <h4>On a tight budget? Start with Standard.</h4>
+        <p>Standard has everything needed to take paid orders. If you need international payments later, we can add them when your sales justify it.</p>
+        <p>What we wouldn't cut is online payment. Without it you're back to checking bank alerts and matching names to orders by hand, which is the problem the store is there to solve.</p>
+      </div>
+    </div>
+    <p style="margin-top:18px;font-size:13.5px;color:var(--muted)">After the included period: hosting ₦11,500/month (or ₦119,500/year), domain ₦25,000/year from year two, optional maintenance ₦10,000/month. Payment providers charge their own fee per transaction.</p>
+  </div>
+</section>
+
+<!-- ================= PROMISES ================= -->
+<section class="band-alt" id="why-us">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">Why ImpactDev</span>
+      <h2>We stay on your side of the table.</h2>
+      <p>A good name is worth more than great wealth. Here is how we protect yours, and your money.</p>
+    </div>
+    <div class="promise">
+      <div class="pr reveal"><i class="bi bi-file-earmark-check"></i><h3>Scope agreed first</h3><p>You know exactly what you're getting before any work starts.</p></div>
+      <div class="pr reveal"><i class="bi bi-cash-coin"></i><h3>50% at handover</h3><p>The second half is paid only once your store is built and working.</p></div>
+      <div class="pr reveal"><i class="bi bi-credit-card-2-front"></i><h3>Payments tested with you</h3><p>We run real test orders through checkout before launch.</p></div>
+      <div class="pr reveal"><i class="bi bi-people"></i><h3>A team you can reach</h3><p>Real people to contact during your support period, and an optional maintenance plan after it.</p></div>
+    </div>
+    <div class="cta-strip reveal">
+      <p>Pay the second half only when your store works.<span>That's how sure we are about what we build.</span></p>
+      <div class="btns"><a href="#lead-form" class="btn btn-amber" data-cta="why_us_cta">Book my free consultation <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">Client feedback</span>
+      <h2>What clients say about working with us.</h2>
+    </div>
+    <div class="tgrid">
+      <figure class="tc reveal"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>Outstanding delivery and attention to detail. It was a seamless process working with the team on this project. I got everything I hoped for with the site and more. Would highly recommend their services.</blockquote><figcaption><span class="av">DC</span><span><b>David Courage-Ode</b>Fashion brand</span></figcaption></figure>
+      <figure class="tc reveal"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>ImpactDev designed an highly professional and all encompassing website for us, this really improved our customer's accessibility and customer base.</blockquote><figcaption><span class="av">DR</span><span><b>Damilola Runsewe</b>Logistics company</span></figcaption></figure>
+      <figure class="tc reveal"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>You really exceeded my expectations. I didn't think there could be a company like yours in Nigeria.</blockquote><figcaption><span class="av">AD</span><span><b>Mr Adedotun</b>Consulting firm</span></figcaption></figure>
+      <figure class="tc reveal"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>I love how the website design is simple yet sophisticated and more importantly user friendly as it is easy to navigate. Your services was great. I love how you paid attention to details, listened to my own input and also the timely delivery of the job.</blockquote><figcaption><span class="av">EA</span><span><b>Eirene Arierhie</b>ImpactDev client</span></figcaption></figure>
+      <figure class="tc reveal"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>First, I would say thank you, you have very excellent customer service and it's so good to see. All I had to do was give you the UI and it was exact design I envisioned, it was really nice working with you.</blockquote><figcaption><span class="av">C</span><span><b>Comfort</b>Brand strategist</span></figcaption></figure>
+      <figure class="tc reveal"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>The services I received was nothing short of excellent, The teams commitment to attention to detail is impeccable.</blockquote><figcaption><span class="av">B</span><span><b>Bianca</b>Solar company</span></figcaption></figure>
+    </div>
+    <div class="cta-strip reveal">
+      <p>Be the next business they're talking about.<span>Free consultation. No payment to book.</span></p>
+      <div class="btns"><a href="#lead-form" class="btn btn-amber" data-cta="testimonials_cta">Book my free consultation <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="band-alt" id="faq">
+  <div class="wrap">
+    <div class="head center">
+      <span class="tag">Questions, answered</span>
+      <h2>Before you book.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Can I keep selling on WhatsApp and Instagram?</summary><p>Yes. Keep every channel you use now. The store gives those conversations somewhere to end: a product page where the customer pays.</p></details>
+      <details><summary>Do I need technical knowledge?</summary><p>No. You get a 1-hour live training plus recordings, and post-launch support: 30 days on Standard and Growth, 3 months on Scale. If you can post on Instagram, you can add a product.</p></details>
+      <details><summary>Can customers pay by bank transfer?</summary><p>Yes. Paystack is built into every package and takes cards, bank transfers and USSD, with instant confirmation.</p></details>
+      <details><summary>Can I receive international payments?</summary><p>Yes, from the Growth Store upward: Paystack International, Stripe, Square or PayPal (subject to eligibility), with multi-currency prices and shipping zones.</p></details>
+      <details><summary>Will I keep paying you after the store is built?</summary><p>The package fee is one-time. After the included period, hosting is ₦11,500 per month (or ₦33,200 per quarter, ₦119,500 per year), the domain renews at ₦25,000 per year from year two, and maintenance is optional at ₦10,000 per month. Payment providers charge their own fee per transaction.</p></details>
+      <details><summary>How long does it take?</summary><p>Standard and Growth stores go live within 10 business days of receiving your content. Scale takes 4 to 5 weeks.</p></details>
+      <details><summary>What if my product photos and details aren't ready?</summary><p>That's normal. On the consultation we'll tell you exactly what we need and agree a realistic timeline. Clear phone photos are fine to start.</p></details>
+      <details><summary>Why does Scale start "from" a price?</summary><p>It depends on your catalogue, integrations and fulfilment. We agree the exact scope and price with you on the discovery call.</p></details>
+    </div>
+    <div class="cta-strip center reveal" style="max-width:820px;margin-inline:auto">
+      <p>Still have a question? Ask it on the call.<span>Or send us a WhatsApp message and we'll reply.</span></p>
+      <div class="btns" style="justify-content:center"><a href="#lead-form" class="btn btn-amber" data-cta="faq_cta">Book my free consultation <i class="bi bi-arrow-right"></i></a><a href="https://wa.me/2349114693886" target="_blank" rel="noopener" class="btn btn-line"><i class="bi bi-whatsapp"></i> WhatsApp us</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEAD FORM ================= -->
+<section class="lead" id="lead-form">
+  <div class="wrap">
+    <div class="form-card">
+      <form id="lead" action="https://formspree.io/f/mwlvrgnk" method="POST" novalidate>
+        <span class="tag">Free consultation</span>
+        <h2>Tell us about your business. We'll tell you exactly what to build, and what to skip.</h2>
+        <p class="lede">A short call to recommend the right package, explain payment setup and plan your launch date.</p>
+
+        <div class="reassure">
+          <i class="bi bi-shield-check"></i>
+          <p><b>No payment needed to book.</b> If StoreFront Pro isn't right for you, we'll say so on the call.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-title"><span class="step-num">1</span> Your contact details</div>
+          <div class="field-grid">
+            <div class="field full">
+              <label for="f-name">Full name <span class="req">*</span></label>
+              <input type="text" id="f-name" name="name" autocomplete="name" required placeholder="Your full name">
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone number <span class="req">*</span></label>
+              <input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+234 …">
+            </div>
+            <div class="field">
+              <label for="f-email">Email address <span class="req">*</span></label>
+              <input type="email" id="f-email" name="email" autocomplete="email" required placeholder="you@example.com">
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-title"><span class="step-num">2</span> Your business</div>
+          <div class="field-grid">
+            <div class="field">
+              <label for="f-biz">Business name <span class="opt">Optional</span></label>
+              <input type="text" id="f-biz" name="business_name" autocomplete="organization" placeholder="Your business name">
+            </div>
+            <div class="field">
+              <label for="f-type">What do you sell? <span class="req">*</span></label>
+              <select id="f-type" name="business_type" required>
+                <option value="">Select your business type</option>
+                <option>Fashion &amp; apparel</option>
+                <option>Food, bakery &amp; beverages</option>
+                <option>Beauty &amp; personal care</option>
+                <option>Electronics &amp; gadgets</option>
+                <option>Home &amp; furnishings</option>
+                <option>Health &amp; wellness products</option>
+                <option>Wholesale &amp; distribution</option>
+                <option>Other product business</option>
+                <option>I'm just starting out</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-title"><span class="step-num">3</span> Which store are you leaning towards?</div>
+          <div class="pkg-grid" role="radiogroup" aria-label="Package">
+            <label class="pkg">
+              <input type="radio" name="package" value="Standard Store (Tier 1, local payments) - ₦400,000" data-price="400000" data-name="Standard Store">
+              <span class="pkg-body"><span class="pkg-name">Standard Store</span><span class="pkg-price">₦400,000</span><span class="pkg-desc">Selling in Nigeria</span><span class="pkg-pick">Select</span></span>
+            </label>
+            <label class="pkg">
+              <input type="radio" name="package" value="Growth Store (Tier 2, international payments) - ₦700,000" data-price="700000" data-name="Growth Store">
+              <span class="pkg-body"><span class="pkg-name">Growth Store</span><span class="pkg-price">₦700,000</span><span class="pkg-desc">Selling locally and abroad</span><span class="pkg-pick">Select</span></span>
+            </label>
+            <label class="pkg">
+              <input type="radio" name="package" value="Scale Store - from ₦1,200,000" data-price="from 1200000" data-name="Scale Store">
+              <span class="pkg-body"><span class="pkg-name">Scale Store</span><span class="pkg-price">from ₦1.2m</span><span class="pkg-desc">Big catalogue and a team</span><span class="pkg-pick">Select</span></span>
+            </label>
+          </div>
+          <label class="pkg-unsure"><input type="radio" name="package" value="Not sure yet" data-price="" data-name="Not sure yet"> I'm not sure yet, help me choose</label>
+          <div class="pkg-error" id="pkg-error" role="alert">Please choose a package, or select "I'm not sure yet".</div>
+        </div>
+
+        <div class="step">
+          <div class="step-title"><span class="step-num">4</span> When should we call?</div>
+          <p class="step-sub">We'll confirm your slot.</p>
+          <div class="field">
+            <span class="lbl" id="contact-label">How should we contact you? <span class="req">*</span></span>
+            <div class="radio-row" role="radiogroup" aria-labelledby="contact-label">
+              <label><input type="radio" name="contact_preference" value="WhatsApp call" checked> WhatsApp call</label>
+              <label><input type="radio" name="contact_preference" value="Google Meet"> Google Meet</label>
+              <label><input type="radio" name="contact_preference" value="Regular phone call"> Phone call</label>
+            </div>
+          </div>
+          <div class="field-grid when">
+            <div class="field">
+              <label for="f-date">Preferred date <span class="req">*</span></label>
+              <input type="date" id="f-date" name="preferred_date" required>
+            </div>
+            <div class="field">
+              <label for="f-time">Preferred time <span class="req">*</span></label>
+              <input type="time" id="f-time" name="preferred_time" required>
+            </div>
+          </div>
+          <p class="tz-note">Use your local time. We'll confirm availability.</p>
+        </div>
+
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" aria-hidden="true">
+
+        <div class="form-submit">
+          <div class="form-error" id="form-error" role="alert"></div>
+          <button type="submit" class="btn btn-amber" id="submit-btn">Book my free consultation <i class="bi bi-arrow-right"></i></button>
+          <span class="form-hint">We only use your details to contact you about your online store.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="mobile-cta"><a href="#lead-form" class="btn btn-amber">Book my free consultation</a></div>
+
+<footer>
+  <div class="wrap foot-row">
+    <p>© 2026 ImpactDev Digital Solutions. All rights reserved.</p>
+    <a href="https://wa.me/2349114693886" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Prefer to chat? WhatsApp us</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    els.forEach(function(el, i){ el.style.transitionDelay = (i % 4) * 60 + 'ms'; io.observe(el); });
+    // Safety: never leave content hidden
+    setTimeout(function(){ els.forEach(function(e){ e.classList.add('in'); }); }, 2500);
+  })();
+
+  // Demo videos: load and play muted when on screen, pause when off screen
+  (function(){
+    var vids = [document.getElementById('vid-desktop'), document.getElementById('vid-mobile')];
+    if (!('IntersectionObserver' in window)) return;
+    var vio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target;
+        if (e.isIntersecting) {
+          if (v.preload === 'none') { v.preload = 'auto'; }
+          var p = v.play(); if (p && p.catch) p.catch(function(){});
+        } else { v.pause(); }
+      });
+    }, { threshold: 0.35 });
+    vids.forEach(function(v){ if (v) vio.observe(v); });
+  })();
+
+  // Missed-sales calculator
+  (function(){
+    var missed = document.getElementById('c-missed'), profit = document.getElementById('c-profit');
+    if (!missed || !profit) return;
+    var naira = function(n){ return '₦' + Math.round(n).toLocaleString('en-NG'); };
+    function update(){
+      var m = Number(missed.value) || 0;
+      var p = Math.max(0, Number(profit.value) || 0);
+      document.getElementById('c-missed-out').textContent = m;
+      var weekly = m * p, yearly = weekly * 52;
+      document.getElementById('c-year').textContent = naira(yearly);
+      document.getElementById('c-month').textContent = naira(yearly / 12);
+      var vs = document.getElementById('c-vs');
+      if (weekly > 0) {
+        var weeks = Math.ceil(400000 / weekly);
+        vs.innerHTML = 'A Standard Store costs ₦400,000 once. At this rate it would pay for itself in about <b>' + weeks + (weeks === 1 ? ' week' : ' weeks') + '</b>.';
+      } else {
+        vs.textContent = 'Enter your average profit per sale to see the payback time.';
+      }
+    }
+    var sent = false;
+    function used(){ if (!sent && typeof gtag === 'function') { sent = true; gtag('event', 'calculator_use'); } }
+    missed.addEventListener('input', function(){ update(); used(); });
+    profit.addEventListener('input', function(){ update(); used(); });
+    update();
+  })();
+
+  // Package buttons preselect the package in the form
+  document.querySelectorAll('[data-pkg]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var r = document.querySelector('input[name="package"][data-name="' + btn.dataset.pkg + '"]');
+      if (r) { r.checked = true; r.dispatchEvent(new Event('change', { bubbles: true })); }
+    });
+  });
+
+  // ================= LEAD FORM (same flow as the live page) =================
+  const FORM_ENDPOINT = 'https://formspree.io/f/mwlvrgnk';
+  const THANK_YOU_PAGE = 'storefront-pro-thank-you.html';
+  const WHATSAPP_NUMBER = '2349114693886'; // fallback only
+
+  const form = document.getElementById('lead');
+  const formError = document.getElementById('form-error');
+  const pkgError = document.getElementById('pkg-error');
+  const submitBtn = document.getElementById('submit-btn');
+  const submitLabel = submitBtn.innerHTML;
+  const dateInput = document.getElementById('f-date');
+  const now = new Date();
+  const todayStr = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+  dateInput.min = todayStr;
+
+  const params = new URLSearchParams(location.search);
+  const tracking = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid'].forEach(k => {
+    if (params.get(k)) tracking[k] = params.get(k);
+  });
+
+  function setInvalid(id, bad){
+    const el = document.getElementById(id);
+    if (el) el.closest('.field').classList.toggle('invalid', bad);
+  }
+  ['f-name','f-phone','f-email','f-type','f-date','f-time'].forEach(id => {
+    document.getElementById(id).addEventListener('input', () => setInvalid(id, false));
+    document.getElementById(id).addEventListener('change', () => setInvalid(id, false));
+  });
+  form.querySelectorAll('input[name="package"]').forEach(r => r.addEventListener('change', () => pkgError.classList.remove('show')));
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+    delete data._gotcha;
+
+    const phoneDigits = String(data.phone || '').replace(/\D/g, '');
+    const checks = {
+      'f-name':  String(data.name || '').trim().length > 1,
+      'f-phone': phoneDigits.length >= 7,
+      'f-email': /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.email || '').trim()),
+      'f-type':  !!data.business_type,
+      'f-date':  !!data.preferred_date && data.preferred_date >= todayStr,
+      'f-time':  !!data.preferred_time
+    };
+    let ok = true, firstBad = null;
+    Object.entries(checks).forEach(([id, valid]) => {
+      setInvalid(id, !valid);
+      if (!valid){ ok = false; if (!firstBad) firstBad = id; }
+    });
+    const pkgChosen = !!data.package;
+    pkgError.classList.toggle('show', !pkgChosen);
+    if (!pkgChosen) ok = false;
+
+    if (!ok){
+      formError.textContent = 'Please complete the highlighted fields.';
+      formError.classList.add('show');
+      const target = firstBad ? document.getElementById(firstBad) : pkgError;
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    formError.classList.remove('show');
+
+    const picked = form.querySelector('input[name="package"]:checked');
+    const payload = {
+      ...data,
+      package_name: picked.dataset.name,
+      package_price_ngn: picked.dataset.price || 'n/a',
+      lead_source: 'StoreFront Pro landing page (new design)',
+      page_url: location.href.split('#')[0],
+      submitted_at: new Date().toISOString(),
+      visitor_timezone: (Intl.DateTimeFormat().resolvedOptions().timeZone || ''),
+      ...tracking,
+      _subject: 'StoreFront Pro lead: ' + data.name + ' | ' + picked.dataset.name,
+      _replyto: data.email
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending…';
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Submission failed');
+      try {
+        sessionStorage.setItem('sfpLead', JSON.stringify({
+          name: data.name, package: picked.dataset.name, contact: data.contact_preference,
+          date: data.preferred_date, time: data.preferred_time
+        }));
+      } catch (e) {}
+      window.location.href = THANK_YOU_PAGE;
+    } catch (err) {
+      if (typeof gtag === 'function') gtag('event', 'form_error', { error_type: 'submit_failed' });
+      const text = 'Hello ImpactDev, I would like to enquire about StoreFront Pro. I am ' + data.name + '.';
+      const wa = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+      formError.innerHTML = 'Something went wrong sending your request. Please try again, or <a href="' + wa + '" target="_blank" rel="noopener">message us on WhatsApp</a>.';
+      formError.classList.add('show');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = submitLabel;
+    }
+  });
+</script>
+<script>
+/* Engagement tracking for GA4: CTA clicks, sections seen, package choice, form attempts, video plays */
+(function () {
+  function track(name, params) { if (typeof gtag === 'function') gtag('event', name, params || {}); }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a, summary');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var text = (a.textContent || '').trim().slice(0, 80);
+    if (a.tagName === 'SUMMARY') { track('faq_open', { question: text }); return; }
+    var label = null;
+    if (a.dataset.cta) label = a.dataset.cta;
+    else if (href === '#lead-form') label = a.dataset.pkg ? 'pkg_' + a.dataset.pkg.toLowerCase().replace(/\s+/g, '_') : (a.closest('nav') ? 'nav_cta' : (a.closest('.mobile-cta') ? 'sticky_cta' : 'hero_cta'));
+    else if (href === '#demo') label = 'watch_demo';
+    else if (href.indexOf('wa.me') !== -1) label = 'whatsapp';
+    else if (a.classList.contains('store')) label = 'portfolio_' + href.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+    if (label) track('cta_click', { cta: label, link_text: text });
+  });
+
+  var sections = { 'demo': 'demo_videos', 'value': 'before_after', 'leak': 'cost_of_waiting','work': 'portfolio', 'offer': 'value_stack', 'dont-need': 'dont_need', 'see-it': 'first_week', 'packages': 'pricing', 'why-us': 'why_us', 'testimonials': 'testimonials', 'faq': 'faq', 'lead-form': 'form' };
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        track('section_view', { section: sections[en.target.id] });
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -50% 0px' });
+    Object.keys(sections).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+  }
+
+  ['vid-desktop', 'vid-mobile'].forEach(function (id) {
+    var v = document.getElementById(id), sent = false;
+    if (v) v.addEventListener('playing', function () { if (!sent) { sent = true; track('video_play', { video: id }); } });
+  });
+
+  var form = document.getElementById('lead');
+  if (form) {
+    var started = false;
+    form.addEventListener('focusin', function () { if (!started) { started = true; track('form_begin'); } });
+    form.addEventListener('change', function (e) {
+      if (e.target.name === 'package') track('package_select', { package_name: e.target.dataset.name || e.target.value });
+    });
+    form.addEventListener('submit', function () {
+      var invalid = form.querySelectorAll(':invalid').length;
+      var pkg = form.querySelector('input[name="package"]:checked');
+      track('form_submit_attempt', { has_errors: (invalid > 0 || !pkg) ? 'yes' : 'no' });
+    });
+  }
+})();
+</script>
+</body>
+</html>
